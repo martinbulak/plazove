@@ -1,0 +1,106 @@
+@import "tailwindcss";
+
+/*
+  Dizajnový systém „Aqualand BB – verejná kontrola".
+  Farebnosť vychádza z vody, leta a mestského prostredia – tlmená, dôveryhodná,
+  občianska. Zámerne sa NEPOUŽÍVA vizuálna identita prevádzkovateľa.
+*/
+
+@theme {
+  /* Brand – voda (tlmená modrozelená / petrolejová) */
+  --color-brand-50: #eff9fb;
+  --color-brand-100: #d6f0f5;
+  --color-brand-200: #b0e2eb;
+  --color-brand-300: #7bccdb;
+  --color-brand-400: #45adc3;
+  --color-brand-500: #2b8fa8;
+  --color-brand-600: #26748d;
+  --color-brand-700: #245e73;
+  --color-brand-800: #244e5f;
+  --color-brand-900: #224152;
+  --color-brand-950: #102a37;
+
+  /* Akcent – leto (teplá pieskovo-jantárová) pre CTA */
+  --color-accent-400: #f6b545;
+  --color-accent-500: #ee9d1f;
+  --color-accent-600: #d47f12;
+  --color-accent-700: #b06210;
+
+  /* Neutrály – mesto (chladná bridlicová sivá) */
+  --color-ink-50: #f6f7f9;
+  --color-ink-100: #eceef1;
+  --color-ink-200: #d5dae0;
+  --color-ink-300: #b0bac5;
+  --color-ink-400: #7f8da3;
+  --color-ink-500: #5f6b7e;
+  --color-ink-600: #4a5566;
+  --color-ink-700: #3b4453;
+  --color-ink-800: #2b323d;
+  --color-ink-900: #1c212a;
+
+  /* Stavové farby */
+  --color-status-done: #2f9e6a;
+  --color-status-progress: #d99a12;
+  --color-status-notdone: #c8483a;
+  --color-status-unknown: #6b7280;
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", Roboto, Arial, sans-serif;
+
+  --radius-card: 0.9rem;
+}
+
+:root {
+  --page-bg: #ffffff;
+  --page-fg: #1c212a;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--page-bg);
+  color: var(--page-fg);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Prístupnosť: viditeľný focus a rešpekt k preferenciám pohybu */
+:where(a, button, input, textarea, select, [tabindex]):focus-visible {
+  outline: 3px solid var(--color-brand-500);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* Skip-link */
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 0;
+  z-index: 100;
+  background: var(--color-brand-700);
+  color: #fff;
+  padding: 0.75rem 1rem;
+  border-radius: 0 0 0.5rem 0;
+}
+.skip-link:focus {
+  left: 0;
+}
+
+/* Typografia dlhých textov */
+.prose-sk :where(h2) { margin-top: 1.75rem; }
+.prose-sk :where(p) { line-height: 1.7; }
+.prose-sk :where(a) { color: var(--color-brand-700); }

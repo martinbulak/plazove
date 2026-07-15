@@ -1,0 +1,74 @@
+[
+  {
+    "id": "c1", "order": 1, "status": "published", "kind": "document_conclusion",
+    "question": "Čo bolo predmetom nájmu?",
+    "answer": "Predmetom nájmu mal byť areál plážového kúpaliska vo vlastníctve mesta vrátane pozemkov a stavieb. (VZOROVÝ TEXT – doplňte presné vymedzenie predmetu nájmu podľa zmluvy.)",
+    "article": "čl. — (doplňte)",
+    "document": { "label": "Nájomná zmluva", "documentId": "doc-zmluva-2007" },
+    "isPlaceholder": true
+  },
+  {
+    "id": "c2", "order": 2, "status": "published", "kind": "citation",
+    "question": "Dokedy zmluva platí?",
+    "answer": "Podľa verejne uvádzaných informácií je nájom dohodnutý do roku 2037. (VZOROVÝ TEXT – overte presnú dobu nájmu a citujte znenie.)",
+    "article": "čl. — (doplňte)",
+    "document": { "label": "Nájomná zmluva", "documentId": "doc-zmluva-2007" },
+    "isPlaceholder": true
+  },
+  {
+    "id": "c3", "order": 3, "status": "published", "kind": "document_conclusion",
+    "question": "Aké investície mal nájomca vykonať?",
+    "answer": "Zmluva mala obsahovať záväzok nájomcu investovať do areálu. (VZOROVÝ TEXT – doplňte rozsah, výšku a účel investícií podľa zmluvy.)",
+    "article": "čl. — (doplňte)",
+    "document": { "label": "Nájomná zmluva", "documentId": "doc-zmluva-2007" },
+    "isPlaceholder": true
+  },
+  {
+    "id": "c4", "order": 4, "status": "published", "kind": "legal_interpretation",
+    "question": "Ako sa mali investície preukazovať?",
+    "answer": "Spôsob preukazovania investícií (napr. doklady, kolaudácie, znalecké posudky) mal byť upravený v zmluve. (VZOROVÝ TEXT – doplňte konkrétny mechanizmus.)",
+    "article": "čl. — (doplňte)",
+    "document": { "label": "Nájomná zmluva", "documentId": "doc-zmluva-2007" },
+    "isPlaceholder": true
+  },
+  {
+    "id": "c5", "order": 5, "status": "published", "kind": "document_conclusion",
+    "question": "Aké povinnosti mal nájomca?",
+    "answer": "Nájomca mal okrem investícií plniť aj ďalšie povinnosti (údržba, prevádzka, nájomné). (VZOROVÝ TEXT – doplňte výpočet povinností.)",
+    "article": "čl. — (doplňte)",
+    "document": { "label": "Nájomná zmluva", "documentId": "doc-zmluva-2007" },
+    "isPlaceholder": true
+  },
+  {
+    "id": "c6", "order": 6, "status": "published", "kind": "legal_interpretation",
+    "question": "Čo bolo označené za podstatné porušenie zmluvy?",
+    "answer": "Zmluva mala definovať, ktoré porušenia sa považujú za podstatné a zakladajú právo mesta konať. (VZOROVÝ TEXT – doplňte definíciu podstatného porušenia a zdroj.)",
+    "article": "čl. — (doplňte)",
+    "document": { "label": "Nájomná zmluva", "documentId": "doc-zmluva-2007" },
+    "isPlaceholder": true
+  },
+  {
+    "id": "c7", "order": 7, "status": "published", "kind": "legal_interpretation",
+    "question": "Dá sa zmluva vypovedať?",
+    "answer": "Možnosť výpovede závisí od dohodnutých výpovedných dôvodov a lehôt. (VZOROVÝ TEXT – doplňte podmienky výpovede podľa zmluvy a právneho stanoviska.)",
+    "article": "čl. — (doplňte)",
+    "document": { "label": "Právne stanovisko", "documentId": "doc-pravne-stanovisko-2022" },
+    "isPlaceholder": true
+  },
+  {
+    "id": "c8", "order": 8, "status": "published", "kind": "legal_interpretation",
+    "question": "Za akých okolností môže mesto od zmluvy odstúpiť?",
+    "answer": "Odstúpenie je zvyčajne viazané na podstatné porušenie zmluvy a splnenie procesných podmienok (výzva, dodatočná lehota). (VZOROVÝ TEXT – doplňte konkrétne podmienky.)",
+    "article": "čl. — (doplňte)",
+    "document": { "label": "Právne stanovisko", "documentId": "doc-pravne-stanovisko-2022" },
+    "isPlaceholder": true
+  },
+  {
+    "id": "c9", "order": 9, "status": "published", "kind": "legal_interpretation",
+    "question": "Čo by sa dialo s investíciami po skončení nájmu?",
+    "answer": "Osud technického zhodnotenia a investícií po skončení nájmu (vysporiadanie, prechod na mesto) mal byť upravený v zmluve. (VZOROVÝ TEXT – doplňte úpravu vysporiadania.)",
+    "article": "čl. — (doplňte)",
+    "document": { "label": "Nájomná zmluva", "documentId": "doc-zmluva-2007" },
+    "isPlaceholder": true
+  }
+]

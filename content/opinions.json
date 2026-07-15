@@ -1,0 +1,20 @@
+[
+  {
+    "id": "op1", "status": "published", "approved": true, "sentiment": "negative",
+    "excerpt": "Vzorová ukážka kritickej skúsenosti návštevníka s areálom kúpaliska. (PLACEHOLDER – nahraďte skutočným, verejne publikovaným úryvkom vrátane odkazu.)",
+    "profileName": "Meno Profilu (vzor)", "platform": "google", "postedAt": "2024-07-01",
+    "originalUrl": "", "archivedAt": "2024-07-10", "isPlaceholder": true
+  },
+  {
+    "id": "op2", "status": "published", "approved": true, "sentiment": "negative",
+    "excerpt": "Vzorová ukážka negatívneho hodnotenia zo sociálnej siete. (PLACEHOLDER – použite len primerane krátky úryvok a odkaz na originál.)",
+    "profileName": "Verejný Profil (vzor)", "platform": "facebook", "postedAt": "2024-06-20",
+    "originalUrl": "", "archivedAt": "2024-06-25", "isPlaceholder": true
+  },
+  {
+    "id": "op3", "status": "published", "approved": true, "sentiment": "neutral",
+    "excerpt": "Vzorová ukážka neutrálneho / vyváženého komentára pre transparentnosť. (PLACEHOLDER.)",
+    "profileName": "Ďalší Profil (vzor)", "platform": "iny", "postedAt": "2024-05-15",
+    "originalUrl": "", "archivedAt": "2024-05-18", "isPlaceholder": true
+  }
+]

@@ -1,0 +1,22 @@
+[
+  {
+    "id": "ca1", "status": "published", "date": "2022", "step": "Zadanie právnej analýzy k možnostiam ukončenia zmluvy",
+    "actionStatus": "done", "note": "Podľa verejných informácií malo byť stanovisko vypracované. (VZOROVÝ ZÁZNAM.)",
+    "isPlaceholder": true, "sources": []
+  },
+  {
+    "id": "ca2", "status": "published", "date": "2023", "step": "Verejný prísľub riešiť stav areálu",
+    "actionStatus": "in_progress", "note": "Deklarovaný zámer riešiť situáciu. (VZOROVÝ ZÁZNAM – doplňte zdroj a aktuálny stav.)",
+    "isPlaceholder": true, "sources": []
+  },
+  {
+    "id": "ca3", "status": "published", "date": "2024", "step": "Výzva nájomcovi na odstránenie nedostatkov",
+    "actionStatus": "no_answer", "note": "Nie je verejne známe, či a s akým výsledkom bola výzva doručená. (VZOROVÝ ZÁZNAM.)",
+    "isPlaceholder": true, "sources": []
+  },
+  {
+    "id": "ca4", "status": "published", "date": "2024", "step": "Zverejnenie aktuálneho plánu ďalšieho postupu",
+    "actionStatus": "not_done", "note": "Ucelený verejný plán zatiaľ nie je k dispozícii. (VZOROVÝ ZÁZNAM.)",
+    "isPlaceholder": true, "sources": []
+  }
+]

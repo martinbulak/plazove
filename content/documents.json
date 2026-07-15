@@ -1,0 +1,56 @@
+[
+  {
+    "id": "doc-zmluva-2007", "slug": "najomna-zmluva-2007", "status": "published",
+    "title": "Nájomná zmluva (2007)", "date": "2007", "category": "zmluva",
+    "summary": "Pôvodná nájomná zmluva medzi mestom a nájomcom na areál plážového kúpaliska. (VZOROVÝ ZÁZNAM – nahraďte skutočným dokumentom.)",
+    "issuer": "Mesto Banská Bystrica / nájomca",
+    "fileUrl": "",
+    "keyFindings": ["Doba nájmu do roku 2037 (overiť).", "Investičná povinnosť nájomcu (overiť rozsah)."],
+    "sourceUrl": "",
+    "isPlaceholder": true
+  },
+  {
+    "id": "doc-dodatok-2009", "slug": "dodatok-2009", "status": "published",
+    "title": "Dodatok k nájomnej zmluve (2009)", "date": "2009", "category": "zmluva",
+    "summary": "Dodatok upravujúci podmienky pôvodnej zmluvy. (VZOROVÝ ZÁZNAM.)",
+    "issuer": "Mesto Banská Bystrica / nájomca", "fileUrl": "", "keyFindings": [], "sourceUrl": "", "isPlaceholder": true
+  },
+  {
+    "id": "doc-dodatok-2010", "slug": "dodatok-2010", "status": "published",
+    "title": "Dodatok k nájomnej zmluve (2010)", "date": "2010", "category": "zmluva",
+    "summary": "Ďalší dodatok k zmluve. (VZOROVÝ ZÁZNAM.)",
+    "issuer": "Mesto Banská Bystrica / nájomca", "fileUrl": "", "keyFindings": [], "sourceUrl": "", "isPlaceholder": true
+  },
+  {
+    "id": "doc-kontrolor-2010", "slug": "sprava-kontrolora-2010", "status": "published",
+    "title": "Správa hlavného kontrolóra (2010)", "date": "2010", "category": "kontrolor",
+    "summary": "Kontrolné zistenia týkajúce sa plnenia zmluvných povinností. (VZOROVÝ ZÁZNAM – doplňte skutočný záver.)",
+    "issuer": "Hlavný kontrolór mesta", "fileUrl": "", "keyFindings": ["Zistenia k plneniu povinností (doplniť)."], "sourceUrl": "", "isPlaceholder": true
+  },
+  {
+    "id": "doc-audit-2018", "slug": "audit-2018", "status": "published",
+    "title": "Audit (2018)", "date": "2018", "category": "audit",
+    "summary": "Audit súvisiaci s areálom / plnením zmluvy. (VZOROVÝ ZÁZNAM.)",
+    "issuer": "Audítor (doplniť)", "fileUrl": "", "keyFindings": [], "sourceUrl": "", "isPlaceholder": true
+  },
+  {
+    "id": "doc-pravne-stanovisko-2022", "slug": "pravne-stanovisko-2022", "status": "published",
+    "title": "Právne stanovisko (2022)", "date": "2022", "category": "pravne-stanovisko",
+    "summary": "Stanovisko k možnostiam ukončenia nájomnej zmluvy. (VZOROVÝ ZÁZNAM – doplňte autora a záver.)",
+    "issuer": "Akademické právne pracovisko (doplniť)", "fileUrl": "",
+    "keyFindings": ["Analýza možností výpovede a odstúpenia (doplniť závery)."],
+    "sourceUrl": "", "isPlaceholder": true
+  },
+  {
+    "id": "doc-uznesenie-2023", "slug": "uznesenie-2023", "status": "published",
+    "title": "Uznesenie mestského zastupiteľstva (2023)", "date": "2023", "category": "uznesenie",
+    "summary": "Uznesenie súvisiace s ďalším postupom mesta. (VZOROVÝ ZÁZNAM.)",
+    "issuer": "Mestské zastupiteľstvo Banská Bystrica", "fileUrl": "", "keyFindings": [], "sourceUrl": "", "isPlaceholder": true
+  },
+  {
+    "id": "doc-infoziadost-2024", "slug": "odpoved-infoziadost-2024", "status": "published",
+    "title": "Odpoveď na infožiadosť (2024)", "date": "2024", "category": "infoziadost",
+    "summary": "Odpoveď mesta na žiadosť o informácie podľa zákona o slobodnom prístupe k informáciám. (VZOROVÝ ZÁZNAM.)",
+    "issuer": "Mesto Banská Bystrica", "fileUrl": "", "keyFindings": [], "sourceUrl": "", "isPlaceholder": true
+  }
+]

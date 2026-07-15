@@ -1,0 +1,17 @@
+{
+  "siteName": "Aqualand BB – verejná kontrola",
+  "tagline": "Nezávislý občiansky informačný projekt",
+  "heroTitle": "Čo sa deje s plážovým kúpaliskom v Banskej Bystrici?",
+  "heroSubtitle": "Dokumenty, právne analýzy, fotografie a skúsenosti verejnosti na jednom mieste.",
+  "disclaimer": "Toto nie je oficiálny web prevádzkovateľa plážového kúpaliska ani Mesta Banská Bystrica. Ide o nezávislý občiansky informačný projekt.",
+  "heroFacts": [
+    { "label": "Nájomná zmluva uzatvorená", "value": "2007", "kind": "fact" },
+    { "label": "Nájom do roku", "value": "2037", "kind": "fact" },
+    { "label": "Vlastník areálu", "value": "Mesto (verejný majetok)", "kind": "fact" },
+    { "label": "Deklarovaná povinnosť nájomcu", "value": "Investície do areálu", "kind": "document_conclusion" },
+    { "label": "Právna analýza možností", "value": "Ukončenie zmluvy", "kind": "legal_interpretation" }
+  ],
+  "contactEmail": "kontakt@aqualandbb.sk",
+  "operator": "Občiansky informačný projekt Aqualand BB – verejná kontrola",
+  "petitionText": "My, dolupodpísaní obyvatelia a obyvateľky Banskej Bystrice a okolia, vyzývame Mesto Banská Bystrica, aby aktívne, transparentne a v súlade s platnou nájomnou zmluvou riešilo súčasný stav plážového kúpaliska ako verejného majetku. Žiadame mesto, aby zverejnilo aktuálny plán ďalšieho postupu, preverilo plnenie zmluvných povinností nájomcu a informovalo verejnosť o vykonaných a plánovaných krokoch."
+}

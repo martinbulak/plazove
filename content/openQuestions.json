@@ -1,0 +1,32 @@
+[
+  {
+    "id": "q1", "status": "published", "actionStatus": "no_answer",
+    "question": "Boli všetky deklarované investície nájomcu riadne preukázané a overené?",
+    "cityAnswer": "", "lastUpdated": "2024-07-01", "isPlaceholder": true, "sources": []
+  },
+  {
+    "id": "q2", "status": "published", "actionStatus": "no_answer",
+    "question": "Aké konkrétne kroky mesto vykonalo po právnom stanovisku?",
+    "cityAnswer": "", "lastUpdated": "2024-07-01", "isPlaceholder": true, "sources": []
+  },
+  {
+    "id": "q3", "status": "published", "actionStatus": "no_answer",
+    "question": "Bol nájomca vyzvaný na odstránenie konkrétnych porušení?",
+    "cityAnswer": "", "lastUpdated": "2024-07-01", "isPlaceholder": true, "sources": []
+  },
+  {
+    "id": "q4", "status": "published", "actionStatus": "no_answer",
+    "question": "Bola nájomcovi určená dodatočná lehota na nápravu?",
+    "cityAnswer": "", "lastUpdated": "2024-07-01", "isPlaceholder": true, "sources": []
+  },
+  {
+    "id": "q5", "status": "published", "actionStatus": "not_done",
+    "question": "Aký je aktuálny plán mesta s areálom?",
+    "cityAnswer": "", "lastUpdated": "2024-07-01", "isPlaceholder": true, "sources": []
+  },
+  {
+    "id": "q6", "status": "published", "actionStatus": "no_answer",
+    "question": "Existuje aktuálny znalecký alebo technický posudok stavu areálu?",
+    "cityAnswer": "", "lastUpdated": "2024-07-01", "isPlaceholder": true, "sources": []
+  }
+]

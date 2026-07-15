@@ -1,0 +1,9 @@
+[
+  {
+    "id": "a1", "slug": "preco-vznikol-tento-web", "status": "published",
+    "title": "Prečo vznikol tento web", "publishedAt": "2024-07-10", "author": "Redakcia projektu",
+    "perex": "Krátke vysvetlenie cieľa projektu a toho, ako pracujeme so zdrojmi. (VZOROVÝ ČLÁNOK.)",
+    "body": "## O čom to je\n\nToto je **vzorový** článok. Cieľom projektu je zrozumiteľne zhromaždiť verejne dostupné dokumenty a fakty o plážovom kúpalisku v Banskej Bystrici.\n\n## Ako pracujeme\n\n- Fakty odlišujeme od názorov.\n- Pri tvrdeniach uvádzame zdroje.\n- Chyby opravujeme a označujeme.\n\nText nahraďte reálnym obsahom.",
+    "isPlaceholder": true, "sources": []
+  }
+]

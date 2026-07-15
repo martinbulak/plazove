@@ -1,0 +1,78 @@
+[
+  {
+    "key": "potvrdene-fakty",
+    "title": "Potvrdené fakty",
+    "intro": "Údaje, ktoré vyplývajú z verejne dostupných dokumentov. Každý fakt musí mať doplnený zdroj – nižšie uvedené položky sú vzorové a zdroje treba doplniť z originálov.",
+    "points": [
+      {
+        "id": "f1",
+        "kind": "fact",
+        "text": "Mesto Banská Bystrica prenajalo areál plážového kúpaliska súkromnému nájomcovi. (VZOROVÝ TEXT – doplňte presné znenie a zdroj.)",
+        "sources": []
+      },
+      {
+        "id": "f2",
+        "kind": "fact",
+        "text": "Nájomná zmluva bola podľa verejne uvádzaných informácií uzatvorená v roku 2007 s platnosťou do roku 2037. (VZOROVÝ TEXT – overte dátumy v origináli zmluvy.)",
+        "sources": []
+      },
+      {
+        "id": "f3",
+        "kind": "fact",
+        "text": "Areál kúpaliska je majetkom mesta, teda verejným majetkom. (VZOROVÝ TEXT – doplňte odkaz na list vlastníctva / uznesenie.)",
+        "sources": []
+      }
+    ]
+  },
+  {
+    "key": "zavery-dokumentov",
+    "title": "Závery dokumentov",
+    "intro": "Zhrnutie toho, čo uvádzajú konkrétne dokumenty (audity, správy kontrolóra, právne stanoviská). Ide o interpretáciu obsahu dokumentov – nie o vlastné tvrdenia.",
+    "points": [
+      {
+        "id": "d1",
+        "kind": "document_conclusion",
+        "text": "Zmluva mala podľa dostupných informácií obsahovať investičnú povinnosť nájomcu do areálu. (VZOROVÝ TEXT – doplňte konkrétny článok a dokument.)",
+        "sources": []
+      },
+      {
+        "id": "d2",
+        "kind": "document_conclusion",
+        "text": "Kontrolné a auditné materiály mali v minulosti konštatovať nedostatky pri plnení niektorých povinností. (VZOROVÝ TEXT – doplňte konkrétnu správu a jej záver.)",
+        "sources": []
+      }
+    ]
+  },
+  {
+    "key": "otvorene-otazky",
+    "title": "Otvorené otázky",
+    "intro": "Body, na ktoré zatiaľ nie je verejne známa úplná a jednoznačná odpoveď.",
+    "points": [
+      {
+        "id": "o1",
+        "kind": "open_question",
+        "text": "Boli všetky deklarované investície nájomcu riadne preukázané a overené? (VZOROVÝ TEXT.)",
+        "sources": []
+      },
+      {
+        "id": "o2",
+        "kind": "open_question",
+        "text": "Aké konkrétne kroky vykonalo mesto po vydaní právneho stanoviska? (VZOROVÝ TEXT.)",
+        "sources": []
+      }
+    ]
+  },
+  {
+    "key": "nazory-autora",
+    "title": "Názory autora webu",
+    "intro": "Táto časť obsahuje hodnotenia a názory prevádzkovateľa webu. Sú jasne označené ako názor a nepredstavujú preukázané fakty.",
+    "points": [
+      {
+        "id": "n1",
+        "kind": "opinion",
+        "text": "Vzhľadom na to, že ide o verejný majetok, si myslíme, že mesto by malo o stave a plánoch informovať proaktívne a zrozumiteľne. (VZOROVÝ NÁZOR.)",
+        "sources": []
+      }
+    ]
+  }
+]

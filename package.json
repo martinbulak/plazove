@@ -1,0 +1,31 @@
+{
+  "name": "aqualandbb",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Aqualand BB – verejná kontrola. Nezávislý občiansky informačný projekt o plážovom kúpalisku v Banskej Bystrici.",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "seed": "node ./scripts/verify-content.mjs"
+  },
+  "dependencies": {
+    "next": "^15.5.20",
+    "react": "19.1.0",
+    "react-dom": "19.1.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.4",
+    "@types/node": "^22.14.1",
+    "@types/react": "^19.1.2",
+    "@types/react-dom": "^19.1.2",
+    "eslint": "^9.25.0",
+    "eslint-config-next": "^15.5.20",
+    "tailwindcss": "^4.1.4",
+    "typescript": "^5.8.3"
+  }
+}

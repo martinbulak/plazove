@@ -1,0 +1,38 @@
+[
+  {
+    "id": "g1", "status": "published", "src": "/placeholders/gallery-1.svg",
+    "alt": "Vzorová fotografia areálu plážového kúpaliska – placeholder", "date": "2024-06",
+    "caption": "Aktuálny stav vstupnej časti areálu (VZOROVÁ FOTOGRAFIA).",
+    "credit": "Vzorový placeholder", "origin": "own", "width": 1200, "height": 800, "isPlaceholder": true
+  },
+  {
+    "id": "g2", "status": "published", "src": "/placeholders/gallery-2.svg",
+    "alt": "Vzorová fotografia bazéna – placeholder", "date": "2024-06",
+    "caption": "Stav bazénovej časti (VZOROVÁ FOTOGRAFIA).",
+    "credit": "Vzorový placeholder", "origin": "own", "width": 1200, "height": 800, "isPlaceholder": true
+  },
+  {
+    "id": "g3", "status": "published", "src": "/placeholders/gallery-3.svg",
+    "alt": "Vzorová historická fotografia – placeholder", "date": "2010",
+    "caption": "Historický stav areálu (VZOROVÁ FOTOGRAFIA).",
+    "credit": "Vzorový placeholder / prevzaté", "origin": "external", "width": 1200, "height": 800, "isPlaceholder": true
+  },
+  {
+    "id": "g4", "status": "published", "src": "/placeholders/gallery-4.svg",
+    "alt": "Vzorová fotografia zázemia – placeholder", "date": "2024-07",
+    "caption": "Zázemie a budovy (VZOROVÁ FOTOGRAFIA).",
+    "credit": "Vzorový placeholder", "origin": "own", "width": 1200, "height": 800, "isPlaceholder": true
+  },
+  {
+    "id": "g5", "status": "published", "src": "/placeholders/gallery-5.svg",
+    "alt": "Vzorová fotografia okolia – placeholder", "date": "2024-07",
+    "caption": "Okolie a prístupové cesty (VZOROVÁ FOTOGRAFIA).",
+    "credit": "Vzorový placeholder", "origin": "own", "width": 1200, "height": 800, "isPlaceholder": true
+  },
+  {
+    "id": "g6", "status": "published", "src": "/placeholders/gallery-6.svg",
+    "alt": "Vzorová fotografia detailu – placeholder", "date": "2024-07",
+    "caption": "Detail technického stavu (VZOROVÁ FOTOGRAFIA).",
+    "credit": "Vzorový placeholder", "origin": "own", "width": 1200, "height": 800, "isPlaceholder": true
+  }
+]

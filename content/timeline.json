@@ -1,0 +1,72 @@
+[
+  {
+    "id": "t2007",
+    "status": "published",
+    "date": "2007",
+    "title": "Podpis nájomnej zmluvy",
+    "description": "Mesto Banská Bystrica malo podľa verejne uvádzaných informácií uzatvoriť nájomnú zmluvu na areál plážového kúpaliska. (VZOROVÝ TEXT – doplňte presný dátum, zmluvné strany a odkaz na zmluvu.)",
+    "tag": "zmluva",
+    "isPlaceholder": true,
+    "sources": []
+  },
+  {
+    "id": "t2009",
+    "status": "published",
+    "date": "2009",
+    "title": "Dodatok k zmluve",
+    "description": "K pôvodnej zmluve mal byť uzatvorený dodatok. (VZOROVÝ TEXT – doplňte obsah a zdroj dodatku.)",
+    "tag": "zmluva",
+    "isPlaceholder": true,
+    "sources": []
+  },
+  {
+    "id": "t2010a",
+    "status": "published",
+    "date": "2010",
+    "title": "Ďalší dodatok k zmluve",
+    "description": "Ďalšia zmena zmluvných podmienok formou dodatku. (VZOROVÝ TEXT – overte a doplňte zdroj.)",
+    "tag": "zmluva",
+    "isPlaceholder": true,
+    "sources": []
+  },
+  {
+    "id": "t2010b",
+    "status": "published",
+    "date": "2010",
+    "title": "Kontrolné zistenia",
+    "description": "Kontrolné materiály mali konštatovať zistenia týkajúce sa plnenia zmluvných povinností. (VZOROVÝ TEXT – doplňte konkrétny dokument a jeho záver.)",
+    "tag": "kontrola",
+    "isPlaceholder": true,
+    "sources": []
+  },
+  {
+    "id": "t2018",
+    "status": "published",
+    "date": "2018",
+    "title": "Audit",
+    "description": "Vykonaný mal byť audit súvisiaci s areálom alebo plnením zmluvy. (VZOROVÝ TEXT – doplňte typ auditu, vykonávateľa a záver.)",
+    "tag": "audit",
+    "isPlaceholder": true,
+    "sources": []
+  },
+  {
+    "id": "t2022",
+    "status": "published",
+    "date": "2022",
+    "title": "Právne stanovisko",
+    "description": "K možnostiam ukončenia zmluvy malo byť vypracované právne stanovisko (podľa verejných informácií z akademického prostredia). (VZOROVÝ TEXT – doplňte autora, dátum a záver stanoviska.)",
+    "tag": "pravo",
+    "isPlaceholder": true,
+    "sources": []
+  },
+  {
+    "id": "t2024",
+    "status": "published",
+    "date": "2024",
+    "title": "Verejné vyjadrenia a kroky mesta",
+    "description": "Ďalšie verejné vyjadrenia a prípadné kroky mesta. (VZOROVÝ TEXT – priebežne dopĺňajte.)",
+    "tag": "mesto",
+    "isPlaceholder": true,
+    "sources": []
+  }
+]
