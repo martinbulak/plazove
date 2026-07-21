@@ -8,10 +8,12 @@ import {
   StatusBadge,
   SourceList,
 } from "@/components/ui";
+import { ReviewAnalysisBlock } from "@/components/ReviewAnalysisBlock";
 import {
   getCityActions,
   getOpenQuestions,
   getOpinions,
+  getReviewAnalysis,
   onlyPublished,
 } from "@/lib/content";
 import { formatDateSk } from "@/lib/utils";
@@ -42,10 +44,11 @@ const SENTIMENT: Record<OpinionSentiment, { label: string; cls: string }> = {
 };
 
 export default async function CurrentStatePage() {
-  const [actions, questions, opinions] = await Promise.all([
+  const [actions, questions, opinions, reviews] = await Promise.all([
     getCityActions(),
     getOpenQuestions(),
     getOpinions(),
+    getReviewAnalysis(),
   ]);
   const acts = onlyPublished(actions);
   const qs = onlyPublished(questions);
@@ -65,6 +68,7 @@ export default async function CurrentStatePage() {
           items={[
             { href: "#kroky", label: "Čo urobilo mesto" },
             { href: "#otvorene-otazky", label: "Otvorené otázky" },
+            ...(reviews ? [{ href: "#hodnotenia", label: "Hodnotenia návštevníkov" }] : []),
             { href: "#nazory", label: "Názory" },
           ]}
         />
@@ -157,8 +161,21 @@ export default async function CurrentStatePage() {
         </Section>
       </div>
 
+      {/* Hodnotenia návštevníkov na Google */}
+      {reviews && (
+        <Section id="hodnotenia" className="scroll-mt-24">
+          <SectionHeading
+            eyebrow="Hodnotenia návštevníkov"
+            title="Čo hovoria návštevníci kúpaliska"
+            intro="Verejné hodnotenia na Mapách Google a rozbor toho, čo sa v negatívnych recenziách opakuje najčastejšie."
+          />
+          <ReviewAnalysisBlock data={reviews} />
+        </Section>
+      )}
+
       {/* Názory verejnosti */}
-      <Section id="nazory" className="scroll-mt-24">
+      <div className="bg-ink-50">
+        <Section id="nazory" className="scroll-mt-24">
         <SectionHeading
           eyebrow="Názory verejnosti"
           title="Verejne publikované vyjadrenia"
@@ -221,9 +238,10 @@ export default async function CurrentStatePage() {
                 </div>
               </Card>
             </li>
-          ))}
-        </ul>
-      </Section>
+            ))}
+          </ul>
+        </Section>
+      </div>
     </>
   );
 }

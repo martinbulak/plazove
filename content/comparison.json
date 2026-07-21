@@ -114,11 +114,11 @@
       "id": "zvolen",
       "city": "Zvolen",
       "population": "38 747",
-      "facility": "Kúpalisko Neresnica",
-      "operator": "Mesto (bez prevádzkovateľa)",
+      "facility": "Kúpalisko Neresnica (mestské) · Športový areál Orlík (súkromný)",
+      "operator": "Mestské kúpalisko bez prevádzkovateľa; v meste funguje súkromný areál Orlík",
       "operatorType": "none",
-      "detail": "Zatvorené od roku 2017. Komplexná obnova vyčíslená na 3,4 mil. €. Prekážkou je aj rozdrobené vlastníctvo pozemkov a chýbajúca kanalizácia.",
-      "inOperation": "Nie",
+      "detail": "Mestské kúpalisko Neresnica je zatvorené od roku 2017, komplexná obnova bola vyčíslená na 3,4 mil. €; prekážkou je aj rozdrobené vlastníctvo pozemkov a chýbajúca kanalizácia. Kúpanie v meste zabezpečuje súkromný Športový areál Orlík v Môťovej.",
+      "inOperation": "Mestské nie, súkromný Orlík áno",
       "sourceUrl": "https://spravy.stvr.sk/2025/06/kedysi-oblubene-kupalisko-vo-zvolene-chatra-opravit-ho-sa-nikto-nechysta-mesto-ma-inu-prioritu/"
     }
   ],
@@ -126,6 +126,33 @@
     "checkedAt": "2026-07-21",
     "minReviews": 500,
     "items": [
+      {
+        "id": "r-hrinova",
+        "name": "Letné kúpalisko Hriňová",
+        "place": "Hriňová (7 814 obyv.)",
+        "rating": 4.5,
+        "reviews": 282,
+        "operatorType": "municipal",
+        "note": "Prevádzkuje Správa športových zariadení mesta Hriňová – mestská príspevková organizácia."
+      },
+      {
+        "id": "r-orlik",
+        "name": "Športový areál Orlík (Aqua Beach)",
+        "place": "Zvolen – Môťová",
+        "rating": 4.4,
+        "reviews": 609,
+        "operatorType": "private",
+        "note": "Súkromný areál pri Zvolenskej priehrade. Presný názov prevádzkovej firmy sa nepodarilo overiť."
+      },
+      {
+        "id": "r-strehova",
+        "name": "Termálne kúpalisko Aquatermal",
+        "place": "Dolná Strehová (1 003 obyv.)",
+        "rating": 4.3,
+        "reviews": 176,
+        "operatorType": "private",
+        "note": "Súkromný termálny areál. Overený je prevádzkovateľ kempu a ubytovania (DolStre s.r.o.), nie samotných bazénov."
+      },
       {
         "id": "r-nitra",
         "name": "Letné kúpalisko (Sihoť)",
@@ -168,6 +195,15 @@
         "operatorType": "municipal"
       },
       {
+        "id": "r-novolandia",
+        "name": "Thermal Park Novolandia",
+        "place": "Rapovce (915 obyv.)",
+        "rating": 4.1,
+        "reviews": 1320,
+        "operatorType": "private",
+        "note": "Termálny park. Väčšinovým vlastníkom je súkromná spoločnosť, menšinové podiely má mesto Lučenec (cca 14 %) a obec Rapovce (cca 4 %)."
+      },
+      {
         "id": "r-martin",
         "name": "Letné kúpalisko (SUNNY)",
         "place": "Martin",
@@ -202,6 +238,10 @@
         "operatorType": "municipal",
         "note": "Samostatný profil s malým počtom recenzií; hlavná Mestská krytá plaváreň Žilina má 4,2 z 1 571 recenzií."
       }
+    ],
+    "footnotes": [
+      "Termálne kúpalisko Katarína v Kremnici v porovnaní nefiguruje – je mimo prevádzky od roku 2017/2018 a nemá aktívny profil s hodnotením. Mesto ho predalo súkromnému majiteľovi v roku 2006 za 66 388 € a v súčasnosti hľadá záujemcu o dlhodobú koncesiu na obnovu a prevádzku.",
+      "Porovnanie zahŕňa aj menšie obecné a súkromné kúpaliská v regióne, kam Bystričania bežne cestujú. Zariadenia sa líšia veľkosťou aj typom (letné kúpalisko, termálny areál), preto hodnotenia porovnávajte s touto výhradou."
     ]
   }
 }

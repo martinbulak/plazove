@@ -10,6 +10,7 @@ import type {
   GalleryItem,
   OpenQuestion,
   OpinionItem,
+  ReviewAnalysis,
   SiteConfig,
   TimelineItem,
 } from "./types";
@@ -64,6 +65,11 @@ export async function getOpenQuestions(): Promise<OpenQuestion[]> {
 
 export async function getArticles(): Promise<Article[]> {
   return readJson<Article[]>("articles", []);
+}
+
+export async function getReviewAnalysis(): Promise<ReviewAnalysis | null> {
+  const data = await readJson<ReviewAnalysis | null>("reviews", null);
+  return data && data.totalReviews ? data : null;
 }
 
 export async function getComparison(): Promise<ComparisonData> {

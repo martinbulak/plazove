@@ -242,6 +242,17 @@ export default async function ComparisonPage() {
               </tbody>
             </table>
           </div>
+
+          {ratings.footnotes && ratings.footnotes.length > 0 && (
+            <ul className="mt-4 space-y-2 text-xs leading-relaxed text-ink-500">
+              {ratings.footnotes.map((f, i) => (
+                <li key={i} className="flex gap-2">
+                  <span aria-hidden>*</span>
+                  <span>{f}</span>
+                </li>
+              ))}
+            </ul>
+          )}
         </Section>
       </div>
 

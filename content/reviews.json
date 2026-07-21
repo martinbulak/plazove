@@ -1,0 +1,134 @@
+{
+  "facility": "Aqualand – Plážové kúpalisko, Banská Bystrica",
+  "checkedAt": "2026-07-21",
+  "average": 3.4,
+  "totalReviews": 1200,
+  "analysedSample": 10,
+  "sourceUrl": "https://www.google.com/maps/search/Aqualand+Pl%C3%A1%C5%BEov%C3%A9+k%C3%BApalisko+Bansk%C3%A1+Bystrica",
+  "distribution": [
+    { "stars": 5, "count": 389 },
+    { "stars": 4, "count": 251 },
+    { "stars": 3, "count": 203 },
+    { "stars": 2, "count": 120 },
+    { "stars": 1, "count": 237 }
+  ],
+  "themes": [
+    {
+      "id": "th-technicky-stav",
+      "label": "Zastaraný technický stav a vybavenie",
+      "description": "Najčastejšia výhrada sa týka opotrebovaného vybavenia – starých ležadiel, poškodených batérií a uvoľnených vstupov do bazénov. Návštevníci opisujú opravy ako provizórne.",
+      "evidence": [
+        "Google recenzia (1★): staré ležadlá a opotrebované vybavenie",
+        "Google recenzia (1★): uvoľnené vstupy do bazénov, poškodené batérie na toaletách",
+        "Mesto Banská Bystrica, 15. 5. 2026: „viaceré časti kúpaliska pôsobia nedokončene, technicky aj prevádzkovo nepripravené“"
+      ]
+    },
+    {
+      "id": "th-voda",
+      "label": "Čistota a kvalita vody",
+      "description": "Opakujú sa výhrady k zákalu vody v bazénoch a k stavu jazera v areáli. Kvalita vody bola aj jedným z dôvodov petície a mesto v roku 2024 podalo podnet na Regionálny úrad verejného zdravotníctva.",
+      "evidence": [
+        "Google recenzia (1★): „V plaveckom bazéne bola dosť mútna voda“",
+        "Google recenzia (1★): „neskutočne špinavé bazény“",
+        "Podnet mesta na RÚVZ – vzorky vody (banskabystrica.sk, 22. 8. 2024)"
+      ]
+    },
+    {
+      "id": "th-cena",
+      "label": "Pomer ceny a kvality",
+      "description": "Návštevníci považujú vstupné za neprimerané k tomu, čo areál ponúka. Vstupné pre dospelého je v sezóne 2026 na úrovni 12 €, pre obyvateľa Banskej Bystrice 10 €.",
+      "evidence": [
+        "Google recenzia (1★): „Za 10 euro na deň dostanete staré lehatka“",
+        "Google recenzia (2★): „To, čo som dnes dostal za tie peniaze, bol výsmech“",
+        "Google recenzia (3★): atrakcie mimo prevádzky bez upozornenia pri plnom vstupnom"
+      ]
+    },
+    {
+      "id": "th-hygiena",
+      "label": "Toalety a hygienické zázemie",
+      "description": "Stav sociálnych zariadení patrí medzi dlhodobo pripomienkované oblasti. Rekonštrukcia toaliet prebehla v roku 2025, prezliekarne a bezbariérovosť zostali podľa verejného reportu nedoriešené.",
+      "evidence": [
+        "Google recenzia (1★): „Toalety sú ešte z čias Márie Terézie“",
+        "Podnet mesta na RÚVZ – sociálne zariadenia (banskabystrica.sk, 22. 8. 2024)",
+        "Hygienické podmienky ako jeden z dôvodov petície"
+      ]
+    },
+    {
+      "id": "th-gastro",
+      "label": "Občerstvenie a bufety",
+      "description": "Kvalita, veľkosť porcií a cena jedla v stánkoch patria medzi časté výhrady, a to aj od dlhoročných návštevníkov.",
+      "evidence": [
+        "Google recenzia (2★, júl 2026): sťažnosť na kvalitu a veľkosť jedla v stánku"
+      ]
+    },
+    {
+      "id": "th-personal",
+      "label": "Prístup personálu",
+      "description": "Časť recenzií kritizuje správanie obsluhy a nejasné či menené pravidlá prevádzky jednotlivých atrakcií.",
+      "evidence": [
+        "Google recenzia (1★): výhrady k správaniu personálu a k meneniu pravidiel"
+      ]
+    },
+    {
+      "id": "th-investicie",
+      "label": "Chýbajúca modernizácia",
+      "description": "Vracia sa aj názor, že sa v areáli robí len nevyhnutné minimum bez skutočnej modernizácie. Táto téma sa priamo prekrýva s investičnou povinnosťou nájomcu zo zmluvy.",
+      "evidence": [
+        "Google recenzia (3★): „Postupne sa niečo opravuje... ale je to dosť málo“, s odkazom na nájom do roku 2037",
+        "Mesto Banská Bystrica, 22. 8. 2024: nájomca plní podmienky „na hranici nutného minima“",
+        "Absencia investícií do infraštruktúry ako jeden z dôvodov petície"
+      ]
+    }
+  ],
+  "samples": [
+    {
+      "id": "rev-1",
+      "author": "Tomáš H.",
+      "stars": 1,
+      "date": "pred 11 mesiacmi",
+      "excerpt": "Po roku sme si prišli zaplávať na plaveckú hodinovku a kúpalisko opäť „nesklamalo“. V plaveckom bazéne bola dosť mútna voda…",
+      "platform": "Google",
+      "ownerReplied": true
+    },
+    {
+      "id": "rev-2",
+      "author": "Ema G.",
+      "stars": 1,
+      "date": "pred rokom",
+      "excerpt": "Nebola som tu roky a nezmenilo sa nič, skôr len zhoršilo. Za 10 euro na deň dostanete staré lehatka, ak vam nejaké ostane…",
+      "platform": "Google"
+    },
+    {
+      "id": "rev-3",
+      "author": "Viliam M.",
+      "stars": 1,
+      "date": "pred rokom",
+      "excerpt": "Toalety sú ešte z čias Marie Terézie. Na pisoaroch ak chcete potiahnuť kohútik na splácanie musíte celý systém pridrzat…",
+      "platform": "Google"
+    },
+    {
+      "id": "rev-4",
+      "author": "Jozef V.",
+      "stars": 2,
+      "date": "pred 3 týždňami",
+      "excerpt": "Chodím k vám už dlhé roky a doteraz bolo vždy všetko v poriadku. To, čo som dnes dostal za tie peniaze, bol výsmech.",
+      "platform": "Google"
+    },
+    {
+      "id": "rev-5",
+      "author": "Alena V.",
+      "stars": 3,
+      "date": "pred 2 rokmi",
+      "excerpt": "Tentokrát to bol L-kový bazén s atrakciami ako obria šmýkačka a tobogán mimo prevádzky, bez predošlého upozornenia. Zaplatíte plné vstupné…",
+      "platform": "Google"
+    },
+    {
+      "id": "rev-6",
+      "author": "Julián L.",
+      "stars": 3,
+      "date": "pred rokom",
+      "excerpt": "Rozľahlý areál v nájme podnikateľa, ktorý tu má zmluvu myslím do roku 2037. Postupne sa niečo opravuje, prípadne buduje, ale je to dosť málo.",
+      "platform": "Google"
+    }
+  ]
+}

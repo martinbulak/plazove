@@ -255,6 +255,8 @@ export interface RatingsBlock {
    */
   minReviews: number;
   items: FacilityRating[];
+  /** Doplňujúce poznámky pod tabuľkou (napr. zatvorené kúpaliská). */
+  footnotes?: string[];
 }
 
 export interface ComparisonData {
@@ -367,6 +369,56 @@ export interface SiteConfig {
   contactEmail: string;
   operator: string;
   petitionText: string;
+}
+
+/* ── Analýza verejných recenzií ──────────────────────────────────────── */
+
+/** Rozloženie hodnotení podľa počtu hviezd. */
+export interface RatingBucket {
+  stars: number;
+  count: number;
+}
+
+/** Opakujúca sa téma sťažností. */
+export interface ComplaintTheme {
+  id: string;
+  label: string;
+  /**
+   * Koľkokrát sa téma v preskúmanej vzorke objavila. Nepovinné – ak vzorka
+   * nie je dosť veľká na počítanie, tému uvedieme bez čísla a doložíme zdrojmi.
+   */
+  count?: number;
+  description: string;
+  /** Zdroje, z ktorých téma vyplýva (ak nie je podložená počtom). */
+  evidence?: string[];
+}
+
+/** Ukážka konkrétnej verejnej recenzie. */
+export interface ReviewSample {
+  id: string;
+  /** Autor tak, ako je uvedený na webe (možno skrátene kvôli súkromiu). */
+  author: string;
+  stars: number;
+  /** Napr. „pred 3 týždňami“ alebo dátum. */
+  date: string;
+  excerpt: string;
+  platform: string;
+  /** Reagoval prevádzkovateľ na recenziu? */
+  ownerReplied?: boolean;
+}
+
+export interface ReviewAnalysis {
+  facility: string;
+  /** Dátum, ku ktorému boli údaje odčítané. */
+  checkedAt: string;
+  average: number;
+  totalReviews: number;
+  distribution: RatingBucket[];
+  /** Počet recenzií, ktoré boli podrobne prečítané pri analýze tém. */
+  analysedSample: number;
+  sourceUrl?: string;
+  themes: ComplaintTheme[];
+  samples: ReviewSample[];
 }
 
 /** Názvy kolekcií = názvy JSON súborov v /content (bez prípony). */
