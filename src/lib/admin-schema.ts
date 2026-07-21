@@ -76,6 +76,12 @@ export const COLLECTIONS: Record<string, CollectionDef> = {
       { name: "title", label: "Názov udalosti", type: "text", required: true },
       { name: "description", label: "Krátky opis", type: "textarea", required: true },
       { name: "tag", label: "Značka (napr. zmluva, audit)", type: "text" },
+      {
+        name: "milestone",
+        label: "Kľúčový moment",
+        type: "checkbox",
+        help: "Zobrazí sa aj v skrátenej (zbalenej) časovej osi na webe.",
+      },
       ...META_FIELDS,
     ],
   },

@@ -88,6 +88,8 @@ export interface TimelineItem extends BaseEntity {
   description: string;
   /** Voliteľné farebné/tematické označenie míľnika. */
   tag?: string;
+  /** Kľúčový moment – zobrazuje sa aj v skrátenej (zbalenej) časovej osi. */
+  milestone?: boolean;
 }
 
 /* ── 4. Zmluva a jej rozbor (Q&A) ────────────────────────────────────── */
