@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Section, SectionHeading, Card } from "@/components/ui";
+import { Section, SectionHeading, Card, QuickNav } from "@/components/ui";
 import { getComparison } from "@/lib/content";
 import { OPERATOR_TYPE_LABEL, type OperatorType } from "@/lib/types";
 import { cn, formatDateSk } from "@/lib/utils";
@@ -59,6 +59,14 @@ export default async function ComparisonPage() {
           intro="Aby sa dal prípad zasadiť do kontextu, porovnali sme, kto prevádzkuje verejné kúpaliská v ďalších slovenských mestách. Údaje sú z oficiálnych zdrojov miest a ich organizácií; pri každom meste uvádzame odkaz."
         />
 
+        <QuickNav
+          items={[
+            { href: "#prevadzkovatelia", label: "Kto ich prevádzkuje" },
+            { href: "#hodnotenia", label: "Hodnotenia na Google" },
+            { href: "#vyznamnejsie", label: "Rebríček" },
+          ]}
+        />
+
         {/* Kontext mesta */}
         <h2 className="mb-4 text-xl font-bold text-ink-900">Banská Bystrica v číslach</h2>
         <dl className="mb-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -99,7 +107,12 @@ export default async function ComparisonPage() {
         </div>
 
         {/* Tabuľka porovnania */}
-        <h2 className="mb-4 text-xl font-bold text-ink-900">Kto prevádzkuje kúpaliská</h2>
+        <h2
+          id="prevadzkovatelia"
+          className="mb-4 scroll-mt-24 text-xl font-bold text-ink-900"
+        >
+          Kto prevádzkuje kúpaliská
+        </h2>
         <div className="overflow-x-auto rounded-[var(--radius-card)] border border-ink-200">
           <table className="w-full min-w-[46rem] text-left text-sm">
             <thead className="bg-ink-50 text-xs uppercase tracking-wide text-ink-500">
@@ -158,7 +171,7 @@ export default async function ComparisonPage() {
 
       {/* Hodnotenia na Google */}
       <div className="bg-ink-50">
-        <Section id="hodnotenia">
+        <Section id="hodnotenia" className="scroll-mt-24">
           <SectionHeading
             eyebrow="Hodnotenia návštevníkov"
             title="Poradie podľa hodnotenia na Google"
@@ -233,7 +246,7 @@ export default async function ComparisonPage() {
       </div>
 
       {/* Rebríček významnejších zariadení */}
-      <Section id="vyznamnejsie">
+      <Section id="vyznamnejsie" className="scroll-mt-24">
         <SectionHeading
           eyebrow="Kúpaliská porovnateľnej veľkosti"
           title="Poradie medzi najnavštevovanejšími kúpaliskami"

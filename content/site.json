@@ -5,12 +5,10 @@
   "heroSubtitle": "Dokumenty, právne analýzy, fotografie a skúsenosti verejnosti na jednom mieste.",
   "disclaimer": "Toto nie je oficiálny web prevádzkovateľa plážového kúpaliska ani Mesta Banská Bystrica. Ide o nezávislý občiansky informačný projekt.",
   "heroFacts": [
-    { "label": "Nájomná zmluva podpísaná", "value": "15. 10. 2007", "kind": "fact" },
-    { "label": "Nájom trvá do", "value": "30. 9. 2037 (+ opcia 10 rokov)", "kind": "fact" },
-    { "label": "Prenajatá plocha mesta", "value": "37 332 m²", "kind": "fact" },
-    { "label": "Investičná povinnosť nájomcu", "value": "100 mil. Sk (3 319 391 €)", "kind": "citation" },
-    { "label": "Ukončenie výpoveďou", "value": "Podľa analýzy UK nie je možné", "kind": "legal_interpretation" },
-    { "label": "Právo mesta na kontrolu", "value": "Raz mesačne (čl. IV ods. 11)", "kind": "citation" }
+    { "label": "Kúpalisko patrí mestu, ale prenajala si ho súkromná firma", "value": "2007 – 2037", "kind": "fact" },
+    { "label": "Firma sľúbila do areálu investovať", "value": "3,32 mil. €", "kind": "citation" },
+    { "label": "Zmluvu podľa právnikov nemožno vypovedať", "value": "Bez výpovede", "kind": "legal_interpretation" },
+    { "label": "Mesto chce zmluvu ukončiť, zatiaľ sa tak nestalo", "value": "Od roku 2024", "kind": "fact" }
   ],
   "contactEmail": "kontakt@aqualandbb.sk",
   "operator": "Občiansky informačný projekt Aqualand BB – verejná kontrola",

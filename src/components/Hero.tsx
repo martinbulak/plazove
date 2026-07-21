@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { Button } from "@/components/ui";
-import { ClaimBadge } from "@/components/ui";
 import type { SiteConfig } from "@/lib/types";
 
 export function Hero({ site }: { site: SiteConfig }) {
@@ -34,45 +33,39 @@ export function Hero({ site }: { site: SiteConfig }) {
           {site.disclaimer}
         </div>
 
-        {/* CTA */}
+        {/* CTA – jedna hlavná cesta, dve vedľajšie */}
         <div className="mt-8 flex flex-wrap gap-3">
           <Button href="/pripad" variant="primary">
-            Pozrieť prípad
+            Čo sa stalo →
           </Button>
-          <Button href="/dokumenty" variant="outline">
-            Zobraziť dokumenty
-          </Button>
-          <Button href="/galeria" variant="outline">
-            Pozrieť aktuálny stav
+          <Button href="/aktualny-stav" variant="outline">
+            Aktuálny stav
           </Button>
           <Button href="/podporte" variant="accent">
             Podporiť výzvu
           </Button>
         </div>
 
-        {/* Základné fakty */}
+        {/* Kľúčové fakty – jednoducho, bez odbornej terminológie */}
         {site.heroFacts.length > 0 && (
-          <dl className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <dl className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {site.heroFacts.map((f, i) => (
               <div
                 key={i}
                 className="rounded-[var(--radius-card)] border border-ink-200 bg-white p-4 shadow-sm"
               >
-                <div className="flex items-center justify-between gap-2">
-                  <dt className="text-sm font-medium text-ink-500">{f.label}</dt>
-                  <ClaimBadge kind={f.kind} />
-                </div>
-                <dd className="mt-1 text-xl font-bold text-ink-900">{f.value}</dd>
+                <dd className="text-2xl font-bold text-brand-700">{f.value}</dd>
+                <dt className="mt-1 text-sm leading-snug text-ink-600">{f.label}</dt>
               </div>
             ))}
           </dl>
         )}
 
-        <p className="mt-6 text-xs text-ink-400">
-          Uvedené hodnoty vychádzajú z verejne dostupných informácií a treba ich
-          overiť v origináloch. Podrobnosti a zdroje nájdete v sekcii{" "}
-          <Link href="/dokumenty" className="underline">
-            Dokumenty
+        <p className="mt-5 text-xs text-ink-400">
+          Každé tvrdenie na webe má uvedený zdroj – presné znenia a dokumenty
+          nájdete v sekcii{" "}
+          <Link href="/zmluva" className="underline">
+            Zmluva a dokumenty
           </Link>
           .
         </p>

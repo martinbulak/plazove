@@ -185,13 +185,9 @@ export function StatusBadge({ status }: { status: ActionStatus }) {
 /* ── Zdroje ──────────────────────────────────────────────────────────── */
 
 export function SourceList({ sources }: { sources?: SourceRef[] }) {
-  if (!sources || sources.length === 0) {
-    return (
-      <p className="mt-2 text-xs italic text-ink-400">
-        Zdroj zatiaľ nedoplnený (vzorové dáta).
-      </p>
-    );
-  }
+  // Bez zdrojov nezobrazujeme nič – napr. názory autora zdroj nevyžadujú
+  // a upozornenie „zdroj nedoplnený“ by čitateľa zbytočne mýlilo.
+  if (!sources || sources.length === 0) return null;
   return (
     <ul className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-xs text-ink-500">
       {sources.map((s, i) => {
@@ -221,6 +217,62 @@ export function SourceList({ sources }: { sources?: SourceRef[] }) {
         );
       })}
     </ul>
+  );
+}
+
+/* ── Vysvetlenie odznakov pre bežného čitateľa ───────────────────────── */
+
+const CLAIM_EXPLANATION: Record<ClaimKind, string> = {
+  fact: "vyplýva priamo z dokumentu alebo oficiálneho zdroja",
+  citation: "doslovné znenie zo zmluvy alebo dokumentu",
+  document_conclusion: "čo tvrdí konkrétny dokument (audit, správa, stanovisko)",
+  legal_interpretation: "ako právnici vykladajú zmluvu či zákon – nie je to rozhodnutie súdu",
+  opinion: "naše hodnotenie, jasne oddelené od faktov",
+  open_question: "odpoveď nie je verejne známa",
+};
+
+/** Rozbaľovacie vysvetlenie farebných odznakov (fakt / citácia / názor…). */
+export function ClaimLegend() {
+  return (
+    <details className="group mb-6 rounded-lg border border-ink-200 bg-white">
+      <summary className="flex cursor-pointer list-none items-center justify-between gap-2 px-4 py-3 text-sm font-medium text-ink-700 [&::-webkit-details-marker]:hidden">
+        <span>
+          <span aria-hidden>🏷️ </span>Čo znamenajú farebné označenia?
+        </span>
+        <span aria-hidden className="text-ink-400 transition-transform group-open:rotate-180">
+          ▾
+        </span>
+      </summary>
+      <ul className="space-y-2 border-t border-ink-100 px-4 py-3">
+        {(Object.keys(CLAIM_EXPLANATION) as ClaimKind[]).map((kind) => (
+          <li key={kind} className="flex flex-wrap items-baseline gap-2 text-sm text-ink-600">
+            <ClaimBadge kind={kind} />
+            <span>– {CLAIM_EXPLANATION[kind]}</span>
+          </li>
+        ))}
+      </ul>
+    </details>
+  );
+}
+
+/* ── Rýchla navigácia v rámci dlhej stránky ──────────────────────────── */
+
+export function QuickNav({ items }: { items: { href: string; label: string }[] }) {
+  return (
+    <nav aria-label="Obsah stránky" className="mb-8">
+      <ul className="flex flex-wrap gap-2">
+        {items.map((i) => (
+          <li key={i.href}>
+            <a
+              href={i.href}
+              className="inline-block rounded-full border border-brand-200 bg-white px-4 py-1.5 text-sm font-medium text-brand-800 hover:bg-brand-50"
+            >
+              {i.label} ↓
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
   );
 }
 

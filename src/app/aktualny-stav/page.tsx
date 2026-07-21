@@ -1,6 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Section, SectionHeading, Card, StatusBadge, SourceList } from "@/components/ui";
+import {
+  Section,
+  SectionHeading,
+  Card,
+  QuickNav,
+  StatusBadge,
+  SourceList,
+} from "@/components/ui";
 import {
   getCityActions,
   getOpenQuestions,
@@ -54,7 +61,17 @@ export default async function CurrentStatePage() {
           intro="Prehľad krokov mesta a ich plnenia, otázok, na ktoré nie je verejne známa odpoveď, a verejne publikovaných názorov. Stav k júlu 2026."
         />
 
-        <h2 className="mb-4 text-xl font-bold text-ink-900">Čo urobilo mesto</h2>
+        <QuickNav
+          items={[
+            { href: "#kroky", label: "Čo urobilo mesto" },
+            { href: "#otvorene-otazky", label: "Otvorené otázky" },
+            { href: "#nazory", label: "Názory" },
+          ]}
+        />
+
+        <h2 id="kroky" className="mb-4 scroll-mt-24 text-xl font-bold text-ink-900">
+          Čo urobilo mesto
+        </h2>
         <div className="overflow-hidden rounded-[var(--radius-card)] border border-ink-200 bg-white">
           <table className="hidden w-full text-left text-sm sm:table">
             <thead className="bg-ink-50 text-xs uppercase tracking-wide text-ink-500">
@@ -103,7 +120,7 @@ export default async function CurrentStatePage() {
 
       {/* Otvorené otázky */}
       <div className="bg-ink-50">
-        <Section id="otvorene-otazky">
+        <Section id="otvorene-otazky" className="scroll-mt-24">
           <SectionHeading
             eyebrow="Otvorené otázky"
             title="Na čo nie je jasná odpoveď"
@@ -141,7 +158,7 @@ export default async function CurrentStatePage() {
       </div>
 
       {/* Názory verejnosti */}
-      <Section id="nazory">
+      <Section id="nazory" className="scroll-mt-24">
         <SectionHeading
           eyebrow="Názory verejnosti"
           title="Verejne publikované vyjadrenia"

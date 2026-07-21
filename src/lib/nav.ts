@@ -10,23 +10,23 @@ export interface NavItem {
 export const MAIN_NAV: NavItem[] = [
   {
     href: "/pripad",
-    label: "Prípad a chronológia",
-    desc: "Čo sa stalo, komu mesto areál prenajalo a ako sa situácia vyvíjala",
+    label: "Čo sa stalo",
+    desc: "Príbeh prípadu v skratke a časová os udalostí",
   },
   {
     href: "/zmluva",
     label: "Zmluva a dokumenty",
-    desc: "Laický rozbor nájomnej zmluvy a archív dokumentov",
+    desc: "Zmluva vysvetlená v otázkach a odpovediach + archív dokumentov",
   },
   {
     href: "/aktualny-stav",
     label: "Aktuálny stav",
-    desc: "Kroky mesta, otvorené otázky a názory verejnosti",
+    desc: "Čo urobilo mesto, čo je nezodpovedané a čo hovoria ľudia",
   },
   {
     href: "/porovnanie",
-    label: "Porovnanie a súvislosti",
-    desc: "Ako to riešia iné mestá a v akom kontexte",
+    label: "Porovnanie",
+    desc: "Ako fungujú kúpaliská v iných mestách a ako sú hodnotené",
   },
   {
     href: "/galeria",

@@ -23,48 +23,12 @@ export default async function HomePage() {
   ]);
 
   const recentTimeline = onlyPublished(timeline).slice(-3).reverse();
-  const publishedActions = onlyPublished(actions).slice(0, 4);
-  const publishedQuestions = onlyPublished(questions).slice(0, 4);
+  const publishedActions = onlyPublished(actions).slice(0, 3);
+  const publishedQuestions = onlyPublished(questions).slice(0, 3);
 
   return (
     <>
       <Hero site={site} />
-
-      {/* O čo ide – zhrnutie */}
-      <Section>
-        <SectionHeading
-          eyebrow="O čo ide"
-          title="Tri vety na úvod"
-        />
-        <div className="grid gap-4 sm:grid-cols-3">
-          <Card>
-            <p className="text-3xl font-bold text-brand-700">2007</p>
-            <p className="mt-1 text-sm text-ink-700">
-              Mesto prenajalo areál plážového kúpaliska spoločnosti AQUALAND
-              Slovakia s.r.o. na 30 rokov, do roku 2037.
-            </p>
-          </Card>
-          <Card>
-            <p className="text-3xl font-bold text-brand-700">100 mil. Sk</p>
-            <p className="mt-1 text-sm text-ink-700">
-              Toľko mal nájomca podľa zmluvy preinvestovať. Nepreukázanie tejto sumy
-              zmluva označuje za podstatné porušenie.
-            </p>
-          </Card>
-          <Card>
-            <p className="text-3xl font-bold text-brand-700">Bez výpovede</p>
-            <p className="mt-1 text-sm text-ink-700">
-              Podľa analýzy Právnickej fakulty UK zmluvu nemožno vypovedať. Ostáva
-              dohoda, odstúpenie alebo rok 2037.
-            </p>
-          </Card>
-        </div>
-        <div className="mt-6">
-          <Button href="/pripad" variant="primary">
-            Celý prípad a chronológia
-          </Button>
-        </div>
-      </Section>
 
       {/* Rozcestník sekcií */}
       <div className="bg-ink-50">
