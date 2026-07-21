@@ -226,9 +226,36 @@ export interface CityComparison {
   highlight?: boolean;
 }
 
+/** Google hodnotenie jedného zariadenia. */
+export interface FacilityRating {
+  id: string;
+  /** Názov presne podľa Google Máp. */
+  name: string;
+  /** Mesto / obec. */
+  place: string;
+  /** Priemerné hodnotenie, napr. 3.4 */
+  rating: number;
+  /** Počet Google recenzií – používame ho ako ukazovateľ návštevnosti. */
+  reviews: number;
+  /** Kto zariadenie prevádzkuje (typ). */
+  operatorType?: OperatorType;
+  note?: string;
+  /** Zvýrazniť (plážové kúpalisko BB). */
+  highlight?: boolean;
+}
+
+export interface RatingsBlock {
+  /** Dátum overenia hodnotení. */
+  checkedAt: string;
+  /** Počet recenzií referenčného zariadenia (plážové kúpalisko). */
+  baselineReviews: number;
+  items: FacilityRating[];
+}
+
 export interface ComparisonData {
   cityFacts: CityFact[];
   cities: CityComparison[];
+  ratings: RatingsBlock;
 }
 
 /* ── 8. Čo urobilo mesto ─────────────────────────────────────────────── */

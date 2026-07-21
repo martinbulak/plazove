@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Section, SectionHeading, Card } from "@/components/ui";
 import { getComparison } from "@/lib/content";
 import { OPERATOR_TYPE_LABEL, type OperatorType } from "@/lib/types";
-import { cn } from "@/lib/utils";
+import { cn, formatDateSk } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "Porovnanie a súvislosti",
@@ -19,11 +19,35 @@ const OP_STYLE: Record<OperatorType, string> = {
   none: "bg-rose-50 text-rose-800 ring-rose-200",
 };
 
+/** Hviezdičkový ukazovateľ hodnotenia. */
+function Stars({ rating }: { rating: number }) {
+  return (
+    <span className="inline-flex items-center gap-1" aria-hidden>
+      <span className="text-accent-500">★</span>
+      <span className="font-bold tabular-nums text-ink-900">
+        {rating.toFixed(1).replace(".", ",")}
+      </span>
+    </span>
+  );
+}
+
 export default async function ComparisonPage() {
-  const { cityFacts, cities } = await getComparison();
+  const { cityFacts, cities, ratings } = await getComparison();
 
   const municipal = cities.filter((c) => c.operatorType === "municipal").length;
   const total = cities.length;
+
+  // Poradie podľa hodnotenia (zostupne), pri zhode rozhoduje počet recenzií.
+  const byRating = [...ratings.items].sort(
+    (a, b) => b.rating - a.rating || b.reviews - a.reviews,
+  );
+
+  // Zariadenia s porovnateľnou alebo väčšou návštevnosťou než plážové kúpalisko.
+  const major = [...ratings.items]
+    .filter((i) => i.reviews >= ratings.baselineReviews)
+    .sort((a, b) => b.rating - a.rating || b.reviews - a.reviews);
+
+  const bbRank = major.findIndex((i) => i.highlight) + 1;
 
   return (
     <>
@@ -130,6 +154,149 @@ export default async function ComparisonPage() {
           organizácií a Štatistického úradu SR. Počty obyvateľov sú k 1. 1. 2026,
           resp. k poslednému dostupnému dátumu.
         </p>
+      </Section>
+
+      {/* Hodnotenia na Google */}
+      <div className="bg-ink-50">
+        <Section id="hodnotenia">
+          <SectionHeading
+            eyebrow="Hodnotenia návštevníkov"
+            title="Poradie podľa hodnotenia na Google"
+            intro="Priemerné hodnotenie a počet recenzií na Mapách Google. Ide o verejne dostupné hodnotenia návštevníkov, nie o odborné posúdenie kvality zariadení."
+          />
+
+          {/* Metodika */}
+          <div className="mb-6 rounded-lg border border-ink-200 bg-white px-4 py-3 text-sm text-ink-600">
+            <p className="font-semibold text-ink-800">Ako čítať tieto čísla</p>
+            <ul className="mt-2 list-disc space-y-1 pl-5">
+              <li>
+                Údaje sme odčítali priamo z Máp Google dňa{" "}
+                {formatDateSk(ratings.checkedAt)}. Hodnotenia sa v čase menia.
+              </li>
+              <li>
+                <strong>Počet recenzií nie je údaj o návštevnosti.</strong> Skutočné
+                počty návštevníkov prevádzkovatelia ani mestá nezverejňujú, preto
+                používame počet recenzií ako približný ukazovateľ veľkosti a
+                známosti zariadenia.
+              </li>
+              <li>
+                Google recenzie nie sú overované a nejde o reprezentatívny prieskum.
+                Porovnávané zariadenia majú rôzny charakter (letné kúpalisko, krytá
+                plaváreň, akvapark).
+              </li>
+            </ul>
+          </div>
+
+          {/* Celkové poradie */}
+          <div className="overflow-x-auto rounded-[var(--radius-card)] border border-ink-200">
+            <table className="w-full min-w-[38rem] text-left text-sm">
+              <thead className="bg-white text-xs uppercase tracking-wide text-ink-500">
+                <tr>
+                  <th className="px-4 py-3 font-semibold">#</th>
+                  <th className="px-4 py-3 font-semibold">Zariadenie</th>
+                  <th className="px-4 py-3 font-semibold">Hodnotenie</th>
+                  <th className="px-4 py-3 font-semibold">Recenzie</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-ink-100 bg-white">
+                {byRating.map((f, i) => (
+                  <tr key={f.id} className={cn("align-top", f.highlight && "bg-brand-50")}>
+                    <td className="px-4 py-3 font-mono text-ink-400">{i + 1}</td>
+                    <td className="px-4 py-3">
+                      <p
+                        className={cn(
+                          "font-medium text-ink-900",
+                          f.highlight && "font-bold text-brand-800",
+                        )}
+                      >
+                        {f.name}
+                      </p>
+                      <p className="text-xs text-ink-500">{f.place}</p>
+                      {f.note && <p className="mt-1 text-xs text-ink-500">{f.note}</p>}
+                    </td>
+                    <td className="whitespace-nowrap px-4 py-3">
+                      <Stars rating={f.rating} />
+                    </td>
+                    <td className="whitespace-nowrap px-4 py-3 tabular-nums text-ink-600">
+                      {f.reviews.toLocaleString("sk-SK")}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </Section>
+      </div>
+
+      {/* Rebríček významnejších zariadení */}
+      <Section id="vyznamnejsie">
+        <SectionHeading
+          eyebrow="Zariadenia porovnateľnej veľkosti"
+          title="Poradie medzi najnavštevovanejšími"
+          intro={`Zúžený rebríček len na zariadenia, ktoré majú aspoň toľko recenzií ako plážové kúpalisko (${ratings.baselineReviews.toLocaleString("sk-SK")}). Tým sa odfiltrujú malé prevádzky, ktorých hodnotenie stojí na desiatkach recenzií.`}
+        />
+
+        <ol className="space-y-3">
+          {major.map((f, i) => (
+            <li key={f.id}>
+              <Card
+                className={cn(
+                  "flex flex-wrap items-center gap-4",
+                  f.highlight && "border-brand-400 bg-brand-50",
+                )}
+              >
+                <span
+                  className={cn(
+                    "grid h-10 w-10 shrink-0 place-items-center rounded-full font-bold",
+                    f.highlight
+                      ? "bg-brand-700 text-white"
+                      : "bg-ink-100 text-ink-700",
+                  )}
+                >
+                  {i + 1}
+                </span>
+                <div className="min-w-0 flex-1">
+                  <p
+                    className={cn(
+                      "font-semibold text-ink-900",
+                      f.highlight && "text-brand-800",
+                    )}
+                  >
+                    {f.name}
+                  </p>
+                  <p className="text-xs text-ink-500">
+                    {f.place} · {f.reviews.toLocaleString("sk-SK")} recenzií
+                  </p>
+                </div>
+                <div className="text-right">
+                  <Stars rating={f.rating} />
+                </div>
+              </Card>
+            </li>
+          ))}
+        </ol>
+
+        {bbRank > 0 && (
+          <div className="mt-6 rounded-[var(--radius-card)] border-l-4 border-accent-500 bg-white p-5 shadow-sm ring-1 ring-ink-100">
+            <p className="text-sm font-semibold uppercase tracking-wide text-brand-700">
+              Zhrnutie
+            </p>
+            <p className="mt-2 text-ink-800">
+              Medzi {major.length} zariadeniami s porovnateľnou alebo väčšou
+              návštevnosťou skončilo plážové kúpalisko v Banskej Bystrici na{" "}
+              <strong>
+                {bbRank}. mieste z {major.length}
+              </strong>{" "}
+              s hodnotením {byRating.find((f) => f.highlight)?.rating.toFixed(1).replace(".", ",")}.
+              Ostatné zariadenia v tejto skupine majú hodnotenie 4,0 a vyššie.
+            </p>
+            <p className="mt-2 text-xs text-ink-600">
+              Ide o porovnanie verejných hodnotení návštevníkov k{" "}
+              {formatDateSk(ratings.checkedAt)}, nie o odborné posúdenie technického
+              stavu či hygieny. Hodnotenie ovplyvňuje aj typ zariadenia a cena vstupu.
+            </p>
+          </div>
+        )}
       </Section>
     </>
   );

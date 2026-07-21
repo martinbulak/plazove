@@ -67,7 +67,11 @@ export async function getArticles(): Promise<Article[]> {
 }
 
 export async function getComparison(): Promise<ComparisonData> {
-  return readJson<ComparisonData>("comparison", { cityFacts: [], cities: [] });
+  return readJson<ComparisonData>("comparison", {
+    cityFacts: [],
+    cities: [],
+    ratings: { checkedAt: "", baselineReviews: 0, items: [] },
+  });
 }
 
 /** Fallback konfigurácia, ak content/site.json chýba. */

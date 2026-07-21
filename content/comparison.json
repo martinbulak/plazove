@@ -143,5 +143,129 @@
       "inOperation": "Áno",
       "sourceUrl": "https://sita.sk/vrealitach/akvapark-v-poprade-ma-noveho-financneho-partnera-prejde-si-kompletnou-zmenou-a-v-hre-su-i-dalsie-atrakcie/"
     }
-  ]
+  ],
+  "ratings": {
+    "checkedAt": "2026-07-21",
+    "baselineReviews": 1200,
+    "items": [
+      {
+        "id": "r-stiavnicky",
+        "name": "Plaváreň Štiavničky",
+        "place": "Banská Bystrica",
+        "rating": 4.7,
+        "reviews": 1590,
+        "operatorType": "municipal",
+        "note": "Iné plavecké zariadenie priamo v Banskej Bystrici."
+      },
+      {
+        "id": "r-nitra",
+        "name": "Letné kúpalisko (Sihoť)",
+        "place": "Nitra",
+        "rating": 4.2,
+        "reviews": 963,
+        "operatorType": "municipal"
+      },
+      {
+        "id": "r-trencin",
+        "name": "Letné Kúpalisko na Ostrove",
+        "place": "Trenčín",
+        "rating": 4.2,
+        "reviews": 981,
+        "operatorType": "municipal"
+      },
+      {
+        "id": "r-cervena-hviezda",
+        "name": "Červená hviezda kúpalisko",
+        "place": "Košice",
+        "rating": 4.2,
+        "reviews": 564,
+        "operatorType": "municipal"
+      },
+      {
+        "id": "r-delna",
+        "name": "Aquapark Delňa",
+        "place": "Prešov",
+        "rating": 4.1,
+        "reviews": 2502,
+        "operatorType": "municipal",
+        "note": "Google eviduje pre areál Delňa viac profilov; použitý je hlavný a najaktívnejší."
+      },
+      {
+        "id": "r-rumanova",
+        "name": "Kúpalisko Rumanová",
+        "place": "Košice",
+        "rating": 4.1,
+        "reviews": 931,
+        "operatorType": "municipal"
+      },
+      {
+        "id": "r-novolandia",
+        "name": "THERMAL PARK NOVOLANDIA",
+        "place": "Rapovce",
+        "rating": 4.1,
+        "reviews": 1320,
+        "operatorType": "private"
+      },
+      {
+        "id": "r-kovacova",
+        "name": "Holidaypark Kováčová",
+        "place": "Kováčová",
+        "rating": 4.1,
+        "reviews": 3051,
+        "operatorType": "private",
+        "note": "Najbližší veľký akvapark v regióne Banskej Bystrice."
+      },
+      {
+        "id": "r-aquacity",
+        "name": "AquaCity Poprad",
+        "place": "Poprad",
+        "rating": 4.0,
+        "reviews": 11742,
+        "operatorType": "private"
+      },
+      {
+        "id": "r-michalovce",
+        "name": "Krytá plaváreň",
+        "place": "Michalovce",
+        "rating": 3.8,
+        "reviews": 195,
+        "operatorType": "municipal"
+      },
+      {
+        "id": "r-martin",
+        "name": "Letné kúpalisko (SUNNY)",
+        "place": "Martin",
+        "rating": 3.6,
+        "reviews": 240,
+        "operatorType": "private"
+      },
+      {
+        "id": "r-bb",
+        "name": "Aqualand – Plážové kúpalisko",
+        "place": "Banská Bystrica",
+        "rating": 3.4,
+        "reviews": 1200,
+        "operatorType": "private",
+        "highlight": true
+      },
+      {
+        "id": "r-zvolen",
+        "name": "Neresnica – Tvoje kúpalisko",
+        "place": "Zvolen",
+        "rating": 3.4,
+        "reviews": 34,
+        "operatorType": "none",
+        "note": "Google označuje ako trvalo zatvorené."
+      },
+      {
+        "id": "r-zilina",
+        "name": "Letné Kúpalisko Plaváreň Žilina",
+        "place": "Žilina",
+        "rating": 3.3,
+        "reviews": 20,
+        "operatorType": "municipal",
+        "note": "Samostatný profil s malým počtom recenzií; hlavná Mestská krytá plaváreň Žilina má 4,2 z 1 571 recenzií."
+      }
+    ]
+  }
 }
