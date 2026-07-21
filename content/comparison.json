@@ -111,17 +111,6 @@
       "sourceUrl": "https://tvturiec.eu/krytu-plavaren-a-letne-kupalisko-bude-prevadzkovat-do-roku-2037-spolocnost-sunny-martin/"
     },
     {
-      "id": "michalovce",
-      "city": "Michalovce",
-      "population": "34 680",
-      "facility": "Mestská plaváreň (krytá, celoročná)",
-      "operator": "Technické a záhradnícke služby mesta",
-      "operatorType": "municipal",
-      "detail": "Komplexná rekonštrukcia 2021–2023 za 4 055 540 €, z toho dotácia Úradu vlády SR 2 145 000 €.",
-      "inOperation": "Áno – od 1. 8. 2023",
-      "sourceUrl": "https://www.michalovce.sk/sk/clanok/vynovena-plavaren-v-michalovciach"
-    },
-    {
       "id": "zvolen",
       "city": "Zvolen",
       "population": "38 747",
@@ -131,32 +120,12 @@
       "detail": "Zatvorené od roku 2017. Komplexná obnova vyčíslená na 3,4 mil. €. Prekážkou je aj rozdrobené vlastníctvo pozemkov a chýbajúca kanalizácia.",
       "inOperation": "Nie",
       "sourceUrl": "https://spravy.stvr.sk/2025/06/kedysi-oblubene-kupalisko-vo-zvolene-chatra-opravit-ho-sa-nikto-nechysta-mesto-ma-inu-prioritu/"
-    },
-    {
-      "id": "poprad",
-      "city": "Poprad",
-      "population": "48 034",
-      "facility": "AquaCity Poprad",
-      "operator": "Súkromný subjekt – AQUAPARK Poprad, s.r.o.",
-      "operatorType": "private",
-      "detail": "Mesto svoj 15 % podiel predalo v roku 2020. Samostatné mestské letné kúpalisko sa nepodarilo doložiť.",
-      "inOperation": "Áno",
-      "sourceUrl": "https://sita.sk/vrealitach/akvapark-v-poprade-ma-noveho-financneho-partnera-prejde-si-kompletnou-zmenou-a-v-hre-su-i-dalsie-atrakcie/"
     }
   ],
   "ratings": {
     "checkedAt": "2026-07-21",
-    "baselineReviews": 1200,
+    "minReviews": 500,
     "items": [
-      {
-        "id": "r-stiavnicky",
-        "name": "Plaváreň Štiavničky",
-        "place": "Banská Bystrica",
-        "rating": 4.7,
-        "reviews": 1590,
-        "operatorType": "municipal",
-        "note": "Iné plavecké zariadenie priamo v Banskej Bystrici."
-      },
       {
         "id": "r-nitra",
         "name": "Letné kúpalisko (Sihoť)",
@@ -183,12 +152,12 @@
       },
       {
         "id": "r-delna",
-        "name": "Aquapark Delňa",
+        "name": "Kúpalisko Delňa",
         "place": "Prešov",
         "rating": 4.1,
         "reviews": 2502,
         "operatorType": "municipal",
-        "note": "Google eviduje pre areál Delňa viac profilov; použitý je hlavný a najaktívnejší."
+        "note": "Mestský rekreačný areál s vodnou plochou; Google ho vedie pod názvom „Aquapark Delňa“ a eviduje preň viac profilov – použitý je hlavný a najaktívnejší."
       },
       {
         "id": "r-rumanova",
@@ -196,39 +165,6 @@
         "place": "Košice",
         "rating": 4.1,
         "reviews": 931,
-        "operatorType": "municipal"
-      },
-      {
-        "id": "r-novolandia",
-        "name": "THERMAL PARK NOVOLANDIA",
-        "place": "Rapovce",
-        "rating": 4.1,
-        "reviews": 1320,
-        "operatorType": "private"
-      },
-      {
-        "id": "r-kovacova",
-        "name": "Holidaypark Kováčová",
-        "place": "Kováčová",
-        "rating": 4.1,
-        "reviews": 3051,
-        "operatorType": "private",
-        "note": "Najbližší veľký akvapark v regióne Banskej Bystrice."
-      },
-      {
-        "id": "r-aquacity",
-        "name": "AquaCity Poprad",
-        "place": "Poprad",
-        "rating": 4.0,
-        "reviews": 11742,
-        "operatorType": "private"
-      },
-      {
-        "id": "r-michalovce",
-        "name": "Krytá plaváreň",
-        "place": "Michalovce",
-        "rating": 3.8,
-        "reviews": 195,
         "operatorType": "municipal"
       },
       {

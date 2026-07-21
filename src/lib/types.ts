@@ -247,8 +247,11 @@ export interface FacilityRating {
 export interface RatingsBlock {
   /** Dátum overenia hodnotení. */
   checkedAt: string;
-  /** Počet recenzií referenčného zariadenia (plážové kúpalisko). */
-  baselineReviews: number;
+  /**
+   * Minimálny počet recenzií pre zaradenie do zúženého rebríčka.
+   * Odfiltruje prevádzky, ktorých hodnotenie stojí na desiatkach recenzií.
+   */
+  minReviews: number;
   items: FacilityRating[];
 }
 

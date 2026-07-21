@@ -7,7 +7,7 @@ import { cn, formatDateSk } from "@/lib/utils";
 export const metadata: Metadata = {
   title: "Porovnanie a súvislosti",
   description:
-    "Ako prevádzkujú letné kúpaliská iné slovenské mestá – Žilina, Nitra, Prešov, Trenčín, Košice či Martin – a v akom kontexte veľkosti a rozpočtu Banskej Bystrice treba prípad plážového kúpaliska vnímať.",
+    "Porovnanie vonkajších kúpalísk na Slovensku – kto ich prevádzkuje v Žiline, Nitre, Prešove, Trenčíne, Košiciach či Martine a ako sú hodnotené na Google v porovnaní s plážovým kúpaliskom v Banskej Bystrici.",
 };
 
 // ISR: obsah sa obnovuje z KV (ak je nastavené) každých 60 s.
@@ -42,9 +42,9 @@ export default async function ComparisonPage() {
     (a, b) => b.rating - a.rating || b.reviews - a.reviews,
   );
 
-  // Zariadenia s porovnateľnou alebo väčšou návštevnosťou než plážové kúpalisko.
+  // Kúpaliská s výraznejšou návštevnosťou (dostatočne veľká vzorka recenzií).
   const major = [...ratings.items]
-    .filter((i) => i.reviews >= ratings.baselineReviews)
+    .filter((i) => i.reviews >= ratings.minReviews)
     .sort((a, b) => b.rating - a.rating || b.reviews - a.reviews);
 
   const bbRank = major.findIndex((i) => i.highlight) + 1;
@@ -170,6 +170,12 @@ export default async function ComparisonPage() {
             <p className="font-semibold text-ink-800">Ako čítať tieto čísla</p>
             <ul className="mt-2 list-disc space-y-1 pl-5">
               <li>
+                Porovnávame <strong>len vonkajšie kúpaliská</strong>. Zámerne sme
+                vynechali kryté plavárne a komerčné akvaparky či termálne parky
+                (napr. AquaCity Poprad), pretože majú iný charakter, cenu aj
+                celoročnú prevádzku, a porovnanie by bolo zavádzajúce.
+              </li>
+              <li>
                 Údaje sme odčítali priamo z Máp Google dňa{" "}
                 {formatDateSk(ratings.checkedAt)}. Hodnotenia sa v čase menia.
               </li>
@@ -181,8 +187,6 @@ export default async function ComparisonPage() {
               </li>
               <li>
                 Google recenzie nie sú overované a nejde o reprezentatívny prieskum.
-                Porovnávané zariadenia majú rôzny charakter (letné kúpalisko, krytá
-                plaváreň, akvapark).
               </li>
             </ul>
           </div>
@@ -231,9 +235,9 @@ export default async function ComparisonPage() {
       {/* Rebríček významnejších zariadení */}
       <Section id="vyznamnejsie">
         <SectionHeading
-          eyebrow="Zariadenia porovnateľnej veľkosti"
-          title="Poradie medzi najnavštevovanejšími"
-          intro={`Zúžený rebríček len na zariadenia, ktoré majú aspoň toľko recenzií ako plážové kúpalisko (${ratings.baselineReviews.toLocaleString("sk-SK")}). Tým sa odfiltrujú malé prevádzky, ktorých hodnotenie stojí na desiatkach recenzií.`}
+          eyebrow="Kúpaliská porovnateľnej veľkosti"
+          title="Poradie medzi najnavštevovanejšími kúpaliskami"
+          intro={`Zúžený rebríček len na kúpaliská s aspoň ${ratings.minReviews.toLocaleString("sk-SK")} recenziami. Tým sa odfiltrujú prevádzky, ktorých hodnotenie stojí na desiatkach recenzií, a porovnávajú sa zariadenia s dostatočne veľkou vzorkou návštevníkov.`}
         />
 
         <ol className="space-y-3">
@@ -282,13 +286,20 @@ export default async function ComparisonPage() {
               Zhrnutie
             </p>
             <p className="mt-2 text-ink-800">
-              Medzi {major.length} zariadeniami s porovnateľnou alebo väčšou
-              návštevnosťou skončilo plážové kúpalisko v Banskej Bystrici na{" "}
+              Medzi {major.length} najnavštevovanejšími kúpaliskami skončilo
+              plážové kúpalisko v Banskej Bystrici na{" "}
               <strong>
                 {bbRank}. mieste z {major.length}
               </strong>{" "}
-              s hodnotením {byRating.find((f) => f.highlight)?.rating.toFixed(1).replace(".", ",")}.
-              Ostatné zariadenia v tejto skupine majú hodnotenie 4,0 a vyššie.
+              s hodnotením{" "}
+              {major.find((f) => f.highlight)?.rating.toFixed(1).replace(".", ",")}.
+              Ostatné kúpaliská v tejto skupine majú hodnotenie{" "}
+              {Math.min(
+                ...major.filter((f) => !f.highlight).map((f) => f.rating),
+              )
+                .toFixed(1)
+                .replace(".", ",")}{" "}
+              a vyššie.
             </p>
             <p className="mt-2 text-xs text-ink-600">
               Ide o porovnanie verejných hodnotení návštevníkov k{" "}

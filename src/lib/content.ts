@@ -70,7 +70,7 @@ export async function getComparison(): Promise<ComparisonData> {
   return readJson<ComparisonData>("comparison", {
     cityFacts: [],
     cities: [],
-    ratings: { checkedAt: "", baselineReviews: 0, items: [] },
+    ratings: { checkedAt: "", minReviews: 0, items: [] },
   });
 }
 
