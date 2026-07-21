@@ -160,6 +160,12 @@ export const COLLECTIONS: Record<string, CollectionDef> = {
       { name: "originalUrl", label: "Odkaz na pôvodný príspevok", type: "text" },
       { name: "archivedAt", label: "Dátum archivácie", type: "date" },
       { name: "embedHtml", label: "Oficiálny embed (HTML, voliteľné)", type: "textarea" },
+      {
+        name: "note",
+        label: "Redakčná poznámka ku kontextu",
+        type: "textarea",
+        help: "Napr. politická angažovanosť autora, upozornenie že ide o názor a nie o overené zistenie.",
+      },
       { name: "approved", label: "Schválené na zverejnenie", type: "checkbox" },
       { name: "status", label: "Stav publikovania", type: "select", options: PUBLISH_OPTIONS, default: "concept" },
       { name: "isPlaceholder", label: "Vzorové dáta", type: "checkbox" },

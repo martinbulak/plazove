@@ -2,7 +2,29 @@
 
 Nezávislý občiansky informačný web o situácii okolo **plážového kúpaliska v Banskej Bystrici**, nájomnej zmluve mesta s prevádzkovateľom, aktuálnom stave areálu a krokoch mesta.
 
-> **Dôležité:** Toto **nie je** oficiálny web prevádzkovateľa kúpaliska ani Mesta Banská Bystrica. Ide o nezávislý občiansky a informačný projekt. Všetok dodaný obsah je **vzorový (placeholder)** a je tak aj označený – pred spustením ho treba nahradiť overenými faktami, dokumentmi a zdrojmi.
+> **Dôležité:** Toto **nie je** oficiálny web prevádzkovateľa kúpaliska ani Mesta Banská Bystrica. Ide o nezávislý občiansky a informačný projekt.
+
+## Zdroje obsahu
+
+Textový obsah webu je spracovaný z týchto primárnych dokumentov a overených zdrojov:
+
+| Zdroj | Použitie |
+|---|---|
+| **Nájomná zmluva č. 526/2007/EM-SM** (sprístupnená mestom na infožiadosť Inf.89/2024) | Predmet nájmu, doba nájmu, investičná povinnosť (100 mil. Sk), právo mesta na mesačnú kontrolu, podstatné porušenia |
+| **Právne stanovisko Právnickej fakulty UK v Bratislave, PLP 060/2022 z 9. 12. 2022** (38 strán) | Možnosti ukončenia nájmu, závery o nemožnosti výpovede, vysporiadanie investícií, citované kontrolné zistenia |
+| **Odpoveď mesta na infožiadosť Inf.89/2024 z 31. 7. 2024** | Doklad o sprístupnení zmluvy |
+| Oficiálne aktuality Mesta Banská Bystrica (2024–2026) | Kroky mesta, kontrolné dni, vyjadrenia |
+| Obchodný register SR, Finstat | Údaje o spoločnosti AQUALAND Slovakia s.r.o. |
+| Štatistický úrad SR, weby miest a mestských organizácií | Sekcia „Porovnanie a súvislosti" |
+| Verejné príspevky na sociálnych sieťach | Označené názory konkrétnych osôb (vrátane politického kontextu autora) |
+
+**Redakčné zásady uplatnené v obsahu:**
+- Každé významné tvrdenie má uvedený zdroj a je označené typom (fakt / citácia / záver dokumentu / právny výklad / názor).
+- Čo sa nepodarilo overiť, je explicitne uvedené ako otvorená otázka, nie ako tvrdenie.
+- Pri politicky angažovaných zdrojoch je táto skutočnosť uvedená v poli `note`.
+- Stanovisko prevádzkovateľa je uvedené kvôli vyváženosti.
+- **Fotogaléria zatiaľ obsahuje vzorové (placeholder) obrázky** – skutočné fotografie treba doplniť cez administráciu.
+- PDF súbory dokumentov nie sú zverejnené – pred zverejnením je potrebná anonymizácia osobných údajov.
 
 - **Doména (cieľová):** aqualandbb.sk
 - **Technológie:** Next.js 15 (App Router) · TypeScript · Tailwind CSS v4 · súborová JSON obsahová vrstva
@@ -55,15 +77,12 @@ Administrácia je na **`/admin`** (predvolené dev heslo: `admin123`).
 ## Informačná architektúra
 
 ```
-/                          Úvod (hero, fakty, rozcestník, náhľady sekcií, CTA)
-├── /pripad                Prípad v skratke (fakty / závery dokumentov / otvorené otázky / názory)
-├── /casova-os             Časová os – vertikálna chronológia so zdrojmi
-├── /zmluva                Zmluva a jej rozbor (Q&A, druh tvrdenia, odkaz na článok/PDF)
-├── /dokumenty             Archív dokumentov (vyhľadávanie + filter podľa kategórie)
+/                          Úvod (hero, fakty v skratke, rozcestník, náhľady, CTA)
+├── /pripad                Prípad a chronológia (fakty / závery dokumentov / nevyriešené / názory + časová os)
+├── /zmluva                Zmluva a dokumenty (laický rozbor Q&A + archív dokumentov s vyhľadávaním)
+├── /aktualny-stav         Aktuálny stav (kroky mesta + otvorené otázky + názory verejnosti)
+├── /porovnanie            Porovnanie a súvislosti (kto prevádzkuje kúpaliská v iných mestách, kontext BB)
 ├── /galeria               Fotogaléria s lightboxom (dátum, autor, vlastná/prevzatá)
-├── /nazory                Názory verejnosti (schválené, s odkazom na originál)
-├── /co-urobilo-mesto      Kroky a prísľuby mesta + stav (splnené/prebieha/…)
-├── /otvorene-otazky       Otvorené otázky + stav + odpoveď mesta
 ├── /podporte              Verejná výzva, newsletter, poslať foto/tip, zdieľať
 │   ├── /podporte/potvrdenie             potvrdenie podpisu výzvy (double opt-in)
 │   └── /podporte/newsletter-potvrdenie  potvrdenie odberu

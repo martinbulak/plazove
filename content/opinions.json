@@ -1,20 +1,57 @@
 [
   {
-    "id": "op1", "status": "published", "approved": true, "sentiment": "negative",
-    "excerpt": "Vzorová ukážka kritickej skúsenosti návštevníka s areálom kúpaliska. (PLACEHOLDER – nahraďte skutočným, verejne publikovaným úryvkom vrátane odkazu.)",
-    "profileName": "Meno Profilu (vzor)", "platform": "google", "postedAt": "2024-07-01",
-    "originalUrl": "", "archivedAt": "2024-07-10", "isPlaceholder": true
+    "id": "op-mergova-2026-06",
+    "status": "published", "approved": true, "sentiment": "negative",
+    "excerpt": "Napriek tomu, že nájomca má v roku 9 mesiacov mimo sezóny na realizáciu úprav a zmien, v areáli stále nie je všetko hotové a stále sa robia prerábky.",
+    "profileName": "Meggie Kováč Mergová",
+    "platform": "facebook",
+    "postedAt": "2026-06-30",
+    "originalUrl": "https://www.facebook.com/magdalenakovacmergova/posts/pfbid0dPxpiwRJoQdkrmnbwGn52jxW1MGnY29fsat2EhQcSNgYufQ6JK18pKW4yHz1pQBJl",
+    "archivedAt": "2026-07-21",
+    "note": "Report z kontrolného dňa 30. 6. 2026. Autorka je koordinátorkou petície a príspevok zverejnila spoločne s Dianou Javorčíkovou, kandidátkou na primátorku Banskej Bystrice – ide teda o politicky angažovaný zdroj."
   },
   {
-    "id": "op2", "status": "published", "approved": true, "sentiment": "negative",
-    "excerpt": "Vzorová ukážka negatívneho hodnotenia zo sociálnej siete. (PLACEHOLDER – použite len primerane krátky úryvok a odkaz na originál.)",
-    "profileName": "Verejný Profil (vzor)", "platform": "facebook", "postedAt": "2024-06-20",
-    "originalUrl": "", "archivedAt": "2024-06-25", "isPlaceholder": true
+    "id": "op-mergova-2026-06b",
+    "status": "published", "approved": true, "sentiment": "negative",
+    "excerpt": "Pre mňa osobne je veľkou škodou stav jazera. Ak by bolo navrátené pôvodnému účelu a zrevitalizované, mohli by sme sa v ňom všetci kúpať.",
+    "profileName": "Meggie Kováč Mergová",
+    "platform": "facebook",
+    "postedAt": "2026-06-30",
+    "originalUrl": "https://www.facebook.com/magdalenakovacmergova/posts/pfbid0dPxpiwRJoQdkrmnbwGn52jxW1MGnY29fsat2EhQcSNgYufQ6JK18pKW4yHz1pQBJl",
+    "archivedAt": "2026-07-21",
+    "note": "Hodnotenie stavu jazera v areáli. Ide o názor konkrétnej osoby, nie o výsledok odborného merania."
   },
   {
-    "id": "op3", "status": "published", "approved": true, "sentiment": "neutral",
-    "excerpt": "Vzorová ukážka neutrálneho / vyváženého komentára pre transparentnosť. (PLACEHOLDER.)",
-    "profileName": "Ďalší Profil (vzor)", "platform": "iny", "postedAt": "2024-05-15",
-    "originalUrl": "", "archivedAt": "2024-05-18", "isPlaceholder": true
+    "id": "op-mergova-2026-07",
+    "status": "published", "approved": true, "sentiment": "negative",
+    "excerpt": "Je zjavný rozdiel v prístupe k areálu. Čistý, dôstojný, dobré služby, proklientsky prístup, kvalitnejší priestor pre deti...",
+    "profileName": "Meggie Kováč Mergová",
+    "platform": "facebook",
+    "postedAt": "2026-07-15",
+    "originalUrl": "https://www.facebook.com/magdalenakovacmergova/posts/pfbid04c4yBUiBFBY4jnJXCqywUTpQs4mCaSxjedPtWjprJJXYgL8yyV6XNHxN3i5sMzTal",
+    "archivedAt": "2026-07-21",
+    "note": "Porovnanie s Thermalparkom Novolandia v Rapovciach. Príspevok obsahuje aj volebný program tímu kandidátky na primátorku Diany Javorčíkovej – ide o politicky angažovaný zdroj."
+  },
+  {
+    "id": "op-aqualand",
+    "status": "published", "approved": true, "sentiment": "neutral",
+    "excerpt": "Prevádzkovateľ hovoril o „koordinovanej aktivite proti Aqualandu a šírení poplašných správ“.",
+    "profileName": "AQUALAND Slovakia s.r.o. (stanovisko prevádzkovateľa)",
+    "platform": "iny",
+    "postedAt": "2025-01-01",
+    "originalUrl": "https://bbonline.sk/prevadzkovatel-kupaliska-hovori-o-koordinovanej-aktivite-proti-aqualandu-a-sireni-poplasnych-sprav/",
+    "archivedAt": "2026-07-21",
+    "note": "Stanovisko prevádzkovateľa uvádzame kvôli vyváženosti. Presný dátum publikovania nebol overený. Prevádzkovateľ má právo zaslať nám vlastné úplné stanovisko, ktoré zverejníme."
+  },
+  {
+    "id": "op-mesto-marhefkova",
+    "status": "published", "approved": true, "sentiment": "negative",
+    "excerpt": "Viaceré časti kúpaliska pôsobia nedokončene, technicky aj prevádzkovo nepripravené.",
+    "profileName": "Zdenka Marhefková, hovorkyňa primátora (Mesto Banská Bystrica)",
+    "platform": "iny",
+    "postedAt": "2026-05-15",
+    "originalUrl": "https://www.banskabystrica.sk/aktuality/2026/kontrolny-den-na-plazovom-kupalisku-priniesol-sklamanie/",
+    "archivedAt": "2026-07-21",
+    "note": "Oficiálne vyjadrenie mesta po kontrolnom dni 15. 5. 2026."
   }
 ]

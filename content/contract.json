@@ -1,74 +1,72 @@
 [
   {
-    "id": "c1", "order": 1, "status": "published", "kind": "document_conclusion",
+    "id": "c1", "order": 1, "status": "published", "kind": "citation",
     "question": "Čo bolo predmetom nájmu?",
-    "answer": "Predmetom nájmu mal byť areál plážového kúpaliska vo vlastníctve mesta vrátane pozemkov a stavieb. (VZOROVÝ TEXT – doplňte presné vymedzenie predmetu nájmu podľa zmluvy.)",
-    "article": "čl. — (doplňte)",
-    "document": { "label": "Nájomná zmluva", "documentId": "doc-zmluva-2007" },
-    "isPlaceholder": true
+    "answer": "Areál plážového kúpaliska – pozemky vo vlastníctve mesta o celkovej výmere 37 332 m² (vedené na LV 4073 a LV 6013), prevádzková budova súp. č. 1263 a technologické zariadenia a hnuteľné veci súvisiace s prevádzkou areálu. Súčasťou je aj vodná plocha s výmerou 23 106 m².",
+    "article": "čl. I ods. 2",
+    "document": { "label": "Nájomná zmluva č. 526/2007/EM-SM", "documentId": "doc-zmluva-2007" }
   },
   {
     "id": "c2", "order": 2, "status": "published", "kind": "citation",
-    "question": "Dokedy zmluva platí?",
-    "answer": "Podľa verejne uvádzaných informácií je nájom dohodnutý do roku 2037. (VZOROVÝ TEXT – overte presnú dobu nájmu a citujte znenie.)",
-    "article": "čl. — (doplňte)",
-    "document": { "label": "Nájomná zmluva", "documentId": "doc-zmluva-2007" },
-    "isPlaceholder": true
+    "question": "Kto je nájomcom a dokedy zmluva platí?",
+    "answer": "Nájomcom je spoločnosť AQUALAND Slovakia s.r.o. Nájom je dohodnutý na dobu určitú od 1. 10. 2007 do 30. 9. 2037, teda na 30 rokov, s opciou 10 rokov. Opciou sa podľa zmluvy rozumie právo prednostného nájmu v prospech nájomcu.",
+    "article": "čl. II ods. 1",
+    "document": { "label": "Nájomná zmluva č. 526/2007/EM-SM", "documentId": "doc-zmluva-2007" }
   },
   {
-    "id": "c3", "order": 3, "status": "published", "kind": "document_conclusion",
+    "id": "c3", "order": 3, "status": "published", "kind": "citation",
     "question": "Aké investície mal nájomca vykonať?",
-    "answer": "Zmluva mala obsahovať záväzok nájomcu investovať do areálu. (VZOROVÝ TEXT – doplňte rozsah, výšku a účel investícií podľa zmluvy.)",
-    "article": "čl. — (doplňte)",
-    "document": { "label": "Nájomná zmluva", "documentId": "doc-zmluva-2007" },
-    "isPlaceholder": true
+    "answer": "Zmluva ukladá nájomcovi preukázať preinvestovanie čiastky vo výške minimálne 100 000 000 Sk v rámci realizácie investícií podľa časového harmonogramu (príloha č. 3 „Modernizácia plážového kúpaliska Banská Bystrica“). Po prechode na euro sa v dodatku uvádza ekvivalent 3 319 391 €. Preinvestovanie znamená náklady na technické zhodnotenie – rekonštrukciu, modernizáciu, stavebné úpravy, prístavby, nadstavby a výstavbu nových stavieb.",
+    "article": "čl. IV ods. 10",
+    "document": { "label": "Nájomná zmluva, čl. IV ods. 10", "documentId": "doc-zmluva-2007", "page": 5 }
   },
   {
-    "id": "c4", "order": 4, "status": "published", "kind": "legal_interpretation",
+    "id": "c4", "order": 4, "status": "published", "kind": "citation",
     "question": "Ako sa mali investície preukazovať?",
-    "answer": "Spôsob preukazovania investícií (napr. doklady, kolaudácie, znalecké posudky) mal byť upravený v zmluve. (VZOROVÝ TEXT – doplňte konkrétny mechanizmus.)",
-    "article": "čl. — (doplňte)",
-    "document": { "label": "Nájomná zmluva", "documentId": "doc-zmluva-2007" },
-    "isPlaceholder": true
+    "answer": "Dodatok č. 1 zaviedol povinnosť nájomcu predložiť vždy k poslednému dňu polroka položkovitý rozpočet preinvestovanej čiastky skutočne vykonaných činností, a to do 30 dní od konca daného polroka. Túto povinnosť má nájomca len vtedy, ak v danom polroku činnosti vykonal. Mesto má právo predložené rozpočty skontrolovať.",
+    "article": "čl. III ods. 4 v znení Dodatku č. 1",
+    "document": { "label": "Dodatok č. 1 (2009)", "documentId": "doc-dodatok-1" }
   },
   {
-    "id": "c5", "order": 5, "status": "published", "kind": "document_conclusion",
-    "question": "Aké povinnosti mal nájomca?",
-    "answer": "Nájomca mal okrem investícií plniť aj ďalšie povinnosti (údržba, prevádzka, nájomné). (VZOROVÝ TEXT – doplňte výpočet povinností.)",
-    "article": "čl. — (doplňte)",
-    "document": { "label": "Nájomná zmluva", "documentId": "doc-zmluva-2007" },
-    "isPlaceholder": true
+    "id": "c5", "order": 5, "status": "published", "kind": "citation",
+    "question": "Môže mesto kúpalisko kontrolovať?",
+    "answer": "Áno. Podľa zmluvy sú prenajímateľ alebo ním poverená osoba oprávnení vstupovať raz mesačne do predmetu nájmu za účelom kontroly, a to v nevyhnutnom rozsahu za prítomnosti nájomcu alebo ním splnomocnenej osoby. Zmluva teda umožňuje mesačnú kontrolu, nielen jednu obhliadku pred sezónou.",
+    "article": "čl. IV ods. 11",
+    "document": { "label": "Nájomná zmluva, čl. IV ods. 11", "documentId": "doc-zmluva-2007", "page": 5 }
   },
   {
-    "id": "c6", "order": 6, "status": "published", "kind": "legal_interpretation",
-    "question": "Čo bolo označené za podstatné porušenie zmluvy?",
-    "answer": "Zmluva mala definovať, ktoré porušenia sa považujú za podstatné a zakladajú právo mesta konať. (VZOROVÝ TEXT – doplňte definíciu podstatného porušenia a zdroj.)",
-    "article": "čl. — (doplňte)",
-    "document": { "label": "Nájomná zmluva", "documentId": "doc-zmluva-2007" },
-    "isPlaceholder": true
+    "id": "c6", "order": 6, "status": "published", "kind": "citation",
+    "question": "Čo zmluva označuje za podstatné porušenie?",
+    "answer": "Zmluva označuje za podstatné porušenie najmä: (a) porušenie ktorejkoľvek povinnosti uvedenej v čl. IV ods. 2 – vtedy má mesto právo odstúpiť od zmluvy alebo uplatniť zmluvnú pokutu 600 000 Sk; (b) nepreukázanie preinvestovania minimálne 100 mil. Sk podľa harmonogramu (čl. IV ods. 10); (c) nesplnenie povinnosti požiadať o potrebné povolenia a licencie (čl. IV ods. 17); (d) nedokončenie výstavby podľa predloženej štúdie do 3 rokov od právoplatnosti povolení alebo nepožiadanie o kolaudáciu (čl. IV ods. 18).",
+    "article": "čl. IV ods. 3, 10, 17, 18",
+    "document": { "label": "Nájomná zmluva, čl. IV", "documentId": "doc-zmluva-2007" }
   },
   {
     "id": "c7", "order": 7, "status": "published", "kind": "legal_interpretation",
     "question": "Dá sa zmluva vypovedať?",
-    "answer": "Možnosť výpovede závisí od dohodnutých výpovedných dôvodov a lehôt. (VZOROVÝ TEXT – doplňte podmienky výpovede podľa zmluvy a právneho stanoviska.)",
-    "article": "čl. — (doplňte)",
-    "document": { "label": "Právne stanovisko", "documentId": "doc-pravne-stanovisko-2022" },
-    "isPlaceholder": true
+    "answer": "Podľa právneho stanoviska Právnickej fakulty UK nie. Stanovisko konštatuje doslova, že „nakoľko predložená Zmluva o nájme neobsahuje ustanovenia o zániku nájmu výpoveďou, tento právny vzťah nemožno ukončiť výpoveďou“. Zostávajú tri cesty: uplynutie doby nájmu (2037), dohoda oboch strán a odstúpenie od zmluvy.",
+    "article": "bod 3.7 Záver, bod 2",
+    "document": { "label": "Právne stanovisko PF UK, s. 37", "documentId": "doc-pravne-stanovisko-2022", "page": 37 }
   },
   {
     "id": "c8", "order": 8, "status": "published", "kind": "legal_interpretation",
     "question": "Za akých okolností môže mesto od zmluvy odstúpiť?",
-    "answer": "Odstúpenie je zvyčajne viazané na podstatné porušenie zmluvy a splnenie procesných podmienok (výzva, dodatočná lehota). (VZOROVÝ TEXT – doplňte konkrétne podmienky.)",
-    "article": "čl. — (doplňte)",
-    "document": { "label": "Právne stanovisko", "documentId": "doc-pravne-stanovisko-2022" },
-    "isPlaceholder": true
+    "answer": "Pri podstatnom porušení zmluvy nájomcom. Stanovisko PF UK však upozorňuje na dôležitú procesnú podmienku: ak mesto zistí porušenie povinnosti, je povinné určiť nájomcovi dodatočnú lehotu na nápravu. Ak by mesto odstúpilo bez poskytnutia dodatočnej lehoty, odstúpenie by nebolo platné a nespôsobilo by zánik zmluvného vzťahu. Zároveň stanovisko uvádza, že či boli predpoklady na odstúpenie naplnené, je otázkou skutkovou, ktorú na základe predložených dokumentov nebolo možné relevantne vyhodnotiť.",
+    "article": "bod 3.6, bod 3.7 Záver bod 3",
+    "document": { "label": "Právne stanovisko PF UK", "documentId": "doc-pravne-stanovisko-2022", "page": 31 }
   },
   {
     "id": "c9", "order": 9, "status": "published", "kind": "legal_interpretation",
     "question": "Čo by sa dialo s investíciami po skončení nájmu?",
-    "answer": "Osud technického zhodnotenia a investícií po skončení nájmu (vysporiadanie, prechod na mesto) mal byť upravený v zmluve. (VZOROVÝ TEXT – doplňte úpravu vysporiadania.)",
-    "article": "čl. — (doplňte)",
-    "document": { "label": "Nájomná zmluva", "documentId": "doc-zmluva-2007" },
-    "isPlaceholder": true
+    "answer": "Pri skončení nájmu uplynutím doby alebo pri odstúpení od zmluvy pre podstatné porušenie zo strany nájomcu sa nájomca zaviazal previesť investície do majetku mesta formou daru, pričom technický stav budov podlieha primeranému opotrebeniu. Mesto nie je povinné uhradiť nájomcovi vynaložené investície a podľa čl. IV ods. 9 nájomcovi nepatrí ani protihodnota toho, o čo sa zvýšila hodnota areálu. Stanovisko však upozorňuje na medzeru: ak by došlo k odstúpeniu z dôvodu, ktorý zmluva neoznačuje ako podstatné porušenie, povinnosť previesť investície na mesto by nájomcovi nevznikla.",
+    "article": "čl. IV ods. 2 písm. f), čl. IV ods. 9, čl. XI ods. 6",
+    "document": { "label": "Právne stanovisko PF UK, s. 35–36", "documentId": "doc-pravne-stanovisko-2022", "page": 35 }
+  },
+  {
+    "id": "c10", "order": 10, "status": "published", "kind": "document_conclusion",
+    "question": "Koľko nájomca podľa dokumentov preinvestoval?",
+    "answer": "K 30. 6. 2010 nájomca deklaroval preinvestovaných celkom 3 539 744 €, pričom za I. polrok 2010 predložil rozpočet vo výške 1 505 187,84 €. V ďalších podkladoch sú uvedené doklady preukazujúce preinvestovanie 4 232 264,01 € s DPH; ceny vo faktúrach boli predmetom kontroly. Spracovateľom právneho stanoviska však neboli predložené doklady za obdobie do 31. 12. 2009, preto stanovisko nemohlo splnenie investičnej povinnosti komplexne vyhodnotiť.",
+    "article": "časť 3.6.2",
+    "document": { "label": "Právne stanovisko PF UK, s. 30–33", "documentId": "doc-pravne-stanovisko-2022", "page": 30 }
   }
 ]

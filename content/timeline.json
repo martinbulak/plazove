@@ -1,72 +1,159 @@
 [
   {
-    "id": "t2007",
+    "id": "t-2007-05",
     "status": "published",
-    "date": "2007",
-    "title": "Podpis nájomnej zmluvy",
-    "description": "Mesto Banská Bystrica malo podľa verejne uvádzaných informácií uzatvoriť nájomnú zmluvu na areál plážového kúpaliska. (VZOROVÝ TEXT – doplňte presný dátum, zmluvné strany a odkaz na zmluvu.)",
+    "date": "2007-05-29",
+    "title": "Mestské zastupiteľstvo schválilo nájom",
+    "description": "Nájom nehnuteľností areálu plážového kúpaliska bol schválený uznesením Mestského zastupiteľstva v Banskej Bystrici č. 68/2007-MsZ.",
     "tag": "zmluva",
-    "isPlaceholder": true,
-    "sources": []
+    "sources": [
+      { "label": "Právne stanovisko PF UK, časť A – Skutkový stav", "documentId": "doc-pravne-stanovisko-2022", "page": 2 }
+    ]
   },
   {
-    "id": "t2009",
+    "id": "t-2007-10",
     "status": "published",
-    "date": "2009",
-    "title": "Dodatok k zmluve",
-    "description": "K pôvodnej zmluve mal byť uzatvorený dodatok. (VZOROVÝ TEXT – doplňte obsah a zdroj dodatku.)",
+    "date": "2007-10-15",
+    "title": "Podpis nájomnej zmluvy č. 526/2007/EM-SM",
+    "description": "Mesto Banská Bystrica a spoločnosť AQUALAND Slovakia s.r.o. uzatvorili nájomnú zmluvu podľa § 663 a nasl. Občianskeho zákonníka. Nájom bol dohodnutý na dobu určitú od 1. 10. 2007 do 30. 9. 2037, teda na 30 rokov, s opciou 10 rokov.",
     "tag": "zmluva",
-    "isPlaceholder": true,
-    "sources": []
+    "sources": [
+      { "label": "Nájomná zmluva č. 526/2007/EM-SM", "documentId": "doc-zmluva-2007" },
+      { "label": "Právne stanovisko PF UK, bod 3.1 Doba nájmu", "documentId": "doc-pravne-stanovisko-2022" }
+    ]
   },
   {
-    "id": "t2010a",
+    "id": "t-2009-04",
     "status": "published",
-    "date": "2010",
-    "title": "Ďalší dodatok k zmluve",
-    "description": "Ďalšia zmena zmluvných podmienok formou dodatku. (VZOROVÝ TEXT – overte a doplňte zdroj.)",
+    "date": "2009-04-27",
+    "title": "Dodatok č. 1 k nájomnej zmluve",
+    "description": "Dodatok okrem iného zaviedol povinnosť nájomcu predkladať mestu vždy k poslednému dňu polroka položkovitý rozpočet preinvestovanej čiastky, a to do 30 dní od konca polroka (čl. III ods. 4).",
     "tag": "zmluva",
-    "isPlaceholder": true,
-    "sources": []
+    "sources": [
+      { "label": "Dodatok č. 1", "documentId": "doc-dodatok-1" },
+      { "label": "Právne stanovisko PF UK", "documentId": "doc-pravne-stanovisko-2022" }
+    ]
   },
   {
-    "id": "t2010b",
+    "id": "t-2010-03",
     "status": "published",
-    "date": "2010",
-    "title": "Kontrolné zistenia",
-    "description": "Kontrolné materiály mali konštatovať zistenia týkajúce sa plnenia zmluvných povinností. (VZOROVÝ TEXT – doplňte konkrétny dokument a jeho záver.)",
+    "date": "2010-03-09",
+    "title": "Správa hlavného kontrolóra – kontrolné zistenia",
+    "description": "Správa hlavného kontrolóra mesta o vykonanej následnej finančnej kontrole č. 13/2009 konštatuje, že nájomca nezaplatil včas nájomné za roky 2007 a 2009 a že nepredložil položkovitý rozpočet za tretí štvrťrok 2008 a za obdobie do 30. júna 2009.",
     "tag": "kontrola",
-    "isPlaceholder": true,
-    "sources": []
+    "sources": [
+      { "label": "Správa hlavného kontrolóra z 9. 3. 2010 (cit. v stanovisku PF UK)", "documentId": "doc-kontrolor-2010" }
+    ]
   },
   {
-    "id": "t2018",
+    "id": "t-2010-07",
     "status": "published",
-    "date": "2018",
-    "title": "Audit",
-    "description": "Vykonaný mal byť audit súvisiaci s areálom alebo plnením zmluvy. (VZOROVÝ TEXT – doplňte typ auditu, vykonávateľa a záver.)",
+    "date": "2010-07-30",
+    "title": "Nájomca deklaroval preinvestované sumy",
+    "description": "Nájomca predložil položkovitý rozpočet preinvestovanej čiastky za I. polrok 2010 vo výške 1 505 187,84 € a uviedol, že k 30. 6. 2010 bolo na predmete nájmu preinvestovaných celkom 3 539 744 €. Doklady za obdobie do 31. 12. 2009 neboli spracovateľom právneho stanoviska predložené.",
+    "tag": "investicie",
+    "sources": [
+      { "label": "Právne stanovisko PF UK, s. 30–31", "documentId": "doc-pravne-stanovisko-2022", "page": 30 }
+    ]
+  },
+  {
+    "id": "t-2010-08",
+    "status": "published",
+    "date": "2010-08-06",
+    "title": "Žiadosť o prekontrolovanie reálnosti faktúr",
+    "description": "Mesto požiadalo o prekontrolovanie reálnosti predložených faktúr. Ceny uvedené vo faktúrach boli predmetom kontroly, ktorú vykonala Ing. Jana Rybárová.",
+    "tag": "kontrola",
+    "sources": [
+      { "label": "Právne stanovisko PF UK – zoznam podkladov, bod 10", "documentId": "doc-pravne-stanovisko-2022" }
+    ]
+  },
+  {
+    "id": "t-2010-10",
+    "status": "published",
+    "date": "2010-10-29",
+    "title": "Dodatok č. 2 k nájomnej zmluve",
+    "description": "Dodatkom č. 2 bolo upravené aj znenie čl. IV ods. 2 písm. f) o prevode investícií do majetku mesta formou daru po skončení nájmu uplynutím doby alebo pri odstúpení od zmluvy pre podstatné porušenie.",
+    "tag": "zmluva",
+    "sources": [
+      { "label": "Dodatok č. 2", "documentId": "doc-dodatok-2" },
+      { "label": "Právne stanovisko PF UK, s. 35", "documentId": "doc-pravne-stanovisko-2022", "page": 35 }
+    ]
+  },
+  {
+    "id": "t-2012-04",
+    "status": "published",
+    "date": "2012-04-10",
+    "title": "Doklady o skolaudovaných objektoch",
+    "description": "Nájomca predložil doklady a správu o technicky ukončených a skolaudovaných stavebných objektoch.",
+    "tag": "investicie",
+    "sources": [
+      { "label": "Právne stanovisko PF UK – zoznam podkladov, bod 11", "documentId": "doc-pravne-stanovisko-2022" }
+    ]
+  },
+  {
+    "id": "t-2017-02",
+    "status": "published",
+    "date": "2017-02-14",
+    "title": "Uznesenie krajského riaditeľstva Policajného zboru",
+    "description": "Medzi podkladmi právneho stanoviska je uvedené uznesenie KR PZ v Banskej Bystrici, odboru kriminálnej polície, ČVS: KRP-94/2-VYS-BB-2014. Obsah ani výsledok konania nie je z dostupných dokumentov známy.",
+    "tag": "kontrola",
+    "sources": [
+      { "label": "Právne stanovisko PF UK – zoznam podkladov, bod 6", "documentId": "doc-pravne-stanovisko-2022", "page": 2 }
+    ]
+  },
+  {
+    "id": "t-2018-09",
+    "status": "published",
+    "date": "2018-09-12",
+    "title": "Audit nákladov v súvislosti s nájomnou zmluvou",
+    "description": "Bol vypracovaný audit nákladov v súvislosti s nájomnou zmluvou č. 526/2007/EM-SM. Audit je uvedený medzi podkladmi právneho stanoviska; jeho úplné závery nie sú z dostupných dokumentov známe.",
     "tag": "audit",
-    "isPlaceholder": true,
-    "sources": []
+    "sources": [
+      { "label": "Právne stanovisko PF UK – zoznam podkladov, bod 7", "documentId": "doc-audit-2018" }
+    ]
   },
   {
-    "id": "t2022",
+    "id": "t-2022-10",
     "status": "published",
-    "date": "2022",
-    "title": "Právne stanovisko",
-    "description": "K možnostiam ukončenia zmluvy malo byť vypracované právne stanovisko (podľa verejných informácií z akademického prostredia). (VZOROVÝ TEXT – doplňte autora, dátum a záver stanoviska.)",
+    "date": "2022-10-14",
+    "title": "Mesto si objednalo právnu analýzu",
+    "description": "Mesto Banská Bystrica sa listom č. 20221484 obrátilo na Právnickú fakultu Univerzity Komenského v Bratislave so žiadosťou o vypracovanie právneho stanoviska k možnostiam ukončenia nájomného vzťahu.",
     "tag": "pravo",
-    "isPlaceholder": true,
-    "sources": []
+    "sources": [
+      { "label": "Právne stanovisko PF UK – hlavička (Váš list 20221484/14.10.2022)", "documentId": "doc-pravne-stanovisko-2022", "page": 1 }
+    ]
   },
   {
-    "id": "t2024",
+    "id": "t-2022-12",
     "status": "published",
-    "date": "2024",
-    "title": "Verejné vyjadrenia a kroky mesta",
-    "description": "Ďalšie verejné vyjadrenia a prípadné kroky mesta. (VZOROVÝ TEXT – priebežne dopĺňajte.)",
-    "tag": "mesto",
-    "isPlaceholder": true,
-    "sources": []
+    "date": "2022-12-09",
+    "title": "Právne stanovisko Právnickej fakulty UK",
+    "description": "Právnická fakulta UK v Bratislave (č. PLP 060/2022) doručila mestu stanovisko k možnostiam skončenia nájmu. Hlavný záver: zmluva neobsahuje ustanovenia o výpovedi, preto ju nemožno ukončiť výpoveďou; zostáva uplynutie doby, dohoda alebo odstúpenie od zmluvy.",
+    "tag": "pravo",
+    "sources": [
+      { "label": "Právne stanovisko PF UK, bod 3.7 Záver", "documentId": "doc-pravne-stanovisko-2022", "page": 37 }
+    ]
+  },
+  {
+    "id": "t-2024-07",
+    "status": "published",
+    "date": "2024-07-31",
+    "title": "Mesto sprístupnilo zmluvu na infožiadosť",
+    "description": "Na žiadosť podanú 29. 7. 2024 podľa zákona č. 211/2000 Z. z. mesto sprístupnilo fotokópiu nájomnej zmluvy č. 526/2007/EM-SM aj s dodatkami (č. 152116/1099/2024/PS-KC, Inf.89/2024). Odpoveď podpísala prednostka MsÚ JUDr. Marica Koreňová.",
+    "tag": "infoziadost",
+    "sources": [
+      { "label": "Odpoveď Mesta Banská Bystrica na infožiadosť Inf.89/2024", "documentId": "doc-infoziadost-2024" }
+    ]
+  },
+  {
+    "id": "t-2026-06",
+    "status": "published",
+    "date": "2026-06-30",
+    "title": "Kontrolný deň na kúpalisku pred sezónou",
+    "description": "Podľa verejného reportu aktivistky Magdalény Kováč Mergovej sa 30. 6. 2026 uskutočnil kontrolný deň v areáli. V reporte uvádza, že práce v areáli neboli dokončené a že nájomca podal projekt na Fond na podporu športu na obnovu detského bazéna bez vedomia mesta. Ide o tvrdenia konkrétnej osoby, nie o overené zistenia mesta.",
+    "tag": "aktualne",
+    "sources": [
+      { "label": "Report z kontrolného dňa – Meggie Kováč Mergová, Facebook, 30. 6. 2026", "url": "https://www.facebook.com/magdalenakovacmergova/posts/pfbid0dPxpiwRJoQdkrmnbwGn52jxW1MGnY29fsat2EhQcSNgYufQ6JK18pKW4yHz1pQBJl" }
+    ]
   }
 ]

@@ -1,56 +1,202 @@
 [
   {
-    "id": "doc-zmluva-2007", "slug": "najomna-zmluva-2007", "status": "published",
-    "title": "Nájomná zmluva (2007)", "date": "2007", "category": "zmluva",
-    "summary": "Pôvodná nájomná zmluva medzi mestom a nájomcom na areál plážového kúpaliska. (VZOROVÝ ZÁZNAM – nahraďte skutočným dokumentom.)",
-    "issuer": "Mesto Banská Bystrica / nájomca",
+    "id": "doc-zmluva-2007",
+    "slug": "najomna-zmluva-526-2007",
+    "status": "published",
+    "title": "Nájomná zmluva č. 526/2007/EM-SM",
+    "date": "2007-10-15",
+    "category": "zmluva",
+    "summary": "Nájomná zmluva medzi Mestom Banská Bystrica (prenajímateľ) a spoločnosťou AQUALAND Slovakia s.r.o. (nájomca) na areál plážového kúpaliska, uzatvorená podľa § 663 a nasl. Občianskeho zákonníka.",
+    "issuer": "Mesto Banská Bystrica / AQUALAND Slovakia s.r.o.",
     "fileUrl": "",
-    "keyFindings": ["Doba nájmu do roku 2037 (overiť).", "Investičná povinnosť nájomcu (overiť rozsah)."],
+    "keyFindings": [
+      "Doba nájmu od 1. 10. 2007 do 30. 9. 2037 (30 rokov) s opciou 10 rokov.",
+      "Predmet nájmu: pozemky spolu o výmere 37 332 m² (LV 4073 a LV 6013), prevádzková budova súp. č. 1263 a technologické zariadenia.",
+      "Čl. IV ods. 10: nepreukázanie preinvestovania minimálne 100 000 000 Sk sa považuje za podstatné porušenie zmluvy a zakladá právo mesta odstúpiť od zmluvy.",
+      "Čl. IV ods. 11: mesto je oprávnené vstupovať do predmetu nájmu na kontrolu raz mesačne.",
+      "Čl. IV ods. 9: po skončení nájmu uplynutím doby alebo pri odstúpení pre podstatné porušenie prechádzajú investície na mesto a nájomcovi nevznikajú nároky na ďalšie vysporiadanie."
+    ],
     "sourceUrl": "",
-    "isPlaceholder": true
+    "sources": [
+      { "label": "Sprístupnené mestom na infožiadosť Inf.89/2024", "documentId": "doc-infoziadost-2024" }
+    ]
   },
   {
-    "id": "doc-dodatok-2009", "slug": "dodatok-2009", "status": "published",
-    "title": "Dodatok k nájomnej zmluve (2009)", "date": "2009", "category": "zmluva",
-    "summary": "Dodatok upravujúci podmienky pôvodnej zmluvy. (VZOROVÝ ZÁZNAM.)",
-    "issuer": "Mesto Banská Bystrica / nájomca", "fileUrl": "", "keyFindings": [], "sourceUrl": "", "isPlaceholder": true
+    "id": "doc-dodatok-1",
+    "slug": "dodatok-1-2009",
+    "status": "published",
+    "title": "Dodatok č. 1 k nájomnej zmluve",
+    "date": "2009-04-27",
+    "category": "zmluva",
+    "summary": "Prvý dodatok k nájomnej zmluve. Okrem iného upravil povinnosť nájomcu pravidelne preukazovať preinvestované sumy a upravil prílohu s harmonogramom investícií.",
+    "issuer": "Mesto Banská Bystrica / AQUALAND Slovakia s.r.o.",
+    "fileUrl": "",
+    "keyFindings": [
+      "Čl. III ods. 4: nájomca sa zaväzuje vždy k poslednému dňu polroka predložiť položkovitý rozpočet preinvestovanej čiastky, a to do 30 dní od konca daného polroka.",
+      "Mesto má právo predložené rozpočty skontrolovať."
+    ],
+    "sourceUrl": "",
+    "sources": [
+      { "label": "Právne stanovisko PF UK – zoznam podkladov", "documentId": "doc-pravne-stanovisko-2022" }
+    ]
   },
   {
-    "id": "doc-dodatok-2010", "slug": "dodatok-2010", "status": "published",
-    "title": "Dodatok k nájomnej zmluve (2010)", "date": "2010", "category": "zmluva",
-    "summary": "Ďalší dodatok k zmluve. (VZOROVÝ ZÁZNAM.)",
-    "issuer": "Mesto Banská Bystrica / nájomca", "fileUrl": "", "keyFindings": [], "sourceUrl": "", "isPlaceholder": true
+    "id": "doc-dodatok-2",
+    "slug": "dodatok-2-2010",
+    "status": "published",
+    "title": "Dodatok č. 2 k nájomnej zmluve",
+    "date": "2010-10-29",
+    "category": "zmluva",
+    "summary": "Druhý dodatok k nájomnej zmluve, ktorý upravil najmä vysporiadanie investícií po skončení nájmu.",
+    "issuer": "Mesto Banská Bystrica / AQUALAND Slovakia s.r.o.",
+    "fileUrl": "",
+    "keyFindings": [
+      "Čl. IV ods. 2 písm. f): pri skončení nájmu uplynutím doby a pri odstúpení pre podstatné porušenie zo strany nájomcu sa nájomca zaväzuje previesť investície do majetku mesta formou daru, pričom technický stav budov podlieha primeranému opotrebeniu.",
+      "V zmluve sa uvádza celková investičná náročnosť 3 319 391 € (ekvivalent 100 mil. Sk)."
+    ],
+    "sourceUrl": "",
+    "sources": [
+      { "label": "Právne stanovisko PF UK, s. 35", "documentId": "doc-pravne-stanovisko-2022", "page": 35 }
+    ]
   },
   {
-    "id": "doc-kontrolor-2010", "slug": "sprava-kontrolora-2010", "status": "published",
-    "title": "Správa hlavného kontrolóra (2010)", "date": "2010", "category": "kontrolor",
-    "summary": "Kontrolné zistenia týkajúce sa plnenia zmluvných povinností. (VZOROVÝ ZÁZNAM – doplňte skutočný záver.)",
-    "issuer": "Hlavný kontrolór mesta", "fileUrl": "", "keyFindings": ["Zistenia k plneniu povinností (doplniť)."], "sourceUrl": "", "isPlaceholder": true
+    "id": "doc-kontrolor-2010",
+    "slug": "sprava-hlavneho-kontrolora-2010",
+    "status": "published",
+    "title": "Správa hlavného kontrolóra o následnej finančnej kontrole č. 13/2009",
+    "date": "2010-03-09",
+    "category": "kontrolor",
+    "summary": "Kontrolná správa hlavného kontrolóra mesta Banská Bystrica týkajúca sa plnenia povinností nájomcu.",
+    "issuer": "Hlavný kontrolór mesta Banská Bystrica",
+    "fileUrl": "",
+    "keyFindings": [
+      "Nájomca nezaplatil včas nájomné za roky 2007 a 2009.",
+      "Nájomca nepredložil položkovitý rozpočet za tretí štvrťrok 2008 a za obdobie do 30. júna 2009 (k 31. 7. 2009)."
+    ],
+    "sourceUrl": "",
+    "sources": [
+      { "label": "Citované v právnom stanovisku PF UK", "documentId": "doc-pravne-stanovisko-2022" }
+    ]
   },
   {
-    "id": "doc-audit-2018", "slug": "audit-2018", "status": "published",
-    "title": "Audit (2018)", "date": "2018", "category": "audit",
-    "summary": "Audit súvisiaci s areálom / plnením zmluvy. (VZOROVÝ ZÁZNAM.)",
-    "issuer": "Audítor (doplniť)", "fileUrl": "", "keyFindings": [], "sourceUrl": "", "isPlaceholder": true
+    "id": "doc-audit-2018",
+    "slug": "audit-nakladov-2018",
+    "status": "published",
+    "title": "Audit nákladov v súvislosti s nájomnou zmluvou č. 526/2007/EM-SM",
+    "date": "2018-09-12",
+    "category": "audit",
+    "summary": "Audit nákladov súvisiacich s nájomnou zmluvou. Dokument je uvedený medzi podkladmi, z ktorých vychádzalo právne stanovisko PF UK; jeho úplné znenie ani závery nie sú verejne dostupné.",
+    "issuer": "Neuvedené v dostupných dokumentoch",
+    "fileUrl": "",
+    "keyFindings": [
+      "Úplné závery auditu nie sú z verejne dostupných zdrojov známe – dokument nie je zverejnený."
+    ],
+    "sourceUrl": "",
+    "sources": [
+      { "label": "Právne stanovisko PF UK – zoznam podkladov, bod 7", "documentId": "doc-pravne-stanovisko-2022", "page": 3 }
+    ]
   },
   {
-    "id": "doc-pravne-stanovisko-2022", "slug": "pravne-stanovisko-2022", "status": "published",
-    "title": "Právne stanovisko (2022)", "date": "2022", "category": "pravne-stanovisko",
-    "summary": "Stanovisko k možnostiam ukončenia nájomnej zmluvy. (VZOROVÝ ZÁZNAM – doplňte autora a záver.)",
-    "issuer": "Akademické právne pracovisko (doplniť)", "fileUrl": "",
-    "keyFindings": ["Analýza možností výpovede a odstúpenia (doplniť závery)."],
-    "sourceUrl": "", "isPlaceholder": true
+    "id": "doc-pravne-stanovisko-2022",
+    "slug": "pravne-stanovisko-pf-uk-2022",
+    "status": "published",
+    "title": "Právne stanovisko Právnickej fakulty UK v Bratislave (PLP 060/2022)",
+    "date": "2022-12-09",
+    "category": "pravne-stanovisko",
+    "summary": "Stanovisko k možnostiam skončenia nájomného vzťahu založeného nájomnou zmluvou č. 526/2007/EM-SM v znení dodatkov č. 1 a 2. Vypracované na objednávku Mesta Banská Bystrica. Rozsah 38 strán.",
+    "issuer": "Univerzita Komenského v Bratislave, Právnická fakulta",
+    "fileUrl": "",
+    "keyFindings": [
+      "Nájom môže skončiť uplynutím doby, na ktorú bol dohodnutý, a dohodou zmluvných strán.",
+      "Keďže zmluva neobsahuje ustanovenia o zániku nájmu výpoveďou, tento vzťah nemožno ukončiť výpoveďou.",
+      "Naplnenie predpokladov na odstúpenie od zmluvy je otázkou skutkovou a na základe predložených dokumentov ju nebolo možné relevantne vyhodnotiť.",
+      "Ak mesto zistí porušenie povinnosti, musí nájomcovi určiť dodatočnú lehotu na nápravu; odstúpenie bez poskytnutia dodatočnej lehoty by nebolo platné.",
+      "Pri ukončení nájmu mesto nie je povinné uhradiť nájomcovi vynaložené investície.",
+      "Podľa čl. IV ods. 9 zmluvy nájomcovi po skončení nájmu nepatrí ani protihodnota toho, o čo sa zvýšila hodnota areálu."
+    ],
+    "sourceUrl": "",
+    "sources": [
+      { "label": "Spracovali: doc. Mgr. Lenka Dufalová, PhD., Mgr. Tamara Čipková, PhD., doc. JUDr. Eduard Burda, PhD. (dekan)" }
+    ]
   },
   {
-    "id": "doc-uznesenie-2023", "slug": "uznesenie-2023", "status": "published",
-    "title": "Uznesenie mestského zastupiteľstva (2023)", "date": "2023", "category": "uznesenie",
-    "summary": "Uznesenie súvisiace s ďalším postupom mesta. (VZOROVÝ ZÁZNAM.)",
-    "issuer": "Mestské zastupiteľstvo Banská Bystrica", "fileUrl": "", "keyFindings": [], "sourceUrl": "", "isPlaceholder": true
+    "id": "doc-infoziadost-2024",
+    "slug": "odpoved-na-infoziadost-2024",
+    "status": "published",
+    "title": "Odpoveď mesta na žiadosť o sprístupnenie nájomnej zmluvy (Inf.89/2024)",
+    "date": "2024-07-31",
+    "category": "infoziadost",
+    "summary": "Odpoveď Mestského úradu Banská Bystrica na žiadosť podľa zákona č. 211/2000 Z. z. o slobodnom prístupe k informáciám, ktorou mesto sprístupnilo fotokópiu nájomnej zmluvy č. 526/2007/EM-SM aj s dodatkami.",
+    "issuer": "Mestský úrad Banská Bystrica – JUDr. Marica Koreňová, prednostka",
+    "fileUrl": "",
+    "keyFindings": [
+      "Žiadosť bola doručená 29. 7. 2024, odpoveď je datovaná 31. 7. 2024.",
+      "Číslo spisu: 152116/1099/2024/PS-KC, Inf.89/2024.",
+      "Žiadateľka: Mgr. Magdaléna Kováč Mergová."
+    ],
+    "sourceUrl": "",
+    "sources": []
   },
   {
-    "id": "doc-infoziadost-2024", "slug": "odpoved-infoziadost-2024", "status": "published",
-    "title": "Odpoveď na infožiadosť (2024)", "date": "2024", "category": "infoziadost",
-    "summary": "Odpoveď mesta na žiadosť o informácie podľa zákona o slobodnom prístupe k informáciám. (VZOROVÝ ZÁZNAM.)",
-    "issuer": "Mesto Banská Bystrica", "fileUrl": "", "keyFindings": [], "sourceUrl": "", "isPlaceholder": true
+    "id": "doc-mesto-2024-ukoncit",
+    "slug": "mesto-ma-zaujem-ukoncit-zmluvu-2024",
+    "status": "published",
+    "title": "Mesto má záujem ukončiť zmluvu s prevádzkovateľom kúpaliska",
+    "date": "2024-08-22",
+    "category": "vyjadrenie",
+    "summary": "Oficiálne vyjadrenie Mesta Banská Bystrica, v ktorom deklaruje záujem ukončiť nájomný vzťah a informuje o krokoch, ktoré podniklo.",
+    "issuer": "Mesto Banská Bystrica",
+    "fileUrl": "",
+    "keyFindings": [
+      "Mesto si objednalo právnu analýzu na Univerzite Komenského v Bratislave.",
+      "Mesto pripravovalo znalecký posudok na zhodnotenie investícií nájomcu v areáli.",
+      "Mesto podalo podnet na Regionálny úrad verejného zdravotníctva a na Inšpektorát práce v Banskej Bystrici.",
+      "Podľa mesta si nájomca podmienky prevádzkovania plní, ale „na hranici nutného minima“."
+    ],
+    "sourceUrl": "https://www.banskabystrica.sk/aktuality/2024/mesto-ma-zaujem-ukoncit-zmluvu-s-prevadzkovatelom-kupaliska/",
+    "sources": [
+      { "label": "Mesto Banská Bystrica, 22. 8. 2024", "url": "https://www.banskabystrica.sk/aktuality/2024/mesto-ma-zaujem-ukoncit-zmluvu-s-prevadzkovatelom-kupaliska/" }
+    ]
+  },
+  {
+    "id": "doc-mesto-2026-kontrola",
+    "slug": "mesto-pokracuje-v-systematickej-kontrole-2026",
+    "status": "published",
+    "title": "Mesto pokračuje v systematickej kontrole plážového kúpaliska",
+    "date": "2026-05-07",
+    "category": "vyjadrenie",
+    "summary": "Informácia mesta o pokračovaní systematickej kontroly plnenia zmluvných povinností nájomcu prostredníctvom pracovnej skupiny.",
+    "issuer": "Mesto Banská Bystrica",
+    "fileUrl": "",
+    "keyFindings": [
+      "Na plnenie zmluvných povinností dozerá pracovná skupina zložená zo zamestnancov MsÚ, zástupcov petičného výboru a predsedov poslaneckých klubov.",
+      "Mesto zriadilo kontaktnú adresu plazovekupalisko@banskabystrica.sk pre podnety občanov.",
+      "Mesto uviedlo, že v sezóne 2025 kontrolné orgány nezaznamenali žiadne závažné nedostatky."
+    ],
+    "sourceUrl": "https://www.banskabystrica.sk/aktuality/2026/mesto-pokracuje-v-systematickej-kontrole-plazoveho-kupaliska",
+    "sources": [
+      { "label": "Mesto Banská Bystrica, 7. 5. 2026", "url": "https://www.banskabystrica.sk/aktuality/2026/mesto-pokracuje-v-systematickej-kontrole-plazoveho-kupaliska" }
+    ]
+  },
+  {
+    "id": "doc-mesto-2026-kontrolny-den",
+    "slug": "kontrolny-den-2026-sklamanie",
+    "status": "published",
+    "title": "Kontrolný deň na plážovom kúpalisku priniesol sklamanie",
+    "date": "2026-05-15",
+    "category": "vyjadrenie",
+    "summary": "Vyjadrenie mesta po kontrolnom dni 15. 5. 2026, podľa ktorého areál nebol pripravený na avizované otvorenie sezóny.",
+    "issuer": "Mesto Banská Bystrica",
+    "fileUrl": "",
+    "keyFindings": [
+      "Podľa hovorkyne primátora Zdenky Marhefkovej „viaceré časti kúpaliska pôsobia nedokončene, technicky aj prevádzkovo nepripravené“.",
+      "Mesto avizovalo spracovanie súhrnnej správy s pripomienkami a jej doručenie nájomcovi.",
+      "Pripravenosť areálu mali preveriť aj štátne orgány (hygiena, bezpečnosť)."
+    ],
+    "sourceUrl": "https://www.banskabystrica.sk/aktuality/2026/kontrolny-den-na-plazovom-kupalisku-priniesol-sklamanie/",
+    "sources": [
+      { "label": "Mesto Banská Bystrica, 15. 5. 2026", "url": "https://www.banskabystrica.sk/aktuality/2026/kontrolny-den-na-plazovom-kupalisku-priniesol-sklamanie/" },
+      { "label": "TASR / Teraz.sk", "url": "https://www.teraz.sk/regiony/banska-bystrica-kontrola-na-plazovom/963085-clanok.html" }
+    ]
   }
 ]

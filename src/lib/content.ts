@@ -3,6 +3,7 @@ import { readJson } from "./store";
 import type {
   Article,
   CaseSection,
+  ComparisonData,
   CityAction,
   ContractQA,
   DocumentItem,
@@ -63,6 +64,10 @@ export async function getOpenQuestions(): Promise<OpenQuestion[]> {
 
 export async function getArticles(): Promise<Article[]> {
   return readJson<Article[]>("articles", []);
+}
+
+export async function getComparison(): Promise<ComparisonData> {
+  return readJson<ComparisonData>("comparison", { cityFacts: [], cities: [] });
 }
 
 /** Fallback konfigurácia, ak content/site.json chýba. */

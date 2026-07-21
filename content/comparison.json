@@ -1,0 +1,147 @@
+{
+  "cityFacts": [
+    {
+      "label": "Počet obyvateľov Banskej Bystrice",
+      "value": "73 054",
+      "note": "k 1. 1. 2026, Štatistický úrad SR. Mesto vo vlastnej evidencii uvádza 72 505 osôb s trvalým pobytom k 31. 12. 2025.",
+      "sourceUrl": "https://krajskemesta.statistics.sk/"
+    },
+    {
+      "label": "Poradie medzi mestami SR",
+      "value": "6. najväčšie mesto",
+      "note": "Za Bratislavou, Košicami, Prešovom, Žilinou a Nitrou.",
+      "sourceUrl": "https://krajskemesta.statistics.sk/"
+    },
+    {
+      "label": "Rozpočet mesta na rok 2026",
+      "value": "150 mil. €",
+      "note": "Vyrovnaný rozpočet schválený mestským zastupiteľstvom 19. 11. 2025.",
+      "sourceUrl": "https://www.banskabystrica.sk/aktuality/2025/poslanci-schvalili-rozvojovy-rozpocet-na-rok-2026/"
+    },
+    {
+      "label": "Rozpočet mesta na rok 2025",
+      "value": "110 mil. €",
+      "note": "Vyrovnaný rozpočet, z toho približne 40 mil. € na školstvo.",
+      "sourceUrl": "https://www.banskabystrica.sk/aktuality/2024/banska-bystrica-ma-rozpocet-na-rok-2025-prioritou-je-obnova-skol-ciest-chodnikov-a-zelene/"
+    },
+    {
+      "label": "Prenajatá plocha kúpaliska",
+      "value": "37 332 m²",
+      "note": "Z toho vodná plocha 23 106 m². Majetok mesta prenajatý do roku 2037.",
+      "sourceUrl": ""
+    }
+  ],
+  "cities": [
+    {
+      "id": "bb",
+      "city": "Banská Bystrica",
+      "population": "73 054",
+      "facility": "Plážové kúpalisko",
+      "operator": "Súkromný nájomca – AQUALAND Slovakia s.r.o.",
+      "operatorType": "private",
+      "detail": "Mestský majetok prenajatý na 30 rokov (2007–2037) s opciou 10 rokov.",
+      "inOperation": "Áno – sezóna 2026 sa začala 18. 6. 2026",
+      "sourceUrl": "https://www.bystricak.sk/clanky/11942/foto-leto-v-banskej-bystrici-moze-naplno-zacat-plazove-kupalisko-po-dlhsom-cakani-konecne-startuje-sezonu",
+      "highlight": true
+    },
+    {
+      "id": "kosice",
+      "city": "Košice",
+      "population": "223 678",
+      "facility": "Červená hviezda, Rumanova",
+      "operator": "TEPELNÉ HOSPODÁRSTVO s.r.o. (TEHO)",
+      "operatorType": "municipal",
+      "detail": "Mestská firma. Červená hviezda obnovená v r. 2016, náklady cca 4 mil. €.",
+      "inOperation": "Áno",
+      "sourceUrl": "https://www.teho.sk/mestske-kupaliska"
+    },
+    {
+      "id": "presov",
+      "city": "Prešov",
+      "population": "81 223",
+      "facility": "Prírodné kúpalisko Delňa",
+      "operator": "PREŠOV REAL, s.r.o.",
+      "operatorType": "municipal",
+      "detail": "Mestská spoločnosť. Pred sezónou priebežné opravy – čistenie dna, mólo, nové prezliekarne.",
+      "inOperation": "Áno",
+      "sourceUrl": "https://www.presovreal.sk/prevadzka_rekreacneho_arealu_delna/"
+    },
+    {
+      "id": "zilina",
+      "city": "Žilina",
+      "population": "79 873",
+      "facility": "Letné kúpalisko pri Plavárni Žilina",
+      "operator": "Šport Žilina, s.r.o.",
+      "operatorType": "municipal",
+      "detail": "Mestská s.r.o., zakladateľom je mesto. V roku 2026 prvá etapa rekonštrukcie za viac než 160 000 € bez DPH.",
+      "inOperation": "Áno",
+      "sourceUrl": "https://www.sportzilina.sk/o-organizacii/"
+    },
+    {
+      "id": "nitra",
+      "city": "Nitra",
+      "population": "75 301",
+      "facility": "Letné kúpalisko na Sihoti",
+      "operator": "Službyt Nitra, s.r.o.",
+      "operatorType": "municipal",
+      "detail": "Mestská s.r.o., jediným spoločníkom je Mesto Nitra. Kapacita približne 3 590 osôb.",
+      "inOperation": "Áno – od 20. 6. 2026",
+      "sourceUrl": "https://nitra.sk/mestske-organizacie/sluzbyt-nitra-s-r-o/"
+    },
+    {
+      "id": "trencin",
+      "city": "Trenčín",
+      "population": "54 104",
+      "facility": "Letné kúpalisko na Ostrove",
+      "operator": "Mestské hospodárstvo a správa lesov, m.r.o.",
+      "operatorType": "municipal",
+      "detail": "Mestská rozpočtová organizácia. Podmienky prevádzky upravuje VZN č. 9/2025.",
+      "inOperation": "Áno – od 27. 6. 2026",
+      "sourceUrl": "https://trencin.sk/pre-obcanov/sport/letne-kupalisko-na-ostrove-v-trencine/"
+    },
+    {
+      "id": "martin",
+      "city": "Martin",
+      "population": "50 153",
+      "facility": "Letné kúpalisko a krytá plaváreň",
+      "operator": "Súkromný nájomca – SUNNY Martin",
+      "operatorType": "private",
+      "detail": "Mestský majetok prenajatý súkromnému prevádzkovateľovi na obdobie 2022–2037. Podobný model ako v Banskej Bystrici.",
+      "inOperation": "Áno – od 19. 6. 2026",
+      "sourceUrl": "https://tvturiec.eu/krytu-plavaren-a-letne-kupalisko-bude-prevadzkovat-do-roku-2037-spolocnost-sunny-martin/"
+    },
+    {
+      "id": "michalovce",
+      "city": "Michalovce",
+      "population": "34 680",
+      "facility": "Mestská plaváreň (krytá, celoročná)",
+      "operator": "Technické a záhradnícke služby mesta",
+      "operatorType": "municipal",
+      "detail": "Komplexná rekonštrukcia 2021–2023 za 4 055 540 €, z toho dotácia Úradu vlády SR 2 145 000 €.",
+      "inOperation": "Áno – od 1. 8. 2023",
+      "sourceUrl": "https://www.michalovce.sk/sk/clanok/vynovena-plavaren-v-michalovciach"
+    },
+    {
+      "id": "zvolen",
+      "city": "Zvolen",
+      "population": "38 747",
+      "facility": "Kúpalisko Neresnica",
+      "operator": "Mesto (bez prevádzkovateľa)",
+      "operatorType": "none",
+      "detail": "Zatvorené od roku 2017. Komplexná obnova vyčíslená na 3,4 mil. €. Prekážkou je aj rozdrobené vlastníctvo pozemkov a chýbajúca kanalizácia.",
+      "inOperation": "Nie",
+      "sourceUrl": "https://spravy.stvr.sk/2025/06/kedysi-oblubene-kupalisko-vo-zvolene-chatra-opravit-ho-sa-nikto-nechysta-mesto-ma-inu-prioritu/"
+    },
+    {
+      "id": "poprad",
+      "city": "Poprad",
+      "population": "48 034",
+      "facility": "AquaCity Poprad",
+      "operator": "Súkromný subjekt – AQUAPARK Poprad, s.r.o.",
+      "operatorType": "private",
+      "detail": "Mesto svoj 15 % podiel predalo v roku 2020. Samostatné mestské letné kúpalisko sa nepodarilo doložiť.",
+      "inOperation": "Áno",
+      "sourceUrl": "https://sita.sk/vrealitach/akvapark-v-poprade-ma-noveho-financneho-partnera-prejde-si-kompletnou-zmenou-a-v-hre-su-i-dalsie-atrakcie/"
+    }
+  ]
+}

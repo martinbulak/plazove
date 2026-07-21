@@ -1,22 +1,75 @@
 [
   {
-    "id": "ca1", "status": "published", "date": "2022", "step": "Zadanie právnej analýzy k možnostiam ukončenia zmluvy",
-    "actionStatus": "done", "note": "Podľa verejných informácií malo byť stanovisko vypracované. (VZOROVÝ ZÁZNAM.)",
-    "isPlaceholder": true, "sources": []
+    "id": "ca-2022-analyza", "status": "published", "date": "2022-12-09",
+    "step": "Zadanie a získanie právnej analýzy možností ukončenia zmluvy",
+    "actionStatus": "done",
+    "note": "Mesto si listom zo 14. 10. 2022 objednalo stanovisko na Právnickej fakulte UK. Stanovisko bolo doručené 9. 12. 2022 (PLP 060/2022).",
+    "sources": [
+      { "label": "Právne stanovisko PF UK", "documentId": "doc-pravne-stanovisko-2022" }
+    ]
   },
   {
-    "id": "ca2", "status": "published", "date": "2023", "step": "Verejný prísľub riešiť stav areálu",
-    "actionStatus": "in_progress", "note": "Deklarovaný zámer riešiť situáciu. (VZOROVÝ ZÁZNAM – doplňte zdroj a aktuálny stav.)",
-    "isPlaceholder": true, "sources": []
+    "id": "ca-2024-podnety", "status": "published", "date": "2024-08-22",
+    "step": "Podanie podnetov na RÚVZ a Inšpektorát práce",
+    "actionStatus": "done",
+    "note": "Mesto podalo podnety týkajúce sa vzoriek vody a sociálnych zariadení (RÚVZ) a herných prvkov a nafukovacích atrakcií (Inšpektorát práce). Konkrétne výsledky kontrol (protokoly, sankcie) neboli vo verejných zdrojoch nájdené.",
+    "sources": [
+      { "label": "Mesto Banská Bystrica, 22. 8. 2024", "url": "https://www.banskabystrica.sk/aktuality/2024/mesto-ma-zaujem-ukoncit-zmluvu-s-prevadzkovatelom-kupaliska/" }
+    ]
   },
   {
-    "id": "ca3", "status": "published", "date": "2024", "step": "Výzva nájomcovi na odstránenie nedostatkov",
-    "actionStatus": "no_answer", "note": "Nie je verejne známe, či a s akým výsledkom bola výzva doručená. (VZOROVÝ ZÁZNAM.)",
-    "isPlaceholder": true, "sources": []
+    "id": "ca-2024-zamer", "status": "published", "date": "2024-08-22",
+    "step": "Verejné deklarovanie záujmu ukončiť nájomný vzťah",
+    "actionStatus": "in_progress",
+    "note": "Mesto uviedlo, že má záujem zmluvu ukončiť, no podľa prednostky MsÚ Marice Koreňovej „k ukončeniu zmluvného vzťahu musí dôjsť takým spôsobom, aby nám nevznikli ďalšie škody“. K ukončeniu zmluvy doteraz nedošlo.",
+    "sources": [
+      { "label": "Mesto Banská Bystrica, 22. 8. 2024", "url": "https://www.banskabystrica.sk/aktuality/2024/mesto-ma-zaujem-ukoncit-zmluvu-s-prevadzkovatelom-kupaliska/" }
+    ]
   },
   {
-    "id": "ca4", "status": "published", "date": "2024", "step": "Zverejnenie aktuálneho plánu ďalšieho postupu",
-    "actionStatus": "not_done", "note": "Ucelený verejný plán zatiaľ nie je k dispozícii. (VZOROVÝ ZÁZNAM.)",
-    "isPlaceholder": true, "sources": []
+    "id": "ca-2024-posudok", "status": "published", "date": "2024-08-22",
+    "step": "Príprava znaleckého posudku na zhodnotenie investícií",
+    "actionStatus": "no_answer",
+    "note": "Mesto vypracovanie posudku avizovalo v auguste 2024. Jeho výsledok ani zverejnenie sa vo verejne dostupných zdrojoch nepodarilo dohľadať.",
+    "sources": [
+      { "label": "Mesto Banská Bystrica, 22. 8. 2024", "url": "https://www.banskabystrica.sk/aktuality/2024/mesto-ma-zaujem-ukoncit-zmluvu-s-prevadzkovatelom-kupaliska/" }
+    ]
+  },
+  {
+    "id": "ca-2025-obhliadky", "status": "published", "date": "2025-05-22",
+    "step": "Obhliadky areálu pred sezónou 2025 a pripomienkovanie",
+    "actionStatus": "done",
+    "note": "Obhliadka 15. 4. 2025 za účasti MsÚ, poslancov a petičného výboru; pripomienky petičného výboru doručené 28. 4.; nájomca požiadal 19. 5. o predĺženie lehoty a odpovede doručil 21. 5.; následná obhliadka bola preložená na 29. 5. 2025.",
+    "sources": [
+      { "label": "Mesto Banská Bystrica, 22. 5. 2025", "url": "https://www.banskabystrica.sk/aktuality/2025/aktualne-informacie-k-plazovemu-kupalisku/" }
+    ]
+  },
+  {
+    "id": "ca-2026-skupina", "status": "published", "date": "2026-05-07",
+    "step": "Systematická kontrola cez pracovnú skupinu a kontaktný e-mail pre podnety",
+    "actionStatus": "in_progress",
+    "note": "Na plnenie zmluvných povinností dozerá pracovná skupina (MsÚ, petičný výbor, predsedovia poslaneckých klubov). Mesto zriadilo adresu plazovekupalisko@banskabystrica.sk. Mesto uviedlo, že v sezóne 2025 kontrolné orgány nezaznamenali závažné nedostatky.",
+    "sources": [
+      { "label": "Mesto Banská Bystrica, 7. 5. 2026", "url": "https://www.banskabystrica.sk/aktuality/2026/mesto-pokracuje-v-systematickej-kontrole-plazoveho-kupaliska" }
+    ]
+  },
+  {
+    "id": "ca-2026-kontrolny-den", "status": "published", "date": "2026-05-15",
+    "step": "Kontrolný deň pred sezónou 2026 a súhrnná správa nájomcovi",
+    "actionStatus": "done",
+    "note": "Mesto konštatovalo, že areál nie je pripravený na avizované otvorenie, a avizovalo spracovanie súhrnnej správy s pripomienkami a jej doručenie nájomcovi. Ďalšia obhliadka bola predbežne naplánovaná na 19. 6. 2026.",
+    "sources": [
+      { "label": "Mesto Banská Bystrica, 15. 5. 2026", "url": "https://www.banskabystrica.sk/aktuality/2026/kontrolny-den-na-plazovom-kupalisku-priniesol-sklamanie/" },
+      { "label": "TASR / Teraz.sk", "url": "https://www.teraz.sk/regiony/banska-bystrica-kontrola-na-plazovom/963085-clanok.html" }
+    ]
+  },
+  {
+    "id": "ca-vypoved", "status": "published", "date": "2026-05-15",
+    "step": "Jednostranné ukončenie zmluvy (výpoveď)",
+    "actionStatus": "not_done",
+    "note": "Podľa právnych analýz, na ktoré sa mesto opakovane odvoláva, nie je jednostranné vypovedanie zmluvy možné. Ukončenie prichádza do úvahy dohodou alebo odstúpením pri podstatnom porušení. K dohode zatiaľ nedošlo a podanie žaloby sa vo verejných zdrojoch nepodarilo doložiť.",
+    "sources": [
+      { "label": "Právne stanovisko PF UK, bod 3.7 Záver", "documentId": "doc-pravne-stanovisko-2022", "page": 37 }
+    ]
   }
 ]

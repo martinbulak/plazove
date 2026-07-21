@@ -2,31 +2,73 @@
   {
     "id": "q1", "status": "published", "actionStatus": "no_answer",
     "question": "Boli všetky deklarované investície nájomcu riadne preukázané a overené?",
-    "cityAnswer": "", "lastUpdated": "2024-07-01", "isPlaceholder": true, "sources": []
+    "cityAnswer": "",
+    "lastUpdated": "2026-07-21",
+    "sources": [
+      { "label": "Právne stanovisko PF UK malo doklady len za časť obdobia (chýbali doklady do 31. 12. 2009)", "documentId": "doc-pravne-stanovisko-2022", "page": 30 }
+    ]
   },
   {
     "id": "q2", "status": "published", "actionStatus": "no_answer",
-    "question": "Aké konkrétne kroky mesto vykonalo po právnom stanovisku?",
-    "cityAnswer": "", "lastUpdated": "2024-07-01", "isPlaceholder": true, "sources": []
+    "question": "Aký je výsledok znaleckého posudku na zhodnotenie investícií, ktorý mesto avizovalo v roku 2024?",
+    "cityAnswer": "",
+    "lastUpdated": "2026-07-21",
+    "sources": [
+      { "label": "Posudok avizovaný mestom 22. 8. 2024; výsledok nebol vo verejných zdrojoch nájdený", "url": "https://www.banskabystrica.sk/aktuality/2024/mesto-ma-zaujem-ukoncit-zmluvu-s-prevadzkovatelom-kupaliska/" }
+    ]
   },
   {
     "id": "q3", "status": "published", "actionStatus": "no_answer",
-    "question": "Bol nájomca vyzvaný na odstránenie konkrétnych porušení?",
-    "cityAnswer": "", "lastUpdated": "2024-07-01", "isPlaceholder": true, "sources": []
+    "question": "Bol nájomca formálne vyzvaný na odstránenie konkrétnych porušení a bola mu určená dodatočná lehota?",
+    "cityAnswer": "",
+    "lastUpdated": "2026-07-21",
+    "sources": [
+      { "label": "Právne stanovisko označuje dodatočnú lehotu za podmienku platného odstúpenia od zmluvy", "documentId": "doc-pravne-stanovisko-2022", "page": 31 }
+    ]
   },
   {
     "id": "q4", "status": "published", "actionStatus": "no_answer",
-    "question": "Bola nájomcovi určená dodatočná lehota na nápravu?",
-    "cityAnswer": "", "lastUpdated": "2024-07-01", "isPlaceholder": true, "sources": []
+    "question": "Aké boli konkrétne výsledky kontrol RÚVZ a Inšpektorátu práce po podnetoch mesta z roku 2024?",
+    "cityAnswer": "",
+    "lastUpdated": "2026-07-21",
+    "sources": [
+      { "label": "Protokoly ani sankcie neboli vo verejných zdrojoch nájdené; k dispozícii sú len sumárne mediálne interpretácie" }
+    ]
   },
   {
     "id": "q5", "status": "published", "actionStatus": "not_done",
-    "question": "Aký je aktuálny plán mesta s areálom?",
-    "cityAnswer": "", "lastUpdated": "2024-07-01", "isPlaceholder": true, "sources": []
+    "question": "Existuje aktuálny a zverejnený plán mesta, čo bude s areálom ďalej?",
+    "cityAnswer": "Mesto opakovane deklaruje záujem ukončiť zmluvu, no ucelený zverejnený plán postupu s termínmi sa vo verejných zdrojoch nepodarilo dohľadať.",
+    "lastUpdated": "2026-07-21",
+    "sources": [
+      { "label": "Mesto Banská Bystrica, 22. 8. 2024", "url": "https://www.banskabystrica.sk/aktuality/2024/mesto-ma-zaujem-ukoncit-zmluvu-s-prevadzkovatelom-kupaliska/" }
+    ]
   },
   {
     "id": "q6", "status": "published", "actionStatus": "no_answer",
-    "question": "Existuje aktuálny znalecký alebo technický posudok stavu areálu?",
-    "cityAnswer": "", "lastUpdated": "2024-07-01", "isPlaceholder": true, "sources": []
+    "question": "Prečo nie sú zverejnené kľúčové dokumenty – audit z roku 2018 a úplné znenie kontrolných zistení?",
+    "cityAnswer": "",
+    "lastUpdated": "2026-07-21",
+    "sources": [
+      { "label": "Audit je uvedený medzi podkladmi stanoviska PF UK, jeho závery však nie sú verejné", "documentId": "doc-audit-2018" }
+    ]
+  },
+  {
+    "id": "q7", "status": "published", "actionStatus": "no_answer",
+    "question": "Využíva mesto svoje zmluvné právo na mesačnú kontrolu areálu podľa čl. IV ods. 11?",
+    "cityAnswer": "",
+    "lastUpdated": "2026-07-21",
+    "sources": [
+      { "label": "Nájomná zmluva, čl. IV ods. 11 – právo kontroly raz mesačne", "documentId": "doc-zmluva-2007", "page": 5 }
+    ]
+  },
+  {
+    "id": "q8", "status": "published", "actionStatus": "no_answer",
+    "question": "Vedelo mesto o projekte nájomcu podanom na Fond na podporu športu na obnovu detského bazéna?",
+    "cityAnswer": "",
+    "lastUpdated": "2026-07-21",
+    "sources": [
+      { "label": "Tvrdenie z reportu aktivistky z kontrolného dňa 30. 6. 2026 – nejde o overené zistenie mesta", "url": "https://www.facebook.com/magdalenakovacmergova/posts/pfbid0dPxpiwRJoQdkrmnbwGn52jxW1MGnY29fsat2EhQcSNgYufQ6JK18pKW4yHz1pQBJl" }
+    ]
   }
 ]

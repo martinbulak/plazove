@@ -8,15 +8,36 @@ export interface NavItem {
 }
 
 export const MAIN_NAV: NavItem[] = [
-  { href: "/pripad", label: "Prípad v skratke", desc: "Čo sa stalo, komu a na ako dlho" },
-  { href: "/casova-os", label: "Časová os", desc: "Chronológia udalostí" },
-  { href: "/zmluva", label: "Zmluva", desc: "Laický rozbor nájomnej zmluvy" },
-  { href: "/dokumenty", label: "Dokumenty", desc: "Zmluvy, analýzy, audity, uznesenia" },
-  { href: "/galeria", label: "Galéria", desc: "Aktuálny a historický stav areálu" },
-  { href: "/nazory", label: "Názory verejnosti", desc: "Verejne publikované skúsenosti" },
-  { href: "/co-urobilo-mesto", label: "Čo urobilo mesto", desc: "Kroky a prísľuby mesta" },
-  { href: "/otvorene-otazky", label: "Otvorené otázky", desc: "Na čo nie je jasná odpoveď" },
-  { href: "/o-projekte", label: "O projekte", desc: "Kto a prečo web prevádzkuje" },
+  {
+    href: "/pripad",
+    label: "Prípad a chronológia",
+    desc: "Čo sa stalo, komu mesto areál prenajalo a ako sa situácia vyvíjala",
+  },
+  {
+    href: "/zmluva",
+    label: "Zmluva a dokumenty",
+    desc: "Laický rozbor nájomnej zmluvy a archív dokumentov",
+  },
+  {
+    href: "/aktualny-stav",
+    label: "Aktuálny stav",
+    desc: "Kroky mesta, otvorené otázky a názory verejnosti",
+  },
+  {
+    href: "/porovnanie",
+    label: "Porovnanie a súvislosti",
+    desc: "Ako to riešia iné mestá a v akom kontexte",
+  },
+  {
+    href: "/galeria",
+    label: "Galéria",
+    desc: "Fotografie stavu areálu",
+  },
+  {
+    href: "/o-projekte",
+    label: "O projekte",
+    desc: "Kto a prečo web prevádzkuje",
+  },
 ];
 
 export const CTA_NAV: NavItem = {

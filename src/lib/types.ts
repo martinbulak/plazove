@@ -190,6 +190,45 @@ export interface OpinionItem extends BaseEntity {
   embedHtml?: string;
   /** Bol príspevok manuálne schválený administrátorom? */
   approved: boolean;
+  /** Redakčná poznámka ku kontextu zdroja (napr. politická angažovanosť autora). */
+  note?: string;
+}
+
+/* ── Porovnanie a súvislosti ─────────────────────────────────────────── */
+
+export interface CityFact {
+  label: string;
+  value: string;
+  note?: string;
+  sourceUrl?: string;
+}
+
+/** Typ prevádzkovateľa kúpaliska v porovnávaných mestách. */
+export type OperatorType = "municipal" | "private" | "none";
+
+export const OPERATOR_TYPE_LABEL: Record<OperatorType, string> = {
+  municipal: "Mesto / mestská organizácia",
+  private: "Súkromný subjekt",
+  none: "Mimo prevádzky",
+};
+
+export interface CityComparison {
+  id: string;
+  city: string;
+  population: string;
+  facility: string;
+  operator: string;
+  operatorType: OperatorType;
+  detail?: string;
+  inOperation: string;
+  sourceUrl?: string;
+  /** Zvýrazniť riadok (Banská Bystrica). */
+  highlight?: boolean;
+}
+
+export interface ComparisonData {
+  cityFacts: CityFact[];
+  cities: CityComparison[];
 }
 
 /* ── 8. Čo urobilo mesto ─────────────────────────────────────────────── */

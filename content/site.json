@@ -5,13 +5,14 @@
   "heroSubtitle": "Dokumenty, právne analýzy, fotografie a skúsenosti verejnosti na jednom mieste.",
   "disclaimer": "Toto nie je oficiálny web prevádzkovateľa plážového kúpaliska ani Mesta Banská Bystrica. Ide o nezávislý občiansky informačný projekt.",
   "heroFacts": [
-    { "label": "Nájomná zmluva uzatvorená", "value": "2007", "kind": "fact" },
-    { "label": "Nájom do roku", "value": "2037", "kind": "fact" },
-    { "label": "Vlastník areálu", "value": "Mesto (verejný majetok)", "kind": "fact" },
-    { "label": "Deklarovaná povinnosť nájomcu", "value": "Investície do areálu", "kind": "document_conclusion" },
-    { "label": "Právna analýza možností", "value": "Ukončenie zmluvy", "kind": "legal_interpretation" }
+    { "label": "Nájomná zmluva podpísaná", "value": "15. 10. 2007", "kind": "fact" },
+    { "label": "Nájom trvá do", "value": "30. 9. 2037 (+ opcia 10 rokov)", "kind": "fact" },
+    { "label": "Prenajatá plocha mesta", "value": "37 332 m²", "kind": "fact" },
+    { "label": "Investičná povinnosť nájomcu", "value": "100 mil. Sk (3 319 391 €)", "kind": "citation" },
+    { "label": "Ukončenie výpoveďou", "value": "Podľa analýzy UK nie je možné", "kind": "legal_interpretation" },
+    { "label": "Právo mesta na kontrolu", "value": "Raz mesačne (čl. IV ods. 11)", "kind": "citation" }
   ],
   "contactEmail": "kontakt@aqualandbb.sk",
   "operator": "Občiansky informačný projekt Aqualand BB – verejná kontrola",
-  "petitionText": "My, dolupodpísaní obyvatelia a obyvateľky Banskej Bystrice a okolia, vyzývame Mesto Banská Bystrica, aby aktívne, transparentne a v súlade s platnou nájomnou zmluvou riešilo súčasný stav plážového kúpaliska ako verejného majetku. Žiadame mesto, aby zverejnilo aktuálny plán ďalšieho postupu, preverilo plnenie zmluvných povinností nájomcu a informovalo verejnosť o vykonaných a plánovaných krokoch."
+  "petitionText": "My, dolupodpísaní obyvatelia a obyvateľky Banskej Bystrice a okolia, vyzývame Mesto Banská Bystrica, aby aktívne, transparentne a v súlade s platnou nájomnou zmluvou riešilo súčasný stav plážového kúpaliska ako verejného majetku. Žiadame mesto, aby zverejnilo aktuálny plán ďalšieho postupu, dôsledne využívalo svoje kontrolné právo podľa článku IV ods. 11 nájomnej zmluvy, preverilo a zdokumentovalo plnenie investičných a prevádzkových povinností nájomcu a o vykonaných aj plánovaných krokoch pravidelne informovalo verejnosť."
 }
