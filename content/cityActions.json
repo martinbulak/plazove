@@ -27,12 +27,12 @@
     ]
   },
   {
-    "id": "ca-2024-posudok", "status": "published", "date": "2024-08-22",
-    "step": "Príprava znaleckého posudku na zhodnotenie investícií",
-    "actionStatus": "no_answer",
-    "note": "Mesto vypracovanie posudku avizovalo v auguste 2024. Jeho výsledok ani zverejnenie sa vo verejne dostupných zdrojoch nepodarilo dohľadať.",
+    "id": "ca-2024-posudok", "status": "published", "date": "2026-05-11",
+    "step": "Zadanie dvoch znaleckých posudkov na zhodnotenie investícií",
+    "actionStatus": "in_progress",
+    "note": "Mesto si objednalo dva posudky. K 11. 5. 2026 je jeden hotový; druhý sa nedá dokončiť, pretože si vyžaduje obhliadku priestorov nájomcu a ten podľa mesta neposkytol súčinnosť.",
     "sources": [
-      { "label": "Mesto Banská Bystrica, 22. 8. 2024", "url": "https://www.banskabystrica.sk/aktuality/2024/mesto-ma-zaujem-ukoncit-zmluvu-s-prevadzkovatelom-kupaliska/" }
+      { "label": "Odpoveď mesta na infožiadosť Inf. 57/2026, bod 3", "documentId": "doc-infoziadost-2026" }
     ]
   },
   {

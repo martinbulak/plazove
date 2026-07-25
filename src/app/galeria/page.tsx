@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Section, SectionHeading, PlaceholderNotice } from "@/components/ui";
+import { Section, SectionHeading } from "@/components/ui";
 import { Gallery } from "@/components/Gallery";
 import { getGallery, onlyPublished } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Galéria",
   description:
-    "Fotogaléria aktuálneho a historického stavu areálu plážového kúpaliska v Banskej Bystrici. Vzorové placeholder fotografie. Nezávislý informačný projekt.",
+    "Fotografie stavu areálu plážového kúpaliska v Banskej Bystrici z rokov 2013–2024 z fotodokumentácie petičného výboru. Nezávislý informačný projekt.",
 };
 
 // ISR: obsah sa obnovuje z KV (ak je nastavené) každých 60 s.
@@ -21,14 +21,18 @@ export default async function GalleryPage() {
       <SectionHeading
         as="h1"
         eyebrow="Galéria"
-        title="Aktuálny a historický stav areálu"
-        intro="Fotografie dokumentujúce stav verejného majetku. Po kliknutí sa fotografia otvorí vo väčšom zobrazení. Pri každej fotografii uvádzame dátum, autora/zdroj a či ide o vlastnú alebo prevzatú fotografiu."
+        title="Stav areálu na fotografiách"
+        intro="Fotografie dokumentujúce stav verejného majetku v rokoch 2013 – 2024. Po kliknutí sa fotografia otvorí vo väčšom zobrazení. Pri každej fotografii uvádzame dátum a zdroj."
       />
 
-      <PlaceholderNotice>
-        Zobrazené fotografie sú vzorové (placeholder) grafiky, nie skutočné zábery
-        areálu. Skutočné fotografie treba nahrať cez administráciu.
-      </PlaceholderNotice>
+      <div className="mb-6 rounded-lg border border-ink-200 bg-ink-50 px-4 py-3 text-sm text-ink-600">
+        <strong>Zdroj a kontext:</strong> fotografie pochádzajú z fotodokumentácie
+        petičného výboru za záchranu plážového kúpaliska (zábery Ľubice Bučkovej
+        z rokov 2013 a 2016 a petičného výboru z roku 2024), ktorá bola predložená
+        aj mestskému zastupiteľstvu. Ide o výber; kompletné materiály obsahujú
+        stovky záberov. Popisy pod fotografiami sú redakčne neutrálne – hodnotenia
+        stavu sú vecou pisateľov pôvodných materiálov.
+      </div>
 
       <Gallery items={items} />
 

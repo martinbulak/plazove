@@ -1,5 +1,31 @@
 [
   {
+    "id": "t-1957",
+    "status": "published",
+    "date": "1957",
+    "title": "Otvorenie plážového kúpaliska",
+    "description": "Plážové kúpalisko bolo podľa historického prehľadu petičného výboru otvorené v roku 1957. Ide o dlhoročný verejný areál v centre mesta.",
+    "tag": "historia",
+    "sources": [
+      {
+        "label": "Historický prehľad petičného výboru (list mestskému zastupiteľstvu, 2024)"
+      }
+    ]
+  },
+  {
+    "id": "t-1988",
+    "status": "published",
+    "date": "1988",
+    "title": "Dokončené tri nové bazény",
+    "description": "Podľa historického prehľadu petičného výboru boli v roku 1988 v areáli dokončené tri nové bazény.",
+    "tag": "historia",
+    "sources": [
+      {
+        "label": "Historický prehľad petičného výboru (list mestskému zastupiteľstvu, 2024)"
+      }
+    ]
+  },
+  {
     "id": "t-2007-05",
     "status": "published",
     "date": "2007-05-29",
@@ -115,6 +141,20 @@
     ]
   },
   {
+    "id": "t-2011",
+    "status": "published",
+    "date": "2011",
+    "title": "Prvá petícia za plážové kúpalisko",
+    "description": "Za záchranu plážového kúpaliska vznikla prvá petícia, ktorú iniciovala občianka Ľubica Bučková. Po nej vznikla aj fotodokumentácia stavu areálu.",
+    "tag": "peticia",
+    "sources": [
+      {
+        "label": "Fotodokumentácia a prehľad petičného výboru",
+        "documentId": "doc-foto-2013"
+      }
+    ]
+  },
+  {
     "id": "t-2012-04",
     "status": "published",
     "date": "2012-04-10",
@@ -203,21 +243,6 @@
     ]
   },
   {
-    "id": "t-2026-06",
-    "status": "published",
-    "date": "2026-06-30",
-    "title": "Kontrolný deň na kúpalisku pred sezónou",
-    "description": "Podľa verejného reportu aktivistky Magdalény Kováč Mergovej sa 30. 6. 2026 uskutočnil kontrolný deň v areáli. V reporte uvádza, že práce v areáli neboli dokončené a že nájomca podal projekt na Fond na podporu športu na obnovu detského bazéna bez vedomia mesta. Ide o tvrdenia konkrétnej osoby, nie o overené zistenia mesta.",
-    "tag": "aktualne",
-    "sources": [
-      {
-        "label": "Report z kontrolného dňa – Meggie Kováč Mergová, Facebook, 30. 6. 2026",
-        "url": "https://www.facebook.com/magdalenakovacmergova/posts/pfbid0dPxpiwRJoQdkrmnbwGn52jxW1MGnY29fsat2EhQcSNgYufQ6JK18pKW4yHz1pQBJl"
-      }
-    ],
-    "milestone": true
-  },
-  {
     "id": "t-2024-08",
     "status": "published",
     "date": "2024-08-22",
@@ -231,5 +256,54 @@
         "url": "https://www.banskabystrica.sk/aktuality/2024/mesto-ma-zaujem-ukoncit-zmluvu-s-prevadzkovatelom-kupaliska/"
       }
     ]
+  },
+  {
+    "id": "t-2024-09",
+    "status": "published",
+    "date": "2024-09-20",
+    "title": "Petícia za obnovu kúpaliska pred zastupiteľstvom",
+    "milestone": true,
+    "description": "Petičný výbor predložil mestskému zastupiteľstvu petíciu za záchranu a obnovu plážového kúpaliska spolu s fotodokumentáciou stavu areálu. Petíciu podľa výboru podpísalo vyše 5 000 ľudí; médiá uvádzali približne 5 217 podpisov. Petícia žiadala riešenie zmluvného vzťahu a obnovu areálu.",
+    "tag": "peticia",
+    "sources": [
+      {
+        "label": "Podklad petičného výboru mestskému zastupiteľstvu (20. 9. 2024)",
+        "documentId": "doc-foto-2024"
+      },
+      {
+        "label": "Info.sk – petíciu podpísalo niekoľko tisíc občanov",
+        "url": "https://www.info.sk/sprava/253329/mesto-bojuje-o-kontroverzne-kupalisko-peticiu-podpisalo-niekolko-tisic-obcanov/"
+      }
+    ]
+  },
+  {
+    "id": "t-2026-05-11",
+    "status": "published",
+    "date": "2026-05-11",
+    "title": "Mesto odpovedalo: jeden posudok hotový, druhý blokuje nájomca",
+    "milestone": true,
+    "description": "V odpovedi na infožiadosť (Inf. 57/2026) mesto uviedlo, že z dvoch objednaných znaleckých posudkov je jeden hotový. Druhý sa nedá dokončiť, lebo si vyžaduje obhliadku priestorov vo vlastníctve nájomcu a ten napriek opakovaným žiadostiam neposkytol súčinnosť. Mesto tiež uviedlo, že k údajnej exekúcii na nájomcu nemá právoplatné rozhodnutie.",
+    "tag": "mesto",
+    "sources": [
+      {
+        "label": "Odpoveď mesta na infožiadosť Inf. 57/2026 (11. 5. 2026)",
+        "documentId": "doc-infoziadost-2026"
+      }
+    ]
+  },
+  {
+    "id": "t-2026-06",
+    "status": "published",
+    "date": "2026-06-30",
+    "title": "Kontrolný deň na kúpalisku pred sezónou",
+    "description": "Podľa verejného reportu aktivistky Magdalény Kováč Mergovej sa 30. 6. 2026 uskutočnil kontrolný deň v areáli. V reporte uvádza, že práce v areáli neboli dokončené a že nájomca podal projekt na Fond na podporu športu na obnovu detského bazéna bez vedomia mesta. Ide o tvrdenia konkrétnej osoby, nie o overené zistenia mesta.",
+    "tag": "aktualne",
+    "sources": [
+      {
+        "label": "Report z kontrolného dňa – Meggie Kováč Mergová, Facebook, 30. 6. 2026",
+        "url": "https://www.facebook.com/magdalenakovacmergova/posts/pfbid0dPxpiwRJoQdkrmnbwGn52jxW1MGnY29fsat2EhQcSNgYufQ6JK18pKW4yHz1pQBJl"
+      }
+    ],
+    "milestone": true
   }
 ]

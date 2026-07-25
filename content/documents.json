@@ -179,6 +179,62 @@
     ]
   },
   {
+    "id": "doc-infoziadost-2026",
+    "slug": "odpoved-na-infoziadost-57-2026",
+    "status": "published",
+    "title": "Odpoveď mesta na infožiadosť o pláne a stave kúpaliska (Inf. 57/2026)",
+    "date": "2026-05-11",
+    "category": "infoziadost",
+    "summary": "Odpoveď Mestského úradu Banská Bystrica na 10 otázok o pláne mesta, znaleckých posudkoch, rokovaniach s nájomcom a hygiene. Žiadosť podala 20. 4. 2026 Magdaléna Kováč Mergová, odpoveď je datovaná 11. 5. 2026.",
+    "issuer": "Mestský úrad Banská Bystrica – JUDr. Marica Koreňová, prednostka",
+    "fileUrl": "",
+    "keyFindings": [
+      "Mesto si objednalo dva znalecké posudky. Jeden je hotový; druhý sa nedá dokončiť, lebo si vyžaduje obhliadku priestorov vo vlastníctve nájomcu a ten napriek opakovaným žiadostiam mesta neposkytol súčinnosť.",
+      "Mesto k dňu odpovede nemá od nájomcu spracované dáta o návštevnosti ani spokojnosti za sezónu 2025.",
+      "Areál sa využíva celoročne (v zime bežkovanie a rybolov v spolupráci s mestskou organizáciou ZaRES).",
+      "Nájomca realizoval stavbu na zvýšenie podielu elektriny z obnoviteľných zdrojov.",
+      "Pracovná skupina zasadala 30. 4. 2026; komplexná obhliadka bola naplánovaná na 15. 5. 2026.",
+      "K údajnej exekúcii na nájomcu mesto uvádza, že nemá právoplatné rozhodnutie ani úradný podklad, na základe ktorého by vedelo vyhodnotiť právne dôsledky pre nájomný vzťah.",
+      "Nájomca podľa mesta pripravuje areál na sezónu 2026 – bazénové technológie, údržba bazénov, čistenie a napúšťanie jazera, opravy zariadení a úpravy oddychových zón."
+    ],
+    "sourceUrl": "",
+    "sources": []
+  },
+  {
+    "id": "doc-foto-2013",
+    "slug": "fotodokumentacia-2013-2016",
+    "status": "published",
+    "title": "Fotodokumentácia stavu areálu 2013 – 2016",
+    "date": "2016",
+    "category": "vyjadrenie",
+    "summary": "Súbor fotografií stavu areálu z rokov 2013 a 2016, ktorý zdokumentovala občianka Ľubica Bučková po prvej petícii. Materiál dokumentuje stav bazénov, zázemia a jazera niekoľko rokov po deklarovanom preinvestovaní 100 mil. Sk.",
+    "issuer": "Ľubica Bučková / petičný výbor",
+    "fileUrl": "",
+    "keyFindings": [
+      "Podľa autorky boli bazény aj po investícii v pôvodnom, približne 30-ročnom stave.",
+      "Materiál obsahuje aj komentáre a odhady autorky, ktoré nie sú overenými faktami."
+    ],
+    "sourceUrl": "",
+    "sources": []
+  },
+  {
+    "id": "doc-foto-2024",
+    "slug": "fotodokumentacia-2024",
+    "status": "published",
+    "title": "Fotodokumentácia stavu areálu 2024 (podklad k petícii)",
+    "date": "2024-09",
+    "category": "vyjadrenie",
+    "summary": "Súbor 17 fotografií stavu areálu zo sezóny 2024, ktorý petičný výbor predložil mestskému zastupiteľstvu ako podklad k petícii za obnovu plážového kúpaliska.",
+    "issuer": "Petičný výbor za záchranu plážového kúpaliska",
+    "fileUrl": "",
+    "keyFindings": [
+      "Dokumentuje stav detského bazéna, sociálnych zariadení, prezliekarní a okolia bazénov.",
+      "Materiál obsahuje aj hodnotenia a odhady autorov, ktoré nie sú overenými faktami."
+    ],
+    "sourceUrl": "",
+    "sources": []
+  },
+  {
     "id": "doc-mesto-2026-kontrolny-den",
     "slug": "kontrolny-den-2026-sklamanie",
     "status": "published",

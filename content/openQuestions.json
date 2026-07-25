@@ -9,12 +9,22 @@
     ]
   },
   {
-    "id": "q2", "status": "published", "actionStatus": "no_answer",
-    "question": "Aký je výsledok znaleckého posudku na zhodnotenie investícií, ktorý mesto avizovalo v roku 2024?",
-    "cityAnswer": "",
+    "id": "q2", "status": "published", "actionStatus": "in_progress",
+    "question": "Aký je výsledok znaleckých posudkov na zhodnotenie investícií?",
+    "cityAnswer": "Mesto si objednalo dva posudky. K 11. 5. 2026 je jeden hotový. Druhý sa nedá dokončiť, lebo si vyžaduje obhliadku priestorov vo vlastníctve nájomcu a ten podľa mesta napriek opakovaným žiadostiam neposkytol súčinnosť. Obsah hotového posudku nebol zverejnený.",
+    "lastUpdated": "2026-05-11",
+    "sources": [
+      { "label": "Odpoveď mesta na infožiadosť Inf. 57/2026, bod 3", "documentId": "doc-infoziadost-2026" }
+    ]
+  },
+  {
+    "id": "q9", "status": "published", "actionStatus": "no_answer",
+    "question": "Je na nájomcu vedená exekúcia a mohla by ovplyvniť nájomný vzťah?",
+    "cityAnswer": "Mesto k 11. 5. 2026 uvádza, že nedisponuje právoplatným rozhodnutím ani úradným podkladom, na základe ktorého by vedelo vyhodnotiť právne dôsledky pre nájomný vzťah. Verejné registre (Finstat) k júlu 2026 pri spoločnosti AQUALAND Slovakia s.r.o. exekúciu nevykazovali. Ide zatiaľ o neoverenú informáciu.",
     "lastUpdated": "2026-07-21",
     "sources": [
-      { "label": "Posudok avizovaný mestom 22. 8. 2024; výsledok nebol vo verejných zdrojoch nájdený", "url": "https://www.banskabystrica.sk/aktuality/2024/mesto-ma-zaujem-ukoncit-zmluvu-s-prevadzkovatelom-kupaliska/" }
+      { "label": "Odpoveď mesta na infožiadosť Inf. 57/2026, bod 9", "documentId": "doc-infoziadost-2026" },
+      { "label": "Finstat – AQUALAND Slovakia s.r.o.", "url": "https://www.finstat.sk/36768014" }
     ]
   },
   {
