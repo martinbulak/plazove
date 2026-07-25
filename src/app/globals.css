@@ -46,6 +46,17 @@
   /* Papierový podklad – teplejší než čistá biela */
   --color-paper: #fbfaf8;
 
+  /*
+    Grafy – divergentná škála (negatív ↔ neutrál ↔ pozitív).
+    Overené skriptom validate_palette.js na svetlom podklade:
+    CVD ΔE 20,3 · normálne videnie ΔE 25,7 · kontrast ≥ 3:1.
+    Svetlý neutrál má nízky kontrast zámerne (stred divergentnej škály),
+    preto má každý stĺpec vždy viditeľný priamy popisok.
+  */
+  --color-chart-neg: #c8483a;
+  --color-chart-mid: #aab2bd;
+  --color-chart-pos: #1c6d84;
+
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system,
     "Segoe UI", Roboto, Arial, sans-serif;
   --font-display: var(--font-display), Georgia, "Times New Roman", serif;

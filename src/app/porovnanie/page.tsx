@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Section, SectionHeading, Card, QuickNav } from "@/components/ui";
+import { RatingRanking } from "@/components/charts";
 import { getComparison } from "@/lib/content";
 import { OPERATOR_TYPE_LABEL, type OperatorType } from "@/lib/types";
 import { cn, formatDateSk } from "@/lib/utils";
@@ -68,13 +69,17 @@ export default async function ComparisonPage() {
         />
 
         {/* Kontext mesta */}
-        <h2 className="mb-4 text-xl font-bold text-ink-900">Banská Bystrica v číslach</h2>
-        <dl className="mb-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <h2 className="display mb-5 text-xl text-ink-900">Banská Bystrica v číslach</h2>
+        <dl className="mb-12 grid gap-x-8 gap-y-7 sm:grid-cols-2 lg:grid-cols-3">
           {cityFacts.map((f, i) => (
-            <Card key={i}>
-              <dt className="text-sm font-medium text-ink-500">{f.label}</dt>
-              <dd className="mt-1 text-xl font-bold text-ink-900">{f.value}</dd>
-              {f.note && <p className="mt-1 text-xs text-ink-600">{f.note}</p>}
+            <div key={i} className="border-t-2 border-ink-900 pt-3">
+              <dd className="display text-2xl text-ink-900">{f.value}</dd>
+              <dt className="mt-1 text-sm font-medium leading-snug text-ink-800">
+                {f.label}
+              </dt>
+              {f.note && (
+                <p className="mt-1 text-xs leading-snug text-ink-500">{f.note}</p>
+              )}
               {f.sourceUrl && (
                 <a
                   href={f.sourceUrl}
@@ -85,7 +90,7 @@ export default async function ComparisonPage() {
                   Zdroj →
                 </a>
               )}
-            </Card>
+            </div>
           ))}
         </dl>
 
@@ -204,44 +209,32 @@ export default async function ComparisonPage() {
             </ul>
           </div>
 
-          {/* Celkové poradie */}
-          <div className="overflow-x-auto rounded-[var(--radius-card)] border border-ink-200">
-            <table className="w-full min-w-[38rem] text-left text-sm">
-              <thead className="bg-white text-xs uppercase tracking-wide text-ink-500">
-                <tr>
-                  <th className="px-4 py-3 font-semibold">#</th>
-                  <th className="px-4 py-3 font-semibold">Zariadenie</th>
-                  <th className="px-4 py-3 font-semibold">Hodnotenie</th>
-                  <th className="px-4 py-3 font-semibold">Recenzie</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-ink-100 bg-white">
-                {byRating.map((f, i) => (
-                  <tr key={f.id} className={cn("align-top", f.highlight && "bg-brand-50")}>
-                    <td className="px-4 py-3 font-mono text-ink-400">{i + 1}</td>
-                    <td className="px-4 py-3">
-                      <p
-                        className={cn(
-                          "font-medium text-ink-900",
-                          f.highlight && "font-bold text-brand-800",
-                        )}
-                      >
-                        {f.name}
-                      </p>
-                      <p className="text-xs text-ink-500">{f.place}</p>
-                      {f.note && <p className="mt-1 text-xs text-ink-500">{f.note}</p>}
-                    </td>
-                    <td className="whitespace-nowrap px-4 py-3">
-                      <Stars rating={f.rating} />
-                    </td>
-                    <td className="whitespace-nowrap px-4 py-3 tabular-nums text-ink-600">
-                      {f.reviews.toLocaleString("sk-SK")}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+          {/* Celkové poradie ako graf */}
+          <div className="rounded-xl border border-ink-200 bg-white p-5 sm:p-6">
+            <RatingRanking rows={byRating} />
           </div>
+
+          {/* Poznámky ku konkrétnym zariadeniam – schované pod rozbalenie */}
+          {byRating.some((f) => f.note) && (
+            <details className="group mt-4">
+              <summary className="cursor-pointer list-none text-sm font-semibold text-brand-700 hover:underline [&::-webkit-details-marker]:hidden">
+                <span className="group-open:hidden">
+                  Poznámky k jednotlivým kúpaliskám ↓
+                </span>
+                <span className="hidden group-open:inline">Skryť poznámky ↑</span>
+              </summary>
+              <ul className="mt-3 space-y-2 border-l-2 border-ink-200 pl-4 text-sm leading-relaxed text-ink-600">
+                {byRating
+                  .filter((f) => f.note)
+                  .map((f) => (
+                    <li key={f.id}>
+                      <strong className="font-semibold text-ink-800">{f.name}:</strong>{" "}
+                      {f.note}
+                    </li>
+                  ))}
+              </ul>
+            </details>
+          )}
 
           {ratings.footnotes && ratings.footnotes.length > 0 && (
             <ul className="mt-4 space-y-2 text-xs leading-relaxed text-ink-500">
