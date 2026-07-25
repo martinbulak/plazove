@@ -19,48 +19,55 @@ export function Timeline({ items }: { items: TimelineItem[] }) {
 
   return (
     <div>
-      {hasMilestones && !showAll && (
-        <p className="mb-6 text-sm text-ink-500">
-          Zobrazujeme {milestones.length} kľúčových momentov. Celú časovú os (
-          {items.length} udalostí) rozbalíte tlačidlom nižšie.
+      {hasMilestones && (
+        <p className="mb-8 text-sm text-ink-500">
+          {showAll
+            ? `Zobrazená celá chronológia (${items.length} udalostí).`
+            : `Zobrazených ${milestones.length} kľúčových momentov z ${items.length}.`}
         </p>
       )}
 
-      <ol className="relative border-l-2 border-brand-200 pl-6">
-        {visible.map((t) => (
-          <li key={t.id} className="mb-8 last:mb-0">
-            <span
-              aria-hidden
-              className={cn(
-                "absolute -left-[9px] mt-1.5 h-4 w-4 rounded-full border-2 border-white shadow",
-                t.milestone ? "bg-accent-500 ring-2 ring-accent-400/40" : "bg-brand-500",
-              )}
-            />
-            <div className="flex flex-wrap items-center gap-2">
-              <time className="font-mono text-sm font-bold text-brand-700">
+      <ol className="relative space-y-0">
+        {visible.map((t, i) => (
+          <li
+            key={t.id}
+            className={cn(
+              "relative grid gap-x-6 gap-y-2 py-7 sm:grid-cols-[8.5rem_1fr]",
+              i > 0 && "border-t border-ink-200",
+            )}
+          >
+            {/* Dátum + značka */}
+            <div className="sm:text-right">
+              <time
+                className={cn(
+                  "display block text-lg",
+                  t.milestone ? "text-brand-800" : "text-ink-500",
+                )}
+              >
                 {formatDateSk(t.date)}
               </time>
               {t.milestone && (
-                <span className="rounded bg-accent-400/20 px-2 py-0.5 text-xs font-semibold text-accent-700">
+                <span className="mt-1 inline-block rounded bg-accent-400/25 px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-accent-700">
                   Kľúčový moment
                 </span>
               )}
-              {t.tag && (
-                <span className="rounded bg-brand-50 px-2 py-0.5 text-xs font-medium text-brand-700 ring-1 ring-brand-200">
-                  {t.tag}
-                </span>
-              )}
             </div>
-            <h3
-              className={cn(
-                "mt-1 text-lg font-semibold text-ink-900",
-                t.milestone && "font-bold",
-              )}
-            >
-              {t.title}
-            </h3>
-            <p className="mt-1 max-w-2xl text-ink-600">{t.description}</p>
-            <SourceList sources={t.sources} />
+
+            {/* Obsah */}
+            <div className="min-w-0">
+              <h3
+                className={cn(
+                  "display text-xl text-ink-900",
+                  t.milestone && "text-[1.4rem]",
+                )}
+              >
+                {t.title}
+              </h3>
+              <p className="mt-2 max-w-2xl leading-relaxed text-ink-600">
+                {t.description}
+              </p>
+              <SourceList sources={t.sources} />
+            </div>
           </li>
         ))}
       </ol>
@@ -69,12 +76,15 @@ export function Timeline({ items }: { items: TimelineItem[] }) {
         <button
           type="button"
           onClick={() => setShowAll((v) => !v)}
-          className="mt-6 inline-flex items-center gap-2 rounded-lg border border-brand-300 px-5 py-2.5 text-sm font-semibold text-brand-800 hover:bg-brand-50"
+          className="mt-8 inline-flex items-center gap-2 rounded-lg border border-ink-300 bg-white px-5 py-3 text-sm font-semibold text-ink-800 transition-colors hover:border-brand-400 hover:bg-brand-50"
         >
           {showAll
             ? "Zobraziť len kľúčové momenty"
-            : `Zobraziť všetky udalosti (${items.length})`}
-          <span aria-hidden className={cn("transition-transform", showAll && "rotate-180")}>
+            : `Zobraziť všetkých ${items.length} udalostí`}
+          <span
+            aria-hidden
+            className={cn("transition-transform", showAll && "rotate-180")}
+          >
             ▾
           </span>
         </button>

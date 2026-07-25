@@ -35,22 +35,40 @@ export default async function CasePage() {
         />
 
         {/* Zhrnutie pre ponáhľajúcich sa */}
-        <ol className="mb-10 max-w-3xl space-y-3">
+        <ol className="mb-12 max-w-3xl divide-y divide-ink-200 border-y-2 border-ink-900">
           {[
-            "Plážové kúpalisko patrí mestu. V roku 2007 ho mesto prenajalo súkromnej firme AQUALAND Slovakia s.r.o. – až do roku 2037.",
-            "Firma sa v zmluve zaviazala preinvestovať do areálu minimálne 3,32 milióna € (100 miliónov Sk).",
-            "Už v roku 2010 kontrolór mesta zistil, že nájomca meškal s nájomným a nepredkladal výkazy investícií.",
-            "Právnici Univerzity Komenského v roku 2022 skonštatovali: zmluva sa nedá vypovedať. Mesto môže len čakať do roku 2037, dohodnúť sa, alebo odstúpiť pri podstatnom porušení – a aj to len po formálnej výzve s dodatočnou lehotou.",
-            "Mesto od roku 2024 verejne hovorí, že chce zmluvu ukončiť. Zatiaľ sa tak nestalo.",
-          ].map((text, i) => (
-            <li key={i} className="flex gap-3">
+            {
+              lead: "Mestský majetok v súkromnom nájme.",
+              rest: "Plážové kúpalisko patrí mestu. V roku 2007 ho prenajalo firme AQUALAND Slovakia s.r.o. – až do roku 2037.",
+            },
+            {
+              lead: "Sľúbená investícia 3,32 mil. €.",
+              rest: "Firma sa v zmluve zaviazala preinvestovať do areálu minimálne túto sumu (100 miliónov Sk).",
+            },
+            {
+              lead: "Prvé problémy už v roku 2010.",
+              rest: "Kontrolór mesta zistil, že nájomca meškal s nájomným a nepredkladal výkazy investícií.",
+            },
+            {
+              lead: "Zmluva sa nedá vypovedať.",
+              rest: "Právnici Univerzity Komenského to skonštatovali v roku 2022. Mesto môže čakať do roku 2037, dohodnúť sa, alebo odstúpiť pri podstatnom porušení – a aj to len po formálnej výzve s dodatočnou lehotou.",
+            },
+            {
+              lead: "Mesto chce zmluvu ukončiť. Zatiaľ sa tak nestalo.",
+              rest: "Verejne to deklaruje od roku 2024.",
+            },
+          ].map((item, i) => (
+            <li key={i} className="flex gap-5 py-4">
               <span
                 aria-hidden
-                className="grid h-7 w-7 shrink-0 place-items-center rounded-full bg-brand-700 text-sm font-bold text-white"
+                className="section-number shrink-0 text-2xl text-brand-400"
               >
-                {i + 1}
+                {String(i + 1).padStart(2, "0")}
               </span>
-              <p className="text-ink-800">{text}</p>
+              <p className="leading-relaxed text-ink-700">
+                <strong className="font-semibold text-ink-900">{item.lead}</strong>{" "}
+                {item.rest}
+              </p>
             </li>
           ))}
         </ol>

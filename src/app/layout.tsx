@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Newsreader } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
@@ -8,6 +8,15 @@ import { CookieBanner } from "@/components/CookieBanner";
 const inter = Inter({
   subsets: ["latin", "latin-ext"],
   variable: "--font-inter",
+  display: "swap",
+});
+
+/** Redakčný serif pre nadpisy – dáva webu novinársky, nie šablónový charakter. */
+const newsreader = Newsreader({
+  subsets: ["latin", "latin-ext"],
+  variable: "--font-display",
+  weight: ["400", "500", "600", "700"],
+  style: ["normal", "italic"],
   display: "swap",
 });
 
@@ -63,8 +72,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="sk" className={inter.variable}>
-      <body className="min-h-screen bg-white font-sans text-ink-800 antialiased">
+    <html lang="sk" className={`${inter.variable} ${newsreader.variable}`}>
+      <body className="min-h-screen bg-paper font-sans text-ink-800 antialiased">
         <a href="#obsah" className="skip-link">
           Preskočiť na obsah
         </a>

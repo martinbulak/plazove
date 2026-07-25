@@ -44,14 +44,17 @@ export function SectionHeading({
   return (
     <header className="mb-8 max-w-3xl">
       {eyebrow && (
-        <p className="mb-2 text-sm font-semibold uppercase tracking-wide text-brand-600">
+        <p className="eyebrow mb-3 flex items-center gap-2.5 text-brand-600">
+          <span aria-hidden className="h-px w-6 bg-brand-400" />
           {eyebrow}
         </p>
       )}
-      <As className="text-balance text-3xl font-bold tracking-tight text-ink-900 sm:text-4xl">
+      <As className="display text-balance text-[2rem] text-ink-900 sm:text-[2.6rem]">
         {title}
       </As>
-      {intro && <p className="mt-4 text-lg leading-relaxed text-ink-600">{intro}</p>}
+      {intro && (
+        <p className="mt-4 text-lg leading-relaxed text-ink-600">{intro}</p>
+      )}
     </header>
   );
 }
@@ -84,9 +87,12 @@ export function Card({
 
 type BtnVariant = "primary" | "accent" | "outline" | "ghost";
 const BTN_VARIANTS: Record<BtnVariant, string> = {
-  primary: "bg-brand-700 text-white hover:bg-brand-800",
-  accent: "bg-accent-500 text-ink-900 hover:bg-accent-600 hover:text-white",
-  outline: "border border-brand-300 text-brand-800 hover:bg-brand-50",
+  primary:
+    "bg-brand-800 text-white shadow-sm hover:bg-brand-900 active:translate-y-px",
+  accent:
+    "bg-accent-500 text-ink-900 shadow-sm hover:bg-accent-400 active:translate-y-px",
+  outline:
+    "border border-ink-300 bg-white/70 text-ink-800 hover:border-brand-400 hover:bg-white",
   ghost: "text-brand-700 hover:bg-brand-50",
 };
 
@@ -105,7 +111,7 @@ export function Button({
   type?: "button" | "submit";
 } & React.ButtonHTMLAttributes<HTMLButtonElement>) {
   const base =
-    "inline-flex items-center justify-center gap-2 rounded-lg px-5 py-2.5 text-sm font-semibold transition-colors focus-visible:outline-none";
+    "inline-flex items-center justify-center gap-2 rounded-lg px-5 py-3 text-sm font-semibold transition-all focus-visible:outline-none";
   if (href) {
     const external = href.startsWith("http");
     return (
@@ -127,24 +133,23 @@ export function Button({
 
 /* ── Odznak druhu tvrdenia (fakt / citácia / názor …) ────────────────── */
 
-const CLAIM_STYLES: Record<ClaimKind, string> = {
-  fact: "bg-emerald-50 text-emerald-800 ring-emerald-200",
-  document_conclusion: "bg-sky-50 text-sky-800 ring-sky-200",
-  citation: "bg-violet-50 text-violet-800 ring-violet-200",
-  legal_interpretation: "bg-amber-50 text-amber-900 ring-amber-200",
-  opinion: "bg-ink-100 text-ink-700 ring-ink-300",
-  open_question: "bg-rose-50 text-rose-800 ring-rose-200",
+/** Farba bodky pri odznaku – nesie význam, text zostáva tlmený a čitateľný. */
+const CLAIM_DOT: Record<ClaimKind, string> = {
+  fact: "bg-emerald-500",
+  document_conclusion: "bg-sky-500",
+  citation: "bg-violet-500",
+  legal_interpretation: "bg-amber-500",
+  opinion: "bg-ink-400",
+  open_question: "bg-rose-500",
 };
 
 export function ClaimBadge({ kind }: { kind: ClaimKind }) {
   return (
     <span
-      className={cn(
-        "inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium ring-1 ring-inset",
-        CLAIM_STYLES[kind],
-      )}
+      className="inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wider text-ink-500"
       title="Druh tvrdenia"
     >
+      <span aria-hidden className={cn("h-1.5 w-1.5 rounded-full", CLAIM_DOT[kind])} />
       {CLAIM_KIND_LABEL[kind]}
     </span>
   );
@@ -153,9 +158,9 @@ export function ClaimBadge({ kind }: { kind: ClaimKind }) {
 /* ── Odznak stavu (splnené / prebieha / …) ───────────────────────────── */
 
 const STATUS_STYLES: Record<ActionStatus, string> = {
-  done: "bg-emerald-50 text-emerald-800 ring-emerald-200",
-  in_progress: "bg-amber-50 text-amber-900 ring-amber-200",
-  not_done: "bg-rose-50 text-rose-800 ring-rose-200",
+  done: "bg-emerald-50 text-emerald-900 ring-emerald-300/70",
+  in_progress: "bg-amber-50 text-amber-900 ring-amber-300/70",
+  not_done: "bg-rose-50 text-rose-900 ring-rose-300/70",
   no_answer: "bg-ink-100 text-ink-600 ring-ink-300",
 };
 
@@ -163,7 +168,7 @@ export function StatusBadge({ status }: { status: ActionStatus }) {
   return (
     <span
       className={cn(
-        "inline-flex items-center gap-1.5 rounded-full px-2.5 py-0.5 text-xs font-medium ring-1 ring-inset",
+        "inline-flex shrink-0 items-center gap-1.5 whitespace-nowrap rounded px-2 py-1 text-[11px] font-bold uppercase tracking-wide ring-1 ring-inset",
         STATUS_STYLES[status],
       )}
     >
@@ -259,15 +264,22 @@ export function ClaimLegend() {
 
 export function QuickNav({ items }: { items: { href: string; label: string }[] }) {
   return (
-    <nav aria-label="Obsah stránky" className="mb-8">
-      <ul className="flex flex-wrap gap-2">
+    <nav aria-label="Obsah stránky" className="mb-10 border-y border-ink-200 py-3">
+      <ul className="flex flex-wrap items-center gap-x-6 gap-y-2">
+        <li className="eyebrow text-ink-400">Na stránke</li>
         {items.map((i) => (
           <li key={i.href}>
             <a
               href={i.href}
-              className="inline-block rounded-full border border-brand-200 bg-white px-4 py-1.5 text-sm font-medium text-brand-800 hover:bg-brand-50"
+              className="group inline-flex items-center gap-1.5 text-sm font-medium text-ink-700 hover:text-brand-700"
             >
-              {i.label} ↓
+              {i.label}
+              <span
+                aria-hidden
+                className="text-ink-400 transition-transform group-hover:translate-y-0.5"
+              >
+                ↓
+              </span>
             </a>
           </li>
         ))}

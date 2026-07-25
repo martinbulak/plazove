@@ -2,8 +2,12 @@
 
 /*
   Dizajnový systém „Aqualand BB – verejná kontrola".
-  Farebnosť vychádza z vody, leta a mestského prostredia – tlmená, dôveryhodná,
-  občianska. Zámerne sa NEPOUŽÍVA vizuálna identita prevádzkovateľa.
+
+  Charakter: občiansky redakčný web, nie firemná šablóna.
+  – nadpisy redakčným serifom (Newsreader), text bezpätkovým (Inter)
+  – tlmená vodná modrozelená + jeden teplý akcent, žiadne farebné ohňostroje
+  – papierový podklad namiesto sterilnej bielej
+  Zámerne sa NEPOUŽÍVA vizuálna identita prevádzkovateľa kúpaliska.
 */
 
 @theme {
@@ -16,43 +20,41 @@
   --color-brand-500: #2b8fa8;
   --color-brand-600: #26748d;
   --color-brand-700: #245e73;
-  --color-brand-800: #244e5f;
-  --color-brand-900: #224152;
-  --color-brand-950: #102a37;
+  --color-brand-800: #1e4a5c;
+  --color-brand-900: #1a3c4b;
+  --color-brand-950: #0e2733;
 
-  /* Akcent – leto (teplá pieskovo-jantárová) pre CTA */
+  /* Akcent – leto (teplá jantárová) pre CTA a zvýraznenia */
+  --color-accent-300: #fbd08a;
   --color-accent-400: #f6b545;
   --color-accent-500: #ee9d1f;
   --color-accent-600: #d47f12;
-  --color-accent-700: #b06210;
+  --color-accent-700: #a95f0c;
 
   /* Neutrály – mesto (chladná bridlicová sivá) */
-  --color-ink-50: #f6f7f9;
-  --color-ink-100: #eceef1;
-  --color-ink-200: #d5dae0;
-  --color-ink-300: #b0bac5;
-  --color-ink-400: #7f8da3;
-  --color-ink-500: #5f6b7e;
-  --color-ink-600: #4a5566;
-  --color-ink-700: #3b4453;
-  --color-ink-800: #2b323d;
-  --color-ink-900: #1c212a;
+  --color-ink-50: #f7f8f9;
+  --color-ink-100: #edeff2;
+  --color-ink-200: #dbdfe5;
+  --color-ink-300: #b4bcc7;
+  --color-ink-400: #8894a3;
+  --color-ink-500: #64707f;
+  --color-ink-600: #4c5766;
+  --color-ink-700: #3a4451;
+  --color-ink-800: #29313b;
+  --color-ink-900: #171d25;
 
-  /* Stavové farby */
-  --color-status-done: #2f9e6a;
-  --color-status-progress: #d99a12;
-  --color-status-notdone: #c8483a;
-  --color-status-unknown: #6b7280;
+  /* Papierový podklad – teplejší než čistá biela */
+  --color-paper: #fbfaf8;
 
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system,
     "Segoe UI", Roboto, Arial, sans-serif;
+  --font-display: var(--font-display), Georgia, "Times New Roman", serif;
 
-  --radius-card: 0.9rem;
+  --radius-card: 0.75rem;
 }
 
 :root {
-  --page-bg: #ffffff;
-  --page-fg: #1c212a;
+  --page-fg: #171d25;
 }
 
 html {
@@ -60,14 +62,40 @@ html {
 }
 
 body {
-  background: var(--page-bg);
   color: var(--page-fg);
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
 
-/* Prístupnosť: viditeľný focus a rešpekt k preferenciám pohybu */
-:where(a, button, input, textarea, select, [tabindex]):focus-visible {
+/* ── Typografické triedy ─────────────────────────────────────────────── */
+
+/* Redakčný nadpis */
+.display {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  line-height: 1.08;
+}
+
+/* Malý veľkoplošný štítok nad nadpisom */
+.eyebrow {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* Číslovanie sekcií – veľké redakčné číslo */
+.section-number {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+
+/* ── Prístupnosť ─────────────────────────────────────────────────────── */
+
+:where(a, button, input, textarea, select, summary, [tabindex]):focus-visible {
   outline: 3px solid var(--color-brand-500);
   outline-offset: 2px;
   border-radius: 4px;
@@ -85,13 +113,12 @@ body {
   }
 }
 
-/* Skip-link */
 .skip-link {
   position: absolute;
   left: -999px;
   top: 0;
   z-index: 100;
-  background: var(--color-brand-700);
+  background: var(--color-brand-800);
   color: #fff;
   padding: 0.75rem 1rem;
   border-radius: 0 0 0.5rem 0;
@@ -100,7 +127,24 @@ body {
   left: 0;
 }
 
-/* Typografia dlhých textov */
-.prose-sk :where(h2) { margin-top: 1.75rem; }
-.prose-sk :where(p) { line-height: 1.7; }
-.prose-sk :where(a) { color: var(--color-brand-700); }
+/* ── Dlhé texty ──────────────────────────────────────────────────────── */
+
+.prose-sk :where(h2) {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin-top: 2rem;
+}
+.prose-sk :where(p) {
+  line-height: 1.75;
+}
+.prose-sk :where(a) {
+  color: var(--color-brand-700);
+}
+
+/* Jemné pozadie s vodorysom pre hero */
+.hero-wash {
+  background-image:
+    radial-gradient(48rem 22rem at 78% -6rem, var(--color-brand-100), transparent 70%),
+    radial-gradient(38rem 20rem at 8% 4rem, #fdf3e2, transparent 70%);
+}

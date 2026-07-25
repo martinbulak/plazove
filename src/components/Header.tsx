@@ -11,15 +11,15 @@ export function Header() {
   const pathname = usePathname();
 
   return (
-    <header className="sticky top-0 z-40 border-b border-ink-200 bg-white/90 backdrop-blur">
+    <header className="sticky top-0 z-40 border-b border-ink-200 bg-paper/90 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
         <Link href="/" className="flex items-center gap-2.5" onClick={() => setOpen(false)}>
           <WaveMark />
           <span className="flex flex-col leading-tight">
-            <span className="text-sm font-bold tracking-tight text-ink-900 sm:text-base">
+            <span className="display text-base text-ink-900 sm:text-lg">
               Aqualand BB
             </span>
-            <span className="text-[11px] font-medium uppercase tracking-wide text-brand-600">
+            <span className="text-[10px] font-semibold uppercase tracking-[0.14em] text-brand-600">
               verejná kontrola
             </span>
           </span>
@@ -43,7 +43,7 @@ export function Header() {
         <div className="flex items-center gap-2">
           <Link
             href={CTA_NAV.href}
-            className="hidden rounded-lg bg-accent-500 px-4 py-2 text-sm font-semibold text-ink-900 hover:bg-accent-600 hover:text-white sm:inline-flex"
+            className="hidden rounded-lg bg-accent-500 px-4 py-2 text-sm font-semibold text-ink-900 shadow-sm hover:bg-accent-400 sm:inline-flex"
           >
             {CTA_NAV.label}
           </Link>
@@ -103,7 +103,7 @@ function WaveMark() {
   return (
     <span
       aria-hidden
-      className="grid h-9 w-9 place-items-center rounded-lg bg-brand-700 text-white"
+      className="grid h-9 w-9 place-items-center rounded-lg bg-brand-800 text-white"
     >
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
         <path

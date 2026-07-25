@@ -75,16 +75,14 @@ export function DocumentsBrowser({ documents }: { documents: DocumentItem[] }) {
                 {d.isPlaceholder && <PlaceholderBadge />}
               </div>
 
-              <h2 className="mt-2 text-lg font-semibold text-ink-900">{d.title}</h2>
-              <p className="mt-1 text-sm text-ink-600">{d.summary}</p>
+              <h2 className="display mt-2 text-xl text-ink-900">{d.title}</h2>
+              <p className="mt-1.5 leading-relaxed text-ink-600">{d.summary}</p>
               <p className="mt-2 text-xs text-ink-500">Vydal / autor: {d.issuer}</p>
 
               {d.keyFindings && d.keyFindings.length > 0 && (
                 <div className="mt-3">
-                  <p className="text-xs font-semibold uppercase tracking-wide text-ink-500">
-                    Hlavné závery
-                  </p>
-                  <ul className="mt-1 list-disc space-y-0.5 pl-5 text-sm text-ink-700">
+                  <p className="eyebrow text-ink-400">Hlavné závery</p>
+                  <ul className="mt-2 space-y-1.5 border-l-2 border-brand-200 pl-4 text-sm leading-relaxed text-ink-700">
                     {d.keyFindings.map((k, i) => (
                       <li key={i}>{k}</li>
                     ))}
