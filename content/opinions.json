@@ -33,6 +33,17 @@
     "note": "Porovnanie s Thermalparkom Novolandia v Rapovciach. Príspevok obsahuje aj volebný program tímu kandidátky na primátorku Diany Javorčíkovej – ide o politicky angažovaný zdroj."
   },
   {
+    "id": "op-peticny-vybor",
+    "status": "published", "approved": true, "sentiment": "negative",
+    "excerpt": "Žiadame: 1. riešenie nevýhodnej zmluvy s nájomcom (jej ukončenie s vyrovnaním investícií, prípadne ponechanie lode a hál v prenájme), 2. obnovu plážového kúpaliska aj kúpania v jazere – nie akvapark s vysokým vstupným, 3. iniciatívu mesta smerujúcu k získaniu dotácie na obnovu areálu.",
+    "profileName": "Petičný výbor za záchranu plážového kúpaliska",
+    "platform": "iny",
+    "postedAt": "2024-09-20",
+    "originalUrl": "",
+    "archivedAt": "2026-07-25",
+    "note": "Zhrnutie troch hlavných požiadaviek z listu petičného výboru mestskému zastupiteľstvu (september 2024). Ide o stanovisko petičného výboru, nie o tvrdenie prevádzkovateľa webu."
+  },
+  {
     "id": "op-aqualand",
     "status": "published", "approved": true, "sentiment": "neutral",
     "excerpt": "Prevádzkovateľ hovoril o „koordinovanej aktivite proti Aqualandu a šírení poplašných správ“.",

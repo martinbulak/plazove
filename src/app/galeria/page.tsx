@@ -29,9 +29,17 @@ export default async function GalleryPage() {
         <strong>Zdroj a kontext:</strong> fotografie pochádzajú z fotodokumentácie
         petičného výboru za záchranu plážového kúpaliska (zábery Ľubice Bučkovej
         z rokov 2013 a 2016 a petičného výboru z roku 2024), ktorá bola predložená
-        aj mestskému zastupiteľstvu. Ide o výber; kompletné materiály obsahujú
-        stovky záberov. Popisy pod fotografiami sú redakčne neutrálne – hodnotenia
-        stavu sú vecou pisateľov pôvodných materiálov.
+        aj mestskému zastupiteľstvu. Ide o výber; kompletné materiály s pôvodnými
+        popismi si môžete stiahnuť ako{" "}
+        <a href="/dokumenty/fotodokumentacia-2013-2016.pdf" target="_blank" rel="noopener noreferrer" className="font-medium text-brand-700 underline">
+          fotodokumentáciu 2013 – 2016
+        </a>{" "}
+        a{" "}
+        <a href="/dokumenty/fotodokumentacia-2024.pdf" target="_blank" rel="noopener noreferrer" className="font-medium text-brand-700 underline">
+          fotodokumentáciu 2024
+        </a>
+        . Popisy pod fotografiami tu sú redakčne neutrálne – hodnotenia stavu sú
+        vecou pisateľov pôvodných materiálov.
       </div>
 
       <Gallery items={items} />
