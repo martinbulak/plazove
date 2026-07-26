@@ -162,6 +162,27 @@ export interface GalleryItem extends BaseEntity {
   origin: "own" | "external";
   width?: number;
   height?: number;
+  /** ID albumu z kolekcie „galleryAlbums" – fotografie z jednej udalosti. */
+  album?: string;
+}
+
+/**
+ * Album zoskupuje fotografie z jednej udalosti (napr. z konkrétneho
+ * kontrolného dňa) pod spoločný nadpis a popis, aby mala galéria kontext.
+ */
+export interface GalleryAlbum extends BaseEntity {
+  title: string;
+  /** Dátum udalosti (YYYY-MM-DD) – určuje poradie albumov. */
+  date: string;
+  /** Krátky neutrálny popis, čo album zachytáva. */
+  description: string;
+  /**
+   * Rozšírený kontext – napríklad zhrnutie reportu autorky. Zobrazuje sa
+   * oddelene a musí byť jasné, čie zistenia to sú.
+   */
+  note?: string;
+  /** Autor fotografií, ak je pre celý album spoločný. */
+  credit?: string;
 }
 
 /* ── 7. Názory verejnosti ────────────────────────────────────────────── */
@@ -463,6 +484,7 @@ export type CollectionName =
   | "contract"
   | "documents"
   | "gallery"
+  | "galleryAlbums"
   | "opinions"
   | "cityActions"
   | "openQuestions"

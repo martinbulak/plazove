@@ -13,6 +13,7 @@ import timeline from "../../content/timeline.json";
 import contract from "../../content/contract.json";
 import documents from "../../content/documents.json";
 import gallery from "../../content/gallery.json";
+import galleryAlbums from "../../content/galleryAlbums.json";
 import opinions from "../../content/opinions.json";
 import cityActions from "../../content/cityActions.json";
 import openQuestions from "../../content/openQuestions.json";
@@ -26,6 +27,7 @@ export const SEED: Record<string, unknown> = {
   contract,
   documents,
   gallery,
+  galleryAlbums,
   opinions,
   cityActions,
   openQuestions,

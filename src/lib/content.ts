@@ -7,6 +7,7 @@ import type {
   CityAction,
   ContractQA,
   DocumentItem,
+  GalleryAlbum,
   GalleryItem,
   OpenQuestion,
   OpinionItem,
@@ -49,6 +50,12 @@ export async function getDocuments(): Promise<DocumentItem[]> {
 
 export async function getGallery(): Promise<GalleryItem[]> {
   return readJson<GalleryItem[]>("gallery", []);
+}
+
+/** Albumy galérie, najnovšia udalosť ako prvá. */
+export async function getGalleryAlbums(): Promise<GalleryAlbum[]> {
+  const items = await readJson<GalleryAlbum[]>("galleryAlbums", []);
+  return items.sort((a, b) => b.date.localeCompare(a.date));
 }
 
 export async function getOpinions(): Promise<OpinionItem[]> {

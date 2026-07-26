@@ -38,11 +38,13 @@ export default async function HomePage() {
    * Koláž do hero sekcie. Hlavná fotka je jazero so zelenými riasami –
    * sedí k citovanej recenzii, ktorá hovorí o kvalite vody.
    */
+  // Tie isté štyri zábery ako doteraz – po zjednotení galérie majú nové ID:
+  // 21 = jazero, 31 = cesta pri jazere, 42 = rozvádzač, 22 = spevnená plocha.
   const HERO_PHOTO_IDS = [
-    "g-2026-jazero",
-    "g-2026-vstup",
-    "g-2026-rozvadzac",
-    "g-2026-plocha",
+    "g-kd260630-21",
+    "g-kd260630-31",
+    "g-kd260630-42",
+    "g-kd260630-22",
   ];
   const heroPhotos = HERO_PHOTO_IDS.map((id) =>
     photos.find((p) => p.id === id),

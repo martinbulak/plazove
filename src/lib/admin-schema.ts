@@ -131,6 +131,7 @@ export const COLLECTIONS: Record<string, CollectionDef> = {
       { name: "caption", label: "Popis", type: "text" },
       { name: "date", label: "Dátum (YYYY-MM alebo YYYY-MM-DD)", type: "text" },
       { name: "credit", label: "Autor / zdroj", type: "text" },
+      { name: "album", label: "Album (ID zo zoznamu albumov)", type: "text", help: "Napr. kd-2026-06-30. Prázdne = fotografia sa zobrazí mimo albumov." },
       { name: "origin", label: "Pôvod", type: "select", options: [
         { value: "own", label: "Vlastná" },
         { value: "external", label: "Prevzatá" },
@@ -139,6 +140,21 @@ export const COLLECTIONS: Record<string, CollectionDef> = {
       { name: "height", label: "Výška (px)", type: "number", default: 800 },
       { name: "status", label: "Stav publikovania", type: "select", options: PUBLISH_OPTIONS, default: "concept" },
       { name: "isPlaceholder", label: "Vzorové dáta", type: "checkbox" },
+    ],
+  },
+  galleryAlbums: {
+    name: "galleryAlbums",
+    title: "Albumy galérie",
+    labelField: "title",
+    subField: "date",
+    fields: [
+      { name: "id", label: "ID albumu (napr. kd-2026-06-30)", type: "text", required: true },
+      { name: "title", label: "Nadpis", type: "text", required: true },
+      { name: "date", label: "Dátum udalosti (YYYY-MM-DD)", type: "date", required: true },
+      { name: "description", label: "Popis", type: "textarea", required: true },
+      { name: "note", label: "Rozšírený kontext (napr. zhrnutie reportu)", type: "textarea", help: "Zobrazí sa oddelene. Musí byť jasné, čie zistenia to sú." },
+      { name: "credit", label: "Autor fotografií", type: "text" },
+      { name: "status", label: "Stav publikovania", type: "select", options: PUBLISH_OPTIONS, default: "concept" },
     ],
   },
   opinions: {
