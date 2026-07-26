@@ -2,13 +2,12 @@ import type { Metadata } from "next";
 import {
   Section,
   SectionHeading,
-  Card,
   QuickNav,
   StatusBadge,
   SourceList,
 } from "@/components/ui";
 import { ReviewAnalysisBlock } from "@/components/ReviewAnalysisBlock";
-import { CityActionsList } from "@/components/CityActionsList";
+import { DisclosureList } from "@/components/DisclosureList";
 import {
   getCityActions,
   getOpenQuestions,
@@ -61,7 +60,23 @@ export default async function CurrentStatePage() {
             Kliknutím na riadok zobrazíte podrobnosti a zdroje.
           </p>
         </div>
-        <CityActionsList items={acts} />
+        <DisclosureList
+          headings={["Dátum", "Krok / prísľub", "Stav"]}
+          items={acts.map((a) => ({
+            id: a.id,
+            lead: formatDateSk(a.date),
+            title: a.step,
+            badge: <StatusBadge status={a.actionStatus} />,
+            detail: (
+              <>
+                {a.note && (
+                  <p className="text-sm leading-relaxed text-ink-700">{a.note}</p>
+                )}
+                <SourceList sources={a.sources} />
+              </>
+            ),
+          }))}
+        />
       </Section>
 
       {/* Otvorené otázky */}
@@ -72,21 +87,24 @@ export default async function CurrentStatePage() {
             title="Na čo nie je jasná odpoveď"
             intro="Otázky, na ktoré sa z verejne dostupných zdrojov nepodarilo nájsť úplnú odpoveď. Ak mesto alebo prevádzkovateľ odpovie, odpoveď doplníme aj so zdrojom."
           />
-          <ul className="space-y-4">
-            {qs.map((q) => (
-              <li key={q.id}>
-                <Card>
-                  <div className="flex flex-wrap items-start justify-between gap-2">
-                    <h3 className="text-base font-semibold text-ink-900">{q.question}</h3>
-                    <StatusBadge status={q.actionStatus} />
-                  </div>
+          <p className="mb-4 text-xs text-ink-500">
+            Kliknutím na riadok zobrazíte zistenia a zdroje.
+          </p>
+          <DisclosureList
+            headings={["Otázka", "Stav"]}
+            items={qs.map((q) => ({
+              id: q.id,
+              title: q.question,
+              badge: <StatusBadge status={q.actionStatus} />,
+              detail: (
+                <>
                   {q.cityAnswer ? (
-                    <p className="mt-2 rounded-md bg-ink-50 p-3 text-sm text-ink-700">
+                    <p className="text-sm leading-relaxed text-ink-700">
                       <span className="font-semibold">Zistenie: </span>
                       {q.cityAnswer}
                     </p>
                   ) : (
-                    <p className="mt-2 text-sm italic text-ink-400">
+                    <p className="text-sm italic text-ink-500">
                       Verejná odpoveď zatiaľ nie je k dispozícii.
                     </p>
                   )}
@@ -96,10 +114,10 @@ export default async function CurrentStatePage() {
                     </p>
                   )}
                   <SourceList sources={q.sources} />
-                </Card>
-              </li>
-            ))}
-          </ul>
+                </>
+              ),
+            }))}
+          />
         </Section>
       </div>
 
