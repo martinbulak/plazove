@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 /** Podpisy sa majú objaviť hneď po overení e-mailu, preto stránku necachujeme. */
 export const dynamic = "force-dynamic";
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://aqualandbb.sk";
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://zaplaz.sk";
 
 export default async function SupportPage() {
   const [site, signatures] = await Promise.all([getSite(), getPublicSignatures()]);
@@ -123,7 +123,7 @@ export default async function SupportPage() {
             Najúčinnejšia podpora je, keď sa o probléme dozvie viac ľudí.
           </p>
           <div className="mt-5 flex justify-center">
-            <ShareButtons url={SITE_URL} title="Aqualand BB – verejná kontrola" />
+            <ShareButtons url={SITE_URL} title="Za Pláž" />
           </div>
         </Section>
       </div>

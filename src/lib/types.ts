@@ -1,5 +1,5 @@
 /**
- * Dátový model projektu „Aqualand BB – verejná kontrola".
+ * Dátový model projektu „Za Pláž".
  *
  * Celý obsah webu je typovaný tu. Kolekcie sa ukladajú ako JSON súbory v /content
  * a čítajú/zapisujú cez src/lib/store.ts. Administrácia (src/app/admin) používa

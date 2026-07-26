@@ -61,7 +61,7 @@ export function Hero({
           <div className="lg:col-span-7">
             <p className="eyebrow mb-5 inline-flex items-center gap-2 rounded-full bg-white px-3 py-1.5 text-brand-700 ring-1 ring-brand-200">
               <span aria-hidden className="h-1.5 w-1.5 rounded-full bg-accent-500" />
-              {site.tagline}
+              Nezávislý občiansky projekt
             </p>
 
             <h1 className="display text-[2.6rem] text-ink-900 sm:text-[3.4rem] lg:text-[3.75rem]">

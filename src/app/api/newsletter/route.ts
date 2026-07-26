@@ -56,10 +56,11 @@ export async function POST(req: Request) {
   const url = confirmUrl("/podporte/newsletter-potvrdenie", token);
   await sendMail({
     to: email,
-    subject: "Potvrďte odber noviniek – Aqualand BB",
+    subject: "Potvrďte odber noviniek – Za Pláž",
     text:
       `Dobrý deň,\n\npre potvrdenie odberu noviniek kliknite na odkaz:\n\n${url}\n\n` +
-      `Ak ste o odber nežiadali, tento e-mail ignorujte.\n\nAqualand BB – verejná kontrola`,
+      `Ak ste o odber nežiadali, tento e-mail ignorujte.\n\n` +
+      `Za Pláž – ktorá nebude hanbou mesta\nzaplaz.sk · info@zaplaz.sk`,
   });
 
   return NextResponse.json({

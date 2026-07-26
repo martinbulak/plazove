@@ -1,4 +1,4 @@
-# Aqualand BB – verejná kontrola
+# Za Pláž
 
 Nezávislý občiansky informačný web o situácii okolo **plážového kúpaliska v Banskej Bystrici**, nájomnej zmluve mesta s prevádzkovateľom, aktuálnom stave areálu a krokoch mesta.
 
@@ -26,7 +26,7 @@ Textový obsah webu je spracovaný z týchto primárnych dokumentov a overených
 - **Fotogaléria je prázdna** – fotografie sa nahrávajú cez administráciu (`/admin/c/gallery`).
 - Zverejnené PDF sú anonymizované (v odpovedi na infožiadosť je začiernená adresa a e-mail žiadateľky).
 
-- **Doména (cieľová):** aqualandbb.sk
+- **Doména (cieľová):** zaplaz.sk
 - **Technológie:** Next.js 15 (App Router) · TypeScript · Tailwind CSS v4 · súborová JSON obsahová vrstva
 
 ---
@@ -150,7 +150,7 @@ Podpis výzvy aj odber newslettera používajú **double opt-in** (potvrdenie e-
 - **Reálne odosielanie (Resend):** doplňte do `.env.local`:
   ```env
   RESEND_API_KEY=re_...
-  MAIL_FROM=vyzva@aqualandbb.sk   # odosielateľ musí byť na overenej doméne
+  MAIL_FROM=info@zaplaz.sk   # odosielateľ musí byť na overenej doméne
   ```
   Implementácia je v [`src/lib/mail.ts`](src/lib/mail.ts) (volá Resend HTTP API cez `fetch`, bez SDK). Pre iného poskytovateľa (SMTP, Mailgun…) upravte túto jednu funkciu.
 
@@ -188,7 +188,7 @@ src/
 ## SEO
 
 - Metadáta a Open Graph v [`src/app/layout.tsx`](src/app/layout.tsx), OG obrázok generovaný v [`src/app/opengraph-image.tsx`](src/app/opengraph-image.tsx).
-- Cielené výrazy: *plážové kúpalisko Banská Bystrica, Aqualand Banská Bystrica, zmluva plážové kúpalisko, kúpalisko Banská Bystrica, Aqualand BB, nájomná zmluva mesta Banská Bystrica*.
+- Cielené výrazy: *plážové kúpalisko Banská Bystrica, Aqualand Banská Bystrica, zmluva plážové kúpalisko, kúpalisko Banská Bystrica, Za Pláž, nájomná zmluva mesta Banská Bystrica*.
 - V titulkoch aj popisoch je vždy jasne uvedené, že ide o **nezávislý informačný projekt**.
 - `lang="sk"`, `sitemap.xml`, `robots.txt`.
 
@@ -216,11 +216,11 @@ Verejné stránky používajú **ISR** (`revalidate = 60`), takže úpravy z KV 
    Vercel doplní `BLOB_READ_WRITE_TOKEN`. Bez neho administrácia fotografie
    nenahrá (na Verceli je súborový systém read-only).
 4. **Nastavte Environment Variables** (Project → Settings → Environment Variables):
-   - `NEXT_PUBLIC_SITE_URL` = `https://aqualandbb.sk` (alebo pridelená vercel.app doména)
+   - `NEXT_PUBLIC_SITE_URL` = `https://zaplaz.sk` (alebo pridelená vercel.app doména)
    - `ADMIN_PASSWORD` = silné heslo do administrácie
    - `ADMIN_SESSION_SECRET` = náhodný reťazec (min. 32 znakov)
    - *(voliteľné)* `RESEND_API_KEY` + `MAIL_FROM` pre reálne e-maily
-5. **Deploy.** Doménu `aqualandbb.sk` pridáte v *Settings → Domains*.
+5. **Deploy.** Doménu `zaplaz.sk` pridáte v *Settings → Domains*.
 
 > Migrácia na inú DB (Postgres/Neon/Turso) je jednoduchá: stačí prepísať telo funkcií v `src/lib/store.ts` a `src/lib/kv.ts`; rozhranie (`readJson`/`writeJson`, `readSubmission`/`appendSubmission`) ostáva rovnaké.
 
@@ -272,4 +272,4 @@ Web je navrhnutý s dôrazom na dôveryhodnosť:
 
 ## Licencia / autor
 
-Občiansky informačný projekt „Aqualand BB – verejná kontrola". Kód je určený na prevádzku tohto projektu; obsah je vzorový a určený na nahradenie.
+Občiansky informačný projekt „Za Pláž". Kód je určený na prevádzku tohto projektu; obsah je vzorový a určený na nahradenie.

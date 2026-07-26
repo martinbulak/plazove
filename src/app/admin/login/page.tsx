@@ -33,7 +33,7 @@ function LoginForm() {
   return (
     <form onSubmit={onSubmit} className="w-full max-w-sm rounded-2xl border border-ink-200 bg-white p-8 shadow-sm">
       <h1 className="text-xl font-bold text-ink-900">Administrácia</h1>
-      <p className="mt-1 text-sm text-ink-500">Aqualand BB – verejná kontrola</p>
+      <p className="mt-1 text-sm text-ink-500">Za Pláž</p>
 
       <label className="mt-6 block">
         <span className="mb-1 block text-sm font-medium text-ink-700">Heslo</span>

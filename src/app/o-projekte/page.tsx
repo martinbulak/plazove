@@ -20,7 +20,7 @@ export default async function AboutPage() {
         as="h1"
         eyebrow="O projekte"
         title="Kto sme a prečo web vznikol"
-        intro="Aqualand BB – verejná kontrola je nezávislý občiansky informačný projekt. Nie je to oficiálny web prevádzkovateľa plážového kúpaliska ani Mesta Banská Bystrica."
+        intro="Za Pláž je nezávislý občiansky informačný projekt. Nie je to oficiálny web prevádzkovateľa plážového kúpaliska ani Mesta Banská Bystrica."
       />
 
       <div className="prose-sk space-y-6 text-ink-700">

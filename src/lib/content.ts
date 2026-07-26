@@ -121,15 +121,15 @@ export async function getComparison(): Promise<ComparisonData> {
 
 /** Fallback konfigurácia, ak content/site.json chýba. */
 export const DEFAULT_SITE: SiteConfig = {
-  siteName: "Aqualand BB – verejná kontrola",
-  tagline: "Nezávislý občiansky informačný projekt",
+  siteName: "Za Pláž",
+  tagline: "Ktorá nebude hanbou mesta",
   heroTitle: "Čo sa deje s plážovým kúpaliskom v Banskej Bystrici?",
   heroSubtitle:
     "Dokumenty, právne analýzy, fotografie a skúsenosti verejnosti na jednom mieste.",
   disclaimer:
     "Toto nie je oficiálny web prevádzkovateľa plážového kúpaliska ani Mesta Banská Bystrica. Ide o nezávislý občiansky informačný projekt.",
   heroFacts: [],
-  contactEmail: "kontakt@aqualandbb.sk",
-  operator: "Občiansky informačný projekt Aqualand BB – verejná kontrola",
+  contactEmail: "info@zaplaz.sk",
+  operator: "Občiansky informačný projekt Za Pláž",
   petitionText: "",
 };

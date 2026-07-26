@@ -106,11 +106,12 @@ export async function POST(req: Request) {
   const url = confirmUrl("/podporte/potvrdenie", token);
   await sendMail({
     to: email,
-    subject: "Potvrďte podpis verejnej výzvy – Aqualand BB",
+    subject: "Potvrďte podpis verejnej výzvy – Za Pláž",
     text:
       `Dobrý deň,\n\nĎakujeme za podporu verejnej výzvy k plážovému kúpalisku v Banskej Bystrici.\n` +
       `Pre potvrdenie podpisu kliknite na odkaz:\n\n${url}\n\n` +
-      `Ak ste o podpis nežiadali, tento e-mail ignorujte.\n\nAqualand BB – verejná kontrola`,
+      `Ak ste o podpis nežiadali, tento e-mail ignorujte.\n\n` +
+      `Za Pláž – ktorá nebude hanbou mesta\nzaplaz.sk · info@zaplaz.sk`,
   });
 
   return NextResponse.json({

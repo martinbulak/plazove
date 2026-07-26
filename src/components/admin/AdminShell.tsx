@@ -18,7 +18,7 @@ export function AdminShell({
         <div className="rounded-xl border border-ink-200 bg-white p-4">
           <Link href="/admin" className="block">
             <p className="text-sm font-bold text-ink-900">Administrácia</p>
-            <p className="text-xs text-brand-600">Aqualand BB</p>
+            <p className="text-xs text-brand-600">Za Pláž</p>
           </Link>
           <nav className="mt-4 space-y-0.5 text-sm" aria-label="Admin navigácia">
             <NavLink href="/admin" active={active === "dashboard"}>

@@ -1,6 +1,6 @@
 {
-  "siteName": "Aqualand BB – verejná kontrola",
-  "tagline": "Nezávislý občiansky informačný projekt",
+  "siteName": "Za Pláž",
+  "tagline": "Ktorá nebude hanbou mesta",
   "heroTitle": "Čo sa deje s plážovým kúpaliskom v Banskej Bystrici?",
   "heroSubtitle": "Dokumenty, právne analýzy, fotografie a skúsenosti verejnosti na jednom mieste.",
   "disclaimer": "Toto nie je oficiálny web prevádzkovateľa plážového kúpaliska ani Mesta Banská Bystrica. Ide o nezávislý občiansky informačný projekt.",
@@ -10,7 +10,7 @@
     { "label": "Zmluvu podľa právnikov nemožno vypovedať", "value": "Bez výpovede", "kind": "legal_interpretation" },
     { "label": "Mesto chce zmluvu ukončiť, zatiaľ sa tak nestalo", "value": "Od roku 2024", "kind": "fact" }
   ],
-  "contactEmail": "kontakt@aqualandbb.sk",
-  "operator": "Občiansky informačný projekt Aqualand BB – verejná kontrola",
+  "contactEmail": "info@zaplaz.sk",
+  "operator": "Občiansky informačný projekt Za Pláž",
   "petitionText": "My, dolupodpísaní obyvatelia a obyvateľky Banskej Bystrice a okolia, vyzývame Mesto Banská Bystrica, aby aktívne, transparentne a v súlade s platnou nájomnou zmluvou riešilo súčasný stav plážového kúpaliska ako verejného majetku. Žiadame mesto, aby zverejnilo aktuálny plán ďalšieho postupu, dôsledne využívalo svoje kontrolné právo podľa článku IV ods. 11 nájomnej zmluvy, preverilo a zdokumentovalo plnenie investičných a prevádzkových povinností nájomcu a o vykonaných aj plánovaných krokoch pravidelne informovalo verejnosť."
 }

@@ -4,7 +4,7 @@ import { Section, SectionHeading } from "@/components/ui";
 export const metadata: Metadata = {
   title: "Zásady používania cookies",
   description:
-    "Ako projekt Aqualand BB – verejná kontrola používa cookies. Nevyhnutné technické cookies vs. analytické/marketingové cookies so súhlasom.",
+    "Ako projekt Za Pláž používa cookies. Nevyhnutné technické cookies vs. analytické/marketingové cookies so súhlasom.",
 };
 
 export default function CookiesPage() {

@@ -20,14 +20,14 @@ const newsreader = Newsreader({
   display: "swap",
 });
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://aqualandbb.sk";
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://zaplaz.sk";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
     default:
-      "Aqualand BB – verejná kontrola | Nezávislý informačný projekt o plážovom kúpalisku v Banskej Bystrici",
-    template: "%s | Aqualand BB – verejná kontrola",
+      "Za Pláž – ktorá nebude hanbou mesta | Plážové kúpalisko v Banskej Bystrici",
+    template: "%s | Za Pláž",
   },
   description:
     "Nezávislý občiansky informačný projekt. Dokumenty, právne analýzy, časová os a fakty o plážovom kúpalisku v Banskej Bystrici, nájomnej zmluve mesta a stave areálu. Nie je to oficiálny web prevádzkovateľa ani mesta.",
@@ -36,24 +36,24 @@ export const metadata: Metadata = {
     "Aqualand Banská Bystrica",
     "zmluva plážové kúpalisko",
     "kúpalisko Banská Bystrica",
-    "Aqualand BB",
+    "Za Pláž",
+    "zaplaz.sk",
     "nájomná zmluva mesta Banská Bystrica",
   ],
-  authors: [{ name: "Aqualand BB – verejná kontrola" }],
+  authors: [{ name: "Za Pláž" }],
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
     locale: "sk_SK",
     url: SITE_URL,
-    siteName: "Aqualand BB – verejná kontrola",
-    title:
-      "Aqualand BB – verejná kontrola | Nezávislý informačný projekt",
+    siteName: "Za Pláž",
+    title: "Za Pláž – ktorá nebude hanbou mesta",
     description:
       "Dokumenty, právne analýzy, časová os a fakty o plážovom kúpalisku v Banskej Bystrici. Nezávislý občiansky informačný projekt – nie je to web prevádzkovateľa ani mesta.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Aqualand BB – verejná kontrola",
+    title: "Za Pláž",
     description:
       "Nezávislý občiansky informačný projekt o plážovom kúpalisku v Banskej Bystrici.",
   },

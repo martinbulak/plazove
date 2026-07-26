@@ -4,7 +4,7 @@ import { Section, SectionHeading } from "@/components/ui";
 export const metadata: Metadata = {
   title: "Podmienky používania",
   description:
-    "Podmienky používania webu Aqualand BB – verejná kontrola. Charakter obsahu, autorské práva, zodpovednosť a pravidlá pre obsah od verejnosti.",
+    "Podmienky používania webu Za Pláž. Charakter obsahu, autorské práva, zodpovednosť a pravidlá pre obsah od verejnosti.",
 };
 
 export default function TermsPage() {
@@ -21,7 +21,7 @@ export default function TermsPage() {
         <div>
           <h2 className="text-xl font-bold text-ink-900">1. Charakter projektu</h2>
           <p className="mt-2">
-            Web „Aqualand BB – verejná kontrola" je nezávislý občiansky informačný
+            Web „Za Pláž" je nezávislý občiansky informačný
             projekt. Nie je oficiálnym webom prevádzkovateľa plážového kúpaliska
             ani Mesta Banská Bystrica a nevytvára dojem spojenia s nimi.
           </p>

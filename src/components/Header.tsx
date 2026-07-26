@@ -17,10 +17,10 @@ export function Header() {
           <WaveMark />
           <span className="flex flex-col leading-tight">
             <span className="display text-base text-ink-900 sm:text-lg">
-              Aqualand BB
+              Za Pláž
             </span>
             <span className="text-[10px] font-semibold uppercase tracking-[0.14em] text-brand-600">
-              verejná kontrola
+              ktorá nebude hanbou mesta
             </span>
           </span>
         </Link>

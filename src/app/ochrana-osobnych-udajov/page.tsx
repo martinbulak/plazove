@@ -4,7 +4,7 @@ import { Section, SectionHeading } from "@/components/ui";
 export const metadata: Metadata = {
   title: "Ochrana osobných údajov",
   description:
-    "Zásady ochrany osobných údajov projektu Aqualand BB – verejná kontrola. Aké údaje spracúvame pri výzve, newsletteri a podaniach a aké máte práva.",
+    "Zásady ochrany osobných údajov projektu Za Pláž. Aké údaje spracúvame pri výzve, newsletteri a podaniach a aké máte práva.",
 };
 
 export default function PrivacyPage() {
@@ -23,8 +23,8 @@ export default function PrivacyPage() {
           <h2 className="text-xl font-bold text-ink-900">1. Prevádzkovateľ</h2>
           <p className="mt-2">
             Prevádzkovateľom osobných údajov je občiansky informačný projekt
-            „Aqualand BB – verejná kontrola" (ďalej „prevádzkovateľ"). Kontakt:
-            kontakt@aqualandbb.sk. (Doplňte presné identifikačné údaje.)
+            „Za Pláž" (ďalej „prevádzkovateľ"). Kontakt:
+            info@zaplaz.sk. (Doplňte presné identifikačné údaje.)
           </p>
         </div>
 
@@ -75,7 +75,7 @@ export default function PrivacyPage() {
             Máte právo na prístup, opravu, vymazanie, obmedzenie spracúvania,
             prenosnosť údajov a právo namietať. Súhlas môžete kedykoľvek odvolať.
             Máte tiež právo podať sťažnosť dozornému orgánu (Úrad na ochranu
-            osobných údajov SR). Žiadosti posielajte na kontakt@aqualandbb.sk.
+            osobných údajov SR). Žiadosti posielajte na info@zaplaz.sk.
           </p>
         </div>
 

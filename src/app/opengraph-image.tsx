@@ -2,7 +2,7 @@ import { ImageResponse } from "next/og";
 
 export const runtime = "nodejs";
 export const alt =
-  "Aqualand BB – verejná kontrola. Nezávislý občiansky informačný projekt.";
+  "Za Pláž – ktorá nebude hanbou mesta. Nezávislý občiansky informačný projekt.";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -38,8 +38,13 @@ export default function OgImage() {
           >
             ~
           </div>
-          <div style={{ fontSize: 30, fontWeight: 700, letterSpacing: -0.5 }}>
-            Aqualand BB — verejná kontrola
+          <div style={{ display: "flex", flexDirection: "column" }}>
+            <div style={{ fontSize: 30, fontWeight: 700, letterSpacing: -0.5 }}>
+              Za Pláž
+            </div>
+            <div style={{ fontSize: 19, opacity: 0.8 }}>
+              ktorá nebude hanbou mesta
+            </div>
           </div>
         </div>
 
