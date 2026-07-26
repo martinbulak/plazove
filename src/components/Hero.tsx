@@ -183,11 +183,11 @@ export function Hero({
                       </span>
                     </span>
 
-                    <span className="mt-2 block text-lg font-bold leading-tight text-ink-400">
-                      Nie sú dostupné
+                    <span className="mt-2 block text-2xl font-bold leading-tight text-ink-400">
+                      Vypnuté
                     </span>
 
-                    <span className="mt-0.5 text-xs leading-snug text-ink-500">
+                    <span className="mt-1 text-xs leading-snug text-ink-500">
                       Stránka prevádzkovateľa má 7 200 sledovateľov, sekciu
                       s hodnoteniami však nemá.
                     </span>
