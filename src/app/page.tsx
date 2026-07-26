@@ -6,9 +6,7 @@ import {
   getTimeline,
   getCityActions,
   getOpenQuestions,
-  getDocuments,
   getGallery,
-  getComparison,
   getReviewAnalysis,
   onlyPublished,
 } from "@/lib/content";
@@ -18,67 +16,53 @@ import { formatDateSk } from "@/lib/utils";
 export const revalidate = 60;
 
 export default async function HomePage() {
-  const [site, timeline, actions, questions, documents, gallery, comparison, reviews] =
-    await Promise.all([
-      getSite(),
-      getTimeline(),
-      getCityActions(),
-      getOpenQuestions(),
-      getDocuments(),
-      getGallery(),
-      getComparison(),
-      getReviewAnalysis(),
-    ]);
+  const [site, timeline, actions, questions, gallery, reviews] = await Promise.all([
+    getSite(),
+    getTimeline(),
+    getCityActions(),
+    getOpenQuestions(),
+    getGallery(),
+    getReviewAnalysis(),
+  ]);
 
   const tl = onlyPublished(timeline);
   const qs = onlyPublished(questions);
-  const docs = onlyPublished(documents);
   const photos = onlyPublished(gallery);
   const acts = onlyPublished(actions);
 
   const recentTimeline = tl.slice(-3).reverse();
-  const unanswered = qs.filter((q) => q.actionStatus === "no_answer").length;
   const heroPhoto = photos.find((p) => p.date === "2024") ?? photos[0];
 
-  /** Rozcestník – každá sekcia s konkrétnym číslom, nech je jasné, čo za ňou je. */
-  const sections = [
-    {
-      href: "/pripad",
-      label: "Čo sa stalo",
-      desc: "Príbeh od otvorenia kúpaliska v roku 1957 cez nájomnú zmluvu až po dnešok.",
-      stat: `${tl.length} udalostí v časovej osi`,
-    },
-    {
-      href: "/zmluva",
-      label: "Zmluva a dokumenty",
-      desc: "Nájomná zmluva vysvetlená v otázkach a odpovediach. Archív s originálmi.",
-      stat: `${docs.length} dokumentov v archíve`,
-    },
-    {
-      href: "/aktualny-stav",
-      label: "Aktuálny stav",
-      desc: "Čo mesto urobilo, čo zostáva bez odpovede a ako areál hodnotia návštevníci.",
-      stat: `${unanswered} otázok bez odpovede`,
-    },
-    {
-      href: "/porovnanie",
-      label: "Porovnanie",
-      desc: "Kto prevádzkuje kúpaliská v iných mestách a ako sú hodnotené oproti Bystrici.",
-      stat: `${comparison.ratings.items.length} kúpalísk v rebríčku`,
-    },
-    {
-      href: "/galeria",
-      label: "Galéria",
-      desc: "Fotodokumentácia stavu areálu z rokov 2013 až 2024.",
-      stat: `${photos.length} fotografií`,
-    },
-    {
-      href: "/o-projekte",
-      label: "O projekte",
-      desc: "Kto web prevádzkuje, ako overujeme zdroje a ako nahlásiť chybu.",
-      stat: "Redakčná metodika",
-    },
-  ];
+  /**
+   * Tri recenzie na úvod. Zámerne volíme rôzne počty hviezd, aby výber
+   * nepôsobil ako vyzobané najhoršie prípady – a vynechávame tú, ktorá je
+   * už použitá v hero sekcii.
+   */
+  const heroQuoteId = reviews?.samples.find((s) => s.stars <= 2)?.id;
+  const homeReviews = (() => {
+    if (!reviews) return [];
+    const pool = reviews.samples.filter((s) => s.id !== heroQuoteId);
+    const picked: typeof pool = [];
+    for (const stars of [1, 2, 3]) {
+      const hit = pool.find((s) => s.stars === stars && !picked.includes(s));
+      if (hit) picked.push(hit);
+    }
+    for (const s of pool) {
+      if (picked.length >= 3) break;
+      if (!picked.includes(s)) picked.push(s);
+    }
+    return picked.slice(0, 3);
+  })();
+
+  const negativeShare = reviews
+    ? Math.round(
+        (reviews.distribution
+          .filter((d) => d.stars <= 2)
+          .reduce((s, d) => s + d.count, 0) /
+          reviews.totalReviews) *
+          100,
+      )
+    : 0;
 
   return (
     <>
@@ -101,46 +85,78 @@ export default async function HomePage() {
         </div>
       </div>
 
-      {/* ── Rozcestník sekcií ── */}
-      <Section>
-        <SectionHeading
-          eyebrow="Rozcestník"
-          title="Kde začať"
-          intro="Web je rozdelený do šiestich častí. Každá stojí na dokumentoch a uvedených zdrojoch."
-        />
+      {/* ── Hlasy návštevníkov ── */}
+      {reviews && homeReviews.length > 0 && (
+        <Section>
+          <SectionHeading
+            eyebrow="Hodnotenia návštevníkov"
+            title="Čo píšu ľudia, ktorí tam boli"
+            intro={`Kúpalisko má na Google priemer ${reviews.average
+              .toFixed(1)
+              .replace(".", ",")} hviezdy z ${reviews.totalReviews.toLocaleString(
+              "sk-SK",
+            )} hodnotení. Takmer ${negativeShare} % návštevníkov dalo jednu alebo dve hviezdy.`}
+          />
 
-        <ul className="grid gap-px overflow-hidden rounded-xl bg-ink-200 sm:grid-cols-2">
-          {sections.map((s, i) => (
-            <li key={s.href}>
-              <Link
-                href={s.href}
-                className="group flex h-full gap-5 bg-white p-6 transition-colors hover:bg-brand-50"
-              >
-                <span
-                  aria-hidden
-                  className="section-number shrink-0 text-3xl text-ink-300 transition-colors group-hover:text-brand-500"
-                >
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <span className="min-w-0">
-                  <span className="display block text-xl text-ink-900 group-hover:text-brand-800">
-                    {s.label}
-                  </span>
-                  <span className="mt-1.5 block text-sm leading-relaxed text-ink-600">
-                    {s.desc}
-                  </span>
-                  <span className="mt-3 inline-flex items-center gap-1.5 text-xs font-semibold text-brand-700">
-                    {s.stat}
-                    <span aria-hidden className="transition-transform group-hover:translate-x-0.5">
-                      →
+          <ul className="grid gap-4 md:grid-cols-3">
+            {homeReviews.map((s) => (
+              <li key={s.id}>
+                <figure className="flex h-full flex-col rounded-xl border border-ink-200 bg-white p-5">
+                  <div className="flex items-center justify-between gap-2">
+                    <span
+                      className="text-sm tracking-tight"
+                      aria-label={`${s.stars} z 5 hviezd`}
+                    >
+                      <span className="text-accent-500">{"★".repeat(s.stars)}</span>
+                      <span className="text-ink-300">{"★".repeat(5 - s.stars)}</span>
                     </span>
-                  </span>
+                    <span className="text-[11px] font-medium uppercase tracking-wide text-ink-400">
+                      {s.platform}
+                    </span>
+                  </div>
+
+                  <blockquote className="mt-3 flex-1 font-display text-[0.95rem] italic leading-relaxed text-ink-700">
+                    „{s.excerpt}"
+                  </blockquote>
+
+                  <figcaption className="mt-4 border-t border-ink-100 pt-3 text-xs text-ink-500">
+                    {s.author} · {s.date}
+                  </figcaption>
+                </figure>
+              </li>
+            ))}
+          </ul>
+
+          <div className="mt-6">
+            <Link
+              href="/aktualny-stav#hodnotenia"
+              className="group inline-flex items-center gap-3 rounded-xl border border-ink-300 bg-white px-5 py-4 transition-colors hover:border-brand-400 hover:bg-brand-50"
+            >
+              <span>
+                <span className="display block text-lg text-ink-900 group-hover:text-brand-800">
+                  Čo hovoria návštevníci kúpaliska
                 </span>
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </Section>
+                <span className="mt-0.5 block text-sm text-ink-600">
+                  Celkové štatistiky, rozloženie hodnotení a najčastejšie dôvody
+                  nespokojnosti
+                </span>
+              </span>
+              <span
+                aria-hidden
+                className="ml-auto shrink-0 text-brand-700 transition-transform group-hover:translate-x-0.5"
+              >
+                →
+              </span>
+            </Link>
+          </div>
+
+          <p className="mt-3 text-xs leading-relaxed text-ink-500">
+            Ide o názory konkrétnych návštevníkov, nie o tvrdenia prevádzkovateľa
+            tohto webu. Mená uvádzame skrátene, stav hodnotení k{" "}
+            {formatDateSk(reviews.checkedAt)}.
+          </p>
+        </Section>
+      )}
 
       {/* ── Najnovšie udalosti + stav ── */}
       <div className="border-y border-ink-200 bg-white">

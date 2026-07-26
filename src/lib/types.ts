@@ -224,6 +224,17 @@ export interface CityComparison {
   detail?: string;
   inOperation: string;
   sourceUrl?: string;
+  /**
+   * Rozloha areálu na porovnanie mierky, napr. „37 332 m²“.
+   * Ak údaj nie je overený, pole chýba a v tabuľke sa zobrazí „neuvedené“.
+   */
+  area?: string;
+  /** Rozloha v m² na zoradenie a na veľkostnú kategóriu. */
+  areaM2?: number;
+  /** Čo presne rozloha vyjadruje (areál / vodná plocha / iné). */
+  areaNote?: string;
+  /** Zdroj údaja o rozlohe. */
+  areaSourceUrl?: string;
   /** Zvýrazniť riadok (Banská Bystrica). */
   highlight?: boolean;
 }
@@ -242,6 +253,8 @@ export interface FacilityRating {
   /** Kto zariadenie prevádzkuje (typ). */
   operatorType?: OperatorType;
   note?: string;
+  /** Rozloha v m² – slúži na veľkostnú kategóriu v rebríčku. */
+  areaM2?: number;
   /** Zvýrazniť (plážové kúpalisko BB). */
   highlight?: boolean;
 }
