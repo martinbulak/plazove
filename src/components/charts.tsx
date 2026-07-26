@@ -117,6 +117,91 @@ export function StarDistribution({
   );
 }
 
+/* ── Rebríček podľa počtu recenzií (návštevnosť) ─────────────────────── */
+
+export function ReviewVolumeRanking({ rows }: { rows: RankRow[] }) {
+  const max = Math.max(...rows.map((r) => r.reviews), 1);
+
+  return (
+    <figure>
+      <figcaption className="mb-4 text-sm text-ink-500">
+        Zoradené podľa počtu hodnotení na Google – čím viac hodnotení, tým
+        navštevovanejšie zariadenie. Vpravo je priemerné hodnotenie a overená
+        rozloha.
+      </figcaption>
+
+      <ul className="space-y-2">
+        {rows.map((r, i) => {
+          const w = (r.reviews / max) * 100;
+          return (
+            <li
+              key={r.id}
+              className={cn(
+                "grid grid-cols-[1.5rem_1fr] items-center gap-x-3 gap-y-1 rounded-md py-1.5 sm:grid-cols-[1.5rem_14rem_1fr_8.5rem]",
+                r.highlight && "bg-[var(--color-chart-neg)]/8 px-2",
+              )}
+            >
+              <span aria-hidden className="section-number text-sm text-ink-400">
+                {i + 1}
+              </span>
+
+              <span className="col-start-2 min-w-0">
+                <span
+                  className={cn(
+                    "block truncate text-sm leading-snug",
+                    r.highlight ? "font-bold text-ink-900" : "font-medium text-ink-800",
+                  )}
+                >
+                  {r.name}
+                </span>
+                <span className="block truncate text-xs text-ink-500">
+                  {r.place}
+                  {haLabel(r.areaM2) && (
+                    <span className="ml-1.5 whitespace-nowrap rounded bg-ink-100 px-1.5 py-0.5 font-medium tabular-nums text-ink-600">
+                      {haLabel(r.areaM2)}
+                    </span>
+                  )}
+                </span>
+              </span>
+
+              <span className="col-span-2 col-start-1 flex items-center gap-3 sm:col-span-1 sm:col-start-3">
+                <span className="relative h-3.5 flex-1 overflow-hidden rounded-sm bg-ink-100">
+                  <span
+                    className="block h-full rounded-r-[4px]"
+                    style={{
+                      width: `${Math.max(w, 2)}%`,
+                      background: r.highlight
+                        ? "var(--color-chart-neg)"
+                        : "var(--color-chart-pos)",
+                    }}
+                  />
+                </span>
+                <span className="w-14 shrink-0 text-right text-sm tabular-nums text-ink-700 sm:hidden">
+                  {r.reviews.toLocaleString("sk-SK")}
+                </span>
+              </span>
+
+              <span className="hidden items-baseline justify-end gap-2 sm:flex">
+                <span
+                  className={cn(
+                    "text-sm tabular-nums",
+                    r.highlight ? "font-bold text-ink-900" : "font-semibold text-ink-800",
+                  )}
+                >
+                  {r.reviews.toLocaleString("sk-SK")}
+                </span>
+                <span className="whitespace-nowrap text-xs tabular-nums text-ink-400">
+                  ★ {r.rating.toFixed(1).replace(".", ",")}
+                </span>
+              </span>
+            </li>
+          );
+        })}
+      </ul>
+    </figure>
+  );
+}
+
 /* ── Rebríček hodnotení kúpalísk ─────────────────────────────────────── */
 
 export interface RankRow {

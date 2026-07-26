@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import { Section, SectionHeading, Card, QuickNav } from "@/components/ui";
-import { RatingRanking } from "@/components/charts";
+import { Section, SectionHeading, QuickNav } from "@/components/ui";
+import { RatingRanking, ReviewVolumeRanking } from "@/components/charts";
 import { getComparison } from "@/lib/content";
-import { cn, formatDateSk } from "@/lib/utils";
+import { formatDateSk } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "Porovnanie a súvislosti",
@@ -13,18 +13,6 @@ export const metadata: Metadata = {
 // ISR: obsah sa obnovuje z KV (ak je nastavené) každých 60 s.
 export const revalidate = 60;
 
-/** Hviezdičkový ukazovateľ hodnotenia. */
-function Stars({ rating }: { rating: number }) {
-  return (
-    <span className="inline-flex items-center gap-1" aria-hidden>
-      <span className="text-accent-500">★</span>
-      <span className="font-bold tabular-nums text-ink-900">
-        {rating.toFixed(1).replace(".", ",")}
-      </span>
-    </span>
-  );
-}
-
 export default async function ComparisonPage() {
   const { cityFacts, ratings } = await getComparison();
 
@@ -34,12 +22,11 @@ export default async function ComparisonPage() {
     (a, b) => b.rating - a.rating || b.reviews - a.reviews,
   );
 
-  // Kúpaliská s výraznejšou návštevnosťou (dostatočne veľká vzorka recenzií).
-  const major = [...ratings.items]
-    .filter((i) => i.reviews >= ratings.minReviews)
-    .sort((a, b) => b.rating - a.rating || b.reviews - a.reviews);
-
-  const bbRank = major.findIndex((i) => i.highlight) + 1;
+  // Top 10 podľa počtu hodnotení – počet recenzií berieme ako ukazovateľ návštevnosti.
+  const top10 = [...ratings.items]
+    .sort((a, b) => b.reviews - a.reviews)
+    .slice(0, 10);
+  const bbVolumeRank = top10.findIndex((i) => i.highlight) + 1;
 
   return (
     <>
@@ -161,83 +148,54 @@ export default async function ComparisonPage() {
         </Section>
       </div>
 
-      {/* Rebríček významnejších zariadení */}
+      {/* Top 10 podľa návštevnosti */}
       <Section id="vyznamnejsie" className="scroll-mt-24">
         <SectionHeading
-          eyebrow="Kúpaliská porovnateľnej veľkosti"
-          title="Poradie medzi najnavštevovanejšími kúpaliskami"
-          intro={`Zúžený rebríček len na kúpaliská s aspoň ${ratings.minReviews.toLocaleString("sk-SK")} recenziami. Tým sa odfiltrujú prevádzky, ktorých hodnotenie stojí na desiatkach recenzií, a porovnávajú sa zariadenia s dostatočne veľkou vzorkou návštevníkov.`}
+          eyebrow="Top 10 kúpalísk"
+          title="Najnavštevovanejšie kúpaliská na Slovensku"
+          intro="Rebríček desiatich kúpalísk s najväčším počtom hodnotení na Mapách Google. Počet hodnotení berieme ako ukazovateľ návštevnosti – tým sa z porovnania prirodzene vytratia malé obecné kúpaliská s desiatkami recenzií."
         />
 
-        <ol className="space-y-3">
-          {major.map((f, i) => (
-            <li key={f.id}>
-              <Card
-                className={cn(
-                  "flex flex-wrap items-center gap-4",
-                  f.highlight && "border-brand-400 bg-brand-50",
-                )}
-              >
-                <span
-                  className={cn(
-                    "grid h-10 w-10 shrink-0 place-items-center rounded-full font-bold",
-                    f.highlight
-                      ? "bg-brand-700 text-white"
-                      : "bg-ink-100 text-ink-700",
-                  )}
-                >
-                  {i + 1}
-                </span>
-                <div className="min-w-0 flex-1">
-                  <p
-                    className={cn(
-                      "font-semibold text-ink-900",
-                      f.highlight && "text-brand-800",
-                    )}
-                  >
-                    {f.name}
-                  </p>
-                  <p className="text-xs text-ink-500">
-                    {f.place} · {f.reviews.toLocaleString("sk-SK")} recenzií
-                  </p>
-                </div>
-                <div className="text-right">
-                  <Stars rating={f.rating} />
-                </div>
-              </Card>
+        <div className="mb-6 rounded-lg border border-ink-200 bg-white px-4 py-3 text-sm leading-relaxed text-ink-600">
+          <p className="font-semibold text-ink-800">Ako sme rebríček zostavili</p>
+          <ol className="mt-2 list-decimal space-y-1 pl-5">
+            <li>
+              Na Mapách Google sme vyhľadali „kúpalisko" a „letné kúpalisko"
+              vo viacerých častiach Slovenska a doplnili známe väčšie zariadenia.
             </li>
-          ))}
-        </ol>
+            <li>
+              Pri každom sme odčítali priemerné hodnotenie a počet hodnotení
+              priamo z karty miesta.
+            </li>
+            <li>
+              Zoradili sme ich podľa počtu hodnotení a zobrazujeme prvých desať.
+              Rozlohu uvádzame tam, kde sa dala overiť – ako ukazovateľ poradia
+              ju použiť nemožno, väčšina prevádzkovateľov ju nezverejňuje.
+            </li>
+            <li>
+              Vynechali sme kryté plavárne a hotelové aquaparky, ktoré majú iný
+              charakter prevádzky.
+            </li>
+          </ol>
+        </div>
 
-        {bbRank > 0 && (
+        <div className="rounded-xl border border-ink-200 bg-white p-5 sm:p-6">
+          <ReviewVolumeRanking rows={top10} />
+        </div>
+
+        {bbVolumeRank > 0 && (
           <div className="mt-6 rounded-[var(--radius-card)] border-l-4 border-accent-500 bg-white p-5 shadow-sm ring-1 ring-ink-100">
-            <p className="text-sm font-semibold uppercase tracking-wide text-brand-700">
-              Zhrnutie
-            </p>
+            <p className="eyebrow text-brand-700">Zhrnutie</p>
             <p className="mt-2 text-ink-800">
-              Medzi {major.length} najnavštevovanejšími kúpaliskami skončilo
-              plážové kúpalisko v Banskej Bystrici na{" "}
-              <strong>
-                {bbRank}. mieste z {major.length}
-              </strong>{" "}
-              s hodnotením{" "}
-              {major.find((f) => f.highlight)?.rating.toFixed(1).replace(".", ",")}.
-              Ostatné kúpaliská v tejto skupine majú hodnotenie{" "}
-              {Math.min(
-                ...major.filter((f) => !f.highlight).map((f) => f.rating),
-              )
-                .toFixed(1)
-                .replace(".", ",")}{" "}
-              a vyššie.
-            </p>
-            <p className="mt-2 text-xs text-ink-600">
-              Ide o porovnanie verejných hodnotení návštevníkov k{" "}
-              {formatDateSk(ratings.checkedAt)}, nie o odborné posúdenie technického
-              stavu či hygieny. Hodnotenie ovplyvňuje aj typ zariadenia a cena vstupu.
+              Plážové kúpalisko v Banskej Bystrici je podľa počtu hodnotení{" "}
+              <strong>{bbVolumeRank}. najnavštevovanejšie</strong> z tejto
+              desiatky – patrí teda medzi najväčšie na Slovensku. Zároveň má
+              v nej <strong>najnižšie hodnotenie</strong>.
             </p>
           </div>
         )}
       </Section>
+
     </>
   );
 }
