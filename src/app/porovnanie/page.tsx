@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Section, SectionHeading, QuickNav } from "@/components/ui";
-import { RatingRanking, ReviewVolumeRanking } from "@/components/charts";
+import { RatingRanking } from "@/components/charts";
 import { getComparison } from "@/lib/content";
 import { formatDateSk } from "@/lib/utils";
 
@@ -22,16 +22,19 @@ export default async function ComparisonPage() {
     (a, b) => b.rating - a.rating || b.reviews - a.reviews,
   );
 
-  // Top 10 podľa počtu hodnotení – počet recenzií berieme ako ukazovateľ návštevnosti.
+  /**
+   * Najhoršie hodnotené kúpaliská: hlavné kritérium je priemerné hodnotenie
+   * (vzostupne), sekundárnym je počet hodnotení ako ukazovateľ návštevnosti –
+   * slúži aj ako prah, aby sa do rebríčka nedostali prevádzky s pár recenziami.
+   */
   const top10 = [...ratings.items]
-    .sort((a, b) => b.reviews - a.reviews)
+    .filter((i) => i.reviews >= ratings.minReviews)
+    .sort((a, b) => a.rating - b.rating || b.reviews - a.reviews)
     .slice(0, 10);
   const bbVolumeRank = top10.findIndex((i) => i.highlight) + 1;
   const bbInTop10 = top10.find((i) => i.highlight);
-  // Overujeme z dát, či je BB v desiatke naozaj najhoršie hodnotené.
-  const bbWorstRated =
-    !!bbInTop10 &&
-    top10.every((i) => i.highlight || i.rating > bbInTop10.rating);
+  // Overujeme z dát, či je BB naozaj najhoršie hodnotené z porovnávaných.
+  const bbWorstRated = !!bbInTop10 && bbVolumeRank === 1;
 
   return (
     <>
@@ -156,9 +159,9 @@ export default async function ComparisonPage() {
       {/* Top 10 podľa návštevnosti */}
       <Section id="vyznamnejsie" className="scroll-mt-24">
         <SectionHeading
-          eyebrow="Top 10 kúpalísk"
-          title="Najnavštevovanejšie kúpaliská na Slovensku"
-          intro="Rebríček desiatich kúpalísk s najväčším počtom hodnotení na Mapách Google. Počet hodnotení berieme ako ukazovateľ návštevnosti – tým sa z porovnania prirodzene vytratia malé obecné kúpaliská s desiatkami recenzií."
+          eyebrow="Rebríček"
+          title="Najhoršie hodnotené kúpaliská na Slovensku"
+          intro="Desať najslabšie hodnotených kúpalísk z tých, ktoré sme porovnávali. Hlavným kritériom je priemerné hodnotenie na Mapách Google, druhotným počet hodnotení – ten slúži ako ukazovateľ návštevnosti."
         />
 
         <div className="mb-6 rounded-lg border border-ink-200 bg-white px-4 py-3 text-sm leading-relaxed text-ink-600">
@@ -173,37 +176,47 @@ export default async function ComparisonPage() {
               priamo z karty miesta.
             </li>
             <li>
-              Zoradili sme ich podľa počtu hodnotení a zobrazujeme prvých desať.
-              Rozlohu uvádzame tam, kde sa dala overiť – ako ukazovateľ poradia
-              ju použiť nemožno, väčšina prevádzkovateľov ju nezverejňuje.
+              Do rebríčka púšťame len zariadenia s aspoň{" "}
+              {ratings.minReviews.toLocaleString("sk-SK")} hodnoteniami, aby
+              poradie nestálo na pár recenziách. Počet hodnotení zároveň
+              používame ako ukazovateľ návštevnosti.
             </li>
             <li>
-              Vynechali sme kryté plavárne a hotelové aquaparky, ktoré majú iný
-              charakter prevádzky.
+              Zoradili sme ich podľa priemerného hodnotenia od najnižšieho
+              a zobrazujeme prvých desať. Rozlohu uvádzame tam, kde sa dala
+              overiť – ako kritérium poradia ju použiť nemožno, väčšina
+              prevádzkovateľov ju nezverejňuje.
+            </li>
+            <li>
+              Vynechali sme kryté plavárne, hotelové aquaparky a prevádzky,
+              ktoré sú trvalo zatvorené.
             </li>
           </ol>
         </div>
 
         <div className="rounded-xl border border-ink-200 bg-white p-5 sm:p-6">
-          <ReviewVolumeRanking rows={top10} />
+          <RatingRanking
+            rows={top10}
+            caption="Priemerné hodnotenie na Google – čím kratší stĺpec, tým horšie hodnotenie. Vpravo je počet hodnotení a overená rozloha."
+          />
         </div>
 
         {bbVolumeRank > 0 && (
           <div className="mt-6 rounded-[var(--radius-card)] border-l-4 border-accent-500 bg-white p-5 shadow-sm ring-1 ring-ink-100">
             <p className="eyebrow text-brand-700">Zhrnutie</p>
             <p className="mt-2 text-ink-800">
-              Plážové kúpalisko v Banskej Bystrici je podľa počtu hodnotení{" "}
-              <strong>{bbVolumeRank}. z desiatich</strong> najnavštevovanejších
-              kúpalísk na Slovensku.{" "}
               {bbWorstRated ? (
                 <>
-                  Zároveň má z celej tejto desiatky{" "}
-                  <strong>najnižšie hodnotenie</strong> –{" "}
-                  {bbInTop10.rating.toFixed(1).replace(".", ",")} hviezdy.
+                  Plážové kúpalisko v Banskej Bystrici je{" "}
+                  <strong>najhoršie hodnotené</strong> zo všetkých porovnávaných
+                  kúpalísk s dostatočným počtom hodnotení –{" "}
+                  {bbInTop10.rating.toFixed(1).replace(".", ",")} hviezdy
+                  z {bbInTop10.reviews.toLocaleString("sk-SK")} hodnotení.
                 </>
               ) : (
                 <>
-                  Jeho hodnotenie je{" "}
+                  Plážové kúpalisko v Banskej Bystrici je v tomto rebríčku na{" "}
+                  <strong>{bbVolumeRank}. mieste</strong> s hodnotením{" "}
                   {bbInTop10?.rating.toFixed(1).replace(".", ",")} hviezdy.
                 </>
               )}

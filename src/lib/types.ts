@@ -255,6 +255,9 @@ export interface FacilityRating {
   note?: string;
   /** Rozloha v m² – slúži na veľkostnú kategóriu v rebríčku. */
   areaM2?: number;
+  /** Náhľadová fotografia (lokálna cesta). Používame len fotky, na ktoré máme práva. */
+  photo?: string;
+  photoAlt?: string;
   /** Zvýrazniť (plážové kúpalisko BB). */
   highlight?: boolean;
 }

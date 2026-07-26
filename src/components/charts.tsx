@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 
 /**
@@ -145,22 +146,35 @@ export function ReviewVolumeRanking({ rows }: { rows: RankRow[] }) {
                 {i + 1}
               </span>
 
-              <span className="col-start-2 min-w-0">
-                <span
-                  className={cn(
-                    "block truncate text-sm leading-snug",
-                    r.highlight ? "font-bold text-ink-900" : "font-medium text-ink-800",
-                  )}
-                >
-                  {r.name}
-                </span>
-                <span className="block truncate text-xs text-ink-500">
-                  {r.place}
-                  {haLabel(r.areaM2) && (
-                    <span className="ml-1.5 whitespace-nowrap rounded bg-ink-100 px-1.5 py-0.5 font-medium tabular-nums text-ink-600">
-                      {haLabel(r.areaM2)}
-                    </span>
-                  )}
+              <span className="col-start-2 flex min-w-0 items-center gap-2.5">
+                {r.photo && (
+                  <span className="relative h-10 w-14 shrink-0 overflow-hidden rounded-md bg-ink-100 ring-1 ring-ink-200">
+                    <Image
+                      src={r.photo}
+                      alt={r.photoAlt || r.name}
+                      fill
+                      sizes="3.5rem"
+                      className="object-cover"
+                    />
+                  </span>
+                )}
+                <span className="min-w-0">
+                  <span
+                    className={cn(
+                      "block truncate text-sm leading-snug",
+                      r.highlight ? "font-bold text-ink-900" : "font-medium text-ink-800",
+                    )}
+                  >
+                    {r.name}
+                  </span>
+                  <span className="block truncate text-xs text-ink-500">
+                    {r.place}
+                    {haLabel(r.areaM2) && (
+                      <span className="ml-1.5 whitespace-nowrap rounded bg-ink-100 px-1.5 py-0.5 font-medium tabular-nums text-ink-600">
+                        {haLabel(r.areaM2)}
+                      </span>
+                    )}
+                  </span>
                 </span>
               </span>
 
@@ -211,6 +225,8 @@ export interface RankRow {
   rating: number;
   reviews: number;
   areaM2?: number;
+  photo?: string;
+  photoAlt?: string;
   highlight?: boolean;
 }
 
@@ -225,18 +241,20 @@ export function RatingRanking({
   rows,
   min = 3,
   max = 5,
+  caption,
 }: {
   rows: RankRow[];
   min?: number;
   max?: number;
+  caption?: string;
 }) {
   const span = max - min;
 
   return (
     <figure>
       <figcaption className="mb-4 text-sm text-ink-500">
-        Priemerné hodnotenie na Google (škála {min}–{max}). Zvýraznené je plážové
-        kúpalisko v Banskej Bystrici.
+        {caption ??
+          `Priemerné hodnotenie na Google (škála ${min}–${max}). Zvýraznené je plážové kúpalisko v Banskej Bystrici.`}
       </figcaption>
 
       <ul className="space-y-2">
@@ -246,7 +264,7 @@ export function RatingRanking({
             <li
               key={r.id}
               className={cn(
-                "grid grid-cols-[1.5rem_1fr] items-center gap-x-3 gap-y-1 rounded-md py-1.5 sm:grid-cols-[1.5rem_13rem_1fr_5.5rem]",
+                "grid grid-cols-[1.5rem_1fr] items-center gap-x-3 gap-y-1 rounded-md py-1.5 sm:grid-cols-[1.5rem_16rem_1fr_6.5rem]",
                 r.highlight && "bg-[var(--color-chart-neg)]/8 px-2",
               )}
             >
@@ -257,22 +275,35 @@ export function RatingRanking({
                 {i + 1}
               </span>
 
-              <span className="col-start-2 min-w-0">
-                <span
-                  className={cn(
-                    "block truncate text-sm leading-snug",
-                    r.highlight ? "font-bold text-ink-900" : "font-medium text-ink-800",
-                  )}
-                >
-                  {r.name}
-                </span>
-                <span className="block truncate text-xs text-ink-500">
-                  {r.place}
-                  {haLabel(r.areaM2) && (
-                    <span className="ml-1.5 whitespace-nowrap rounded bg-ink-100 px-1.5 py-0.5 font-medium tabular-nums text-ink-600">
-                      {haLabel(r.areaM2)}
-                    </span>
-                  )}
+              <span className="col-start-2 flex min-w-0 items-center gap-2.5">
+                {r.photo && (
+                  <span className="relative h-10 w-14 shrink-0 overflow-hidden rounded-md bg-ink-100 ring-1 ring-ink-200">
+                    <Image
+                      src={r.photo}
+                      alt={r.photoAlt || r.name}
+                      fill
+                      sizes="3.5rem"
+                      className="object-cover"
+                    />
+                  </span>
+                )}
+                <span className="min-w-0">
+                  <span
+                    className={cn(
+                      "block truncate text-sm leading-snug",
+                      r.highlight ? "font-bold text-ink-900" : "font-medium text-ink-800",
+                    )}
+                  >
+                    {r.name}
+                  </span>
+                  <span className="block truncate text-xs text-ink-500">
+                    {r.place}
+                    {haLabel(r.areaM2) && (
+                      <span className="ml-1.5 whitespace-nowrap rounded bg-ink-100 px-1.5 py-0.5 font-medium tabular-nums text-ink-600">
+                        {haLabel(r.areaM2)}
+                      </span>
+                    )}
+                  </span>
                 </span>
               </span>
 
