@@ -2,6 +2,31 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui";
 import type { SiteConfig, ReviewAnalysis, GalleryItem } from "@/lib/types";
+import { formatDateSk } from "@/lib/utils";
+
+/** Značka Google – používame len ako rozlišovací piktogram zdroja hodnotení. */
+function GoogleMark() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 48 48" aria-hidden className="shrink-0">
+      <path fill="#4285F4" d="M45 24c0-1.6-.1-2.7-.4-3.9H24v7.1h12c-.2 1.8-1.5 4.6-4.3 6.4l6.6 5.1C42.2 35 45 30 45 24z" />
+      <path fill="#34A853" d="M24 46c5.8 0 10.6-1.9 14.2-5.2l-6.8-5.2c-1.8 1.3-4.3 2.2-7.4 2.2-5.6 0-10.4-3.7-12.1-8.8l-7 5.4C8.5 41.2 15.7 46 24 46z" />
+      <path fill="#FBBC05" d="M11.9 29c-.4-1.3-.7-2.6-.7-4s.3-2.7.7-4l-7-5.4C3.7 18.3 3 21.1 3 24s.7 5.7 1.9 8.4l7-5.4z" />
+      <path fill="#EA4335" d="M24 10.5c4 0 6.6 1.7 8.1 3.1l5.9-5.8C34.6 4.4 29.8 2 24 2 15.7 2 8.5 6.8 4.9 14.6l7 5.4C13.6 14.9 18.4 10.5 24 10.5z" />
+    </svg>
+  );
+}
+
+/** Značka Facebook – rozlišovací piktogram zdroja. */
+function FacebookMark() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden className="shrink-0">
+      <path
+        fill="#1877F2"
+        d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.69 4.53-4.69 1.31 0 2.68.24 2.68.24v2.96h-1.51c-1.49 0-1.96.93-1.96 1.89v2.26h3.33l-.53 3.49h-2.8V24C19.61 23.1 24 18.1 24 12.07z"
+      />
+    </svg>
+  );
+}
 
 /**
  * Hero: vľavo tvrdenie a výzva, vpravo dôkaz – fotografia stavu areálu
@@ -11,31 +36,16 @@ export function Hero({
   site,
   reviews,
   photos = [],
-  quoteId,
   galleryCount = 0,
 }: {
   site: SiteConfig;
   reviews: ReviewAnalysis | null;
   /** Fotografie do koláže – prvá je hlavná, ďalšie dve menšie. */
   photos?: GalleryItem[];
-  /** Recenzia, ktorá tematicky sedí k fotkám. */
-  quoteId?: string;
   /** Celkový počet fotografií v galérii – pre dlaždicu „+N". */
   galleryCount?: number;
 }) {
-  const quote =
-    reviews?.samples.find((s) => s.id === quoteId) ??
-    reviews?.samples.find((s) => s.stars <= 2) ??
-    reviews?.samples[0];
   const [main, ...rest] = photos;
-  const negative = reviews
-    ? reviews.distribution
-        .filter((d) => d.stars <= 2)
-        .reduce((s, d) => s + d.count, 0)
-    : 0;
-  const negativeShare = reviews
-    ? Math.round((negative / reviews.totalReviews) * 100)
-    : 0;
 
   return (
     <section className="hero-wash relative overflow-hidden border-b border-ink-200">
@@ -126,42 +136,69 @@ export function Hero({
                 </figure>
               )}
 
-              {reviews && quote && (
-                <div className="relative z-10 mt-3 rounded-xl border border-ink-200 bg-white p-5 shadow-lg">
-                  <div className="flex items-center gap-3">
-                    <span className="display text-4xl text-ink-900">
-                      {reviews.average.toFixed(1).replace(".", ",")}
-                    </span>
-                    <div className="min-w-0">
-                      <span className="block text-sm text-accent-500" aria-hidden>
-                        ★★★★★
-                      </span>
-                      <span className="block text-xs text-ink-500">
-                        {reviews.totalReviews.toLocaleString("sk-SK")} hodnotení
-                        na Google
-                      </span>
-                    </div>
-                  </div>
-
-                  <blockquote className="mt-4 border-l-2 border-accent-400 pl-3 font-display text-[0.95rem] italic leading-relaxed text-ink-700">
-                    „{quote.excerpt}"
-                  </blockquote>
-
-                  <p className="mt-3 flex flex-wrap items-center gap-x-2 text-xs text-ink-500">
-                    <span className="font-medium">{quote.author}</span>
-                    <span aria-hidden>·</span>
-                    <span>{quote.date}</span>
-                  </p>
-
+              {reviews && (
+                <div className="mt-3 grid grid-cols-2 gap-3">
+                  {/* Google – hodnotenie s preklikom */}
                   <Link
                     href="/aktualny-stav#hodnotenia"
-                    className="mt-4 flex items-center justify-between gap-2 rounded-lg bg-rose-50 px-3 py-2 text-xs font-semibold text-rose-800 ring-1 ring-rose-200 hover:bg-rose-100"
+                    className="group flex flex-col rounded-xl border border-ink-200 bg-white p-4 shadow-sm transition-colors hover:border-brand-400"
                   >
-                    <span>{negativeShare} % návštevníkov dalo 1–2 hviezdy</span>
-                    <span aria-hidden>→</span>
+                    <span className="flex items-center gap-2">
+                      <GoogleMark />
+                      <span className="text-xs font-semibold text-ink-700">
+                        Google recenzie
+                      </span>
+                    </span>
+
+                    <span className="mt-2 flex items-baseline gap-2">
+                      <span className="display text-3xl text-ink-900">
+                        {reviews.average.toFixed(1).replace(".", ",")}
+                      </span>
+                      <span className="text-sm text-accent-500" aria-hidden>
+                        ★★★★★
+                      </span>
+                    </span>
+
+                    <span className="mt-0.5 text-xs text-ink-500">
+                      z {reviews.totalReviews.toLocaleString("sk-SK")} hodnotení
+                    </span>
+
+                    <span className="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-brand-700">
+                      Zobraziť rozbor
+                      <span
+                        aria-hidden
+                        className="transition-transform group-hover:translate-x-0.5"
+                      >
+                        →
+                      </span>
+                    </span>
                   </Link>
+
+                  {/* Facebook – recenzie na stránke nie sú */}
+                  <div className="flex flex-col rounded-xl border border-ink-200 bg-white p-4 shadow-sm">
+                    <span className="flex items-center gap-2">
+                      <FacebookMark />
+                      <span className="text-xs font-semibold text-ink-700">
+                        Facebook recenzie
+                      </span>
+                    </span>
+
+                    <span className="mt-2 block text-lg font-bold leading-tight text-ink-400">
+                      Nie sú dostupné
+                    </span>
+
+                    <span className="mt-0.5 text-xs leading-snug text-ink-500">
+                      Stránka prevádzkovateľa má 7 200 sledovateľov, sekciu
+                      s hodnoteniami však nemá.
+                    </span>
+
+                    <span className="mt-auto pt-3 text-[11px] text-ink-400">
+                      Stav k {formatDateSk(reviews.checkedAt)}
+                    </span>
+                  </div>
                 </div>
               )}
+
             </div>
           </div>
         </div>

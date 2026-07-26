@@ -44,7 +44,6 @@ export default async function HomePage() {
     "g-2026-rozvadzac",
     "g-2026-plocha",
   ];
-  const HERO_QUOTE_ID = "rev-1";
   const heroPhotos = HERO_PHOTO_IDS.map((id) =>
     photos.find((p) => p.id === id),
   ).filter((p): p is NonNullable<typeof p> => Boolean(p));
@@ -52,13 +51,11 @@ export default async function HomePage() {
 
   /**
    * Tri recenzie na úvod. Zámerne volíme rôzne počty hviezd, aby výber
-   * nepôsobil ako vyzobané najhoršie prípady – a vynechávame tú, ktorá je
-   * už použitá v hero sekcii.
+   * nepôsobil ako vyzobané najhoršie prípady.
    */
-  const heroQuoteId = HERO_QUOTE_ID;
   const homeReviews = (() => {
     if (!reviews) return [];
-    const pool = reviews.samples.filter((s) => s.id !== heroQuoteId);
+    const pool = [...reviews.samples];
     const picked: typeof pool = [];
     for (const stars of [1, 2, 3]) {
       const hit = pool.find((s) => s.stars === stars && !picked.includes(s));
@@ -97,7 +94,6 @@ export default async function HomePage() {
         site={site}
         reviews={reviews}
         photos={heroCollage}
-        quoteId={HERO_QUOTE_ID}
         galleryCount={photos.length}
       />
 

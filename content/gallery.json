@@ -1,1 +1,50 @@
-[]
+[
+  {
+    "id": "g-2026-jazero",
+    "src": "/foto/2026-jazero.jpg",
+    "alt": "Jazero v areáli plážového kúpaliska so zelenými riasami na hladine, v pozadí drevená loď, 2026",
+    "caption": "Jazero v areáli, 2026.",
+    "status": "published",
+    "date": "2026",
+    "credit": "Fotodokumentácia stavu areálu, poskytnutá redakcii",
+    "origin": "external",
+    "width": 1050,
+    "height": 1400
+  },
+  {
+    "id": "g-2026-vstup",
+    "src": "/foto/2026-vstup.jpg",
+    "alt": "Chodník v areáli kúpaliska so zábranami, návštevníci a jazero, 2026",
+    "caption": "Hlavný chodník areálu, 2026.",
+    "status": "published",
+    "date": "2026",
+    "credit": "Fotodokumentácia stavu areálu, poskytnutá redakcii",
+    "origin": "external",
+    "width": 1050,
+    "height": 1400
+  },
+  {
+    "id": "g-2026-rozvadzac",
+    "src": "/foto/2026-rozvadzac.jpg",
+    "alt": "Elektrický rozvádzač na tráve s voľne vedenými káblami a hadicami, 2026",
+    "caption": "Elektrický rozvádzač a vedenie káblov, 2026.",
+    "status": "published",
+    "date": "2026",
+    "credit": "Fotodokumentácia stavu areálu, poskytnutá redakcii",
+    "origin": "external",
+    "width": 1050,
+    "height": 1400
+  },
+  {
+    "id": "g-2026-plocha",
+    "src": "/foto/2026-plocha.jpg",
+    "alt": "Prázdna spevnená plocha bývalých ihrísk s očíslovanými značkami, 2026",
+    "caption": "Spevnená plocha v areáli, 2026.",
+    "status": "published",
+    "date": "2026",
+    "credit": "Fotodokumentácia stavu areálu, poskytnutá redakcii",
+    "origin": "external",
+    "width": 1050,
+    "height": 1400
+  }
+]
