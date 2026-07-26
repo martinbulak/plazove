@@ -69,10 +69,10 @@
       "detail": "Mestská spoločnosť. Pred sezónou priebežné opravy – čistenie dna, mólo, nové prezliekarne.",
       "inOperation": "Áno",
       "sourceUrl": "https://www.presovreal.sk/prevadzka_rekreacneho_arealu_delna/",
-      "area": "13 – 15 ha",
-      "areaM2": 140000,
-      "areaNote": "celý rekreačný areál vrátane vodnej nádrže; samotný aquapark má cca 1,5 ha. Zdroj uvádza na jednom mieste 13 aj 15 ha.",
-      "areaSourceUrl": "https://www.presovreal.sk/prevadzka_rekreacneho_arealu_delna/"
+      "area": "1,5 ha",
+      "areaM2": 15000,
+      "areaNote": "plocha samotného aquaparku (oplotená kúpacia časť); celý rekreačný areál Delňa vrátane vodnej nádrže má 13 – 15 ha",
+      "areaSourceUrl": "https://www.kupaliska.sk/k/aquapark-delna-presov/"
     },
     {
       "id": "zilina",
@@ -163,8 +163,7 @@
         "rating": 4.3,
         "reviews": 176,
         "operatorType": "private",
-        "note": "Súkromný termálny areál. Overený je prevádzkovateľ kempu a ubytovania (DolStre s.r.o.), nie samotných bazénov.",
-        "areaM2": 80000
+        "note": "Súkromný termálny areál. Overený je prevádzkovateľ kempu a ubytovania (DolStre s.r.o.), nie samotných bazénov. Rozlohu kúpacej časti neuvádzame – dostupný údaj (8 ha) je plocha celého areálu vrátane hotela a kempu."
       },
       {
         "id": "r-nitra",
@@ -259,7 +258,7 @@
     "footnotes": [
       "Termálne kúpalisko Katarína v Kremnici v porovnaní nefiguruje – je mimo prevádzky od roku 2017/2018 a nemá aktívny profil s hodnotením. Mesto ho predalo súkromnému majiteľovi v roku 2006 za 66 388 € a v súčasnosti hľadá záujemcu o dlhodobú koncesiu na obnovu a prevádzku.",
       "Porovnanie zahŕňa aj menšie obecné a súkromné kúpaliská v regióne, kam Bystričania bežne cestujú. Zariadenia sa líšia veľkosťou aj typom (letné kúpalisko, termálny areál), preto hodnotenia porovnávajte s touto výhradou.",
-      "Rozlohu areálu zverejňuje len časť prevádzkovateľov, preto ju uvádzame iba tam, kde sa dala overiť. Plocha bystrického kúpaliska (37 332 m²) vyplýva priamo z nájomnej zmluvy. Pri porovnávaní hodnotení berte do úvahy, že niektoré zariadenia sú obecné kúpaliská v obciach s pár stovkami obyvateľov."
+      "Rozlohu uvádzame len tam, kde ide o plochu vyhradenú na kúpanie. Údaje, ktoré zahŕňajú aj kemp, hotel či parkoviská, sme zámerne vynechali. Plocha bystrického kúpaliska (37 332 m², z toho 23 106 m² vodná plocha) vyplýva priamo z nájomnej zmluvy. Pri porovnávaní hodnotení berte do úvahy aj to, že niektoré zariadenia sú obecné kúpaliská v obciach s pár stovkami obyvateľov."
     ]
   }
 }

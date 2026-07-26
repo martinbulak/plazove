@@ -203,10 +203,12 @@ export default async function ComparisonPage() {
           Údaje boli overované v júli 2026 z oficiálnych webov miest, ich
           organizácií a Štatistického úradu SR. Počty obyvateľov sú k 1. 1. 2026,
           resp. k poslednému dostupnému dátumu.{" "}
-          <strong>K rozlohe:</strong> väčšina miest ani prevádzkovateľov plochu
-          areálu nezverejňuje, preto ju uvádzame len tam, kde sa dala overiť.
-          Plocha bystrického kúpaliska vyplýva priamo z nájomnej zmluvy. Kde
-          rozloha chýba, poslúži na porovnanie mierky počet obyvateľov mesta.
+          <strong>K rozlohe:</strong> uvádzame výlučne plochu vyhradenú na
+          kúpanie – údaje zahŕňajúce kemp, hotel alebo parkoviská sme vynechali,
+          lebo by porovnanie skreslili. Väčšina miest plochu nezverejňuje vôbec;
+          kde chýba, poslúži na porovnanie mierky počet obyvateľov mesta. Plocha
+          bystrického kúpaliska vyplýva z nájomnej zmluvy a zahŕňa aj jazero
+          (23 106 m² z celkových 37 332 m²).
         </p>
       </Section>
 
