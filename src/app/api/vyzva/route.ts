@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import crypto from "crypto";
-import { readSubmission, appendSubmission, StorageReadOnlyError } from "@/lib/store";
+import { readSubmission, writeSubmission, StorageReadOnlyError } from "@/lib/store";
 import { isEmail, isNonEmpty, isBot, str } from "@/lib/validate";
 import { sendMail, confirmUrl } from "@/lib/mail";
 import { shortId } from "@/lib/utils";
@@ -92,7 +92,13 @@ export async function POST(req: Request) {
     createdAt: new Date().toISOString(),
   };
   try {
-    await appendSubmission("petition", signature);
+    // Nepotvrdený podpis s rovnakým e-mailom nahradíme – ak prvý pokus zlyhal
+    // na odoslaní e-mailu, opakovaný pokus nemá pridať ďalší záznam. Zároveň
+    // sa tak uplatnia prípadné zmeny v mene, meste či odkaze.
+    const kept = existing.filter(
+      (s) => s.confirmed || s.email.toLowerCase() !== email.toLowerCase(),
+    );
+    await writeSubmission("petition", [...kept, signature]);
   } catch (err) {
     if (err instanceof StorageReadOnlyError) {
       return NextResponse.json(
@@ -104,7 +110,7 @@ export async function POST(req: Request) {
   }
 
   const url = confirmUrl("/podporte/potvrdenie", token);
-  await sendMail({
+  const mail = await sendMail({
     to: email,
     subject: "Potvrďte podpis verejnej výzvy – Za Pláž",
     text:
@@ -112,7 +118,20 @@ export async function POST(req: Request) {
       `Pre potvrdenie podpisu kliknite na odkaz:\n\n${url}\n\n` +
       `Ak ste o podpis nežiadali, tento e-mail ignorujte.\n\n` +
       `Za Pláž – ktorá nebude hanbou\nzaplaz.sk · info@zaplaz.sk`,
+    action: { label: "Potvrdiť podpis výzvy", url },
   });
+
+  if (!mail.delivered) {
+    // Podpis je uložený, ale bez potvrdenia sa nezapočíta – nesmieme
+    // používateľovi tvrdiť, že e-mail odišiel.
+    return NextResponse.json(
+      {
+        error:
+          "Potvrdzovací e-mail sa nepodarilo odoslať. Skúste to, prosím, o chvíľu znova alebo nám napíšte na info@zaplaz.sk.",
+      },
+      { status: 502 },
+    );
+  }
 
   return NextResponse.json({
     ok: true,

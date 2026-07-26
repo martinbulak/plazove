@@ -23,8 +23,9 @@ export default function PrivacyPage() {
           <h2 className="text-xl font-bold text-ink-900">1. Prevádzkovateľ</h2>
           <p className="mt-2">
             Prevádzkovateľom osobných údajov je občiansky informačný projekt
-            „Za Pláž" (ďalej „prevádzkovateľ"). Kontakt:
-            info@zaplaz.sk. (Doplňte presné identifikačné údaje.)
+            „Za Pláž", za ktorý zodpovedá Martin Bulák (ďalej „prevádzkovateľ").
+            Kontakt: info@zaplaz.sk. (Pred spustením doplňte adresu na
+            doručovanie.)
           </p>
         </div>
 

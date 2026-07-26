@@ -2,6 +2,8 @@ import Link from "next/link";
 import { AdminShell } from "@/components/admin/AdminShell";
 import { COLLECTION_LIST } from "@/lib/admin-schema";
 import { readJson, readSubmission } from "@/lib/store";
+import { isMailConfigured } from "@/lib/mail";
+import { MailTester } from "@/components/admin/MailTester";
 
 export const dynamic = "force-dynamic";
 
@@ -55,6 +57,11 @@ export default async function AdminDashboard() {
         <Stat label="Odber noviniek (potvrdené)" value={`${newsletterConfirmed} / ${newsletter.length}`} href="/admin/podania" />
         <Stat label="Nové tipy / foto / opravy" value={String(submissionsNew)} href="/admin/podania" highlight={submissionsNew > 0} />
       </div>
+
+      <h2 className="mb-3 mt-8 text-sm font-semibold uppercase tracking-wide text-ink-500">
+        Nastavenie
+      </h2>
+      <MailTester configured={isMailConfigured()} />
     </AdminShell>
   );
 }

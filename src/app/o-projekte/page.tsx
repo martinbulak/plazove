@@ -36,6 +36,35 @@ export default async function AboutPage() {
         </div>
 
         <div>
+          <h2 className="text-xl font-bold text-ink-900">Kto za projektom stojí</h2>
+          <p className="mt-2">
+            Projekt je občianska iniciatíva dvoch ľudí z Banskej Bystrice. Nestojí
+            za ním politická strana ani žiadna firma.
+          </p>
+          <ul className="mt-4 space-y-3 not-prose">
+            <li className="rounded-[var(--radius-card)] border border-ink-200 bg-white p-4">
+              <p className="font-semibold text-ink-900">Martin Bulák</p>
+              <p className="mt-1 text-sm leading-relaxed text-ink-600">
+                Založil tento web. Zastrešuje jeho technickú stránku a
+                zhromažďovanie dokumentov na jednom mieste.
+              </p>
+            </li>
+            <li className="rounded-[var(--radius-card)] border border-ink-200 bg-white p-4">
+              <p className="font-semibold text-ink-900">Magdaléna Kováč Mergová</p>
+              <p className="mt-1 text-sm leading-relaxed text-ink-600">
+                Téme plážového kúpaliska sa venuje dlhodobo. Podáva žiadosti
+                o informácie podľa infozákona a osobne sa zúčastňuje kontrolných
+                dní v areáli. Jej infožiadosti sú medzi{" "}
+                <a href="/dokumenty" className="font-medium text-brand-700 underline">
+                  zverejnenými dokumentmi
+                </a>
+                .
+              </p>
+            </li>
+          </ul>
+        </div>
+
+        <div>
           <h2 className="text-xl font-bold text-ink-900">Ako overujeme zdroje</h2>
           <ul className="mt-2 list-disc space-y-1.5 pl-6">
             <li>Fakty podkladáme verejne dostupnými dokumentmi a odkazmi.</li>
@@ -97,14 +126,12 @@ export default async function AboutPage() {
           <p className="mt-2 text-sm">
             Prevádzkovateľ: {site.operator}
             <br />
+            Zodpovedná osoba: Martin Bulák
+            <br />
             E-mail:{" "}
             <a href={`mailto:${site.contactEmail}`} className="font-medium text-brand-700 underline">
               {site.contactEmail}
             </a>
-          </p>
-          <p className="mt-3 text-xs text-ink-500">
-            (Vzorové kontaktné údaje – pred spustením doplňte skutočné údaje
-            prevádzkovateľa projektu.)
           </p>
         </Card>
       </div>

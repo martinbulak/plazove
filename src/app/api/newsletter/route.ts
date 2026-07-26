@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import crypto from "crypto";
-import { readSubmission, appendSubmission, StorageReadOnlyError } from "@/lib/store";
+import { readSubmission, writeSubmission, StorageReadOnlyError } from "@/lib/store";
 import { isEmail, isBot, str } from "@/lib/validate";
 import { sendMail, confirmUrl } from "@/lib/mail";
 import { shortId } from "@/lib/utils";
@@ -42,7 +42,12 @@ export async function POST(req: Request) {
     createdAt: new Date().toISOString(),
   };
   try {
-    await appendSubmission("newsletter", sub);
+    // Nepotvrdené prihlásenie s rovnakým e-mailom nahradíme – ak prvý pokus
+    // zlyhal na odoslaní e-mailu, opakovaný pokus nemá pridať ďalší záznam.
+    const kept = existing.filter(
+      (s) => s.confirmed || s.email.toLowerCase() !== email.toLowerCase(),
+    );
+    await writeSubmission("newsletter", [...kept, sub]);
   } catch (err) {
     if (err instanceof StorageReadOnlyError) {
       return NextResponse.json(
@@ -54,14 +59,27 @@ export async function POST(req: Request) {
   }
 
   const url = confirmUrl("/podporte/newsletter-potvrdenie", token);
-  await sendMail({
+  const mail = await sendMail({
     to: email,
     subject: "Potvrďte odber noviniek – Za Pláž",
     text:
       `Dobrý deň,\n\npre potvrdenie odberu noviniek kliknite na odkaz:\n\n${url}\n\n` +
       `Ak ste o odber nežiadali, tento e-mail ignorujte.\n\n` +
       `Za Pláž – ktorá nebude hanbou\nzaplaz.sk · info@zaplaz.sk`,
+    action: { label: "Potvrdiť odber noviniek", url },
   });
+
+  if (!mail.delivered) {
+    // Prihlásenie je uložené, ale bez potvrdenia je neplatné – nesmieme
+    // tvrdiť, že e-mail odišiel.
+    return NextResponse.json(
+      {
+        error:
+          "Potvrdzovací e-mail sa nepodarilo odoslať. Skúste to, prosím, o chvíľu znova alebo nám napíšte na info@zaplaz.sk.",
+      },
+      { status: 502 },
+    );
+  }
 
   return NextResponse.json({
     ok: true,

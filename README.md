@@ -147,12 +147,23 @@ Obsah je uložený ako **JSON súbory v `/content`**. Čítanie/zápis rieši [`
 Podpis výzvy aj odber newslettera používajú **double opt-in** (potvrdenie e-mailom).
 
 - **Predvolene (bez konfigurácie):** e-mail sa **neodošle**, iba sa **vypíše potvrdzovací odkaz do konzoly servera** – ideálne na lokálne testovanie. Odkaz nájdete vo výstupe `npm run dev`.
-- **Reálne odosielanie (Resend):** doplňte do `.env.local`:
-  ```env
-  RESEND_API_KEY=re_...
-  MAIL_FROM=info@zaplaz.sk   # odosielateľ musí byť na overenej doméne
-  ```
-  Implementácia je v [`src/lib/mail.ts`](src/lib/mail.ts) (volá Resend HTTP API cez `fetch`, bez SDK). Pre iného poskytovateľa (SMTP, Mailgun…) upravte túto jednu funkciu.
+### Nastavenie Resendu
+
+1. **Overte doménu.** V Resende *Domains → Add Domain* zadajte `zaplaz.sk`. Resend vypíše DNS záznamy (MX + TXT pre SPF, TXT pre DKIM, voliteľne DMARC) – pridajte ich u správcu domény a počkajte na stav *Verified*. Bez overenej domény Resend odmietne odoslať čokoľvek z adresy `@zaplaz.sk`.
+2. **Vytvorte API kľúč** (*API Keys → Create*, oprávnenie *Sending access*).
+3. **Doplňte premenné prostredia** – lokálne do `.env.local`, na Verceli v *Settings → Environment Variables* (pre všetky prostredia), a projekt **znova nasaďte** (premenné sa načítajú až pri buildovaní/štarte):
+   ```env
+   RESEND_API_KEY=re_...
+   MAIL_FROM=Za Pláž <info@zaplaz.sk>   # doména musí byť overená
+   MAIL_REPLY_TO=info@zaplaz.sk          # voliteľné, kam chodia odpovede
+   ```
+4. **Overte v administrácii.** Na `/admin` je v sekcii *Nastavenie* pole na odoslanie skúšobného e-mailu. Ukáže presnú chybovú správu od Resendu, takže neoverenú doménu či neplatný kľúč odhalíte hneď.
+
+Na skúšanie bez overenej domény sa dá použiť `MAIL_FROM=onboarding@resend.dev`, doručí však len na e-mail vlastníka účtu.
+
+Implementácia je v [`src/lib/mail.ts`](src/lib/mail.ts) – volá Resend HTTP API cez `fetch` (bez SDK), posiela text aj HTML verziu, pri chybe 429/5xx skúsi raz zopakovať a výsledok vždy vracia volajúcemu. Pre iného poskytovateľa (SMTP, Mailgun…) stačí upraviť túto jednu funkciu.
+
+**Ak odoslanie zlyhá**, API cesta vráti chybu 502 a formulár to používateľovi povie – nikdy netvrdíme, že e-mail odišiel, keď neodišiel. Nepotvrdený záznam s rovnakou adresou sa pri opakovanom pokuse prepíše, takže sa nehromadia duplicity.
 
 Ochrana proti spamu: skryté honeypot pole vo všetkých formulároch + serverová validácia. Formálnu **elektronickú petíciu** podľa zákona zámerne zatiaľ neimplementujeme – najprv treba doplniť presné právne a identifikačné náležitosti. Aktuálne ide o **verejnú výzvu**.
 
