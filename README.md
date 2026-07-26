@@ -23,8 +23,8 @@ Textový obsah webu je spracovaný z týchto primárnych dokumentov a overených
 - Čo sa nepodarilo overiť, je explicitne uvedené ako otvorená otázka, nie ako tvrdenie.
 - Pri politicky angažovaných zdrojoch je táto skutočnosť uvedená v poli `note`.
 - Stanovisko prevádzkovateľa je uvedené kvôli vyváženosti.
-- **Fotogaléria zatiaľ obsahuje vzorové (placeholder) obrázky** – skutočné fotografie treba doplniť cez administráciu.
-- PDF súbory dokumentov nie sú zverejnené – pred zverejnením je potrebná anonymizácia osobných údajov.
+- **Fotogaléria je prázdna** – fotografie sa nahrávajú cez administráciu (`/admin/c/gallery`).
+- Zverejnené PDF sú anonymizované (v odpovedi na infožiadosť je začiernená adresa a e-mail žiadateľky).
 
 - **Doména (cieľová):** aqualandbb.sk
 - **Technológie:** Next.js 15 (App Router) · TypeScript · Tailwind CSS v4 · súborová JSON obsahová vrstva
@@ -117,7 +117,7 @@ Kolekcie (každá = jeden JSON súbor v `/content`):
 | Časová os | `timeline.json` | `TimelineItem[]` | /casova-os |
 | Zmluva Q&A | `contract.json` | `ContractQA[]` | /zmluva |
 | Dokumenty | `documents.json` | `DocumentItem[]` | /dokumenty |
-| Galéria | `gallery.json` | `GalleryItem[]` | /galeria |
+| Galéria | `gallery.json` | `GalleryItem[]` | /galeria (nahrávanie cez admin) |
 | Názory | `opinions.json` | `OpinionItem[]` | /nazory |
 | Kroky mesta | `cityActions.json` | `CityAction[]` | /co-urobilo-mesto |
 | Otvorené otázky | `openQuestions.json` | `OpenQuestion[]` | /otvorene-otazky |
