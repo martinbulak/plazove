@@ -6,15 +6,16 @@
     "title": "Nájomná zmluva č. 526/2007/EM-SM",
     "date": "2007-10-15",
     "category": "zmluva",
-    "summary": "Nájomná zmluva medzi Mestom Banská Bystrica (prenajímateľ) a spoločnosťou AQUALAND Slovakia s.r.o. (nájomca) na areál plážového kúpaliska, uzatvorená podľa § 663 a nasl. Občianskeho zákonníka.",
+    "summary": "Nájomná zmluva medzi Mestom Banská Bystrica (prenajímateľ) a spoločnosťou AQUALAND Slovakia s.r.o. (nájomca) na areál plážového kúpaliska, uzatvorená podľa § 663 a nasl. Občianskeho zákonníka. Zverejnený súbor je kópia sprístupnená mestom na infožiadosť Inf.89/2024 a obsahuje okrem samotnej zmluvy aj jej prílohy, stanoviská orgánov, revízne správy a dodatky č. 1 až 3 (70 strán).",
     "issuer": "Mesto Banská Bystrica / AQUALAND Slovakia s.r.o.",
-    "fileUrl": "",
+    "fileUrl": "/dokumenty/najomna-zmluva-526-2007-s-dodatkami.pdf",
     "keyFindings": [
       "Doba nájmu od 1. 10. 2007 do 30. 9. 2037 (30 rokov) s opciou 10 rokov.",
       "Predmet nájmu: pozemky spolu o výmere 37 332 m² (LV 4073 a LV 6013), prevádzková budova súp. č. 1263 a technologické zariadenia.",
       "Čl. IV ods. 10: nepreukázanie preinvestovania minimálne 100 000 000 Sk sa považuje za podstatné porušenie zmluvy a zakladá právo mesta odstúpiť od zmluvy.",
       "Čl. IV ods. 11: mesto je oprávnené vstupovať do predmetu nájmu na kontrolu raz mesačne.",
-      "Čl. IV ods. 9: po skončení nájmu uplynutím doby alebo pri odstúpení pre podstatné porušenie prechádzajú investície na mesto a nájomcovi nevznikajú nároky na ďalšie vysporiadanie."
+      "Čl. IV ods. 9: po skončení nájmu uplynutím doby alebo pri odstúpení pre podstatné porušenie prechádzajú investície na mesto a nájomcovi nevznikajú nároky na ďalšie vysporiadanie.",
+      "Príloha č. 4 zmluvy je podnikateľský zámer „Modernizácia plážového kúpaliska Banská Bystrica“ s časovým rozvrhom a finančnou analýzou projektu."
     ],
     "sourceUrl": "",
     "sources": [
@@ -29,11 +30,11 @@
     "slug": "dodatok-1-2009",
     "status": "published",
     "title": "Dodatok č. 1 k nájomnej zmluve",
-    "date": "2009-04-27",
+    "date": "2009-04-29",
     "category": "zmluva",
-    "summary": "Prvý dodatok k nájomnej zmluve. Okrem iného upravil povinnosť nájomcu pravidelne preukazovať preinvestované sumy a upravil prílohu s harmonogramom investícií.",
+    "summary": "Prvý dodatok k nájomnej zmluve. Okrem iného upravil povinnosť nájomcu pravidelne preukazovať preinvestované sumy a upravil prílohu s harmonogramom investícií. V zverejnenom súbore so zmluvou začína na strane 59.",
     "issuer": "Mesto Banská Bystrica / AQUALAND Slovakia s.r.o.",
-    "fileUrl": "",
+    "fileUrl": "/dokumenty/najomna-zmluva-526-2007-s-dodatkami.pdf",
     "keyFindings": [
       "Čl. III ods. 4: nájomca sa zaväzuje vždy k poslednému dňu polroka predložiť položkovitý rozpočet preinvestovanej čiastky, a to do 30 dní od konca daného polroka.",
       "Mesto má právo predložené rozpočty skontrolovať."
@@ -43,6 +44,10 @@
       {
         "label": "Právne stanovisko PF UK – zoznam podkladov",
         "documentId": "doc-pravne-stanovisko-2022"
+      },
+      {
+        "label": "Dátum uzatvorenia podľa čl. I ods. 1 dodatku č. 3 k nájomnej zmluve",
+        "documentId": "doc-dodatok-3"
       }
     ]
   },
@@ -53,9 +58,9 @@
     "title": "Dodatok č. 2 k nájomnej zmluve",
     "date": "2010-10-29",
     "category": "zmluva",
-    "summary": "Druhý dodatok k nájomnej zmluve, ktorý upravil najmä vysporiadanie investícií po skončení nájmu.",
+    "summary": "Druhý dodatok k nájomnej zmluve, ktorý upravil najmä vysporiadanie investícií po skončení nájmu. V zverejnenom súbore so zmluvou začína na strane 65.",
     "issuer": "Mesto Banská Bystrica / AQUALAND Slovakia s.r.o.",
-    "fileUrl": "",
+    "fileUrl": "/dokumenty/najomna-zmluva-526-2007-s-dodatkami.pdf",
     "keyFindings": [
       "Čl. IV ods. 2 písm. f): pri skončení nájmu uplynutím doby a pri odstúpení pre podstatné porušenie zo strany nájomcu sa nájomca zaväzuje previesť investície do majetku mesta formou daru, pričom technický stav budov podlieha primeranému opotrebeniu.",
       "V zmluve sa uvádza celková investičná náročnosť 3 319 391 € (ekvivalent 100 mil. Sk)."
@@ -66,6 +71,30 @@
         "label": "Právne stanovisko PF UK, s. 35",
         "documentId": "doc-pravne-stanovisko-2022",
         "page": 35
+      }
+    ]
+  },
+  {
+    "id": "doc-dodatok-3",
+    "slug": "dodatok-3",
+    "status": "published",
+    "title": "Dodatok č. 3 k nájomnej zmluve",
+    "date": "",
+    "category": "zmluva",
+    "summary": "Tretí dodatok k nájomnej zmluve. Upravuje identifikačné údaje mesta (mesto už zastupuje primátor Ján Nosko) a mení výmeru pozemku CKN 3446/1. V kópii sprístupnenej mestom nie je vyplnený dátum podpisu, preto ho neuvádzame; dodatok začína na strane 67.",
+    "issuer": "Mesto Banská Bystrica / AQUALAND Slovakia s.r.o.",
+    "fileUrl": "/dokumenty/najomna-zmluva-526-2007-s-dodatkami.pdf",
+    "keyFindings": [
+      "Čl. I ods. 1 potvrdzuje dátumy predchádzajúcich dodatkov: dodatok č. 1 z 29. 4. 2009 a dodatok č. 2 z 29. 10. 2010.",
+      "Čl. II ods. 2.1: výmera položky CKN 3446/1 (ostatná plocha) sa mení na 36 693 m², čo je oproti pôvodnej hodnote zmena o 23 m².",
+      "Čl. III ods. 3.1: dodatok nadobúda účinnosť dňom nasledujúcim po zverejnení v Centrálnom registri zmlúv.",
+      "Dátum podpisu nie je v poskytnutej kópii vyplnený. Keďže mesto zastupuje primátor Ján Nosko, dodatok vznikol najskôr v roku 2015."
+    ],
+    "sourceUrl": "",
+    "sources": [
+      {
+        "label": "Sprístupnené mestom na infožiadosť Inf.89/2024",
+        "documentId": "doc-infoziadost-2024"
       }
     ]
   },
@@ -122,7 +151,7 @@
     "category": "pravne-stanovisko",
     "summary": "Stanovisko k možnostiam skončenia nájomného vzťahu založeného nájomnou zmluvou č. 526/2007/EM-SM v znení dodatkov č. 1 a 2. Vypracované na objednávku Mesta Banská Bystrica. Rozsah 38 strán.",
     "issuer": "Univerzita Komenského v Bratislave, Právnická fakulta",
-    "fileUrl": "",
+    "fileUrl": "/dokumenty/pravne-stanovisko-pf-uk-2022.pdf",
     "keyFindings": [
       "Nájom môže skončiť uplynutím doby, na ktorú bol dohodnutý, a dohodou zmluvných strán.",
       "Keďže zmluva neobsahuje ustanovenia o zániku nájmu výpoveďou, tento vzťah nemožno ukončiť výpoveďou.",
@@ -147,11 +176,12 @@
     "category": "infoziadost",
     "summary": "Odpoveď Mestského úradu Banská Bystrica na žiadosť podľa zákona č. 211/2000 Z. z. o slobodnom prístupe k informáciám, ktorou mesto sprístupnilo fotokópiu nájomnej zmluvy č. 526/2007/EM-SM aj s dodatkami.",
     "issuer": "Mestský úrad Banská Bystrica – JUDr. Marica Koreňová, prednostka",
-    "fileUrl": "",
+    "fileUrl": "/dokumenty/odpoved-inf-89-2024.pdf",
     "keyFindings": [
       "Žiadosť bola doručená 29. 7. 2024, odpoveď je datovaná 31. 7. 2024.",
       "Číslo spisu: 152116/1099/2024/PS-KC, Inf.89/2024.",
-      "Žiadateľka: Mgr. Magdaléna Kováč Mergová."
+      "Žiadateľka: Mgr. Magdaléna Kováč Mergová.",
+      "Pred zverejnením sme z listu odstránili adresu bydliska a súkromný e-mail žiadateľky."
     ],
     "sourceUrl": "",
     "sources": []
