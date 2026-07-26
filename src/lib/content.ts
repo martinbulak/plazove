@@ -1,5 +1,5 @@
 import "server-only";
-import { readJson } from "./store";
+import { readJson, readSubmission } from "./store";
 import type {
   Article,
   CaseSection,
@@ -10,6 +10,7 @@ import type {
   GalleryItem,
   OpenQuestion,
   OpinionItem,
+  PetitionSignature,
   ReviewAnalysis,
   SiteConfig,
   TimelineItem,
@@ -70,6 +71,44 @@ export async function getArticles(): Promise<Article[]> {
 export async function getReviewAnalysis(): Promise<ReviewAnalysis | null> {
   const data = await readJson<ReviewAnalysis | null>("reviews", null);
   return data && data.totalReviews ? data : null;
+}
+
+/** Verejne zobraziteľný podpis – bez e-mailu a bez priezviska, ak si to podpisujúci zvolil. */
+export interface PublicSignature {
+  id: string;
+  name: string;
+  city: string;
+  message?: string;
+  confirmedAt?: string;
+}
+
+/**
+ * Podpisy výzvy pre verejné zobrazenie.
+ * Vracia iba potvrdené (double opt-in), neskryté podpisy, ktoré si zverejnenie
+ * zvolili. E-mail sa nevracia nikdy.
+ */
+export async function getPublicSignatures(): Promise<{
+  total: number;
+  items: PublicSignature[];
+}> {
+  const all = await readSubmission<PetitionSignature[]>("petition", []);
+  const confirmed = all.filter((s) => s.confirmed);
+
+  const items = confirmed
+    .filter((s) => s.publishMode !== "none" && !s.hidden)
+    .map((s) => ({
+      id: s.id,
+      name:
+        s.publishMode === "full"
+          ? `${s.firstName} ${s.lastName}`.trim()
+          : s.firstName,
+      city: s.city,
+      message: s.message,
+      confirmedAt: s.confirmedAt,
+    }))
+    .reverse();
+
+  return { total: confirmed.length, items };
 }
 
 export async function getComparison(): Promise<ComparisonData> {

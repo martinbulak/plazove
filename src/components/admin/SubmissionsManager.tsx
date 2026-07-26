@@ -2,7 +2,12 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import type { NewsletterSubscriber, PetitionSignature, Submission } from "@/lib/types";
+import {
+  PUBLISH_MODE_LABEL,
+  type NewsletterSubscriber,
+  type PetitionSignature,
+  type Submission,
+} from "@/lib/types";
 
 type Tab = "petition" | "newsletter" | "submissions";
 
@@ -56,14 +61,30 @@ export function SubmissionsManager({
       <div className="rounded-xl border border-ink-200 bg-white p-2">
         {tab === "petition" && (
           <Table
-            head={["Meno", "Mesto", "E-mail", "Verejne", "Potvrdené", ""]}
+            head={["Meno", "Mesto", "E-mail", "Zverejnenie", "Odkaz", "Stav", ""]}
             rows={petition.map((p) => [
               `${p.firstName} ${p.lastName}`,
               p.city,
               p.email,
-              p.showPublicly ? "áno" : "nie",
-              p.confirmed ? "✓" : "čaká",
-              <Actions key={p.id} busy={busy} onDelete={() => act("petition", p.id, "delete")} />,
+              <span key="m" className="text-xs">
+                {PUBLISH_MODE_LABEL[p.publishMode ?? "none"]}
+                {p.hidden && (
+                  <span className="mt-0.5 block font-semibold text-rose-700">
+                    skryté administrátorom
+                  </span>
+                )}
+              </span>,
+              <span key="t" className="block max-w-xs whitespace-pre-wrap text-ink-700">
+                {p.message || "—"}
+              </span>,
+              p.confirmed ? "✓ potvrdené" : "čaká",
+              <Actions
+                key={p.id}
+                busy={busy}
+                onToggle={() => act("petition", p.id, p.hidden ? "unhide" : "hide")}
+                toggleLabel={p.hidden ? "Zobraziť" : "Skryť z webu"}
+                onDelete={() => act("petition", p.id, "delete")}
+              />,
             ])}
           />
         )}

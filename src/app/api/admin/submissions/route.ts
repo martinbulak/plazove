@@ -33,6 +33,11 @@ export async function POST(req: Request) {
     list[idx].handled = true;
   } else if (action === "markUnhandled") {
     list[idx].handled = false;
+  } else if (action === "hide") {
+    // Skrytie zverejneného podpisu/odkazu (moderovanie po zverejnení).
+    list[idx].hidden = true;
+  } else if (action === "unhide") {
+    list[idx].hidden = false;
   } else {
     return NextResponse.json({ error: "Neznáma akcia." }, { status: 400 });
   }

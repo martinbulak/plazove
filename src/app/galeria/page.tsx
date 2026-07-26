@@ -46,7 +46,7 @@ export default async function GalleryPage() {
 
       <div className="mt-8 rounded-lg border border-brand-200 bg-brand-50 p-4 text-sm text-brand-900">
         Máte vlastnú fotografiu areálu?{" "}
-        <Link href="/podporte#poslat-fotografiu" className="font-semibold underline">
+        <Link href="/nahlasit" className="font-semibold underline">
           Pošlite nám ju
         </Link>
         . Pri odosielaní potvrdzujete autorstvo, súhlas so zverejnením a to, že

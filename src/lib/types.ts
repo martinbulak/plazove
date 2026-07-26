@@ -310,14 +310,32 @@ export interface Article extends BaseEntity {
 
 /* ── 10. Podania od verejnosti (výzva, newsletter, tipy) ─────────────── */
 
+/**
+ * Spôsob zverejnenia podpisu:
+ *  – „full"  = krstné meno, priezvisko a mesto
+ *  – „first" = iba krstné meno a mesto (anonymizované)
+ *  – „none"  = podpis sa nezverejní, len sa započíta
+ */
+export type PublishMode = "full" | "first" | "none";
+
+export const PUBLISH_MODE_LABEL: Record<PublishMode, string> = {
+  full: "Meno, priezvisko a mesto",
+  first: "Iba krstné meno a mesto",
+  none: "Nezverejňovať – len započítať podpis",
+};
+
 export interface PetitionSignature {
   id: string;
   firstName: string;
   lastName: string;
   city: string;
   email: string;
-  /** Zobraziť verejne meno a mesto? */
-  showPublicly: boolean;
+  /** Rozsah zverejnenia mena. */
+  publishMode: PublishMode;
+  /** Verejný odkaz podpisujúceho (voliteľný). */
+  message?: string;
+  /** Skryté administrátorom (moderovanie až po zverejnení). */
+  hidden?: boolean;
   /** Súhlas so spracovaním osobných údajov. */
   consent: boolean;
   /** Potvrdený e-mail (double opt-in). */

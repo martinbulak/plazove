@@ -102,48 +102,169 @@ function SubmitBtn({ state, children }: { state: FormState; children: ReactNode 
 
 /* ── Verejná výzva ───────────────────────────────────────────────────── */
 
+const MESSAGE_MAX = 280;
+
 export function PetitionForm() {
   const { state, submit } = useSubmit("/api/vyzva");
+  const [msgLen, setMsgLen] = useState(0);
+  const [mode, setMode] = useState<"full" | "first" | "none">("first");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [city, setCity] = useState("");
 
   async function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    const f = new FormData(e.currentTarget);
+    const form = e.currentTarget;
+    const f = new FormData(form);
     const ok = await submit({
       firstName: f.get("firstName"),
       lastName: f.get("lastName"),
       city: f.get("city"),
       email: f.get("email"),
-      showPublicly: f.get("showPublicly") === "on",
+      message: f.get("message"),
+      publishMode: f.get("publishMode"),
       consent: f.get("consent") === "on",
       website: f.get("website"),
     });
-    if (ok) e.currentTarget.reset();
+    if (ok) {
+      form.reset();
+      setMsgLen(0);
+      setFirstName("");
+      setLastName("");
+      setCity("");
+      setMode("first");
+    }
   }
 
+  /** Živý náhľad toho, čo sa reálne objaví na webe. */
+  const previewName =
+    mode === "none"
+      ? null
+      : mode === "first"
+        ? firstName || "Meno"
+        : `${firstName || "Meno"} ${lastName || "Priezvisko"}`;
+
+  const MODES: { v: typeof mode; label: string; hint: string }[] = [
+    { v: "first", label: "Iba krstné meno a mesto", hint: "Odporúčané – priezvisko sa nezverejní" },
+    { v: "full", label: "Meno, priezvisko a mesto", hint: "Plné meno bude viditeľné" },
+    { v: "none", label: "Nezverejňovať", hint: "Podpis sa iba započíta do počtu" },
+  ];
+
   return (
-    <form onSubmit={onSubmit} className="relative space-y-4">
+    <form onSubmit={onSubmit} className="relative space-y-5">
       <Honeypot />
+
       <div className="grid gap-4 sm:grid-cols-2">
         <Field label="Meno" required>
-          <input name="firstName" required maxLength={80} className={inputCls} autoComplete="given-name" />
+          <input
+            name="firstName"
+            required
+            maxLength={80}
+            className={inputCls}
+            autoComplete="given-name"
+            value={firstName}
+            onChange={(e) => setFirstName(e.target.value)}
+          />
         </Field>
         <Field label="Priezvisko" required>
-          <input name="lastName" required maxLength={80} className={inputCls} autoComplete="family-name" />
-        </Field>
-      </div>
-      <div className="grid gap-4 sm:grid-cols-2">
-        <Field label="Mesto" required>
-          <input name="city" required maxLength={120} className={inputCls} autoComplete="address-level2" />
-        </Field>
-        <Field label="E-mail (na overenie)" required>
-          <input name="email" type="email" required maxLength={254} className={inputCls} autoComplete="email" />
+          <input
+            name="lastName"
+            required
+            maxLength={80}
+            className={inputCls}
+            autoComplete="family-name"
+            value={lastName}
+            onChange={(e) => setLastName(e.target.value)}
+          />
         </Field>
       </div>
 
-      <label className="flex items-start gap-2 text-sm text-ink-700">
-        <input type="checkbox" name="showPublicly" className="mt-1" />
-        <span>Súhlasím, aby sa <strong>verejne zobrazilo len moje meno a mesto</strong> (nie e-mail).</span>
-      </label>
+      <div className="grid gap-4 sm:grid-cols-2">
+        <Field label="Mesto" required>
+          <input
+            name="city"
+            required
+            maxLength={120}
+            className={inputCls}
+            autoComplete="address-level2"
+            value={city}
+            onChange={(e) => setCity(e.target.value)}
+          />
+        </Field>
+        <Field label="E-mail (na overenie)" required>
+          <input
+            name="email"
+            type="email"
+            required
+            maxLength={254}
+            className={inputCls}
+            autoComplete="email"
+          />
+        </Field>
+      </div>
+
+      {/* Verejný odkaz */}
+      <Field label="Odkaz mestu (nepovinné, zverejní sa)">
+        <textarea
+          name="message"
+          rows={3}
+          maxLength={MESSAGE_MAX}
+          className={inputCls}
+          placeholder="Napríklad prečo vám na kúpalisku záleží…"
+          onChange={(e) => setMsgLen(e.target.value.length)}
+        />
+        <span className="mt-1 flex justify-between text-xs text-ink-500">
+          <span>Bez webových adries. Odkaz sa zverejní hneď po overení e-mailu.</span>
+          <span className="tabular-nums">
+            {msgLen}/{MESSAGE_MAX}
+          </span>
+        </span>
+      </Field>
+
+      {/* Rozsah zverejnenia */}
+      <fieldset>
+        <legend className="mb-2 block text-sm font-medium text-ink-700">
+          Ako sa má zobraziť váš podpis?
+        </legend>
+        <div className="space-y-2">
+          {MODES.map((m) => (
+            <label
+              key={m.v}
+              className={`flex cursor-pointer items-start gap-3 rounded-lg border p-3 text-sm transition-colors ${
+                mode === m.v
+                  ? "border-brand-400 bg-brand-50"
+                  : "border-ink-200 bg-white hover:border-ink-300"
+              }`}
+            >
+              <input
+                type="radio"
+                name="publishMode"
+                value={m.v}
+                checked={mode === m.v}
+                onChange={() => setMode(m.v)}
+                className="mt-0.5"
+              />
+              <span>
+                <span className="block font-medium text-ink-900">{m.label}</span>
+                <span className="block text-xs text-ink-500">{m.hint}</span>
+              </span>
+            </label>
+          ))}
+        </div>
+
+        <p className="mt-2 rounded-lg bg-ink-100 px-3 py-2 text-xs text-ink-600">
+          <strong>Na webe sa zobrazí:</strong>{" "}
+          {previewName ? (
+            <span className="font-medium text-ink-900">
+              {previewName}
+              {city ? `, ${city}` : ""}
+            </span>
+          ) : (
+            <span className="italic">nič – podpis sa iba započíta</span>
+          )}
+          . E-mail nezverejňujeme nikdy.
+        </p>
+      </fieldset>
 
       <label className="flex items-start gap-2 text-sm text-ink-700">
         <input type="checkbox" name="consent" required className="mt-1" />
@@ -160,8 +281,8 @@ export function PetitionForm() {
       <Alert state={state} />
       <SubmitBtn state={state}>Podpísať výzvu</SubmitBtn>
       <p className="text-xs text-ink-500">
-        Podpis sa započíta až po potvrdení e-mailu (double opt-in). Formálnu
-        elektronickú petíciu podľa zákona spustíme neskôr – viď text nižšie.
+        Podpis sa započíta až po potvrdení e-mailu. Ide o verejnú výzvu, nie
+        o formálnu elektronickú petíciu podľa zákona.
       </p>
     </form>
   );

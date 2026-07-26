@@ -41,7 +41,14 @@ export default async function AboutPage() {
             <li>Fakty podkladáme verejne dostupnými dokumentmi a odkazmi.</li>
             <li>Odlišujeme fakty, citácie, právne výklady a názory.</li>
             <li>Používame len primerane krátke úryvky z cudzích textov s uvedením zdroja.</li>
-            <li>Obsah od verejnosti podlieha moderovaniu pred zverejnením.</li>
+            <li>
+              Fotografie, dokumenty a tipy od verejnosti moderujeme pred
+              zverejnením.
+            </li>
+            <li>
+              Odkazy pripojené k podpisu výzvy sa zverejňujú automaticky po overení
+              e-mailu; moderujeme ich dodatočne.
+            </li>
           </ul>
         </div>
 
@@ -52,7 +59,11 @@ export default async function AboutPage() {
             <li>Komentáre a názory sú jasne označené.</li>
             <li>Chyby opravujeme a uvádzame, čo sa zmenilo.</li>
             <li>Dotknuté strany majú právo zaslať stanovisko, ktoré zverejníme.</li>
-            <li>Obsah od verejnosti prechádza moderovaním.</li>
+            <li>
+              Odkazy podpisujúcich sú názormi konkrétnych osôb. Zverejňujú sa po
+              overení e-mailu a odstránime ich, ak porušujú zákon, urážajú
+              konkrétne osoby alebo nesúvisia s témou.
+            </li>
           </ul>
         </Card>
 

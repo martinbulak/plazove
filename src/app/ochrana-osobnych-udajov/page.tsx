@@ -32,8 +32,9 @@ export default function PrivacyPage() {
           <h2 className="text-xl font-bold text-ink-900">2. Aké údaje spracúvame</h2>
           <ul className="mt-2 list-disc space-y-1.5 pl-6">
             <li>
-              <strong>Verejná výzva:</strong> meno, priezvisko, mesto, e-mail a
-              vaše voľby (verejné zobrazenie mena a mesta, súhlas).
+              <strong>Verejná výzva:</strong> meno, priezvisko, mesto, e-mail,
+              nepovinný verejný odkaz a vami zvolený rozsah zverejnenia (plné meno
+              a mesto / iba krstné meno a mesto / nezverejňovať).
             </li>
             <li>
               <strong>Newsletter:</strong> e-mailová adresa.
@@ -52,9 +53,11 @@ export default function PrivacyPage() {
           <h2 className="text-xl font-bold text-ink-900">3. Účel a právny základ</h2>
           <p className="mt-2">
             Údaje spracúvame na základe vášho súhlasu (čl. 6 ods. 1 písm. a GDPR)
-            na účel evidencie podpisov výzvy, zasielania noviniek a spracovania
-            podaní. Verejne zobrazujeme nanajvýš meno a mesto, a to len s vaším
-            výslovným súhlasom. E-mail nezverejňujeme.
+            na účel evidencie podpisov výzvy a spracovania podaní. Verejne
+            zobrazujeme nanajvýš meno a mesto v rozsahu, ktorý si sami zvolíte, a
+            nepovinný odkaz, ktorý napíšete. Zverejnenie nastáva až po overení
+            e-mailu. E-mail nezverejňujeme nikdy. Zverejnenie môžete kedykoľvek
+            odvolať – podpis aj odkaz na požiadanie odstránime.
           </p>
         </div>
 

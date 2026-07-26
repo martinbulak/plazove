@@ -4,7 +4,10 @@ import { readSubmission, appendSubmission, StorageReadOnlyError } from "@/lib/st
 import { isEmail, isNonEmpty, isBot, str } from "@/lib/validate";
 import { sendMail, confirmUrl } from "@/lib/mail";
 import { shortId } from "@/lib/utils";
-import type { PetitionSignature } from "@/lib/types";
+import type { PetitionSignature, PublishMode } from "@/lib/types";
+
+/** Maximálna dĺžka verejného odkazu. */
+const MESSAGE_MAX = 280;
 
 /**
  * Podpis verejnej výzvy (double opt-in).
@@ -45,6 +48,28 @@ export async function POST(req: Request) {
     );
   }
 
+  const modeRaw = str(body.publishMode, 10);
+  const publishMode: PublishMode =
+    modeRaw === "full" || modeRaw === "first" || modeRaw === "none"
+      ? modeRaw
+      : "first";
+
+  // Verejný odkaz sa po overení e-mailu zverejní automaticky, preto ho
+  // obmedzujeme dĺžkou a nepúšťame doň odkazy (najčastejší spam).
+  const message = str(body.message, MESSAGE_MAX);
+  if (message.length > MESSAGE_MAX) {
+    return NextResponse.json(
+      { error: `Odkaz môže mať najviac ${MESSAGE_MAX} znakov.` },
+      { status: 400 },
+    );
+  }
+  if (message && /(https?:\/\/|www\.|\b[\w.-]+\.(sk|com|net|org|ru|xyz)\b)/i.test(message)) {
+    return NextResponse.json(
+      { error: "Odkaz nemôže obsahovať webové adresy. Napíšte ho, prosím, bez liniek." },
+      { status: 400 },
+    );
+  }
+
   const existing = await readSubmission<PetitionSignature[]>("petition", []);
   if (existing.some((s) => s.email.toLowerCase() === email.toLowerCase() && s.confirmed)) {
     return NextResponse.json(
@@ -59,7 +84,8 @@ export async function POST(req: Request) {
     lastName,
     city,
     email,
-    showPublicly: body.showPublicly === true,
+    publishMode,
+    message: message || undefined,
     consent: true,
     confirmed: false,
     confirmToken: token,

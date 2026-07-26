@@ -33,7 +33,7 @@ export default async function ConfirmPage({
   const messages = {
     ok: {
       title: "Podpis potvrdený. Ďakujeme!",
-      body: "Váš podpis verejnej výzvy sme zaznamenali. Vážime si vašu podporu.",
+      body: "Váš podpis sme započítali a ak ste pripojili odkaz, je už zverejnený na stránke výzvy.",
     },
     already: {
       title: "Podpis už bol potvrdený",
@@ -60,11 +60,17 @@ export default async function ConfirmPage({
         </div>
         <h1 className="text-2xl font-bold text-ink-900">{m.title}</h1>
         <p className="mt-3 text-ink-600">{m.body}</p>
-        <div className="mt-6 flex justify-center gap-3">
-          <Link href="/podporte" className="rounded-lg bg-brand-700 px-4 py-2 text-sm font-semibold text-white hover:bg-brand-800">
-            Späť na výzvu
+        <div className="mt-6 flex flex-wrap justify-center gap-3">
+          <Link
+            href="/podporte#podpisy"
+            className="rounded-lg bg-brand-800 px-4 py-2.5 text-sm font-semibold text-white hover:bg-brand-900"
+          >
+            {result === "invalid" ? "Späť na výzvu" : "Zobraziť podpisy a odkazy"}
           </Link>
-          <Link href="/" className="rounded-lg border border-ink-300 px-4 py-2 text-sm font-semibold text-ink-700 hover:bg-ink-50">
+          <Link
+            href="/"
+            className="rounded-lg border border-ink-300 px-4 py-2.5 text-sm font-semibold text-ink-700 hover:bg-ink-50"
+          >
             Domov
           </Link>
         </div>
