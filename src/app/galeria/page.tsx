@@ -40,30 +40,59 @@ export default async function GalleryPage() {
           Galéria sa práve dopĺňa. Fotografie pribudnú čoskoro.
         </p>
       ) : (
-        <div className="space-y-14">
+        <div className="space-y-8">
           {grouped.map(({ album, items }) => (
-            <section key={album.id} id={album.id} className="scroll-mt-24">
-              <div className="mb-2 flex flex-wrap items-baseline gap-x-3 gap-y-1">
-                <h2 className="display text-2xl text-ink-900">{album.title}</h2>
-                <span className="text-sm text-ink-500">{countLabel(items.length)}</span>
-              </div>
-
-              <p className="max-w-3xl text-sm leading-relaxed text-ink-600">
-                {album.description}
-              </p>
-
-              {album.note && (
-                <div className="mt-3 max-w-3xl rounded-lg border-l-4 border-brand-500 bg-ink-50 px-4 py-3 text-sm leading-relaxed text-ink-700">
-                  {album.note}
+            <section
+              key={album.id}
+              id={album.id}
+              className="scroll-mt-24 overflow-hidden rounded-[var(--radius-card)] border border-ink-200 bg-white"
+            >
+              <header className="border-b border-ink-100 bg-paper px-4 py-4 sm:px-6">
+                <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+                  <h2 className="display text-2xl text-ink-900">{album.title}</h2>
+                  <span className="text-sm text-ink-500">{countLabel(items.length)}</span>
                 </div>
-              )}
 
-              <p className="mb-5 mt-3 text-xs text-ink-500">
-                {album.credit ? `Autorka fotografií: ${album.credit} · ` : ""}
-                {formatDateSk(album.date)}
-              </p>
+                <p className="mt-1.5 max-w-3xl text-sm leading-relaxed text-ink-600">
+                  {album.description}
+                </p>
 
-              <Gallery items={items} />
+                <p className="mt-1.5 text-xs text-ink-500">
+                  {album.credit ? `Foto: ${album.credit} · ` : ""}
+                  {formatDateSk(album.date)}
+                </p>
+
+                {album.note && (
+                  <details className="group mt-3 max-w-3xl">
+                    <summary className="inline-flex cursor-pointer list-none items-center gap-1.5 text-sm font-semibold text-brand-700 hover:text-brand-800 [&::-webkit-details-marker]:hidden">
+                      Zhrnutie reportu autorky
+                      <svg
+                        aria-hidden
+                        width="14"
+                        height="14"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        className="transition-transform group-open:rotate-180"
+                      >
+                        <path
+                          d="M6 9l6 6 6-6"
+                          stroke="currentColor"
+                          strokeWidth="2.5"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </svg>
+                    </summary>
+                    <div className="mt-2 rounded-lg border-l-4 border-brand-500 bg-ink-50 px-4 py-3 text-sm leading-relaxed text-ink-700">
+                      {album.note}
+                    </div>
+                  </details>
+                )}
+              </header>
+
+              <div className="px-4 py-5 sm:px-6">
+                <Gallery items={items} initialCount={8} />
+              </div>
             </section>
           ))}
 

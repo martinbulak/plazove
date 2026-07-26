@@ -6,8 +6,25 @@ import type { GalleryItem } from "@/lib/types";
 import { formatDateSk } from "@/lib/utils";
 import { PlaceholderBadge } from "@/components/ui";
 
-export function Gallery({ items }: { items: GalleryItem[] }) {
+export function Gallery({
+  items,
+  /**
+   * Koľko fotografií zobraziť pred rozbalením. Zvyšok si čitateľ dožiada
+   * tlačidlom – album s desiatkami záberov inak zaberie celú stránku.
+   * Bez hodnoty sa zobrazia všetky.
+   */
+  initialCount,
+}: {
+  items: GalleryItem[];
+  initialCount?: number;
+}) {
   const [open, setOpen] = useState<number | null>(null);
+  const [expanded, setExpanded] = useState(false);
+
+  const limit = initialCount ?? items.length;
+  const hidden = Math.max(0, items.length - limit);
+  // Svetlobox listuje vždy celým albumom, aj keď je mriežka zbalená.
+  const visible = expanded ? items : items.slice(0, limit);
 
   const close = useCallback(() => setOpen(null), []);
   const prev = useCallback(
@@ -34,8 +51,8 @@ export function Gallery({ items }: { items: GalleryItem[] }) {
 
   return (
     <>
-      <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {items.map((g, i) => (
+      <ul className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
+        {visible.map((g, i) => (
           <li key={g.id}>
             <button
               type="button"
@@ -53,22 +70,43 @@ export function Gallery({ items }: { items: GalleryItem[] }) {
                   className="object-cover transition-transform duration-300 group-hover:scale-[1.03]"
                 />
               </span>
-              <span className="block p-3">
-                <span className="flex flex-wrap items-center gap-2 text-xs text-ink-500">
-                  {g.date && <span>{formatDateSk(g.date)}</span>}
-                  <span className="rounded bg-ink-100 px-1.5 py-0.5">
-                    {g.origin === "own" ? "vlastná" : "prevzatá"}
-                  </span>
-                  {g.isPlaceholder && <PlaceholderBadge />}
-                </span>
+              <span className="block px-3 py-2">
                 {g.caption && (
-                  <span className="mt-1 block text-sm text-ink-700">{g.caption}</span>
+                  <span className="block text-sm leading-snug text-ink-700">
+                    {g.caption}
+                  </span>
+                )}
+                {g.isPlaceholder && (
+                  <span className="mt-1 block">
+                    <PlaceholderBadge />
+                  </span>
                 )}
               </span>
             </button>
           </li>
         ))}
       </ul>
+
+      {hidden > 0 && !expanded && (
+        <button
+          type="button"
+          onClick={() => setExpanded(true)}
+          className="mt-4 w-full rounded-lg border border-ink-300 bg-white px-4 py-2.5 text-sm font-semibold text-ink-800 hover:border-brand-300 hover:bg-brand-50 hover:text-brand-800"
+        >
+          Zobraziť ďalších {hidden}{" "}
+          {hidden < 5 ? "fotografie" : "fotografií"}
+        </button>
+      )}
+
+      {hidden > 0 && expanded && (
+        <button
+          type="button"
+          onClick={() => setExpanded(false)}
+          className="mt-4 w-full rounded-lg border border-ink-300 bg-white px-4 py-2.5 text-sm font-semibold text-ink-800 hover:border-brand-300 hover:bg-brand-50 hover:text-brand-800"
+        >
+          Zbaliť galériu
+        </button>
+      )}
 
       {active && (
         <div
