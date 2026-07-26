@@ -135,7 +135,7 @@
     }
   ],
   "ratings": {
-    "checkedAt": "2026-07-21",
+    "checkedAt": "2026-07-26",
     "minReviews": 500,
     "items": [
       {
@@ -253,12 +253,92 @@
         "reviews": 20,
         "operatorType": "municipal",
         "note": "Samostatný profil s malým počtom recenzií; hlavná Mestská krytá plaváreň Žilina má 4,2 z 1 571 recenzií."
+      },
+      {
+        "id": "r-velky-meder",
+        "name": "Termálne kúpalisko Thermal Corvinus",
+        "place": "Veľký Meder",
+        "rating": 4.4,
+        "reviews": 9284,
+        "operatorType": "private"
+      },
+      {
+        "id": "r-podhajska",
+        "name": "Termálne kúpalisko Podhájska",
+        "place": "Podhájska",
+        "rating": 4.3,
+        "reviews": 8562,
+        "operatorType": "private"
+      },
+      {
+        "id": "r-dun-streda",
+        "name": "Thermalpark Dunajská Streda",
+        "place": "Dunajská Streda",
+        "rating": 4.5,
+        "reviews": 8047,
+        "operatorType": "private"
+      },
+      {
+        "id": "r-vincov",
+        "name": "Termálne kúpalisko Vincov les",
+        "place": "Sládkovičovo",
+        "rating": 4.3,
+        "reviews": 2131,
+        "operatorType": "private"
+      },
+      {
+        "id": "r-bojnice",
+        "name": "Kúpalisko Čajka",
+        "place": "Bojnice",
+        "rating": 3.5,
+        "reviews": 1402,
+        "operatorType": "private"
+      },
+      {
+        "id": "r-patince",
+        "name": "Termálne kúpalisko Patince",
+        "place": "Patince",
+        "rating": 3.9,
+        "reviews": 1127,
+        "operatorType": "private"
+      },
+      {
+        "id": "r-levice",
+        "name": "Kúpalisko Margita – Ilona",
+        "place": "Levice – Kalinčiakovo",
+        "rating": 4.3,
+        "reviews": 765,
+        "operatorType": "private"
+      },
+      {
+        "id": "r-vieska",
+        "name": "Termálne kúpalisko Vieska",
+        "place": "Turčianske Teplice",
+        "rating": 4,
+        "reviews": 485,
+        "operatorType": "private"
+      },
+      {
+        "id": "r-topolcany",
+        "name": "Letné kúpalisko Topoľčany",
+        "place": "Topoľčany",
+        "rating": 4.2,
+        "reviews": 477,
+        "operatorType": "municipal"
+      },
+      {
+        "id": "r-podbrezova",
+        "name": "Letné kúpalisko Podbrezová",
+        "place": "Podbrezová",
+        "rating": 4.1,
+        "reviews": 280,
+        "operatorType": "municipal"
       }
     ],
     "footnotes": [
-      "Termálne kúpalisko Katarína v Kremnici v porovnaní nefiguruje – je mimo prevádzky od roku 2017/2018 a nemá aktívny profil s hodnotením. Mesto ho predalo súkromnému majiteľovi v roku 2006 za 66 388 € a v súčasnosti hľadá záujemcu o dlhodobú koncesiu na obnovu a prevádzku.",
-      "Porovnanie zahŕňa aj menšie obecné a súkromné kúpaliská v regióne, kam Bystričania bežne cestujú. Zariadenia sa líšia veľkosťou aj typom (letné kúpalisko, termálny areál), preto hodnotenia porovnávajte s touto výhradou.",
-      "Rozlohu uvádzame len tam, kde ide o plochu vyhradenú na kúpanie. Údaje, ktoré zahŕňajú aj kemp, hotel či parkoviská, sme zámerne vynechali. Plocha bystrického kúpaliska (37 332 m², z toho 23 106 m² vodná plocha) vyplýva priamo z nájomnej zmluvy. Pri porovnávaní hodnotení berte do úvahy aj to, že niektoré zariadenia sú obecné kúpaliská v obciach s pár stovkami obyvateľov."
+      "Do porovnania zaraďujeme vonkajšie kúpaliská vrátane termálnych. Zámerne sme vynechali: kryté plavárne; hotelové rezorty, kde hodnotenie pokrýva aj ubytovanie (Vadaš Štúrovo 4,5 z 12 465 hodnotení a Vodný park Bešeňová 4,5 z 14 675 – Google ich vedie ako hotely); a jazerá či rekreačné oblasti bez prevádzkovaného kúpaliska (Slnečné jazerá Senec, Zelená voda).",
+      "Rozlohu uvádzame len tam, kde ide o plochu vyhradenú na kúpanie. Údaje, ktoré zahŕňajú aj kemp, hotel či parkoviská, sme zámerne vynechali. Plocha bystrického kúpaliska (37 332 m², z toho 23 106 m² vodná plocha) vyplýva priamo z nájomnej zmluvy.",
+      "Zoznam nie je úplným prehľadom všetkých kúpalísk na Slovensku. Google Maps vracia na jedno vyhľadávanie len niekoľko výsledkov, preto ide o výber z viacerých hľadaní doplnený o známejšie väčšie zariadenia."
     ]
   }
 }

@@ -27,6 +27,11 @@ export default async function ComparisonPage() {
     .sort((a, b) => b.reviews - a.reviews)
     .slice(0, 10);
   const bbVolumeRank = top10.findIndex((i) => i.highlight) + 1;
+  const bbInTop10 = top10.find((i) => i.highlight);
+  // Overujeme z dát, či je BB v desiatke naozaj najhoršie hodnotené.
+  const bbWorstRated =
+    !!bbInTop10 &&
+    top10.every((i) => i.highlight || i.rating > bbInTop10.rating);
 
   return (
     <>
@@ -188,9 +193,20 @@ export default async function ComparisonPage() {
             <p className="eyebrow text-brand-700">Zhrnutie</p>
             <p className="mt-2 text-ink-800">
               Plážové kúpalisko v Banskej Bystrici je podľa počtu hodnotení{" "}
-              <strong>{bbVolumeRank}. najnavštevovanejšie</strong> z tejto
-              desiatky – patrí teda medzi najväčšie na Slovensku. Zároveň má
-              v nej <strong>najnižšie hodnotenie</strong>.
+              <strong>{bbVolumeRank}. z desiatich</strong> najnavštevovanejších
+              kúpalísk na Slovensku.{" "}
+              {bbWorstRated ? (
+                <>
+                  Zároveň má z celej tejto desiatky{" "}
+                  <strong>najnižšie hodnotenie</strong> –{" "}
+                  {bbInTop10.rating.toFixed(1).replace(".", ",")} hviezdy.
+                </>
+              ) : (
+                <>
+                  Jeho hodnotenie je{" "}
+                  {bbInTop10?.rating.toFixed(1).replace(".", ",")} hviezdy.
+                </>
+              )}
             </p>
           </div>
         )}
