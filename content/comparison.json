@@ -42,7 +42,11 @@
       "detail": "Mestský majetok prenajatý na 30 rokov (2007–2037) s opciou 10 rokov.",
       "inOperation": "Áno – sezóna 2026 sa začala 18. 6. 2026",
       "sourceUrl": "https://www.bystricak.sk/clanky/11942/foto-leto-v-banskej-bystrici-moze-naplno-zacat-plazove-kupalisko-po-dlhsom-cakani-konecne-startuje-sezonu",
-      "highlight": true
+      "highlight": true,
+      "area": "3,7 ha",
+      "areaM2": 37332,
+      "areaNote": "37 332 m² prenajatej plochy podľa nájomnej zmluvy (z toho 23 106 m² vodná plocha)",
+      "areaSourceUrl": ""
     },
     {
       "id": "kosice",
@@ -64,7 +68,11 @@
       "operatorType": "municipal",
       "detail": "Mestská spoločnosť. Pred sezónou priebežné opravy – čistenie dna, mólo, nové prezliekarne.",
       "inOperation": "Áno",
-      "sourceUrl": "https://www.presovreal.sk/prevadzka_rekreacneho_arealu_delna/"
+      "sourceUrl": "https://www.presovreal.sk/prevadzka_rekreacneho_arealu_delna/",
+      "area": "13 – 15 ha",
+      "areaM2": 140000,
+      "areaNote": "celý rekreačný areál vrátane vodnej nádrže; samotný aquapark má cca 1,5 ha. Zdroj uvádza na jednom mieste 13 aj 15 ha.",
+      "areaSourceUrl": "https://www.presovreal.sk/prevadzka_rekreacneho_arealu_delna/"
     },
     {
       "id": "zilina",
@@ -97,7 +105,11 @@
       "operatorType": "municipal",
       "detail": "Mestská rozpočtová organizácia. Podmienky prevádzky upravuje VZN č. 9/2025.",
       "inOperation": "Áno – od 27. 6. 2026",
-      "sourceUrl": "https://trencin.sk/pre-obcanov/sport/letne-kupalisko-na-ostrove-v-trencine/"
+      "sourceUrl": "https://trencin.sk/pre-obcanov/sport/letne-kupalisko-na-ostrove-v-trencine/",
+      "area": "1,7 ha",
+      "areaM2": 17000,
+      "areaNote": "plocha areálu",
+      "areaSourceUrl": "https://www.kupaliska.sk/k/letne-kupalisko-na-ostrove-v-trencine/"
     },
     {
       "id": "martin",
@@ -151,7 +163,8 @@
         "rating": 4.3,
         "reviews": 176,
         "operatorType": "private",
-        "note": "Súkromný termálny areál. Overený je prevádzkovateľ kempu a ubytovania (DolStre s.r.o.), nie samotných bazénov."
+        "note": "Súkromný termálny areál. Overený je prevádzkovateľ kempu a ubytovania (DolStre s.r.o.), nie samotných bazénov.",
+        "areaM2": 80000
       },
       {
         "id": "r-nitra",
@@ -167,7 +180,8 @@
         "place": "Trenčín",
         "rating": 4.2,
         "reviews": 981,
-        "operatorType": "municipal"
+        "operatorType": "municipal",
+        "areaM2": 17000
       },
       {
         "id": "r-cervena-hviezda",
@@ -184,7 +198,8 @@
         "rating": 4.1,
         "reviews": 2502,
         "operatorType": "municipal",
-        "note": "Mestský rekreačný areál s vodnou plochou; Google ho vedie pod názvom „Aquapark Delňa“ a eviduje preň viac profilov – použitý je hlavný a najaktívnejší."
+        "note": "Mestský rekreačný areál s vodnou plochou; Google ho vedie pod názvom „Aquapark Delňa“ a eviduje preň viac profilov – použitý je hlavný a najaktívnejší.",
+        "areaM2": 15000
       },
       {
         "id": "r-rumanova",
@@ -201,7 +216,8 @@
         "rating": 4.1,
         "reviews": 1320,
         "operatorType": "private",
-        "note": "Termálny park. Väčšinovým vlastníkom je súkromná spoločnosť, menšinové podiely má mesto Lučenec (cca 14 %) a obec Rapovce (cca 4 %)."
+        "note": "Termálny park. Väčšinovým vlastníkom je súkromná spoločnosť, menšinové podiely má mesto Lučenec (cca 14 %) a obec Rapovce (cca 4 %).",
+        "areaM2": 13000
       },
       {
         "id": "r-martin",
@@ -218,7 +234,8 @@
         "rating": 3.4,
         "reviews": 1200,
         "operatorType": "private",
-        "highlight": true
+        "highlight": true,
+        "areaM2": 37332
       },
       {
         "id": "r-zvolen",
@@ -241,7 +258,8 @@
     ],
     "footnotes": [
       "Termálne kúpalisko Katarína v Kremnici v porovnaní nefiguruje – je mimo prevádzky od roku 2017/2018 a nemá aktívny profil s hodnotením. Mesto ho predalo súkromnému majiteľovi v roku 2006 za 66 388 € a v súčasnosti hľadá záujemcu o dlhodobú koncesiu na obnovu a prevádzku.",
-      "Porovnanie zahŕňa aj menšie obecné a súkromné kúpaliská v regióne, kam Bystričania bežne cestujú. Zariadenia sa líšia veľkosťou aj typom (letné kúpalisko, termálny areál), preto hodnotenia porovnávajte s touto výhradou."
+      "Porovnanie zahŕňa aj menšie obecné a súkromné kúpaliská v regióne, kam Bystričania bežne cestujú. Zariadenia sa líšia veľkosťou aj typom (letné kúpalisko, termálny areál), preto hodnotenia porovnávajte s touto výhradou.",
+      "Rozlohu areálu zverejňuje len časť prevádzkovateľov, preto ju uvádzame iba tam, kde sa dala overiť. Plocha bystrického kúpaliska (37 332 m²) vyplýva priamo z nájomnej zmluvy. Pri porovnávaní hodnotení berte do úvahy, že niektoré zariadenia sú obecné kúpaliská v obciach s pár stovkami obyvateľov."
     ]
   }
 }

@@ -119,11 +119,12 @@ export default async function ComparisonPage() {
           Kto prevádzkuje kúpaliská
         </h2>
         <div className="overflow-x-auto rounded-[var(--radius-card)] border border-ink-200">
-          <table className="w-full min-w-[46rem] text-left text-sm">
+          <table className="w-full min-w-[56rem] text-left text-sm">
             <thead className="bg-ink-50 text-xs uppercase tracking-wide text-ink-500">
               <tr>
                 <th className="px-4 py-3 font-semibold">Mesto</th>
                 <th className="px-4 py-3 font-semibold">Zariadenie</th>
+                <th className="px-4 py-3 font-semibold">Rozloha</th>
                 <th className="px-4 py-3 font-semibold">Prevádzkovateľ</th>
                 <th className="px-4 py-3 font-semibold">V prevádzke</th>
               </tr>
@@ -138,6 +139,37 @@ export default async function ComparisonPage() {
                     <p className="text-xs text-ink-500">{c.population} obyv.</p>
                   </td>
                   <td className="px-4 py-3 text-ink-700">{c.facility}</td>
+                  <td className="px-4 py-3">
+                    {c.area ? (
+                      <>
+                        <p
+                          className={cn(
+                            "whitespace-nowrap font-semibold tabular-nums text-ink-900",
+                            c.highlight && "text-brand-800",
+                          )}
+                        >
+                          {c.area}
+                        </p>
+                        {c.areaNote && (
+                          <p className="mt-0.5 text-xs leading-snug text-ink-500">
+                            {c.areaNote}
+                          </p>
+                        )}
+                        {c.areaSourceUrl && (
+                          <a
+                            href={c.areaSourceUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="mt-1 inline-block text-xs font-medium text-brand-700 underline decoration-dotted"
+                          >
+                            Zdroj →
+                          </a>
+                        )}
+                      </>
+                    ) : (
+                      <span className="text-xs italic text-ink-400">neuvedené</span>
+                    )}
+                  </td>
                   <td className="px-4 py-3">
                     <span
                       className={cn(
@@ -167,10 +199,14 @@ export default async function ComparisonPage() {
           </table>
         </div>
 
-        <p className="mt-4 text-xs text-ink-500">
+        <p className="mt-4 text-xs leading-relaxed text-ink-500">
           Údaje boli overované v júli 2026 z oficiálnych webov miest, ich
           organizácií a Štatistického úradu SR. Počty obyvateľov sú k 1. 1. 2026,
-          resp. k poslednému dostupnému dátumu.
+          resp. k poslednému dostupnému dátumu.{" "}
+          <strong>K rozlohe:</strong> väčšina miest ani prevádzkovateľov plochu
+          areálu nezverejňuje, preto ju uvádzame len tam, kde sa dala overiť.
+          Plocha bystrického kúpaliska vyplýva priamo z nájomnej zmluvy. Kde
+          rozloha chýba, poslúži na porovnanie mierky počet obyvateľov mesta.
         </p>
       </Section>
 

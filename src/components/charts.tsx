@@ -125,7 +125,15 @@ export interface RankRow {
   place: string;
   rating: number;
   reviews: number;
+  areaM2?: number;
   highlight?: boolean;
+}
+
+/** Rozloha v hektároch pre kompaktný štítok, napr. „3,7 ha“. */
+function haLabel(m2?: number): string | null {
+  if (!m2) return null;
+  const ha = m2 / 10000;
+  return `${ha.toFixed(1).replace(".", ",")} ha`;
 }
 
 export function RatingRanking({
@@ -175,6 +183,11 @@ export function RatingRanking({
                 </span>
                 <span className="block truncate text-xs text-ink-500">
                   {r.place}
+                  {haLabel(r.areaM2) && (
+                    <span className="ml-1.5 whitespace-nowrap rounded bg-ink-100 px-1.5 py-0.5 font-medium tabular-nums text-ink-600">
+                      {haLabel(r.areaM2)}
+                    </span>
+                  )}
                 </span>
               </span>
 
