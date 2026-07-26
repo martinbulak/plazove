@@ -111,7 +111,7 @@ export async function POST(req: Request) {
       `Dobrý deň,\n\nĎakujeme za podporu verejnej výzvy k plážovému kúpalisku v Banskej Bystrici.\n` +
       `Pre potvrdenie podpisu kliknite na odkaz:\n\n${url}\n\n` +
       `Ak ste o podpis nežiadali, tento e-mail ignorujte.\n\n` +
-      `Za Pláž – ktorá nebude hanbou mesta\nzaplaz.sk · info@zaplaz.sk`,
+      `Za Pláž – ktorá nebude hanbou\nzaplaz.sk · info@zaplaz.sk`,
   });
 
   return NextResponse.json({

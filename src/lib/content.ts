@@ -122,7 +122,7 @@ export async function getComparison(): Promise<ComparisonData> {
 /** Fallback konfigurácia, ak content/site.json chýba. */
 export const DEFAULT_SITE: SiteConfig = {
   siteName: "Za Pláž",
-  tagline: "Ktorá nebude hanbou mesta",
+  tagline: "Ktorá nebude hanbou",
   heroTitle: "Čo sa deje s plážovým kúpaliskom v Banskej Bystrici?",
   heroSubtitle:
     "Dokumenty, právne analýzy, fotografie a skúsenosti verejnosti na jednom mieste.",

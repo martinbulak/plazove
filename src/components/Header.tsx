@@ -20,7 +20,7 @@ export function Header() {
               Za Pláž
             </span>
             <span className="text-[10px] font-semibold uppercase tracking-[0.14em] text-brand-600">
-              ktorá nebude hanbou mesta
+              ktorá nebude hanbou
             </span>
           </span>
         </Link>

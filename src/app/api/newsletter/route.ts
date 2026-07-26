@@ -60,7 +60,7 @@ export async function POST(req: Request) {
     text:
       `Dobrý deň,\n\npre potvrdenie odberu noviniek kliknite na odkaz:\n\n${url}\n\n` +
       `Ak ste o odber nežiadali, tento e-mail ignorujte.\n\n` +
-      `Za Pláž – ktorá nebude hanbou mesta\nzaplaz.sk · info@zaplaz.sk`,
+      `Za Pláž – ktorá nebude hanbou\nzaplaz.sk · info@zaplaz.sk`,
   });
 
   return NextResponse.json({

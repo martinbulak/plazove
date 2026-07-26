@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
     default:
-      "Za Pláž – ktorá nebude hanbou mesta | Plážové kúpalisko v Banskej Bystrici",
+      "Za Pláž – ktorá nebude hanbou | Plážové kúpalisko v Banskej Bystrici",
     template: "%s | Za Pláž",
   },
   description:
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     locale: "sk_SK",
     url: SITE_URL,
     siteName: "Za Pláž",
-    title: "Za Pláž – ktorá nebude hanbou mesta",
+    title: "Za Pláž – ktorá nebude hanbou",
     description:
       "Dokumenty, právne analýzy, časová os a fakty o plážovom kúpalisku v Banskej Bystrici. Nezávislý občiansky informačný projekt – nie je to web prevádzkovateľa ani mesta.",
   },

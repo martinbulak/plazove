@@ -2,7 +2,7 @@ import { ImageResponse } from "next/og";
 
 export const runtime = "nodejs";
 export const alt =
-  "Za Pláž – ktorá nebude hanbou mesta. Nezávislý občiansky informačný projekt.";
+  "Za Pláž – ktorá nebude hanbou. Nezávislý občiansky informačný projekt.";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -43,7 +43,7 @@ export default function OgImage() {
               Za Pláž
             </div>
             <div style={{ fontSize: 19, opacity: 0.8 }}>
-              ktorá nebude hanbou mesta
+              ktorá nebude hanbou
             </div>
           </div>
         </div>
