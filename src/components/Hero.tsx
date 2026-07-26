@@ -10,13 +10,21 @@ import type { SiteConfig, ReviewAnalysis, GalleryItem } from "@/lib/types";
 export function Hero({
   site,
   reviews,
-  photo,
+  photos = [],
+  quoteId,
 }: {
   site: SiteConfig;
   reviews: ReviewAnalysis | null;
-  photo?: GalleryItem;
+  /** Fotografie do koláže – prvá je hlavná, ďalšie dve menšie. */
+  photos?: GalleryItem[];
+  /** Recenzia, ktorá tematicky sedí k fotkám. */
+  quoteId?: string;
 }) {
-  const quote = reviews?.samples.find((s) => s.stars <= 2) ?? reviews?.samples[0];
+  const quote =
+    reviews?.samples.find((s) => s.id === quoteId) ??
+    reviews?.samples.find((s) => s.stars <= 2) ??
+    reviews?.samples[0];
+  const [main, ...rest] = photos;
   const negative = reviews
     ? reviews.distribution
         .filter((d) => d.stars <= 2)
@@ -65,26 +73,55 @@ export function Hero({
           {/* ── Pravý stĺpec: dôkaz (fotka + hodnotenia) ── */}
           <div className="lg:col-span-5">
             <div className="relative mx-auto max-w-md lg:mx-0">
-              {photo && (
-                <figure className="overflow-hidden rounded-xl bg-ink-100 shadow-lg ring-1 ring-ink-900/10">
-                  <div className="relative aspect-[4/3]">
-                    <Image
-                      src={photo.src}
-                      alt={photo.alt}
-                      fill
-                      priority
-                      sizes="(max-width: 1024px) 90vw, 30rem"
-                      className="object-cover"
-                    />
-                    <figcaption className="absolute left-3 top-3 rounded-md bg-ink-900/80 px-2.5 py-1 text-xs font-medium text-white backdrop-blur-sm">
-                      Stav areálu · {photo.date}
-                    </figcaption>
+              {main && (
+                <figure className="relative">
+                  {/* Koláž: jedna hlavná fotka + dve menšie vedľa seba */}
+                  <div className="grid grid-cols-3 gap-2">
+                    <div className="relative col-span-3 aspect-[4/3] overflow-hidden rounded-xl bg-ink-100 shadow-lg ring-1 ring-ink-900/10">
+                      <Image
+                        src={main.src}
+                        alt={main.alt}
+                        fill
+                        priority
+                        sizes="(max-width: 1024px) 90vw, 30rem"
+                        className="object-cover"
+                      />
+                      <span className="absolute left-3 top-3 rounded-md bg-ink-900/80 px-2.5 py-1 text-xs font-medium text-white backdrop-blur-sm">
+                        Stav areálu · {main.date}
+                      </span>
+                    </div>
+
+                    {rest.slice(0, 2).map((p) => (
+                      <div
+                        key={p.id}
+                        className="relative col-span-1 aspect-[4/3] overflow-hidden rounded-lg bg-ink-100 shadow-md ring-1 ring-ink-900/10"
+                      >
+                        <Image
+                          src={p.src}
+                          alt={p.alt}
+                          fill
+                          sizes="10rem"
+                          className="object-cover"
+                        />
+                      </div>
+                    ))}
+
+                    {/* Odkaz do galérie ako tretia dlaždica */}
+                    <Link
+                      href="/galeria"
+                      className="col-span-1 flex aspect-[4/3] flex-col items-center justify-center rounded-lg border border-ink-300 bg-white/80 text-center text-xs font-semibold text-brand-800 transition-colors hover:border-brand-400 hover:bg-white"
+                    >
+                      <span className="display text-xl text-ink-900">+7</span>
+                      <span className="mt-0.5 px-1 leading-tight">
+                        fotografií
+                      </span>
+                    </Link>
                   </div>
                 </figure>
               )}
 
               {reviews && quote && (
-                <div className="relative z-10 mx-3 -mt-8 rounded-xl border border-ink-200 bg-white p-5 shadow-xl">
+                <div className="relative z-10 mt-3 rounded-xl border border-ink-200 bg-white p-5 shadow-lg">
                   <div className="flex items-center gap-3">
                     <span className="display text-4xl text-ink-900">
                       {reviews.average.toFixed(1).replace(".", ",")}

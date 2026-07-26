@@ -31,14 +31,24 @@ export default async function HomePage() {
   const acts = onlyPublished(actions);
 
   const recentTimeline = tl.slice(-3).reverse();
-  const heroPhoto = photos.find((p) => p.date === "2024") ?? photos[0];
+
+  /**
+   * Koláž do hero sekcie. Fotky sú zvolené tak, aby tematicky sedeli
+   * k citovanej recenzii (tá hovorí o stave toaliet a zázemia).
+   */
+  const HERO_PHOTO_IDS = ["g-2024-06", "g-2024-09", "g-2024-05"];
+  const HERO_QUOTE_ID = "rev-3";
+  const heroPhotos = HERO_PHOTO_IDS.map((id) =>
+    photos.find((p) => p.id === id),
+  ).filter((p): p is NonNullable<typeof p> => Boolean(p));
+  const heroCollage = heroPhotos.length ? heroPhotos : photos.slice(0, 3);
 
   /**
    * Tri recenzie na úvod. Zámerne volíme rôzne počty hviezd, aby výber
    * nepôsobil ako vyzobané najhoršie prípady – a vynechávame tú, ktorá je
    * už použitá v hero sekcii.
    */
-  const heroQuoteId = reviews?.samples.find((s) => s.stars <= 2)?.id;
+  const heroQuoteId = HERO_QUOTE_ID;
   const homeReviews = (() => {
     if (!reviews) return [];
     const pool = reviews.samples.filter((s) => s.id !== heroQuoteId);
@@ -66,7 +76,12 @@ export default async function HomePage() {
 
   return (
     <>
-      <Hero site={site} reviews={reviews} photo={heroPhoto} />
+      <Hero
+        site={site}
+        reviews={reviews}
+        photos={heroCollage}
+        quoteId={HERO_QUOTE_ID}
+      />
 
       {/* ── Kľúčové fakty ── */}
       <div className="border-b border-ink-200 bg-white">
