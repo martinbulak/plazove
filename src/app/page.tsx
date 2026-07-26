@@ -8,6 +8,7 @@ import {
   getOpenQuestions,
   getGallery,
   getReviewAnalysis,
+  getComparison,
   onlyPublished,
 } from "@/lib/content";
 import { formatDateSk } from "@/lib/utils";
@@ -16,13 +17,14 @@ import { formatDateSk } from "@/lib/utils";
 export const revalidate = 60;
 
 export default async function HomePage() {
-  const [site, timeline, actions, questions, gallery, reviews] = await Promise.all([
+  const [site, timeline, actions, questions, gallery, reviews, comparison] = await Promise.all([
     getSite(),
     getTimeline(),
     getCityActions(),
     getOpenQuestions(),
     getGallery(),
     getReviewAnalysis(),
+    getComparison(),
   ]);
 
   const tl = onlyPublished(timeline);
@@ -46,7 +48,7 @@ export default async function HomePage() {
   const heroPhotos = HERO_PHOTO_IDS.map((id) =>
     photos.find((p) => p.id === id),
   ).filter((p): p is NonNullable<typeof p> => Boolean(p));
-  const heroCollage = heroPhotos.length ? heroPhotos : photos.slice(0, 3);
+  const heroCollage = heroPhotos.length ? heroPhotos : photos.slice(0, 4);
 
   /**
    * Tri recenzie na úvod. Zámerne volíme rôzne počty hviezd, aby výber
@@ -68,6 +70,16 @@ export default async function HomePage() {
     }
     return picked.slice(0, 3);
   })();
+
+  /**
+   * Päť najhoršie hodnotených kúpalísk – rovnaká metodika ako na stránke
+   * Porovnanie: primárne hodnotenie vzostupne, sekundárne počet hodnotení,
+   * a len zariadenia s dostatočným počtom recenzií.
+   */
+  const worst5 = [...comparison.ratings.items]
+    .filter((i) => i.reviews >= comparison.ratings.minReviews)
+    .sort((a, b) => a.rating - b.rating || b.reviews - a.reviews)
+    .slice(0, 5);
 
   const negativeShare = reviews
     ? Math.round(
@@ -177,6 +189,69 @@ export default async function HomePage() {
             {formatDateSk(reviews.checkedAt)}.
           </p>
         </Section>
+      )}
+
+      {/* ── Najhoršie hodnotené kúpaliská ── */}
+      {worst5.length > 0 && (
+        <div className="border-t border-ink-200 bg-white">
+          <Section>
+            <SectionHeading
+              eyebrow="Rebríček"
+              title="Najhoršie hodnotené kúpaliská na Slovensku"
+              intro="Päť najslabšie hodnotených kúpalísk z tých, ktoré sme porovnávali. Hlavným kritériom je priemerné hodnotenie na Mapách Google, do rebríčka púšťame len zariadenia s dostatočným počtom hodnotení."
+            />
+
+            <ol className="divide-y divide-ink-100 border-y border-ink-200">
+              {worst5.map((f, i) => (
+                <li
+                  key={f.id}
+                  className={`flex items-center gap-4 py-3.5 ${
+                    f.highlight ? "bg-[var(--color-chart-neg)]/8 px-3" : ""
+                  }`}
+                >
+                  <span
+                    aria-hidden
+                    className="section-number w-6 shrink-0 text-lg text-ink-400"
+                  >
+                    {i + 1}
+                  </span>
+                  <span className="min-w-0 flex-1">
+                    <span
+                      className={`block truncate ${
+                        f.highlight
+                          ? "font-bold text-ink-900"
+                          : "font-medium text-ink-800"
+                      }`}
+                    >
+                      {f.name}
+                    </span>
+                    <span className="block truncate text-xs text-ink-500">
+                      {f.place} · {f.reviews.toLocaleString("sk-SK")} hodnotení
+                    </span>
+                  </span>
+                  <span className="flex shrink-0 items-baseline gap-1.5">
+                    <span className="text-accent-500" aria-hidden>
+                      ★
+                    </span>
+                    <span
+                      className={`tabular-nums ${
+                        f.highlight
+                          ? "font-bold text-ink-900"
+                          : "font-semibold text-ink-800"
+                      }`}
+                    >
+                      {f.rating.toFixed(1).replace(".", ",")}
+                    </span>
+                  </span>
+                </li>
+              ))}
+            </ol>
+
+            <Button href="/porovnanie#vyznamnejsie" variant="outline" className="mt-6">
+              Celý rebríček a metodika →
+            </Button>
+          </Section>
+        </div>
       )}
 
       {/* ── Najnovšie udalosti + stav ── */}

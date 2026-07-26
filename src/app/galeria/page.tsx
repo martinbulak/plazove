@@ -25,6 +25,7 @@ export default async function GalleryPage() {
         intro="Fotografie dokumentujúce stav verejného majetku v rokoch 2013 – 2024. Po kliknutí sa fotografia otvorí vo väčšom zobrazení. Pri každej fotografii uvádzame dátum a zdroj."
       />
 
+      {items.length > 0 && (
       <div className="mb-6 rounded-lg border border-ink-200 bg-ink-50 px-4 py-3 text-sm text-ink-600">
         <strong>Zdroj a kontext:</strong> fotografie pochádzajú z fotodokumentácie
         petičného výboru za záchranu plážového kúpaliska (zábery Ľubice Bučkovej
@@ -41,8 +42,15 @@ export default async function GalleryPage() {
         . Popisy pod fotografiami tu sú redakčne neutrálne – hodnotenia stavu sú
         vecou pisateľov pôvodných materiálov.
       </div>
+      )}
 
-      <Gallery items={items} />
+      {items.length === 0 ? (
+        <p className="rounded-xl border border-dashed border-ink-300 bg-white p-10 text-center text-sm text-ink-500">
+          Galéria sa práve dopĺňa. Fotografie pribudnú čoskoro.
+        </p>
+      ) : (
+        <Gallery items={items} />
+      )}
 
       <div className="mt-8 rounded-lg border border-brand-200 bg-brand-50 p-4 text-sm text-brand-900">
         Máte vlastnú fotografiu areálu?{" "}

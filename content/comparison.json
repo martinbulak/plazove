@@ -234,9 +234,7 @@
         "reviews": 1200,
         "operatorType": "private",
         "highlight": true,
-        "areaM2": 37332,
-        "photo": "/foto/2024-05.jpg",
-        "photoAlt": "Popraskaný betón a sprcha pri bazéne plážového kúpaliska, 2024"
+        "areaM2": 37332
       },
       {
         "id": "r-zilina",
@@ -331,8 +329,7 @@
     "footnotes": [
       "Do porovnania zaraďujeme vonkajšie kúpaliská vrátane termálnych. Zámerne sme vynechali: kryté plavárne; hotelové rezorty, kde hodnotenie pokrýva aj ubytovanie (Vadaš Štúrovo 4,5 z 12 465 hodnotení a Vodný park Bešeňová 4,5 z 14 675 – Google ich vedie ako hotely); a jazerá či rekreačné oblasti bez prevádzkovaného kúpaliska (Slnečné jazerá Senec, Zelená voda).",
       "Rozlohu uvádzame len tam, kde ide o plochu vyhradenú na kúpanie. Údaje, ktoré zahŕňajú aj kemp, hotel či parkoviská, sme zámerne vynechali. Plocha bystrického kúpaliska (37 332 m², z toho 23 106 m² vodná plocha) vyplýva priamo z nájomnej zmluvy.",
-      "Zoznam nie je úplným prehľadom všetkých kúpalísk na Slovensku. Google Maps vracia na jedno vyhľadávanie len niekoľko výsledkov, preto ide o výber z viacerých hľadaní doplnený o známejšie väčšie zariadenia.",
-      "Náhľadové fotografie zobrazujeme len tam, kde máme na snímku práva. Fotografia plážového kúpaliska pochádza z fotodokumentácie petičného výboru."
+      "Zoznam nie je úplným prehľadom všetkých kúpalísk na Slovensku. Google Maps vracia na jedno vyhľadávanie len niekoľko výsledkov, preto ide o výber z viacerých hľadaní doplnený o známejšie väčšie zariadenia."
     ]
   }
 }

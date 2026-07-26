@@ -5,7 +5,10 @@ const nextConfig: NextConfig = {
   images: {
     // Placeholder-obrázky sú lokálne (SVG/PNG v /public). Pre externé zdroje
     // (napr. archív fotiek na CDN) doplňte remotePatterns nižšie.
-    remotePatterns: [],
+    remotePatterns: [
+      // Fotografie nahrané cez administráciu do Vercel Blob.
+      { protocol: "https", hostname: "*.public.blob.vercel-storage.com" },
+    ],
     formats: ["image/avif", "image/webp"],
   },
   // Po zlúčení sekcií presmerúvame pôvodné URL na nové (trvalé presmerovanie).

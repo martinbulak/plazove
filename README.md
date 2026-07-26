@@ -211,14 +211,27 @@ Verejné stránky používajú **ISR** (`revalidate = 60`), takže úpravy z KV 
 ### Nasadenie na Vercel (krok za krokom)
 1. **Import repozitára** na [vercel.com/new](https://vercel.com/new) (Vercel deteguje Next.js automaticky, žiadny build config netreba).
 2. **Vytvorte KV úložisko:** v projekte → *Storage* → *Create Database* → **Upstash Redis** (free tier). Vercel doň automaticky doplní `KV_REST_API_URL` a `KV_REST_API_TOKEN`.
-3. **Nastavte Environment Variables** (Project → Settings → Environment Variables):
+3. **Vytvorte Blob úložisko na fotografie:** Storage → *Create* → **Blob**.
+   Vercel doplní `BLOB_READ_WRITE_TOKEN`. Bez neho administrácia fotografie
+   nenahrá (na Verceli je súborový systém read-only).
+4. **Nastavte Environment Variables** (Project → Settings → Environment Variables):
    - `NEXT_PUBLIC_SITE_URL` = `https://aqualandbb.sk` (alebo pridelená vercel.app doména)
    - `ADMIN_PASSWORD` = silné heslo do administrácie
    - `ADMIN_SESSION_SECRET` = náhodný reťazec (min. 32 znakov)
    - *(voliteľné)* `RESEND_API_KEY` + `MAIL_FROM` pre reálne e-maily
-4. **Deploy.** Doménu `aqualandbb.sk` pridáte v *Settings → Domains*.
+5. **Deploy.** Doménu `aqualandbb.sk` pridáte v *Settings → Domains*.
 
 > Migrácia na inú DB (Postgres/Neon/Turso) je jednoduchá: stačí prepísať telo funkcií v `src/lib/store.ts` a `src/lib/kv.ts`; rozhranie (`readJson`/`writeJson`, `readSubmission`/`appendSubmission`) ostáva rovnaké.
+
+### Nahrávanie fotografií
+Administrácia (`/admin/c/gallery`) má nahrávanie fotografií. Obrázky sa zmenšia
+už v prehliadači (max. 1600 px, JPEG), takže sa dajú nahrať aj z mobilu.
+Ku každej fotke sa vypĺňa alt text (povinný), popis, dátum, autor a pôvod.
+
+- **Na Verceli** idú súbory do Blob úložiska a zobrazia sa okamžite.
+- **Lokálne** sa ukladajú do `public/foto/`. Pri `npm run start` ich Next
+  začne servovať až po reštarte (priečinok `public` sa načíta pri štarte);
+  v `npm run dev` to obmedzenie neplatí.
 
 ### Vlastný Node.js server
 Súborová obsahová vrstva funguje s **trvalým zapisovateľným diskom** (KV netreba):

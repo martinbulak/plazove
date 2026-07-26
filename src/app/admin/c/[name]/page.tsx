@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { AdminShell } from "@/components/admin/AdminShell";
 import { CollectionEditor } from "@/components/admin/CollectionEditor";
+import { GalleryUploader } from "@/components/admin/GalleryUploader";
 import { COLLECTIONS } from "@/lib/admin-schema";
 import { readJson } from "@/lib/store";
 
@@ -19,6 +20,7 @@ export default async function CollectionAdminPage({
 
   return (
     <AdminShell active={name} title={def.title}>
+      {name === "gallery" && <GalleryUploader />}
       <CollectionEditor def={def} initialItems={items} />
     </AdminShell>
   );
