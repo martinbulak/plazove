@@ -9,8 +9,15 @@
         "kind": "fact",
         "text": "Mesto Banská Bystrica prenajalo areál plážového kúpaliska spoločnosti AQUALAND Slovakia s.r.o. nájomnou zmluvou č. 526/2007/EM-SM podpísanou 15. 10. 2007. Nájom schválilo mestské zastupiteľstvo uznesením č. 68/2007-MsZ z 29. mája 2007.",
         "sources": [
-          { "label": "Nájomná zmluva č. 526/2007/EM-SM", "documentId": "doc-zmluva-2007" },
-          { "label": "Právne stanovisko PF UK, časť A", "documentId": "doc-pravne-stanovisko-2022", "page": 2 }
+          {
+            "label": "Nájomná zmluva č. 526/2007/EM-SM",
+            "documentId": "doc-zmluva-2007"
+          },
+          {
+            "label": "Právne stanovisko PF UK, časť A",
+            "documentId": "doc-pravne-stanovisko-2022",
+            "page": 2
+          }
         ]
       },
       {
@@ -18,7 +25,10 @@
         "kind": "fact",
         "text": "Nájom je dohodnutý na dobu určitú od 1. 10. 2007 do 30. 9. 2037, teda na 30 rokov, s opciou ďalších 10 rokov v prospech nájomcu.",
         "sources": [
-          { "label": "Nájomná zmluva, čl. II ods. 1", "documentId": "doc-zmluva-2007" }
+          {
+            "label": "Nájomná zmluva, čl. II ods. 1",
+            "documentId": "doc-zmluva-2007"
+          }
         ]
       },
       {
@@ -26,7 +36,10 @@
         "kind": "fact",
         "text": "Predmetom nájmu je 37 332 m² pozemkov vo vlastníctve mesta vrátane vodnej plochy s výmerou 23 106 m², prevádzková budova a technologické zariadenia. Ide o majetok mesta, teda verejný majetok.",
         "sources": [
-          { "label": "Nájomná zmluva, čl. I ods. 2 (LV 4073, LV 6013)", "documentId": "doc-zmluva-2007" }
+          {
+            "label": "Nájomná zmluva, čl. I ods. 2 (LV 4073, LV 6013)",
+            "documentId": "doc-zmluva-2007"
+          }
         ]
       },
       {
@@ -34,7 +47,11 @@
         "kind": "fact",
         "text": "Zmluva ukladá nájomcovi preukázať preinvestovanie minimálne 100 000 000 Sk (v dodatku uvedený ekvivalent 3 319 391 €). Nepreukázanie tejto sumy podľa harmonogramu zmluva výslovne označuje za podstatné porušenie zmluvy.",
         "sources": [
-          { "label": "Nájomná zmluva, čl. IV ods. 10", "documentId": "doc-zmluva-2007", "page": 5 }
+          {
+            "label": "Nájomná zmluva, čl. IV ods. 10",
+            "documentId": "doc-zmluva-2007",
+            "page": 5
+          }
         ]
       },
       {
@@ -42,7 +59,11 @@
         "kind": "fact",
         "text": "Mesto má podľa zmluvy právo vstupovať do areálu na kontrolu raz mesačne.",
         "sources": [
-          { "label": "Nájomná zmluva, čl. IV ods. 11", "documentId": "doc-zmluva-2007", "page": 5 }
+          {
+            "label": "Nájomná zmluva, čl. IV ods. 11",
+            "documentId": "doc-zmluva-2007",
+            "page": 5
+          }
         ]
       },
       {
@@ -50,7 +71,10 @@
         "kind": "fact",
         "text": "Mesto Banská Bystrica 22. 8. 2024 verejne deklarovalo záujem ukončiť nájomný vzťah. Uviedlo, že si objednalo právnu analýzu na UK, pripravovalo znalecký posudok a podalo podnety na Regionálny úrad verejného zdravotníctva a Inšpektorát práce.",
         "sources": [
-          { "label": "Mesto Banská Bystrica, 22. 8. 2024", "url": "https://www.banskabystrica.sk/aktuality/2024/mesto-ma-zaujem-ukoncit-zmluvu-s-prevadzkovatelom-kupaliska/" }
+          {
+            "label": "Mesto Banská Bystrica, 22. 8. 2024",
+            "url": "https://www.banskabystrica.sk/aktuality/2024/mesto-ma-zaujem-ukoncit-zmluvu-s-prevadzkovatelom-kupaliska/"
+          }
         ]
       },
       {
@@ -58,7 +82,10 @@
         "kind": "fact",
         "text": "Konateľom a od 3. 11. 2022 aj jediným spoločníkom spoločnosti AQUALAND Slovakia s.r.o. (IČO 36 768 014, sídlo Michalovce) je MUDr. Juraj Sninský. Spoločnosť bola zapísaná 24. 4. 2007, teda ešte pred podpisom nájomnej zmluvy.",
         "sources": [
-          { "label": "Obchodný register SR", "url": "https://orsr.sk/vypis.asp?ID=96310&P=1&SID=4" }
+          {
+            "label": "Obchodný register SR",
+            "url": "https://orsr.sk/vypis.asp?ID=96310&P=1&SID=4"
+          }
         ]
       }
     ]
@@ -73,7 +100,11 @@
         "kind": "document_conclusion",
         "text": "Právne stanovisko PF UK (9. 12. 2022): zmluva neobsahuje ustanovenia o zániku nájmu výpoveďou, preto ju nemožno ukončiť výpoveďou. Ostávajú tri cesty – uplynutie doby (2037), dohoda oboch strán a odstúpenie od zmluvy.",
         "sources": [
-          { "label": "Právne stanovisko PF UK, bod 3.7 Záver", "documentId": "doc-pravne-stanovisko-2022", "page": 37 }
+          {
+            "label": "Právne stanovisko PF UK, bod 3.7 Záver",
+            "documentId": "doc-pravne-stanovisko-2022",
+            "page": 37
+          }
         ]
       },
       {
@@ -81,7 +112,11 @@
         "kind": "document_conclusion",
         "text": "Stanovisko zároveň uvádza, že či boli splnené predpoklady na odstúpenie od zmluvy, je otázkou skutkovou a na základe predložených dokumentov ju nebolo možné relevantne vyhodnotiť. Zdôrazňuje tiež, že pred odstúpením musí mesto poskytnúť nájomcovi dodatočnú lehotu na nápravu, inak by odstúpenie nebolo platné.",
         "sources": [
-          { "label": "Právne stanovisko PF UK, bod 3.6 a 3.7", "documentId": "doc-pravne-stanovisko-2022", "page": 31 }
+          {
+            "label": "Právne stanovisko PF UK, bod 3.6 a 3.7",
+            "documentId": "doc-pravne-stanovisko-2022",
+            "page": 31
+          }
         ]
       },
       {
@@ -89,7 +124,10 @@
         "kind": "document_conclusion",
         "text": "Správa hlavného kontrolóra mesta z 9. 3. 2010 konštatovala, že nájomca nezaplatil včas nájomné za roky 2007 a 2009 a nepredložil položkovitý rozpočet za tretí štvrťrok 2008 a za obdobie do 30. júna 2009.",
         "sources": [
-          { "label": "Správa hlavného kontrolóra č. 13/2009 (cit. v stanovisku PF UK)", "documentId": "doc-kontrolor-2010" }
+          {
+            "label": "Správa hlavného kontrolóra č. 13/2009 (cit. v stanovisku PF UK)",
+            "documentId": "doc-kontrolor-2010"
+          }
         ]
       },
       {
@@ -97,7 +135,11 @@
         "kind": "document_conclusion",
         "text": "Pre mesto je z hľadiska majetku podstatné, že pri skončení nájmu uplynutím doby alebo pri odstúpení pre podstatné porušenie prechádzajú investície na mesto formou daru a mesto ich nemusí nájomcovi uhrádzať. Stanovisko však upozorňuje, že pri odstúpení z dôvodu, ktorý zmluva neoznačuje ako podstatné porušenie, by táto povinnosť nájomcovi nevznikla.",
         "sources": [
-          { "label": "Právne stanovisko PF UK, s. 35–36", "documentId": "doc-pravne-stanovisko-2022", "page": 35 }
+          {
+            "label": "Právne stanovisko PF UK, s. 35–36",
+            "documentId": "doc-pravne-stanovisko-2022",
+            "page": 35
+          }
         ]
       },
       {
@@ -105,7 +147,33 @@
         "kind": "document_conclusion",
         "text": "Mesto po kontrolnom dni 15. 5. 2026 uviedlo, že areál nie je pripravený na otvorenie sezóny. Podľa hovorkyne primátora Zdenky Marhefkovej „viaceré časti kúpaliska pôsobia nedokončene, technicky aj prevádzkovo nepripravené“.",
         "sources": [
-          { "label": "Mesto Banská Bystrica, 15. 5. 2026", "url": "https://www.banskabystrica.sk/aktuality/2026/kontrolny-den-na-plazovom-kupalisku-priniesol-sklamanie/" }
+          {
+            "label": "Mesto Banská Bystrica, 15. 5. 2026",
+            "url": "https://www.banskabystrica.sk/aktuality/2026/kontrolny-den-na-plazovom-kupalisku-priniesol-sklamanie/"
+          }
+        ]
+      },
+      {
+        "id": "zd6",
+        "kind": "legal_interpretation",
+        "text": "Podľa právnej analýzy Univerzity Komenského je predkupné právo nájomcu na kúpu areálu (čl. VII ods. 10) absolútne neplatné a rovnako neplatná je aj časť dodatku č. 1 – oboje preto, že tieto úkony neschválilo mestské zastupiteľstvo.",
+        "sources": [
+          {
+            "label": "Právne stanovisko PF UK, záver kapitoly 2.5, s. 18",
+            "documentId": "doc-pravne-stanovisko-2022",
+            "page": 19
+          }
+        ]
+      },
+      {
+        "id": "zd7",
+        "kind": "document_conclusion",
+        "text": "Podľa podnikateľského zámeru, ktorý je prílohou nájomnej zmluvy, mala byť celá modernizácia za 100 mil. Sk hotová do júna 2010 a od toho istého termínu mal areál fungovať celoročne. Zámer sľuboval aj nový detský bazén s výmerou 40 m².",
+        "sources": [
+          {
+            "label": "Nájomná zmluva, Príloha č. 4 – podnikateľský zámer „Modernizácia plážového kúpaliska Banská Bystrica“, kap. IV a VII",
+            "documentId": "doc-zmluva-2007"
+          }
         ]
       }
     ]
@@ -120,7 +188,11 @@
         "kind": "open_question",
         "text": "Nie je verejne doložené, či a ako mesto komplexne overilo splnenie investičnej povinnosti vo výške 100 mil. Sk. Právne stanovisko malo k dispozícii doklady len za časť obdobia.",
         "sources": [
-          { "label": "Právne stanovisko PF UK, s. 30–33", "documentId": "doc-pravne-stanovisko-2022", "page": 30 }
+          {
+            "label": "Právne stanovisko PF UK, s. 30–33",
+            "documentId": "doc-pravne-stanovisko-2022",
+            "page": 30
+          }
         ]
       },
       {
@@ -128,7 +200,10 @@
         "kind": "open_question",
         "text": "Znalecký posudok na zhodnotenie investícií, ktorý mesto avizovalo v roku 2024, nebol v čase spracovania tejto stránky vo verejných zdrojoch nájdený.",
         "sources": [
-          { "label": "Avizované mestom 22. 8. 2024", "url": "https://www.banskabystrica.sk/aktuality/2024/mesto-ma-zaujem-ukoncit-zmluvu-s-prevadzkovatelom-kupaliska/" }
+          {
+            "label": "Avizované mestom 22. 8. 2024",
+            "url": "https://www.banskabystrica.sk/aktuality/2024/mesto-ma-zaujem-ukoncit-zmluvu-s-prevadzkovatelom-kupaliska/"
+          }
         ]
       },
       {
@@ -136,7 +211,11 @@
         "kind": "open_question",
         "text": "Nie je verejne známe, či mesto niekedy formálne vyzvalo nájomcu na odstránenie konkrétnych porušení a určilo mu dodatočnú lehotu – teda krok, ktorý právne stanovisko označuje za podmienku platného odstúpenia od zmluvy.",
         "sources": [
-          { "label": "Právne stanovisko PF UK, bod 3.6", "documentId": "doc-pravne-stanovisko-2022", "page": 31 }
+          {
+            "label": "Právne stanovisko PF UK, bod 3.6",
+            "documentId": "doc-pravne-stanovisko-2022",
+            "page": 31
+          }
         ]
       }
     ]

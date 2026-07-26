@@ -1,84 +1,178 @@
 [
   {
-    "id": "q1", "status": "published", "actionStatus": "no_answer",
+    "id": "q1",
+    "status": "published",
+    "actionStatus": "no_answer",
     "question": "Boli všetky deklarované investície nájomcu riadne preukázané a overené?",
     "cityAnswer": "",
     "lastUpdated": "2026-07-21",
     "sources": [
-      { "label": "Právne stanovisko PF UK malo doklady len za časť obdobia (chýbali doklady do 31. 12. 2009)", "documentId": "doc-pravne-stanovisko-2022", "page": 30 }
+      {
+        "label": "Právne stanovisko PF UK malo doklady len za časť obdobia (chýbali doklady do 31. 12. 2009)",
+        "documentId": "doc-pravne-stanovisko-2022",
+        "page": 30
+      }
     ]
   },
   {
-    "id": "q2", "status": "published", "actionStatus": "in_progress",
+    "id": "q2",
+    "status": "published",
+    "actionStatus": "in_progress",
     "question": "Aký je výsledok znaleckých posudkov na zhodnotenie investícií?",
     "cityAnswer": "Mesto si objednalo dva posudky. K 11. 5. 2026 je jeden hotový. Druhý sa nedá dokončiť, lebo si vyžaduje obhliadku priestorov vo vlastníctve nájomcu a ten podľa mesta napriek opakovaným žiadostiam neposkytol súčinnosť. Obsah hotového posudku nebol zverejnený.",
     "lastUpdated": "2026-05-11",
     "sources": [
-      { "label": "Odpoveď mesta na infožiadosť Inf. 57/2026, bod 3", "documentId": "doc-infoziadost-2026" }
+      {
+        "label": "Odpoveď mesta na infožiadosť Inf. 57/2026, bod 3",
+        "documentId": "doc-infoziadost-2026"
+      }
     ]
   },
   {
-    "id": "q9", "status": "published", "actionStatus": "no_answer",
+    "id": "q9",
+    "status": "published",
+    "actionStatus": "no_answer",
     "question": "Je na nájomcu vedená exekúcia a mohla by ovplyvniť nájomný vzťah?",
     "cityAnswer": "Mesto k 11. 5. 2026 uvádza, že nedisponuje právoplatným rozhodnutím ani úradným podkladom, na základe ktorého by vedelo vyhodnotiť právne dôsledky pre nájomný vzťah. Verejné registre (Finstat) k júlu 2026 pri spoločnosti AQUALAND Slovakia s.r.o. exekúciu nevykazovali. Ide zatiaľ o neoverenú informáciu.",
     "lastUpdated": "2026-07-21",
     "sources": [
-      { "label": "Odpoveď mesta na infožiadosť Inf. 57/2026, bod 9", "documentId": "doc-infoziadost-2026" },
-      { "label": "Finstat – AQUALAND Slovakia s.r.o.", "url": "https://www.finstat.sk/36768014" }
+      {
+        "label": "Odpoveď mesta na infožiadosť Inf. 57/2026, bod 9",
+        "documentId": "doc-infoziadost-2026"
+      },
+      {
+        "label": "Finstat – AQUALAND Slovakia s.r.o.",
+        "url": "https://www.finstat.sk/36768014"
+      }
     ]
   },
   {
-    "id": "q3", "status": "published", "actionStatus": "no_answer",
+    "id": "q3",
+    "status": "published",
+    "actionStatus": "no_answer",
     "question": "Bol nájomca formálne vyzvaný na odstránenie konkrétnych porušení a bola mu určená dodatočná lehota?",
     "cityAnswer": "",
     "lastUpdated": "2026-07-21",
     "sources": [
-      { "label": "Právne stanovisko označuje dodatočnú lehotu za podmienku platného odstúpenia od zmluvy", "documentId": "doc-pravne-stanovisko-2022", "page": 31 }
+      {
+        "label": "Právne stanovisko označuje dodatočnú lehotu za podmienku platného odstúpenia od zmluvy",
+        "documentId": "doc-pravne-stanovisko-2022",
+        "page": 31
+      }
     ]
   },
   {
-    "id": "q4", "status": "published", "actionStatus": "no_answer",
+    "id": "q4",
+    "status": "published",
+    "actionStatus": "no_answer",
     "question": "Aké boli konkrétne výsledky kontrol RÚVZ a Inšpektorátu práce po podnetoch mesta z roku 2024?",
     "cityAnswer": "",
     "lastUpdated": "2026-07-21",
     "sources": [
-      { "label": "Protokoly ani sankcie neboli vo verejných zdrojoch nájdené; k dispozícii sú len sumárne mediálne interpretácie" }
+      {
+        "label": "Protokoly ani sankcie neboli vo verejných zdrojoch nájdené; k dispozícii sú len sumárne mediálne interpretácie"
+      }
     ]
   },
   {
-    "id": "q5", "status": "published", "actionStatus": "not_done",
+    "id": "q5",
+    "status": "published",
+    "actionStatus": "not_done",
     "question": "Existuje aktuálny a zverejnený plán mesta, čo bude s areálom ďalej?",
     "cityAnswer": "Mesto opakovane deklaruje záujem ukončiť zmluvu, no ucelený zverejnený plán postupu s termínmi sa vo verejných zdrojoch nepodarilo dohľadať.",
     "lastUpdated": "2026-07-21",
     "sources": [
-      { "label": "Mesto Banská Bystrica, 22. 8. 2024", "url": "https://www.banskabystrica.sk/aktuality/2024/mesto-ma-zaujem-ukoncit-zmluvu-s-prevadzkovatelom-kupaliska/" }
+      {
+        "label": "Mesto Banská Bystrica, 22. 8. 2024",
+        "url": "https://www.banskabystrica.sk/aktuality/2024/mesto-ma-zaujem-ukoncit-zmluvu-s-prevadzkovatelom-kupaliska/"
+      }
     ]
   },
   {
-    "id": "q6", "status": "published", "actionStatus": "no_answer",
+    "id": "q6",
+    "status": "published",
+    "actionStatus": "no_answer",
     "question": "Prečo nie sú zverejnené kľúčové dokumenty – audit z roku 2018 a úplné znenie kontrolných zistení?",
     "cityAnswer": "",
     "lastUpdated": "2026-07-21",
     "sources": [
-      { "label": "Audit je uvedený medzi podkladmi stanoviska PF UK, jeho závery však nie sú verejné", "documentId": "doc-audit-2018" }
+      {
+        "label": "Audit je uvedený medzi podkladmi stanoviska PF UK, jeho závery však nie sú verejné",
+        "documentId": "doc-audit-2018"
+      }
     ]
   },
   {
-    "id": "q7", "status": "published", "actionStatus": "no_answer",
+    "id": "q7",
+    "status": "published",
+    "actionStatus": "no_answer",
     "question": "Využíva mesto svoje zmluvné právo na mesačnú kontrolu areálu podľa čl. IV ods. 11?",
     "cityAnswer": "",
     "lastUpdated": "2026-07-21",
     "sources": [
-      { "label": "Nájomná zmluva, čl. IV ods. 11 – právo kontroly raz mesačne", "documentId": "doc-zmluva-2007", "page": 5 }
+      {
+        "label": "Nájomná zmluva, čl. IV ods. 11 – právo kontroly raz mesačne",
+        "documentId": "doc-zmluva-2007",
+        "page": 5
+      }
     ]
   },
   {
-    "id": "q8", "status": "published", "actionStatus": "no_answer",
+    "id": "q8",
+    "status": "published",
+    "actionStatus": "no_answer",
     "question": "Vedelo mesto o projekte nájomcu podanom na Fond na podporu športu na obnovu detského bazéna?",
     "cityAnswer": "",
     "lastUpdated": "2026-07-21",
     "sources": [
-      { "label": "Tvrdenie z reportu aktivistky z kontrolného dňa 30. 6. 2026 – nejde o overené zistenie mesta", "url": "https://www.facebook.com/magdalenakovacmergova/posts/pfbid0dPxpiwRJoQdkrmnbwGn52jxW1MGnY29fsat2EhQcSNgYufQ6JK18pKW4yHz1pQBJl" }
+      {
+        "label": "Tvrdenie z reportu aktivistky z kontrolného dňa 30. 6. 2026 – nejde o overené zistenie mesta",
+        "url": "https://www.facebook.com/magdalenakovacmergova/posts/pfbid0dPxpiwRJoQdkrmnbwGn52jxW1MGnY29fsat2EhQcSNgYufQ6JK18pKW4yHz1pQBJl"
+      }
+    ]
+  },
+  {
+    "id": "q10",
+    "status": "published",
+    "actionStatus": "no_answer",
+    "question": "Požiadal nájomca o povolenia a dokončil výstavbu v 3-ročnej lehote podľa čl. IV ods. 18?",
+    "cityAnswer": "",
+    "lastUpdated": "2026-07-26",
+    "sources": [
+      {
+        "label": "Právne stanovisko PF UK, s. 29 – citácia čl. IV ods. 17 a 18 zmluvy",
+        "documentId": "doc-pravne-stanovisko-2022",
+        "page": 30
+      }
+    ]
+  },
+  {
+    "id": "q11",
+    "status": "published",
+    "actionStatus": "no_answer",
+    "question": "Vyvodilo mesto dôsledky z toho, že predkupné právo nájomcu a časť dodatku č. 1 sú podľa právnej analýzy neplatné?",
+    "cityAnswer": "",
+    "lastUpdated": "2026-07-26",
+    "sources": [
+      {
+        "label": "Právne stanovisko PF UK, záver kapitoly 2.5, s. 18",
+        "documentId": "doc-pravne-stanovisko-2022",
+        "page": 19
+      }
+    ]
+  },
+  {
+    "id": "q12",
+    "status": "published",
+    "actionStatus": "no_answer",
+    "question": "Ktoré položky z podnikateľského zámeru boli v areáli skutočne zrealizované?",
+    "cityAnswer": "",
+    "lastUpdated": "2026-07-26",
+    "sources": [
+      {
+        "label": "Nájomná zmluva, Príloha č. 4 – podnikateľský zámer „Modernizácia plážového kúpaliska Banská Bystrica“, kap. IV a VII",
+        "documentId": "doc-zmluva-2007"
+      }
     ]
   }
 ]

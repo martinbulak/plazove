@@ -305,5 +305,33 @@
       }
     ],
     "milestone": true
+  },
+  {
+    "id": "t-2009-06",
+    "status": "published",
+    "date": "2009-06",
+    "milestone": false,
+    "title": "Termín na dokončenie prvej fázy modernizácie",
+    "description": "Podľa časového rozvrhu v podnikateľskom zámere, ktorý je prílohou nájomnej zmluvy, mala byť do júna 2009 hotová prvá fáza výstavby za 50 mil. Sk.",
+    "sources": [
+      {
+        "label": "Nájomná zmluva, Príloha č. 4 – podnikateľský zámer, kap. IV",
+        "documentId": "doc-zmluva-2007"
+      }
+    ]
+  },
+  {
+    "id": "t-2010-06",
+    "status": "published",
+    "date": "2010-06",
+    "milestone": true,
+    "title": "Termín na dokončenie modernizácie a otvorenie celoročnej prevádzky",
+    "description": "Podľa podnikateľského zámeru mala byť do júna 2010 ukončená druhá fáza výstavby a areál mal začať fungovať celoročne. Celková sľúbená investícia bola 100 mil. Sk (3 319 391 €).",
+    "sources": [
+      {
+        "label": "Nájomná zmluva, Príloha č. 4 – podnikateľský zámer, kap. IV",
+        "documentId": "doc-zmluva-2007"
+      }
+    ]
   }
 ]
