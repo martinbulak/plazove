@@ -8,6 +8,7 @@ import {
   SourceList,
 } from "@/components/ui";
 import { ReviewAnalysisBlock } from "@/components/ReviewAnalysisBlock";
+import { CityActionsList } from "@/components/CityActionsList";
 import {
   getCityActions,
   getOpenQuestions,
@@ -52,53 +53,15 @@ export default async function CurrentStatePage() {
           ]}
         />
 
-        <h2 id="kroky" className="mb-4 scroll-mt-24 text-xl font-bold text-ink-900">
-          Čo urobilo mesto
-        </h2>
-        <div className="overflow-hidden rounded-[var(--radius-card)] border border-ink-200 bg-white">
-          <table className="hidden w-full text-left text-sm sm:table">
-            <thead className="bg-ink-50 text-xs uppercase tracking-wide text-ink-500">
-              <tr>
-                <th className="px-4 py-3 font-semibold">Dátum</th>
-                <th className="px-4 py-3 font-semibold">Krok / prísľub</th>
-                <th className="px-4 py-3 font-semibold">Stav</th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-ink-100">
-              {acts.map((a) => (
-                <tr key={a.id} className="align-top">
-                  <td className="whitespace-nowrap px-4 py-3 font-mono text-ink-600">
-                    {formatDateSk(a.date)}
-                  </td>
-                  <td className="px-4 py-3">
-                    <p className="font-medium text-ink-900">{a.step}</p>
-                    {a.note && <p className="mt-1 text-ink-600">{a.note}</p>}
-                    <SourceList sources={a.sources} />
-                  </td>
-                  <td className="px-4 py-3">
-                    <StatusBadge status={a.actionStatus} />
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-
-          <ul className="divide-y divide-ink-100 sm:hidden">
-            {acts.map((a) => (
-              <li key={a.id} className="p-4">
-                <div className="flex items-center justify-between gap-2">
-                  <span className="font-mono text-xs text-ink-500">
-                    {formatDateSk(a.date)}
-                  </span>
-                  <StatusBadge status={a.actionStatus} />
-                </div>
-                <p className="mt-1 font-medium text-ink-900">{a.step}</p>
-                {a.note && <p className="mt-1 text-sm text-ink-600">{a.note}</p>}
-                <SourceList sources={a.sources} />
-              </li>
-            ))}
-          </ul>
+        <div className="mb-4 flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+          <h2 id="kroky" className="scroll-mt-24 text-xl font-bold text-ink-900">
+            Čo urobilo mesto
+          </h2>
+          <p className="text-xs text-ink-500">
+            Kliknutím na riadok zobrazíte podrobnosti a zdroje.
+          </p>
         </div>
+        <CityActionsList items={acts} />
       </Section>
 
       {/* Otvorené otázky */}
