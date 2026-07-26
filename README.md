@@ -89,7 +89,7 @@ Administrácia je na **`/admin`** (predvolené dev heslo: `admin123`).
 │   └── /podporte/newsletter-potvrdenie  potvrdenie odberu
 ├── /o-projekte            Kto/prečo, overovanie zdrojov, redakčná metodika, kontakt
 ├── /nahlasit              Nahlásenie chyby / žiadosť o opravu alebo odstránenie
-├── /ochrana-osobnych-udajov, /cookies, /podmienky   Právne stránky
+├── /ochrana-osobnych-udajov, /podmienky            Právne stránky
 └── /admin                 Zabezpečená administrácia (mimo indexovania)
     ├── /admin/login
     ├── /admin/c/[name]    Generický editor pre každú kolekciu
@@ -272,8 +272,8 @@ Web je navrhnutý s dôrazom na dôveryhodnosť:
 - **Nepoužíva** označenie „oficiálny" a na viditeľných miestach (hero, pätička, SEO) uvádza, že ide o nezávislý projekt.
 - **Nepreberá** logo ani dizajn prevádzkovateľa.
 - Pri citáciách uvádza zdroj a používa len primerane krátke úryvky.
-- Obsahuje stránky **ochrany osobných údajov, cookies a podmienok používania** (vzorové znenia – dajte právne skontrolovať).
-- **Cookie banner** sa zobrazuje len pre nepodstatné (analytické/marketingové) cookies; web sám žiadne také nenasadzuje.
+- Obsahuje stránky **ochrany osobných údajov a podmienok používania** s uvedeným prevádzkovateľom.
+- **Web je bez cookies.** Verejná časť nenastavuje cookies ani nič neukladá do prehliadača, nepoužíva analytiku a nenačítava žiadne zdroje tretích strán (písma sú self-hostované cez `next/font`). Jediná cookie je session administrácie, ktorá vznikne až po prihlásení na `/admin`. Preto web nemá ani cookie lištu.
 - Má mechanizmus na **nahlásenie chyby, porušenia práv či žiadosť o odstránenie** obsahu (`/nahlasit`).
 - Web nezhromažďuje anonymné recenzie tvorené na webe. Ak sa citujú cudzie príspevky alebo hodnotenia, vždy s odkazom na originál a s možnosťou požiadať o odstránenie.
 

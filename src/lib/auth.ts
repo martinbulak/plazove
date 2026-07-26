@@ -9,7 +9,7 @@ import { cookies } from "next/headers";
  * Auth.js) – viď README.
  */
 
-const COOKIE_NAME = "aqb_admin";
+const COOKIE_NAME = "zaplaz_admin";
 const MAX_AGE_SEC = 60 * 60 * 8; // 8 hodín
 
 function secret(): string {

@@ -52,7 +52,6 @@ export const CTA_NAV: NavItem = {
 
 export const LEGAL_NAV: NavItem[] = [
   { href: "/ochrana-osobnych-udajov", label: "Ochrana osobných údajov" },
-  { href: "/cookies", label: "Cookies" },
   { href: "/podmienky", label: "Podmienky používania" },
   { href: "/nahlasit", label: "Nahlásiť chybu / obsah" },
 ];

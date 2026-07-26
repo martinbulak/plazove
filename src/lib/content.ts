@@ -137,6 +137,6 @@ export const DEFAULT_SITE: SiteConfig = {
     "Toto nie je oficiálny web prevádzkovateľa plážového kúpaliska ani Mesta Banská Bystrica. Ide o nezávislý občiansky informačný projekt.",
   heroFacts: [],
   contactEmail: "info@zaplaz.sk",
-  operator: "Občiansky informačný projekt Za Pláž",
+  operator: "Martin Bulák – občiansky projekt Za Pláž",
   petitionText: "",
 };

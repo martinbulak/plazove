@@ -13,13 +13,21 @@ export default function TermsPage() {
       <SectionHeading as="h1" eyebrow="Právne informácie" title="Podmienky používania" />
 
       <div className="prose-sk space-y-5 text-ink-700">
-        <p className="rounded-lg border border-amber-200 bg-amber-50 p-3 text-sm text-amber-900">
-          <strong>Vzorový text.</strong> Pred spustením dajte podmienky
-          skontrolovať a upravte podľa skutočného prevádzkovateľa.
-        </p>
+        <div>
+          <h2 className="text-xl font-bold text-ink-900">1. Prevádzkovateľ webu</h2>
+          <p className="mt-2">
+            Web zaplaz.sk prevádzkuje <strong>Martin Bulák</strong>, Družby 31,
+            974 04 Banská Bystrica, e-mail{" "}
+            <a href="mailto:info@zaplaz.sk" className="text-brand-700 underline">
+              info@zaplaz.sk
+            </a>
+            , ako fyzická osoba. Nejde o podnikateľskú činnosť a web nepredáva
+            žiadny tovar ani služby.
+          </p>
+        </div>
 
         <div>
-          <h2 className="text-xl font-bold text-ink-900">1. Charakter projektu</h2>
+          <h2 className="text-xl font-bold text-ink-900">2. Charakter projektu</h2>
           <p className="mt-2">
             Web „Za Pláž" je nezávislý občiansky informačný
             projekt. Nie je oficiálnym webom prevádzkovateľa plážového kúpaliska
@@ -28,7 +36,7 @@ export default function TermsPage() {
         </div>
 
         <div>
-          <h2 className="text-xl font-bold text-ink-900">2. Charakter obsahu</h2>
+          <h2 className="text-xl font-bold text-ink-900">3. Charakter obsahu</h2>
           <p className="mt-2">
             Obsah predstavuje informačné spracovanie verejne dostupných dokumentov.
             Odlišujeme fakty, citácie, právne výklady a názory. Obsah nenahrádza
@@ -38,7 +46,7 @@ export default function TermsPage() {
         </div>
 
         <div>
-          <h2 className="text-xl font-bold text-ink-900">3. Autorské práva a citácie</h2>
+          <h2 className="text-xl font-bold text-ink-900">4. Autorské práva a citácie</h2>
           <p className="mt-2">
             Pri citáciách uvádzame zdroj a odkaz a používame len primerane krátke
             úryvky. Práva k pôvodným dielam zostávajú ich autorom. Ak sa domnievate,
@@ -48,7 +56,7 @@ export default function TermsPage() {
         </div>
 
         <div>
-          <h2 className="text-xl font-bold text-ink-900">4. Obsah od verejnosti</h2>
+          <h2 className="text-xl font-bold text-ink-900">5. Obsah od verejnosti</h2>
           <p className="mt-2">
             Príspevky, fotografie a tipy od verejnosti podliehajú moderovaniu.
             Odoslaním fotografie potvrdzujete autorstvo alebo oprávnenie, súhlas so
@@ -58,7 +66,7 @@ export default function TermsPage() {
         </div>
 
         <div>
-          <h2 className="text-xl font-bold text-ink-900">5. Zodpovednosť</h2>
+          <h2 className="text-xl font-bold text-ink-900">6. Zodpovednosť</h2>
           <p className="mt-2">
             Snažíme sa o presnosť, no za úplnosť a bezchybnosť obsahu neručíme.
             Chyby po nahlásení opravujeme a označujeme vykonanú zmenu.
@@ -66,7 +74,7 @@ export default function TermsPage() {
         </div>
 
         <div>
-          <h2 className="text-xl font-bold text-ink-900">6. Zmeny podmienok</h2>
+          <h2 className="text-xl font-bold text-ink-900">7. Zmeny podmienok</h2>
           <p className="mt-2">
             Podmienky môžeme aktualizovať. Aktuálne znenie je vždy dostupné na tejto
             stránke.

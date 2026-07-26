@@ -124,9 +124,9 @@ export default async function AboutPage() {
         <Card>
           <h2 className="text-lg font-bold text-ink-900">Kontakt</h2>
           <p className="mt-2 text-sm">
-            Prevádzkovateľ: {site.operator}
+            Prevádzkovateľ webu: Martin Bulák
             <br />
-            Zodpovedná osoba: Martin Bulák
+            Družby 31, 974 04 Banská Bystrica
             <br />
             E-mail:{" "}
             <a href={`mailto:${site.contactEmail}`} className="font-medium text-brand-700 underline">

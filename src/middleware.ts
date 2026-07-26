@@ -6,7 +6,7 @@ import { NextResponse, type NextRequest } from "next/server";
  * src/lib/auth.ts (rovnaký payload „admin.<exp>" a HMAC-SHA256 v hex).
  */
 
-const COOKIE_NAME = "aqb_admin";
+const COOKIE_NAME = "zaplaz_admin";
 
 function hex(buf: ArrayBuffer): string {
   return Array.from(new Uint8Array(buf))
