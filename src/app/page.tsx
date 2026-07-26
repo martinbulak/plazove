@@ -33,11 +33,16 @@ export default async function HomePage() {
   const recentTimeline = tl.slice(-3).reverse();
 
   /**
-   * Koláž do hero sekcie. Fotky sú zvolené tak, aby tematicky sedeli
-   * k citovanej recenzii (tá hovorí o stave toaliet a zázemia).
+   * Koláž do hero sekcie. Hlavná fotka je jazero so zelenými riasami –
+   * sedí k citovanej recenzii, ktorá hovorí o kvalite vody.
    */
-  const HERO_PHOTO_IDS = ["g-2024-06", "g-2024-09", "g-2024-05"];
-  const HERO_QUOTE_ID = "rev-3";
+  const HERO_PHOTO_IDS = [
+    "g-2026-jazero",
+    "g-2026-vstup",
+    "g-2026-rozvadzac",
+    "g-2026-plocha",
+  ];
+  const HERO_QUOTE_ID = "rev-1";
   const heroPhotos = HERO_PHOTO_IDS.map((id) =>
     photos.find((p) => p.id === id),
   ).filter((p): p is NonNullable<typeof p> => Boolean(p));
@@ -81,6 +86,7 @@ export default async function HomePage() {
         reviews={reviews}
         photos={heroCollage}
         quoteId={HERO_QUOTE_ID}
+        galleryCount={photos.length}
       />
 
       {/* ── Kľúčové fakty ── */}

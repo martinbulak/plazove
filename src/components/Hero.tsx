@@ -12,6 +12,7 @@ export function Hero({
   reviews,
   photos = [],
   quoteId,
+  galleryCount = 0,
 }: {
   site: SiteConfig;
   reviews: ReviewAnalysis | null;
@@ -19,6 +20,8 @@ export function Hero({
   photos?: GalleryItem[];
   /** Recenzia, ktorá tematicky sedí k fotkám. */
   quoteId?: string;
+  /** Celkový počet fotografií v galérii – pre dlaždicu „+N". */
+  galleryCount?: number;
 }) {
   const quote =
     reviews?.samples.find((s) => s.id === quoteId) ??
@@ -74,10 +77,10 @@ export function Hero({
           <div className="lg:col-span-5">
             <div className="relative mx-auto max-w-md lg:mx-0">
               {main && (
-                <figure className="relative">
-                  {/* Koláž: jedna hlavná fotka + dve menšie vedľa seba */}
-                  <div className="grid grid-cols-3 gap-2">
-                    <div className="relative col-span-3 aspect-[4/3] overflow-hidden rounded-xl bg-ink-100 shadow-lg ring-1 ring-ink-900/10">
+                <figure>
+                  {/* Koláž: hlavná fotografia + rad miniatúr */}
+                  <div className="overflow-hidden rounded-xl bg-ink-100 shadow-lg ring-1 ring-ink-900/10">
+                    <div className="relative aspect-[4/3]">
                       <Image
                         src={main.src}
                         alt={main.alt}
@@ -90,33 +93,36 @@ export function Hero({
                         Stav areálu · {main.date}
                       </span>
                     </div>
-
-                    {rest.slice(0, 2).map((p) => (
-                      <div
-                        key={p.id}
-                        className="relative col-span-1 aspect-[4/3] overflow-hidden rounded-lg bg-ink-100 shadow-md ring-1 ring-ink-900/10"
-                      >
-                        <Image
-                          src={p.src}
-                          alt={p.alt}
-                          fill
-                          sizes="10rem"
-                          className="object-cover"
-                        />
-                      </div>
-                    ))}
-
-                    {/* Odkaz do galérie ako tretia dlaždica */}
-                    <Link
-                      href="/galeria"
-                      className="col-span-1 flex aspect-[4/3] flex-col items-center justify-center rounded-lg border border-ink-300 bg-white/80 text-center text-xs font-semibold text-brand-800 transition-colors hover:border-brand-400 hover:bg-white"
-                    >
-                      <span className="display text-xl text-ink-900">+7</span>
-                      <span className="mt-0.5 px-1 leading-tight">
-                        fotografií
-                      </span>
-                    </Link>
                   </div>
+
+                  {rest.length > 0 && (
+                    <div className="mt-2 grid grid-cols-4 gap-2">
+                      {rest.slice(0, 3).map((p) => (
+                        <div
+                          key={p.id}
+                          className="relative aspect-square overflow-hidden rounded-lg bg-ink-100 ring-1 ring-ink-900/10"
+                        >
+                          <Image
+                            src={p.src}
+                            alt={p.alt}
+                            fill
+                            sizes="8rem"
+                            className="object-cover"
+                          />
+                        </div>
+                      ))}
+
+                      <Link
+                        href="/galeria"
+                        className="flex aspect-square flex-col items-center justify-center rounded-lg border border-ink-300 bg-white/80 text-center text-[11px] font-semibold leading-tight text-brand-800 transition-colors hover:border-brand-400 hover:bg-white"
+                      >
+                        <span className="display text-lg text-ink-900">
+                          +{Math.max(galleryCount - 4, 0)}
+                        </span>
+                        <span className="px-1">fotografií</span>
+                      </Link>
+                    </div>
+                  )}
                 </figure>
               )}
 
