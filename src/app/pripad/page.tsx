@@ -26,58 +26,30 @@ export default async function CasePage() {
 
   return (
     <>
-      <Section>
+      {/* Časová os – hlavný vstup do príbehu */}
+      <Section id="chronologia" className="scroll-mt-24">
         <SectionHeading
           as="h1"
           eyebrow="Čo sa stalo"
           title="Prípad plážového kúpaliska"
-          intro="Nemáte čas čítať dokumenty? Tu je celý príbeh v piatich bodoch. Podrobnosti so zdrojmi nájdete nižšie."
+          intro="Celý príbeh od podpisu nájomnej zmluvy v roku 2007 až po dnešok. Zobrazujeme kľúčové momenty, celú chronológiu si môžete rozbaliť. Pri každej udalosti uvádzame zdroj."
         />
+        <Timeline items={items} />
+      </Section>
 
-        {/* Zhrnutie pre ponáhľajúcich sa */}
-        <ol className="mb-12 max-w-3xl divide-y divide-ink-200 border-y-2 border-ink-900">
-          {[
-            {
-              lead: "Mestský majetok v súkromnom nájme.",
-              rest: "Plážové kúpalisko patrí mestu. V roku 2007 ho prenajalo firme AQUALAND Slovakia s.r.o. – až do roku 2037.",
-            },
-            {
-              lead: "Sľúbená investícia 3,32 mil. €.",
-              rest: "Firma sa v zmluve zaviazala preinvestovať do areálu minimálne túto sumu (100 miliónov Sk).",
-            },
-            {
-              lead: "Prvé problémy už v roku 2010.",
-              rest: "Kontrolór mesta zistil, že nájomca meškal s nájomným a nepredkladal výkazy investícií.",
-            },
-            {
-              lead: "Zmluva sa nedá vypovedať.",
-              rest: "Právnici Univerzity Komenského to skonštatovali v roku 2022. Mesto môže čakať do roku 2037, dohodnúť sa, alebo odstúpiť pri podstatnom porušení – a aj to len po formálnej výzve s dodatočnou lehotou.",
-            },
-            {
-              lead: "Mesto chce zmluvu ukončiť. Zatiaľ sa tak nestalo.",
-              rest: "Verejne to deklaruje od roku 2024.",
-            },
-          ].map((item, i) => (
-            <li key={i} className="flex gap-5 py-4">
-              <span
-                aria-hidden
-                className="section-number shrink-0 text-2xl text-brand-400"
-              >
-                {String(i + 1).padStart(2, "0")}
-              </span>
-              <p className="leading-relaxed text-ink-700">
-                <strong className="font-semibold text-ink-900">{item.lead}</strong>{" "}
-                {item.rest}
-              </p>
-            </li>
-          ))}
-        </ol>
+      <div className="border-t border-ink-200 bg-ink-50">
+        <Section>
+        <SectionHeading
+          eyebrow="Podrobne"
+          title="Fakty, závery dokumentov a otvorené otázky"
+          intro="Rozpis toho, čo je doložené dokumentmi, čo z nich vyplýva a čo zostáva bez odpovede. Pri každom tvrdení uvádzame, o aký druh tvrdenia ide."
+        />
 
         <QuickNav
           items={[
+            { href: "#chronologia", label: "Späť na časovú os" },
             { href: "#potvrdene-fakty", label: "Fakty a závery" },
             { href: "#otvorene-otazky", label: "Čo je nevyriešené" },
-            { href: "#chronologia", label: "Časová os" },
           ]}
         />
 
@@ -106,17 +78,6 @@ export default async function CasePage() {
             </div>
           ))}
         </div>
-      </Section>
-
-      {/* Časová os */}
-      <div className="bg-ink-50">
-        <Section id="chronologia" className="scroll-mt-24">
-          <SectionHeading
-            eyebrow="Časová os"
-            title="Chronológia prípadu"
-            intro="Vývoj situácie od schválenia nájmu v roku 2007 až po súčasnosť. Každá položka má uvedený zdroj."
-          />
-          <Timeline items={items} />
         </Section>
       </div>
     </>

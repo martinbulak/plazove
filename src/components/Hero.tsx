@@ -76,10 +76,8 @@ export function Hero({
                   <strong className="font-semibold text-ink-900">
                     najhoršie hodnotené
                   </strong>{" "}
-                  zo všetkých porovnávaných kúpalísk s dostatočným počtom
-                  hodnotení – {reviews.average.toFixed(1).replace(".", ",")}{" "}
-                  hviezdy z {reviews.totalReviews.toLocaleString("sk-SK")}{" "}
-                  hodnotení. S tým treba niečo robiť.
+                  zo všetkých porovnávaných kúpalísk na Slovensku. S tým treba
+                  niečo robiť.
                 </>
               ) : (
                 <>

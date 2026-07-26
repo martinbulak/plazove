@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import type { TimelineItem } from "@/lib/types";
 import { formatDateSk, cn } from "@/lib/utils";
 import { SourceList } from "@/components/ui";
@@ -12,13 +12,24 @@ import { SourceList } from "@/components/ui";
  */
 export function Timeline({ items }: { items: TimelineItem[] }) {
   const [showAll, setShowAll] = useState(false);
+  const listRef = useRef<HTMLDivElement>(null);
   const milestones = items.filter((i) => i.milestone);
   const hasMilestones = milestones.length > 0;
   const visible = showAll || !hasMilestones ? items : milestones;
   const hiddenCount = items.length - milestones.length;
 
+  /**
+   * Doplnené udalosti sa vkladajú medzi míľniky, teda nad tlačidlo. Prehliadač
+   * pritom drží pozíciu viditeľného obsahu, takže po kliknutí to zdola vyzerá,
+   * že sa nič nestalo. Preto po prepnutí posunieme pohľad na začiatok osi.
+   */
+  function toggle() {
+    setShowAll((v) => !v);
+    listRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+
   return (
-    <div>
+    <div ref={listRef} className="scroll-mt-24">
       {hasMilestones && (
         <p className="mb-8 text-sm text-ink-500">
           {showAll
@@ -75,7 +86,7 @@ export function Timeline({ items }: { items: TimelineItem[] }) {
       {hasMilestones && hiddenCount > 0 && (
         <button
           type="button"
-          onClick={() => setShowAll((v) => !v)}
+          onClick={toggle}
           className="mt-8 inline-flex items-center gap-2 rounded-lg border border-ink-300 bg-white px-5 py-3 text-sm font-semibold text-ink-800 transition-colors hover:border-brand-400 hover:bg-brand-50"
         >
           {showAll
