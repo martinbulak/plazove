@@ -2,13 +2,13 @@ import type { Metadata } from "next";
 import {
   Section,
   SectionHeading,
-  Card,
   ClaimBadge,
   ClaimLegend,
   QuickNav,
   SourceList,
 } from "@/components/ui";
 import { Timeline } from "@/components/Timeline";
+import { DisclosureList } from "@/components/DisclosureList";
 import { getCaseSections, getTimeline, onlyPublished } from "@/lib/content";
 
 export const metadata: Metadata = {
@@ -60,21 +60,22 @@ export default async function CasePage() {
             <div key={sec.key} id={sec.key} className="scroll-mt-24">
               <h2 className="text-xl font-bold text-ink-900">{sec.title}</h2>
               {sec.intro && (
-                <p className="mt-2 max-w-3xl text-sm text-ink-600">{sec.intro}</p>
+                <p className="mb-4 mt-2 max-w-3xl text-sm text-ink-600">{sec.intro}</p>
               )}
-              <ul className="mt-4 space-y-3">
-                {sec.points.map((p) => (
-                  <li key={p.id}>
-                    <Card>
-                      <div className="mb-2">
-                        <ClaimBadge kind={p.kind} />
-                      </div>
-                      <p className="text-ink-800">{p.text}</p>
+              <DisclosureList
+                headings={["Tvrdenie", "Druh"]}
+                items={sec.points.map((p) => ({
+                  id: p.id,
+                  title: p.title ?? firstSentence(p.text),
+                  badge: <ClaimBadge kind={p.kind} />,
+                  detail: (
+                    <>
+                      <p className="text-sm leading-relaxed text-ink-700">{p.text}</p>
                       <SourceList sources={p.sources} />
-                    </Card>
-                  </li>
-                ))}
-              </ul>
+                    </>
+                  ),
+                }))}
+              />
             </div>
           ))}
         </div>
@@ -82,4 +83,10 @@ export default async function CasePage() {
       </div>
     </>
   );
+}
+
+/** Záloha, ak položka nemá vlastný nadpis – prvá veta textu. */
+function firstSentence(text: string): string {
+  const end = text.search(/[.!?](\s|$)/);
+  return end === -1 ? text : text.slice(0, end + 1);
 }

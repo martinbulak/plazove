@@ -67,6 +67,11 @@ export interface BaseEntity {
 export interface CasePoint {
   id: string;
   kind: ClaimKind;
+  /**
+   * Krátky nadpis, ktorý vidno v zbalenom zozname. Ak chýba, použije sa
+   * prvá veta textu, aby položka nikdy nezostala bez popisu.
+   */
+  title?: string;
   text: string;
   sources?: SourceRef[];
 }
