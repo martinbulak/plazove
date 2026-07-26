@@ -14,9 +14,14 @@ export const MAIN_NAV: NavItem[] = [
     desc: "Príbeh prípadu v skratke a časová os udalostí",
   },
   {
-    href: "/zmluva",
-    label: "Zmluva a dokumenty",
-    desc: "Zmluva vysvetlená v otázkach a odpovediach + archív dokumentov",
+    href: "/otazky-a-odpovede",
+    label: "Otázky a odpovede",
+    desc: "Čo hovorí nájomná zmluva, vysvetlené v bežnej reči",
+  },
+  {
+    href: "/dokumenty",
+    label: "Dokumenty",
+    desc: "Archív zmlúv, analýz, kontrol a odpovedí na infožiadosti",
   },
   {
     href: "/aktualny-stav",

@@ -12,12 +12,18 @@ import { slugify } from "@/lib/utils";
  *  – Vercel Blob, ak je nastavený BLOB_READ_WRITE_TOKEN (produkcia na Verceli),
  *  – zápis do /public/foto pri lokálnom vývoji.
  *
- * Zmenšovanie a kompresia prebiehajú už v prehliadači, sem prichádza hotový
- * JPEG – server tak nepotrebuje sharp ani inú natívnu závislosť.
+ * Obrázky sa zmenšujú už v prehliadači, sem prichádza hotový JPEG – server
+ * tak nepotrebuje sharp ani inú natívnu závislosť. PDF sa ukladajú tak, ako
+ * prídu (max. 25 MB), do samostatného priečinka.
+ *
+ * POZOR: PDF sa zverejňujú verejne. Pred nahratím dokumentu, ktorý obsahuje
+ * osobné údaje, ho anonymizujte (viď README).
  */
 
-const MAX_BYTES = 8 * 1024 * 1024; // 8 MB
-const ALLOWED = ["image/jpeg", "image/png", "image/webp"];
+const MAX_IMAGE_BYTES = 8 * 1024 * 1024; // 8 MB
+const MAX_DOC_BYTES = 25 * 1024 * 1024; // 25 MB
+const IMAGES = ["image/jpeg", "image/png", "image/webp"];
+const DOCS = ["application/pdf"];
 
 export async function POST(req: Request) {
   let form: FormData;
@@ -31,27 +37,41 @@ export async function POST(req: Request) {
   if (!(file instanceof File)) {
     return NextResponse.json({ error: "Chýba súbor." }, { status: 400 });
   }
-  if (!ALLOWED.includes(file.type)) {
+  const isDoc = DOCS.includes(file.type);
+  const isImage = IMAGES.includes(file.type);
+  if (!isDoc && !isImage) {
     return NextResponse.json(
-      { error: "Povolené sú len obrázky JPEG, PNG alebo WebP." },
+      { error: "Povolené sú obrázky (JPEG, PNG, WebP) alebo PDF." },
       { status: 400 },
     );
   }
-  if (file.size > MAX_BYTES) {
+  const limit = isDoc ? MAX_DOC_BYTES : MAX_IMAGE_BYTES;
+  if (file.size > limit) {
     return NextResponse.json(
-      { error: "Súbor je príliš veľký (max. 8 MB po zmenšení)." },
+      {
+        error: isDoc
+          ? "PDF je príliš veľké (max. 25 MB)."
+          : "Obrázok je príliš veľký (max. 8 MB po zmenšení).",
+      },
       { status: 400 },
     );
   }
 
-  const ext = file.type === "image/png" ? "png" : file.type === "image/webp" ? "webp" : "jpg";
+  const ext = isDoc
+    ? "pdf"
+    : file.type === "image/png"
+      ? "png"
+      : file.type === "image/webp"
+        ? "webp"
+        : "jpg";
+  const folder = isDoc ? "dokumenty" : "foto";
   const base = slugify(file.name.replace(/\.[^.]+$/, "")) || "foto";
   const name = `${base}-${crypto.randomBytes(4).toString("hex")}.${ext}`;
 
   // 1) Vercel Blob (produkcia)
   if (process.env.BLOB_READ_WRITE_TOKEN) {
     try {
-      const blob = await put(`galeria/${name}`, file, {
+      const blob = await put(`${folder}/${name}`, file, {
         access: "public",
         contentType: file.type,
       });
@@ -67,11 +87,11 @@ export async function POST(req: Request) {
 
   // 2) Lokálny súborový systém (vývoj)
   try {
-    const dir = path.join(process.cwd(), "public", "foto");
+    const dir = path.join(process.cwd(), "public", folder);
     await fs.mkdir(dir, { recursive: true });
     const buf = Buffer.from(await file.arrayBuffer());
     await fs.writeFile(path.join(dir, name), buf);
-    return NextResponse.json({ url: `/foto/${name}` });
+    return NextResponse.json({ url: `/${folder}/${name}` });
   } catch (err) {
     const code = (err as NodeJS.ErrnoException).code;
     if (code === "EROFS" || code === "EACCES" || code === "EPERM") {

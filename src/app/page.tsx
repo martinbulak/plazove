@@ -328,11 +328,11 @@ export default async function HomePage() {
               Podpísať výzvu
             </Button>
             <Button
-              href="/zmluva"
+              href="/dokumenty"
               variant="outline"
               className="border-white/30 bg-transparent text-white hover:border-white/60 hover:bg-white/10"
             >
-              Zmluva a dokumenty
+              Dokumenty a analýzy
             </Button>
           </div>
         </Section>

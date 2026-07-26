@@ -15,7 +15,7 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       { source: "/casova-os", destination: "/pripad#chronologia", permanent: true },
-      { source: "/dokumenty", destination: "/zmluva#archiv", permanent: true },
+      { source: "/zmluva", destination: "/otazky-a-odpovede", permanent: true },
       { source: "/nazory", destination: "/aktualny-stav#nazory", permanent: true },
       { source: "/co-urobilo-mesto", destination: "/aktualny-stav", permanent: true },
       {

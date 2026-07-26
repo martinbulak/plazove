@@ -18,7 +18,10 @@
     ],
     "sourceUrl": "",
     "sources": [
-      { "label": "Sprístupnené mestom na infožiadosť Inf.89/2024", "documentId": "doc-infoziadost-2024" }
+      {
+        "label": "Sprístupnené mestom na infožiadosť Inf.89/2024",
+        "documentId": "doc-infoziadost-2024"
+      }
     ]
   },
   {
@@ -37,7 +40,10 @@
     ],
     "sourceUrl": "",
     "sources": [
-      { "label": "Právne stanovisko PF UK – zoznam podkladov", "documentId": "doc-pravne-stanovisko-2022" }
+      {
+        "label": "Právne stanovisko PF UK – zoznam podkladov",
+        "documentId": "doc-pravne-stanovisko-2022"
+      }
     ]
   },
   {
@@ -56,7 +62,11 @@
     ],
     "sourceUrl": "",
     "sources": [
-      { "label": "Právne stanovisko PF UK, s. 35", "documentId": "doc-pravne-stanovisko-2022", "page": 35 }
+      {
+        "label": "Právne stanovisko PF UK, s. 35",
+        "documentId": "doc-pravne-stanovisko-2022",
+        "page": 35
+      }
     ]
   },
   {
@@ -75,7 +85,10 @@
     ],
     "sourceUrl": "",
     "sources": [
-      { "label": "Citované v právnom stanovisku PF UK", "documentId": "doc-pravne-stanovisko-2022" }
+      {
+        "label": "Citované v právnom stanovisku PF UK",
+        "documentId": "doc-pravne-stanovisko-2022"
+      }
     ]
   },
   {
@@ -93,7 +106,11 @@
     ],
     "sourceUrl": "",
     "sources": [
-      { "label": "Právne stanovisko PF UK – zoznam podkladov, bod 7", "documentId": "doc-pravne-stanovisko-2022", "page": 3 }
+      {
+        "label": "Právne stanovisko PF UK – zoznam podkladov, bod 7",
+        "documentId": "doc-pravne-stanovisko-2022",
+        "page": 3
+      }
     ]
   },
   {
@@ -116,7 +133,9 @@
     ],
     "sourceUrl": "",
     "sources": [
-      { "label": "Spracovali: doc. Mgr. Lenka Dufalová, PhD., Mgr. Tamara Čipková, PhD., doc. JUDr. Eduard Burda, PhD. (dekan)" }
+      {
+        "label": "Spracovali: doc. Mgr. Lenka Dufalová, PhD., Mgr. Tamara Čipková, PhD., doc. JUDr. Eduard Burda, PhD. (dekan)"
+      }
     ]
   },
   {
@@ -155,7 +174,10 @@
     ],
     "sourceUrl": "https://www.banskabystrica.sk/aktuality/2024/mesto-ma-zaujem-ukoncit-zmluvu-s-prevadzkovatelom-kupaliska/",
     "sources": [
-      { "label": "Mesto Banská Bystrica, 22. 8. 2024", "url": "https://www.banskabystrica.sk/aktuality/2024/mesto-ma-zaujem-ukoncit-zmluvu-s-prevadzkovatelom-kupaliska/" }
+      {
+        "label": "Mesto Banská Bystrica, 22. 8. 2024",
+        "url": "https://www.banskabystrica.sk/aktuality/2024/mesto-ma-zaujem-ukoncit-zmluvu-s-prevadzkovatelom-kupaliska/"
+      }
     ]
   },
   {
@@ -175,7 +197,10 @@
     ],
     "sourceUrl": "https://www.banskabystrica.sk/aktuality/2026/mesto-pokracuje-v-systematickej-kontrole-plazoveho-kupaliska",
     "sources": [
-      { "label": "Mesto Banská Bystrica, 7. 5. 2026", "url": "https://www.banskabystrica.sk/aktuality/2026/mesto-pokracuje-v-systematickej-kontrole-plazoveho-kupaliska" }
+      {
+        "label": "Mesto Banská Bystrica, 7. 5. 2026",
+        "url": "https://www.banskabystrica.sk/aktuality/2026/mesto-pokracuje-v-systematickej-kontrole-plazoveho-kupaliska"
+      }
     ]
   },
   {
@@ -251,8 +276,14 @@
     ],
     "sourceUrl": "https://www.banskabystrica.sk/aktuality/2026/kontrolny-den-na-plazovom-kupalisku-priniesol-sklamanie/",
     "sources": [
-      { "label": "Mesto Banská Bystrica, 15. 5. 2026", "url": "https://www.banskabystrica.sk/aktuality/2026/kontrolny-den-na-plazovom-kupalisku-priniesol-sklamanie/" },
-      { "label": "TASR / Teraz.sk", "url": "https://www.teraz.sk/regiony/banska-bystrica-kontrola-na-plazovom/963085-clanok.html" }
+      {
+        "label": "Mesto Banská Bystrica, 15. 5. 2026",
+        "url": "https://www.banskabystrica.sk/aktuality/2026/kontrolny-den-na-plazovom-kupalisku-priniesol-sklamanie/"
+      },
+      {
+        "label": "TASR / Teraz.sk",
+        "url": "https://www.teraz.sk/regiony/banska-bystrica-kontrola-na-plazovom/963085-clanok.html"
+      }
     ]
   }
 ]

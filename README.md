@@ -79,7 +79,8 @@ Administrácia je na **`/admin`** (predvolené dev heslo: `admin123`).
 ```
 /                          Úvod (hero, fakty v skratke, rozcestník, náhľady, CTA)
 ├── /pripad                Prípad a chronológia (fakty / závery dokumentov / nevyriešené / názory + časová os)
-├── /zmluva                Zmluva a dokumenty (laický rozbor Q&A + archív dokumentov s vyhľadávaním)
+├── /otazky-a-odpovede     Otázky a odpovede – zmluva vysvetlená v bežnej reči (FAQ)
+├── /dokumenty             Archív dokumentov s vyhľadávaním + prehľad chýbajúcich súborov
 ├── /aktualny-stav         Aktuálny stav (kroky mesta + otvorené otázky + názory verejnosti)
 ├── /porovnanie            Porovnanie a súvislosti (kto prevádzkuje kúpaliská v iných mestách, kontext BB)
 ├── /galeria               Fotogaléria s lightboxom (dátum, autor, vlastná/prevzatá)
@@ -223,8 +224,16 @@ Verejné stránky používajú **ISR** (`revalidate = 60`), takže úpravy z KV 
 
 > Migrácia na inú DB (Postgres/Neon/Turso) je jednoduchá: stačí prepísať telo funkcií v `src/lib/store.ts` a `src/lib/kv.ts`; rozhranie (`readJson`/`writeJson`, `readSubmission`/`appendSubmission`) ostáva rovnaké.
 
-### Nahrávanie fotografií
-Administrácia (`/admin/c/gallery`) má nahrávanie fotografií. Obrázky sa zmenšia
+### Nahrávanie súborov
+Administrácia má nahrávanie **fotografií** (`/admin/c/gallery`) aj **PDF
+k dokumentom** (`/admin/c/documents`). Panel pri dokumentoch ukazuje, ktorým
+ešte chýba súbor; PDF sa nahrá jedným klikom a pripojí sa k danému dokumentu.
+Rovnaký zoznam vidí aj verejnosť na `/dokumenty`.
+
+> **Pred nahratím PDF skontrolujte osobné údaje.** Dokumenty od úradov často
+> obsahujú meno, adresu či e-mail žiadateľa – po nahratí je súbor verejný.
+
+Fotografie: Obrázky sa zmenšia
 už v prehliadači (max. 1600 px, JPEG), takže sa dajú nahrať aj z mobilu.
 Ku každej fotke sa vypĺňa alt text (povinný), popis, dátum, autor a pôvod.
 
