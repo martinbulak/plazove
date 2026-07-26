@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import {
   Section,
   SectionHeading,
@@ -12,47 +11,28 @@ import { ReviewAnalysisBlock } from "@/components/ReviewAnalysisBlock";
 import {
   getCityActions,
   getOpenQuestions,
-  getOpinions,
   getReviewAnalysis,
   onlyPublished,
 } from "@/lib/content";
 import { formatDateSk } from "@/lib/utils";
-import type { OpinionPlatform, OpinionSentiment } from "@/lib/types";
 
 export const metadata: Metadata = {
   title: "Aktuálny stav",
   description:
-    "Aktuálny stav prípadu plážového kúpaliska v Banskej Bystrici – kroky mesta a ich plnenie, otvorené otázky bez odpovede a verejne publikované názory. Nezávislý informačný projekt.",
+    "Aktuálny stav prípadu plážového kúpaliska v Banskej Bystrici – kroky mesta a ich plnenie, otvorené otázky bez odpovede a hodnotenia návštevníkov. Nezávislý informačný projekt.",
 };
 
 // ISR: obsah sa obnovuje z KV (ak je nastavené) každých 60 s.
 export const revalidate = 60;
 
-const PLATFORM_LABEL: Record<OpinionPlatform, string> = {
-  facebook: "Facebook",
-  google: "Google recenzie",
-  instagram: "Instagram",
-  x: "X (Twitter)",
-  tripadvisor: "TripAdvisor",
-  iny: "Iný zdroj",
-};
-
-const SENTIMENT: Record<OpinionSentiment, { label: string; cls: string }> = {
-  negative: { label: "Kritický", cls: "bg-rose-50 text-rose-800 ring-rose-200" },
-  neutral: { label: "Neutrálny", cls: "bg-ink-100 text-ink-700 ring-ink-300" },
-  positive: { label: "Pozitívny", cls: "bg-emerald-50 text-emerald-800 ring-emerald-200" },
-};
-
 export default async function CurrentStatePage() {
-  const [actions, questions, opinions, reviews] = await Promise.all([
+  const [actions, questions, reviews] = await Promise.all([
     getCityActions(),
     getOpenQuestions(),
-    getOpinions(),
     getReviewAnalysis(),
   ]);
   const acts = onlyPublished(actions);
   const qs = onlyPublished(questions);
-  const ops = onlyPublished(opinions).filter((o) => o.approved);
 
   return (
     <>
@@ -61,7 +41,7 @@ export default async function CurrentStatePage() {
           as="h1"
           eyebrow="Aktuálny stav"
           title="Kde sa prípad nachádza dnes"
-          intro="Prehľad krokov mesta a ich plnenia, otázok, na ktoré nie je verejne známa odpoveď, a verejne publikovaných názorov. Stav k júlu 2026."
+          intro="Prehľad krokov mesta a ich plnenia, otázok, na ktoré nie je verejne známa odpoveď, a hodnotení od návštevníkov kúpaliska. Stav k júlu 2026."
         />
 
         <QuickNav
@@ -69,7 +49,6 @@ export default async function CurrentStatePage() {
             { href: "#kroky", label: "Čo urobilo mesto" },
             { href: "#otvorene-otazky", label: "Otvorené otázky" },
             ...(reviews ? [{ href: "#hodnotenia", label: "Hodnotenia návštevníkov" }] : []),
-            { href: "#nazory", label: "Názory" },
           ]}
         />
 
@@ -173,75 +152,6 @@ export default async function CurrentStatePage() {
         </Section>
       )}
 
-      {/* Názory verejnosti */}
-      <div className="bg-ink-50">
-        <Section id="nazory" className="scroll-mt-24">
-        <SectionHeading
-          eyebrow="Názory verejnosti"
-          title="Verejne publikované vyjadrenia"
-          intro="Táto sekcia nezhromažďuje anonymné recenzie vytvorené na tomto webe. Ide o verejne publikované vyjadrenia, ktoré administrátor manuálne schválil. Každé je názorom konkrétnej osoby alebo inštitúcie, nie tvrdením prevádzkovateľa webu."
-        />
-
-        <div className="mb-6 rounded-lg border border-ink-200 bg-ink-50 px-4 py-3 text-sm text-ink-600">
-          Web nepredstiera reprezentatívny prieskum verejnej mienky. Pre vyváženosť
-          uvádzame aj stanovisko prevádzkovateľa kúpaliska. Pri politicky
-          angažovaných zdrojoch túto skutočnosť výslovne označujeme. Ak ste autorom
-          citovaného príspevku a želáte si jeho odstránenie,{" "}
-          <Link href="/nahlasit" className="font-semibold underline">
-            napíšte nám
-          </Link>
-          .
-        </div>
-
-        <ul className="grid gap-4 sm:grid-cols-2">
-          {ops.map((o) => (
-            <li key={o.id}>
-              <Card className="flex h-full flex-col">
-                <div className="flex flex-wrap items-center gap-2 text-xs">
-                  <span className="rounded bg-brand-50 px-2 py-0.5 font-medium text-brand-700 ring-1 ring-brand-200">
-                    {PLATFORM_LABEL[o.platform]}
-                  </span>
-                  <span
-                    className={`rounded-full px-2 py-0.5 font-medium ring-1 ring-inset ${SENTIMENT[o.sentiment].cls}`}
-                  >
-                    {SENTIMENT[o.sentiment].label}
-                  </span>
-                </div>
-
-                <blockquote className="mt-3 flex-1 border-l-2 border-ink-200 pl-3 text-ink-800">
-                  „{o.excerpt}"
-                </blockquote>
-
-                <div className="mt-3 text-sm text-ink-600">
-                  <span className="font-medium">{o.profileName}</span>
-                  {o.postedAt && <span> · {formatDateSk(o.postedAt)}</span>}
-                </div>
-
-                {o.note && (
-                  <p className="mt-2 rounded bg-ink-50 p-2 text-xs text-ink-600">
-                    <strong>Kontext:</strong> {o.note}
-                  </p>
-                )}
-
-                <div className="mt-2 flex flex-wrap gap-x-4 text-xs text-ink-400">
-                  {o.archivedAt && <span>Archivované: {formatDateSk(o.archivedAt)}</span>}
-                  {o.originalUrl && (
-                    <a
-                      href={o.originalUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="font-medium text-brand-700 underline"
-                    >
-                      Pôvodný príspevok →
-                    </a>
-                  )}
-                </div>
-              </Card>
-            </li>
-            ))}
-          </ul>
-        </Section>
-      </div>
     </>
   );
 }

@@ -119,7 +119,7 @@ Kolekcie (každá = jeden JSON súbor v `/content`):
 | Zmluva Q&A | `contract.json` | `ContractQA[]` | /zmluva |
 | Dokumenty | `documents.json` | `DocumentItem[]` | /dokumenty |
 | Galéria | `gallery.json` | `GalleryItem[]` | /galeria (nahrávanie cez admin) |
-| Názory | `opinions.json` | `OpinionItem[]` | /nazory |
+| Názory | `opinions.json` | `OpinionItem[]` | (zatiaľ sa nikde nezobrazuje – sekcia bola z /aktualny-stav odstránená) |
 | Kroky mesta | `cityActions.json` | `CityAction[]` | /co-urobilo-mesto |
 | Otvorené otázky | `openQuestions.json` | `OpenQuestion[]` | /otvorene-otazky |
 | Články | `articles.json` | `Article[]` | (voliteľné) |
@@ -264,7 +264,7 @@ Web je navrhnutý s dôrazom na dôveryhodnosť:
 - Obsahuje stránky **ochrany osobných údajov, cookies a podmienok používania** (vzorové znenia – dajte právne skontrolovať).
 - **Cookie banner** sa zobrazuje len pre nepodstatné (analytické/marketingové) cookies; web sám žiadne také nenasadzuje.
 - Má mechanizmus na **nahlásenie chyby, porušenia práv či žiadosť o odstránenie** obsahu (`/nahlasit`).
-- Sekcia názorov nezhromažďuje anonymné recenzie tvorené na webe – len **verejne publikované** príspevky, **manuálne schválené** administrátorom, s odkazom na originál a možnosťou požiadať o odstránenie.
+- Web nezhromažďuje anonymné recenzie tvorené na webe. Ak sa citujú cudzie príspevky alebo hodnotenia, vždy s odkazom na originál a s možnosťou požiadať o odstránenie.
 
 > ⚠️ **Pred spustením:** nahraďte všetok placeholder obsah overenými údajmi a zdrojmi, doplňte skutočné identifikačné údaje prevádzkovateľa projektu do právnych stránok a nechajte právne texty skontrolovať. Nepublikujte nepodložené obvinenia z trestnej činnosti, korupcie ani úmyselného konania.
 

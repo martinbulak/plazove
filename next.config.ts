@@ -16,7 +16,7 @@ const nextConfig: NextConfig = {
     return [
       { source: "/casova-os", destination: "/pripad#chronologia", permanent: true },
       { source: "/zmluva", destination: "/otazky-a-odpovede", permanent: true },
-      { source: "/nazory", destination: "/aktualny-stav#nazory", permanent: true },
+      { source: "/nazory", destination: "/aktualny-stav#hodnotenia", permanent: true },
       { source: "/co-urobilo-mesto", destination: "/aktualny-stav", permanent: true },
       {
         source: "/otvorene-otazky",

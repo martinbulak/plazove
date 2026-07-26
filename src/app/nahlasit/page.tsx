@@ -25,8 +25,8 @@ export default function ReportPage() {
       <div className="mt-6 space-y-3 text-sm text-ink-600">
         <p>
           <strong>Žiadosť o odstránenie citovaného príspevku:</strong> ak ste
-          autorom verejného príspevku citovaného v sekcii „Názory verejnosti" a
-          želáte si jeho odstránenie, uveďte to v správe spolu s odkazom na
+          autorom verejného príspevku alebo hodnotenia citovaného na tomto webe
+          a želáte si jeho odstránenie, uveďte to v správe spolu s odkazom na
           príspevok. Po overení ho odstránime.
         </p>
         <p>
