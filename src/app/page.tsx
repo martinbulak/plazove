@@ -78,6 +78,9 @@ export default async function HomePage() {
     .sort((a, b) => a.rating - b.rating || b.reviews - a.reviews)
     .slice(0, 5);
 
+  /** Je bystrické kúpalisko najhoršie hodnotené z porovnávaných? */
+  const bbWorstRated = worst5.length > 0 && worst5[0].highlight === true;
+
   const negativeShare = reviews
     ? Math.round(
         (reviews.distribution
@@ -95,6 +98,7 @@ export default async function HomePage() {
         reviews={reviews}
         photos={heroCollage}
         galleryCount={photos.length}
+        isWorstRated={bbWorstRated}
       />
 
       {/* ── Kľúčové fakty ── */}

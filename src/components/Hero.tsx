@@ -37,6 +37,7 @@ export function Hero({
   reviews,
   photos = [],
   galleryCount = 0,
+  isWorstRated = false,
 }: {
   site: SiteConfig;
   reviews: ReviewAnalysis | null;
@@ -44,6 +45,11 @@ export function Hero({
   photos?: GalleryItem[];
   /** Celkový počet fotografií v galérii – pre dlaždicu „+N". */
   galleryCount?: number;
+  /**
+   * Je kúpalisko najhoršie hodnotené z porovnávaných? Overuje sa z dát
+   * na strane stránky – ak prestane platiť, hero použije neutrálny text.
+   */
+  isWorstRated?: boolean;
 }) {
   const [main, ...rest] = photos;
 
@@ -64,9 +70,24 @@ export function Hero({
             </h1>
 
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink-600">
-              Areál patrí mestu, no od roku 2007 ho má v nájme súkromná firma –
-              až do roku 2037. Zhromažďujeme dokumenty, fakty a dôkazy o jeho
-              stave, aby mesto muselo konať.
+              {reviews && isWorstRated ? (
+                <>
+                  Plážové kúpalisko v Banskej Bystrici je{" "}
+                  <strong className="font-semibold text-ink-900">
+                    najhoršie hodnotené
+                  </strong>{" "}
+                  zo všetkých porovnávaných kúpalísk s dostatočným počtom
+                  hodnotení – {reviews.average.toFixed(1).replace(".", ",")}{" "}
+                  hviezdy z {reviews.totalReviews.toLocaleString("sk-SK")}{" "}
+                  hodnotení. S tým treba niečo robiť.
+                </>
+              ) : (
+                <>
+                  Areál patrí mestu, no od roku 2007 ho má v nájme súkromná
+                  firma – až do roku 2037. Zhromažďujeme dokumenty, fakty
+                  a dôkazy o jeho stave, aby mesto muselo konať.
+                </>
+              )}
             </p>
 
             <div className="mt-8 flex flex-wrap gap-3">
