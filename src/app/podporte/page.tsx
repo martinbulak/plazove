@@ -1,23 +1,22 @@
 import type { Metadata } from "next";
-import { Section, SectionHeading } from "@/components/ui";
-import { PetitionForm, ShareButtons } from "@/components/forms";
-import { getSite, getPublicSignatures } from "@/lib/content";
-import { formatDateSk } from "@/lib/utils";
+import Link from "next/link";
+import { Section, SectionHeading, Card } from "@/components/ui";
+import { ShareButtons } from "@/components/forms";
+import { getSite } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "Podpíšte výzvu",
+  title: "Podporte zmenu",
   description:
-    "Podpíšte verejnú výzvu mestu Banská Bystrica, aby aktívne riešilo stav plážového kúpaliska. Môžete pripojiť aj vlastný odkaz. Nezávislý občiansky informačný projekt.",
+    "Verejná výzva mestu Banská Bystrica, aby aktívne riešilo stav plážového kúpaliska. Ako ju môžete podporiť a komu napísať. Nezávislý občiansky projekt.",
 };
 
-/** Podpisy sa majú objaviť hneď po overení e-mailu, preto stránku necachujeme. */
-export const dynamic = "force-dynamic";
+// ISR: obsah sa obnovuje z KV (ak je nastavené) každých 60 s.
+export const revalidate = 60;
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://zaplaz.sk";
 
 export default async function SupportPage() {
-  const [site, signatures] = await Promise.all([getSite(), getPublicSignatures()]);
-  const withMessage = signatures.items.filter((s) => s.message);
+  const site = await getSite();
 
   return (
     <>
@@ -25,106 +24,120 @@ export default async function SupportPage() {
         <SectionHeading
           as="h1"
           eyebrow="Podporte zmenu"
-          title="Podpíšte verejnú výzvu"
+          title="Verejná výzva mestu"
           intro="Plážové kúpalisko je majetok mesta. Čím viac ľudí dá najavo, že im na ňom záleží, tým ťažšie sa dá situácia prehliadať."
         />
 
-        {/* Text výzvy */}
-        <blockquote className="mb-8 border-l-4 border-brand-500 bg-white py-4 pl-5 pr-4 font-display text-lg leading-relaxed text-ink-800 shadow-sm ring-1 ring-ink-100">
+        <blockquote className="border-l-4 border-brand-500 bg-white py-4 pl-5 pr-4 font-display text-lg leading-relaxed text-ink-800 shadow-sm ring-1 ring-ink-100">
           {site.petitionText}
         </blockquote>
 
-        {/* Počítadlo */}
-        <div className="mb-8 flex flex-wrap items-baseline gap-x-3 gap-y-1 border-y-2 border-ink-900 py-4">
-          <span className="display text-4xl text-ink-900">{signatures.total}</span>
-          <span className="text-sm font-medium text-ink-700">
-            {signatures.total === 1 ? "potvrdený podpis" : "potvrdených podpisov"}
-          </span>
-          {withMessage.length > 0 && (
-            <span className="text-sm text-ink-500">
-              · {withMessage.length}{" "}
-              {withMessage.length === 1 ? "odkaz" : "odkazov"} od podpisujúcich
-            </span>
-          )}
-        </div>
-
-        {/* Formulár */}
-        <div className="rounded-xl border border-ink-200 bg-white p-5 shadow-sm sm:p-6">
-          <PetitionForm />
-        </div>
-
-        <div className="mt-4 rounded-lg border border-ink-200 bg-ink-50 p-4 text-xs leading-relaxed text-ink-600">
-          <strong>Ako to funguje:</strong> po odoslaní vám príde overovací e-mail.
-          Kliknutím naň sa podpis započíta a váš odkaz sa <strong>ihneď zobrazí</strong>{" "}
-          nižšie na tejto stránke. E-mailovú adresu nezverejňujeme a neposielame ju
-          tretím stranám. Podpis aj odkaz môžete kedykoľvek nechať odstrániť –
-          napíšte nám na{" "}
-          <a href={`mailto:${site.contactEmail}`} className="underline">
-            {site.contactEmail}
-          </a>
-          .
+        <div className="mt-6 rounded-lg border border-ink-200 bg-ink-50 p-4 text-sm leading-relaxed text-ink-600">
+          <strong>Prečo tu nie je podpisový formulár:</strong> tento web zámerne
+          nezbiera žiadne osobné údaje – nemá formuláre, cookies ani sledovanie.
+          Výzvu preto môžete podporiť priamo u mesta a tým, že sa o probléme
+          dozvie viac ľudí.
         </div>
       </Section>
 
-      {/* Zoznam podpisov a odkazov */}
       <div className="border-t border-ink-200 bg-white">
-        <Section id="podpisy" className="max-w-3xl scroll-mt-24">
+        <Section className="max-w-3xl">
           <SectionHeading
-            eyebrow="Kto už podpísal"
-            title="Odkazy podpisujúcich"
-            intro="Zobrazujeme len podpisy s overeným e-mailom, a to v rozsahu, ktorý si každý zvolil. E-mail nezverejňujeme."
+            eyebrow="Ako pomôcť"
+            title="Tri veci, ktoré má zmysel urobiť"
           />
 
-          {signatures.items.length === 0 ? (
-            <p className="rounded-lg border border-dashed border-ink-300 p-8 text-center text-sm text-ink-500">
-              Zatiaľ tu nie je žiadny zverejnený podpis. Buďte prvý.
-            </p>
-          ) : (
-            <ul className="space-y-3">
-              {signatures.items.map((s) => (
-                <li
-                  key={s.id}
-                  className="rounded-xl border border-ink-200 bg-paper p-4 sm:p-5"
-                >
-                  <div className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
-                    <p className="font-semibold text-ink-900">
-                      {s.name}
-                      <span className="font-normal text-ink-500">, {s.city}</span>
+          <ol className="space-y-4">
+            <li>
+              <Card>
+                <div className="flex gap-4">
+                  <span aria-hidden className="section-number text-2xl text-brand-400">
+                    01
+                  </span>
+                  <div>
+                    <h3 className="font-semibold text-ink-900">Napíšte mestu</h3>
+                    <p className="mt-1 text-sm leading-relaxed text-ink-600">
+                      Mesto zriadilo na podnety k plážovému kúpalisku samostatnú
+                      adresu{" "}
+                      <a
+                        href="mailto:plazovekupalisko@banskabystrica.sk"
+                        className="font-medium text-brand-700 underline"
+                      >
+                        plazovekupalisko@banskabystrica.sk
+                      </a>
+                      . Napíšte, čo vás v areáli trápi a čo od mesta očakávate.
+                      Konkrétna skúsenosť váži viac než všeobecná sťažnosť.
                     </p>
-                    {s.confirmedAt && (
-                      <time className="text-xs text-ink-400">
-                        {formatDateSk(s.confirmedAt.slice(0, 10))}
-                      </time>
-                    )}
                   </div>
-                  {s.message && (
-                    <p className="mt-2 border-l-2 border-brand-200 pl-3 font-display text-[0.95rem] italic leading-relaxed text-ink-700">
-                      „{s.message}"
+                </div>
+              </Card>
+            </li>
+            <li>
+              <Card>
+                <div className="flex gap-4">
+                  <span aria-hidden className="section-number text-2xl text-brand-400">
+                    02
+                  </span>
+                  <div>
+                    <h3 className="font-semibold text-ink-900">
+                      Oslovte svojho poslanca
+                    </h3>
+                    <p className="mt-1 text-sm leading-relaxed text-ink-600">
+                      Stav kúpaliska rieši pracovná skupina, v ktorej sú aj
+                      predsedovia poslaneckých klubov. Kontakty na poslancov za
+                      váš volebný obvod nájdete na{" "}
+                      <a
+                        href="https://www.banskabystrica.sk/samosprava/mestske-zastupitelstvo/poslanci/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-medium text-brand-700 underline"
+                      >
+                        webe mesta
+                      </a>
+                      .
                     </p>
-                  )}
-                </li>
-              ))}
-            </ul>
-          )}
+                  </div>
+                </div>
+              </Card>
+            </li>
+            <li>
+              <Card>
+                <div className="flex gap-4">
+                  <span aria-hidden className="section-number text-2xl text-brand-400">
+                    03
+                  </span>
+                  <div>
+                    <h3 className="font-semibold text-ink-900">
+                      Pošlite tento web ďalej
+                    </h3>
+                    <p className="mt-1 text-sm leading-relaxed text-ink-600">
+                      Najúčinnejšia podpora je, keď sa o probléme dozvie viac
+                      ľudí. Všetky dokumenty a fakty sú tu na jednom mieste.
+                    </p>
+                    <div className="mt-4">
+                      <ShareButtons url={SITE_URL} title="Za Pláž" />
+                    </div>
+                  </div>
+                </div>
+              </Card>
+            </li>
+          </ol>
 
-          <p className="mt-6 text-xs leading-relaxed text-ink-500">
-            Odkazy sú názormi konkrétnych podpisujúcich, nie tvrdeniami
-            prevádzkovateľa tohto webu. Vyhradzujeme si právo odstrániť odkaz,
-            ktorý porušuje zákon, uráža konkrétne osoby alebo nesúvisí s témou.
+          <p className="mt-8 text-sm leading-relaxed text-ink-600">
+            Máte fotografiu areálu, dokument alebo upozornenie na nepresnosť?
+            Napíšte nám na{" "}
+            <a
+              href={`mailto:${site.contactEmail}`}
+              className="font-medium text-brand-700 underline"
+            >
+              {site.contactEmail}
+            </a>{" "}
+            – viac na stránke{" "}
+            <Link href="/nahlasit" className="font-medium text-brand-700 underline">
+              Nahlásiť chybu / obsah
+            </Link>
+            .
           </p>
-        </Section>
-      </div>
-
-      {/* Zdieľanie */}
-      <div className="border-t border-ink-200">
-        <Section className="max-w-3xl text-center">
-          <h2 className="display text-2xl text-ink-900">Pomôžte výzvu rozšíriť</h2>
-          <p className="mx-auto mt-2 max-w-lg text-sm leading-relaxed text-ink-600">
-            Najúčinnejšia podpora je, keď sa o probléme dozvie viac ľudí.
-          </p>
-          <div className="mt-5 flex justify-center">
-            <ShareButtons url={SITE_URL} title="Za Pláž" />
-          </div>
         </Section>
       </div>
     </>

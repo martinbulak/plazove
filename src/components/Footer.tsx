@@ -58,9 +58,10 @@ export async function Footer() {
 
         <div className="mt-12 border-t border-white/10 pt-6 text-xs leading-relaxed text-ink-500">
           <p>
-            © {new Date().getFullYear()} {site.operator}. Nezávislý občiansky
-            informačný projekt. Web nie je oficiálnym webom prevádzkovateľa
-            plážového kúpaliska ani Mesta Banská Bystrica.
+            <strong className="font-semibold text-ink-300">No copyright.</strong>{" "}
+            Obsah tohto webu môžete voľne šíriť a použiť. {site.operator}.
+            Nezávislý občiansky projekt. Web nie je oficiálnym webom
+            prevádzkovateľa plážového kúpaliska ani Mesta Banská Bystrica.
           </p>
           <p className="mt-2">
             Obsah predstavuje informačné spracovanie verejne dostupných dokumentov

@@ -71,12 +71,12 @@ export default async function AboutPage() {
             <li>Odlišujeme fakty, citácie, právne výklady a názory.</li>
             <li>Používame len primerane krátke úryvky z cudzích textov s uvedením zdroja.</li>
             <li>
-              Fotografie, dokumenty a tipy od verejnosti moderujeme pred
-              zverejnením.
+              Fotografie a dokumenty poslané e-mailom overujeme pred zverejnením
+              – autorstvo, dátum a súvislosť s témou.
             </li>
             <li>
-              Odkazy pripojené k podpisu výzvy sa zverejňujú automaticky po overení
-              e-mailu; moderujeme ich dodatočne.
+              Web nemá diskusiu ani formuláre, takže nezverejňujeme obsah, ktorý
+              by sme predtým neprešli.
             </li>
           </ul>
         </div>
@@ -89,9 +89,8 @@ export default async function AboutPage() {
             <li>Chyby opravujeme a uvádzame, čo sa zmenilo.</li>
             <li>Dotknuté strany majú právo zaslať stanovisko, ktoré zverejníme.</li>
             <li>
-              Odkazy podpisujúcich sú názormi konkrétnych osôb. Zverejňujú sa po
-              overení e-mailu a odstránime ich, ak porušujú zákon, urážajú
-              konkrétne osoby alebo nesúvisia s témou.
+              Web nezbiera žiadne osobné údaje – nemá formuláre, cookies ani
+              sledovacie nástroje.
             </li>
           </ul>
         </Card>
@@ -109,11 +108,11 @@ export default async function AboutPage() {
           <h2 className="text-xl font-bold text-ink-900">Ako nahlásiť chybu alebo požiadať o opravu</h2>
           <p className="mt-2">
             Ak ste našli chybu, chcete požiadať o opravu, reakciu alebo odstránenie
-            obsahu, použite formulár na stránke{" "}
+            obsahu, pozrite stránku{" "}
             <a href="/nahlasit" className="font-medium text-brand-700 underline">
               Nahlásiť chybu / obsah
             </a>{" "}
-            alebo nám napíšte na{" "}
+            alebo nám rovno napíšte na{" "}
             <a href={`mailto:${site.contactEmail}`} className="font-medium text-brand-700 underline">
               {site.contactEmail}
             </a>

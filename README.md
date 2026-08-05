@@ -36,7 +36,6 @@ Textový obsah webu je spracovaný z týchto primárnych dokumentov a overených
 2. [Informačná architektúra](#informačná-architektúra)
 3. [Dátový model](#dátový-model)
 4. [Obsahová vrstva a administrácia](#obsahová-vrstva-a-administrácia)
-5. [E-maily (výzva a newsletter)](#e-maily-výzva-a-newsletter)
 6. [Štruktúra projektu](#štruktúra-projektu)
 7. [Dizajnový systém](#dizajnový-systém)
 8. [SEO](#seo)
@@ -89,7 +88,7 @@ Administrácia je na **`/admin`** (predvolené dev heslo: `admin123`).
 │   └── /podporte/newsletter-potvrdenie  potvrdenie odberu
 ├── /o-projekte            Kto/prečo, overovanie zdrojov, redakčná metodika, kontakt
 ├── /nahlasit              Nahlásenie chyby / žiadosť o opravu alebo odstránenie
-├── /ochrana-osobnych-udajov, /podmienky            Právne stránky
+├── /podmienky             Podmienky používania
 └── /admin                 Zabezpečená administrácia (mimo indexovania)
     ├── /admin/login
     ├── /admin/c/[name]    Generický editor pre každú kolekciu
@@ -124,7 +123,7 @@ Kolekcie (každá = jeden JSON súbor v `/content`):
 | Otvorené otázky | `openQuestions.json` | `OpenQuestion[]` | /otvorene-otazky |
 | Články | `articles.json` | `Article[]` | (voliteľné) |
 
-Podania od verejnosti (osobné údaje) sa ukladajú oddelene do `content/_submissions/` (`petition.json`, `newsletter.json`, `submissions.json`) a **nie sú verzované v gite**.
+Web **nezbiera žiadne osobné údaje** – nemá formuláre ani ukladanie podaní. Kontakt prebieha e-mailom mimo webu.
 
 ---
 
@@ -142,37 +141,13 @@ Obsah je uložený ako **JSON súbory v `/content`**. Čítanie/zápis rieši [`
 
 ---
 
-## E-maily (výzva a newsletter)
-
-Podpis výzvy aj odber newslettera používajú **double opt-in** (potvrdenie e-mailom).
-
-- **Predvolene (bez konfigurácie):** e-mail sa **neodošle**, iba sa **vypíše potvrdzovací odkaz do konzoly servera** – ideálne na lokálne testovanie. Odkaz nájdete vo výstupe `npm run dev`.
-### Nastavenie Resendu
-
-1. **Overte doménu.** V Resende *Domains → Add Domain* zadajte `zaplaz.sk`. Resend vypíše DNS záznamy (MX + TXT pre SPF, TXT pre DKIM, voliteľne DMARC) – pridajte ich u správcu domény a počkajte na stav *Verified*. Bez overenej domény Resend odmietne odoslať čokoľvek z adresy `@zaplaz.sk`.
-2. **Vytvorte API kľúč** (*API Keys → Create*, oprávnenie *Sending access*).
-3. **Doplňte premenné prostredia** – lokálne do `.env.local`, na Verceli v *Settings → Environment Variables* (pre všetky prostredia), a projekt **znova nasaďte** (premenné sa načítajú až pri buildovaní/štarte):
-   ```env
-   RESEND_API_KEY=re_...
-   MAIL_FROM=Za Pláž <info@zaplaz.sk>   # doména musí byť overená
-   MAIL_REPLY_TO=info@zaplaz.sk          # voliteľné, kam chodia odpovede
-   ```
-4. **Overte v administrácii.** Na `/admin` je v sekcii *Nastavenie* pole na odoslanie skúšobného e-mailu. Ukáže presnú chybovú správu od Resendu, takže neoverenú doménu či neplatný kľúč odhalíte hneď.
-
-Na skúšanie bez overenej domény sa dá použiť `MAIL_FROM=onboarding@resend.dev`, doručí však len na e-mail vlastníka účtu.
-
-Implementácia je v [`src/lib/mail.ts`](src/lib/mail.ts) – volá Resend HTTP API cez `fetch` (bez SDK), posiela text aj HTML verziu, pri chybe 429/5xx skúsi raz zopakovať a výsledok vždy vracia volajúcemu. Pre iného poskytovateľa (SMTP, Mailgun…) stačí upraviť túto jednu funkciu.
-
-**Ak odoslanie zlyhá**, API cesta vráti chybu 502 a formulár to používateľovi povie – nikdy netvrdíme, že e-mail odišiel, keď neodišiel. Nepotvrdený záznam s rovnakou adresou sa pri opakovanom pokuse prepíše, takže sa nehromadia duplicity.
-
-Ochrana proti spamu: skryté honeypot pole vo všetkých formulároch + serverová validácia. Formálnu **elektronickú petíciu** podľa zákona zámerne zatiaľ neimplementujeme – najprv treba doplniť presné právne a identifikačné náležitosti. Aktuálne ide o **verejnú výzvu**.
 
 ---
 
 ## Štruktúra projektu
 
 ```
-content/                 JSON obsah (verzovaný) + _submissions/ (osobné údaje, neverzované)
+content/                 JSON obsah (verzovaný)
 public/placeholders/     Vzorové SVG obrázky do galérie
 scripts/verify-content.mjs   Kontrola JSON obsahu (npm run seed)
 src/
@@ -230,7 +205,6 @@ Verejné stránky používajú **ISR** (`revalidate = 60`), takže úpravy z KV 
    - `NEXT_PUBLIC_SITE_URL` = `https://zaplaz.sk` (alebo pridelená vercel.app doména)
    - `ADMIN_PASSWORD` = silné heslo do administrácie
    - `ADMIN_SESSION_SECRET` = náhodný reťazec (min. 32 znakov)
-   - *(voliteľné)* `RESEND_API_KEY` + `MAIL_FROM` pre reálne e-maily
 5. **Deploy.** Doménu `zaplaz.sk` pridáte v *Settings → Domains*.
 
 > Migrácia na inú DB (Postgres/Neon/Turso) je jednoduchá: stačí prepísať telo funkcií v `src/lib/store.ts` a `src/lib/kv.ts`; rozhranie (`readJson`/`writeJson`, `readSubmission`/`appendSubmission`) ostáva rovnaké.
@@ -260,7 +234,7 @@ npm run build
 npm run start   # port 3000 (nastaviteľné cez PORT)
 ```
 Za reverznou proxy (Nginx/Caddy) nasmerujte doménu na aplikáciu a nastavte `.env`:
-`NEXT_PUBLIC_SITE_URL`, `ADMIN_PASSWORD`, `ADMIN_SESSION_SECRET`, prípadne `RESEND_API_KEY` a `MAIL_FROM`.
+`NEXT_PUBLIC_SITE_URL`, `ADMIN_PASSWORD`, `ADMIN_SESSION_SECRET`.
 
 ---
 

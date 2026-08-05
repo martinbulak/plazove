@@ -90,7 +90,7 @@ export function Hero({
 
             <div className="mt-8 flex flex-wrap gap-3">
               <Button href="/podporte" variant="accent">
-                Podporiť výzvu
+                Ako pomôcť
               </Button>
               <Button href="/pripad" variant="primary">
                 Čo sa stalo →

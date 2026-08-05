@@ -38,9 +38,6 @@ export function AdminShell({
             <NavLink href="/admin/nastavenia" active={active === "settings"}>
               Nastavenia webu
             </NavLink>
-            <NavLink href="/admin/podania" active={active === "submissions"}>
-              Podania od verejnosti
-            </NavLink>
           </nav>
           <div className="mt-4 border-t border-ink-100 pt-4">
             <LogoutButton />

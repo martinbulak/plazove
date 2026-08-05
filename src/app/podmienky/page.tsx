@@ -50,18 +50,22 @@ export default function TermsPage() {
           <p className="mt-2">
             Pri citáciách uvádzame zdroj a odkaz a používame len primerane krátke
             úryvky. Práva k pôvodným dielam zostávajú ich autorom. Ak sa domnievate,
-            že bol porušený váš obsah alebo práva, použite formulár{" "}
+            že bol porušený váš obsah alebo práva, napíšte nám – postup je na stránke{" "}
             <a href="/nahlasit" className="underline text-brand-700">Nahlásiť chybu / obsah</a>.
           </p>
         </div>
 
         <div>
-          <h2 className="text-xl font-bold text-ink-900">5. Obsah od verejnosti</h2>
+          <h2 className="text-xl font-bold text-ink-900">
+            5. Materiály od verejnosti a osobné údaje
+          </h2>
           <p className="mt-2">
-            Príspevky, fotografie a tipy od verejnosti podliehajú moderovaniu.
-            Odoslaním fotografie potvrdzujete autorstvo alebo oprávnenie, súhlas so
-            zverejnením a ohľad na súkromie iných osôb. Vyhradzujeme si právo obsah
-            nezverejniť alebo odstrániť.
+            Web nemá formuláre, diskusiu, cookies ani sledovacie nástroje –{" "}
+            <strong>nezbiera o návštevníkoch žiadne údaje</strong>. Ak nám pošlete
+            fotografiu alebo dokument e-mailom, potvrdzujete tým autorstvo alebo
+            oprávnenie s materiálom nakladať, súhlas so zverejnením a ohľad na
+            súkromie iných osôb. Každý materiál pred zverejnením overujeme
+            a vyhradzujeme si právo ho nezverejniť.
           </p>
         </div>
 

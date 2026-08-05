@@ -47,11 +47,10 @@ export const MAIN_NAV: NavItem[] = [
 
 export const CTA_NAV: NavItem = {
   href: "/podporte",
-  label: "Podporiť výzvu",
+  label: "Ako pomôcť",
 };
 
 export const LEGAL_NAV: NavItem[] = [
-  { href: "/ochrana-osobnych-udajov", label: "Ochrana osobných údajov" },
   { href: "/podmienky", label: "Podmienky používania" },
   { href: "/nahlasit", label: "Nahlásiť chybu / obsah" },
 ];

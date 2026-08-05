@@ -322,12 +322,12 @@ export default async function HomePage() {
             Ide o verejný majetok. Pomôžte ho ustrážiť.
           </h2>
           <p className="mx-auto mt-4 max-w-xl leading-relaxed text-brand-100">
-            Podpíšte verejnú výzvu mestu, prihláste sa na odber noviniek alebo
-            pošlite vlastnú fotografiu či dokument.
+            Napíšte mestu, oslovte svojho poslanca alebo pošlite tento web
+            ďalej. Všetky dokumenty a fakty sú tu na jednom mieste.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             <Button href="/podporte" variant="accent">
-              Podpísať výzvu
+              Ako pomôcť
             </Button>
             <Button
               href="/dokumenty"

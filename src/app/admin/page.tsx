@@ -1,9 +1,7 @@
 import Link from "next/link";
 import { AdminShell } from "@/components/admin/AdminShell";
 import { COLLECTION_LIST } from "@/lib/admin-schema";
-import { readJson, readSubmission } from "@/lib/store";
-import { isMailConfigured } from "@/lib/mail";
-import { MailTester } from "@/components/admin/MailTester";
+import { readJson } from "@/lib/store";
 
 export const dynamic = "force-dynamic";
 
@@ -16,14 +14,6 @@ export default async function AdminDashboard() {
   const counts = await Promise.all(
     COLLECTION_LIST.map(async (c) => ({ ...c, n: await count(c.name) })),
   );
-  const petition = await readSubmission<Array<{ confirmed?: boolean }>>("petition", []);
-  const newsletter = await readSubmission<Array<{ confirmed?: boolean }>>("newsletter", []);
-  const submissions = await readSubmission<Array<{ handled?: boolean }>>("submissions", []);
-
-  const petitionConfirmed = petition.filter((p) => p.confirmed).length;
-  const newsletterConfirmed = newsletter.filter((n) => n.confirmed).length;
-  const submissionsNew = submissions.filter((s) => !s.handled).length;
-
   return (
     <AdminShell active="dashboard" title="Prehľad">
       <div className="mb-6 rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-900">
@@ -49,43 +39,7 @@ export default async function AdminDashboard() {
         ))}
       </div>
 
-      <h2 className="mb-3 mt-8 text-sm font-semibold uppercase tracking-wide text-ink-500">
-        Podania od verejnosti
-      </h2>
-      <div className="grid gap-3 sm:grid-cols-3">
-        <Stat label="Podpisy výzvy (potvrdené)" value={`${petitionConfirmed} / ${petition.length}`} href="/admin/podania" />
-        <Stat label="Odber noviniek (potvrdené)" value={`${newsletterConfirmed} / ${newsletter.length}`} href="/admin/podania" />
-        <Stat label="Nové tipy / foto / opravy" value={String(submissionsNew)} href="/admin/podania" highlight={submissionsNew > 0} />
-      </div>
-
-      <h2 className="mb-3 mt-8 text-sm font-semibold uppercase tracking-wide text-ink-500">
-        Nastavenie
-      </h2>
-      <MailTester configured={isMailConfigured()} />
     </AdminShell>
   );
 }
 
-function Stat({
-  label,
-  value,
-  href,
-  highlight,
-}: {
-  label: string;
-  value: string;
-  href: string;
-  highlight?: boolean;
-}) {
-  return (
-    <Link
-      href={href}
-      className={`rounded-xl border p-4 ${
-        highlight ? "border-accent-500 bg-accent-400/10" : "border-ink-200 bg-white"
-      } hover:border-brand-300`}
-    >
-      <p className="text-sm font-medium text-ink-600">{label}</p>
-      <p className="mt-1 text-2xl font-bold text-ink-900">{value}</p>
-    </Link>
-  );
-}

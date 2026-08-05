@@ -17,7 +17,6 @@ import { kvEnabled, kvGet, kvSet } from "./kv";
  */
 
 const CONTENT_DIR = path.join(process.cwd(), "content");
-const SUBMISSIONS_DIR = path.join(CONTENT_DIR, "_submissions");
 
 export class StorageReadOnlyError extends Error {
   constructor() {
@@ -82,25 +81,3 @@ export async function writeJson<T>(name: string, data: T): Promise<void> {
 
 /* ── Podania od verejnosti (osobné údaje – oddelený namespace) ────────── */
 
-export async function readSubmission<T>(name: string, fallback: T): Promise<T> {
-  if (kvEnabled()) {
-    const fromKv = await kvGet<T>(`submission:${name}`);
-    return fromKv ?? fallback;
-  }
-  const fromFile = await readFileJson<T>(SUBMISSIONS_DIR, name);
-  return fromFile ?? fallback;
-}
-
-export async function writeSubmission<T>(name: string, data: T): Promise<void> {
-  if (kvEnabled()) {
-    await kvSet(`submission:${name}`, data);
-    return;
-  }
-  await writeFileJson(SUBMISSIONS_DIR, name, data);
-}
-
-export async function appendSubmission<T>(name: string, item: T): Promise<void> {
-  const list = await readSubmission<T[]>(name, []);
-  list.push(item);
-  await writeSubmission(name, list);
-}

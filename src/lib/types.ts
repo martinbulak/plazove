@@ -350,66 +350,6 @@ export interface Article extends BaseEntity {
   body: string;
 }
 
-/* ── 10. Podania od verejnosti (výzva, newsletter, tipy) ─────────────── */
-
-/**
- * Spôsob zverejnenia podpisu:
- *  – „full"  = krstné meno, priezvisko a mesto
- *  – „first" = iba krstné meno a mesto (anonymizované)
- *  – „none"  = podpis sa nezverejní, len sa započíta
- */
-export type PublishMode = "full" | "first" | "none";
-
-export const PUBLISH_MODE_LABEL: Record<PublishMode, string> = {
-  full: "Meno, priezvisko a mesto",
-  first: "Iba krstné meno a mesto",
-  none: "Nezverejňovať – len započítať podpis",
-};
-
-export interface PetitionSignature {
-  id: string;
-  firstName: string;
-  lastName: string;
-  city: string;
-  email: string;
-  /** Rozsah zverejnenia mena. */
-  publishMode: PublishMode;
-  /** Verejný odkaz podpisujúceho (voliteľný). */
-  message?: string;
-  /** Skryté administrátorom (moderovanie až po zverejnení). */
-  hidden?: boolean;
-  /** Súhlas so spracovaním osobných údajov. */
-  consent: boolean;
-  /** Potvrdený e-mail (double opt-in). */
-  confirmed: boolean;
-  confirmToken?: string;
-  createdAt: string;
-  confirmedAt?: string;
-}
-
-export interface NewsletterSubscriber {
-  id: string;
-  email: string;
-  confirmed: boolean;
-  confirmToken?: string;
-  createdAt: string;
-  confirmedAt?: string;
-}
-
-export interface Submission {
-  id: string;
-  /** „tip" (dokument/tip) | „photo" (fotografia) | „correction" (nahlásenie chyby) */
-  type: "tip" | "photo" | "correction";
-  name?: string;
-  email?: string;
-  message: string;
-  /** Pri fotografii potvrdenie autorstva a súhlasu so zverejnením. */
-  photoConsent?: boolean;
-  /** Pri fotografii – URL/odkaz, ak bol priložený. */
-  attachmentNote?: string;
-  createdAt: string;
-  handled: boolean;
-}
 
 /* ── Globálne nastavenia webu ────────────────────────────────────────── */
 
