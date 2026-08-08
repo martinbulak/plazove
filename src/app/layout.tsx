@@ -19,7 +19,7 @@ const newsreader = Newsreader({
   display: "swap",
 });
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://zaplaz.sk";
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.zaplaz.sk";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -47,14 +47,16 @@ export const metadata: Metadata = {
     url: SITE_URL,
     siteName: "Za Pláž",
     title: "Za Pláž – ktorá nebude hanbou",
+    // Facebook aj LinkedIn popis skracujú, preto je hlavná myšlienka hneď
+    // na začiatku a text sa zmestí do zhruba 150 znakov.
     description:
-      "Dokumenty, právne analýzy, časová os a fakty o plážovom kúpalisku v Banskej Bystrici. Nezávislý občiansky informačný projekt – nie je to web prevádzkovateľa ani mesta.",
+      "Areál patrí mestu, no od roku 2007 ho má v nájme súkromná firma. Dokumenty, fakty a fotografie stavu plážového kúpaliska na jednom mieste.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Za Pláž",
+    title: "Za Pláž – ktorá nebude hanbou",
     description:
-      "Nezávislý občiansky informačný projekt o plážovom kúpalisku v Banskej Bystrici.",
+      "Areál patrí mestu, no od roku 2007 ho má v nájme súkromná firma. Dokumenty, fakty a fotografie stavu plážového kúpaliska na jednom mieste.",
   },
   robots: { index: true, follow: true },
 };

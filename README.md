@@ -23,10 +23,10 @@ Textový obsah webu je spracovaný z týchto primárnych dokumentov a overených
 - Čo sa nepodarilo overiť, je explicitne uvedené ako otvorená otázka, nie ako tvrdenie.
 - Pri politicky angažovaných zdrojoch je táto skutočnosť uvedená v poli `note`.
 - Stanovisko prevádzkovateľa je uvedené kvôli vyváženosti.
-- **Fotogaléria je prázdna** – fotografie sa nahrávajú cez administráciu (`/admin/c/gallery`).
+- Fotogaléria je členená na albumy podľa udalostí; fotografie sa nahrávajú cez administráciu (`/admin/c/gallery`).
 - Zverejnené PDF sú anonymizované (v odpovedi na infožiadosť je začiernená adresa a e-mail žiadateľky).
 
-- **Doména (cieľová):** zaplaz.sk
+- **Doména:** www.zaplaz.sk
 - **Technológie:** Next.js 15 (App Router) · TypeScript · Tailwind CSS v4 · súborová JSON obsahová vrstva
 
 ---
@@ -83,17 +83,14 @@ Administrácia je na **`/admin`** (predvolené dev heslo: `admin123`).
 ├── /aktualny-stav         Aktuálny stav (kroky mesta + otvorené otázky + názory verejnosti)
 ├── /porovnanie            Porovnanie a súvislosti (kto prevádzkuje kúpaliská v iných mestách, kontext BB)
 ├── /galeria               Fotogaléria s lightboxom (dátum, autor, vlastná/prevzatá)
-├── /podporte              Verejná výzva, newsletter, poslať foto/tip, zdieľať
-│   ├── /podporte/potvrdenie             potvrdenie podpisu výzvy (double opt-in)
-│   └── /podporte/newsletter-potvrdenie  potvrdenie odberu
+├── /podporte              Napíšte mestu – hotový text na skopírovanie, ako inak pomôcť
 ├── /o-projekte            Kto/prečo, overovanie zdrojov, redakčná metodika, kontakt
 ├── /nahlasit              Nahlásenie chyby / žiadosť o opravu alebo odstránenie
 ├── /podmienky             Podmienky používania
 └── /admin                 Zabezpečená administrácia (mimo indexovania)
     ├── /admin/login
     ├── /admin/c/[name]    Generický editor pre každú kolekciu
-    ├── /admin/nastavenia  Nastavenia webu (hero, disclaimer, text výzvy…)
-    └── /admin/podania     Podpisy výzvy, newsletter, tipy/foto/opravy
+    └── /admin/nastavenia  Nastavenia webu (hero, disclaimer, text výzvy…)
 ```
 
 `sitemap.xml` a `robots.txt` sa generujú automaticky (admin a API sú vylúčené z indexovania).
@@ -114,13 +111,13 @@ Kolekcie (každá = jeden JSON súbor v `/content`):
 |---|---|---|---|
 | Nastavenia webu | `site.json` | `SiteConfig` | Úvod / global |
 | Prípad v skratke | `case.json` | `CaseSection[]` | /pripad |
-| Časová os | `timeline.json` | `TimelineItem[]` | /casova-os |
-| Zmluva Q&A | `contract.json` | `ContractQA[]` | /zmluva |
+| Časová os | `timeline.json` | `TimelineItem[]` | /pripad |
+| Zmluva Q&A | `contract.json` | `ContractQA[]` | /otazky-a-odpovede |
 | Dokumenty | `documents.json` | `DocumentItem[]` | /dokumenty |
 | Galéria | `gallery.json` | `GalleryItem[]` | /galeria (nahrávanie cez admin) |
 | Názory | `opinions.json` | `OpinionItem[]` | (zatiaľ sa nikde nezobrazuje – sekcia bola z /aktualny-stav odstránená) |
-| Kroky mesta | `cityActions.json` | `CityAction[]` | /co-urobilo-mesto |
-| Otvorené otázky | `openQuestions.json` | `OpenQuestion[]` | /otvorene-otazky |
+| Kroky mesta | `cityActions.json` | `CityAction[]` | /aktualny-stav |
+| Otvorené otázky | `openQuestions.json` | `OpenQuestion[]` | /aktualny-stav |
 | Články | `articles.json` | `Article[]` | (voliteľné) |
 
 Web **nezbiera žiadne osobné údaje** – nemá formuláre ani ukladanie podaní. Kontakt prebieha e-mailom mimo webu.
@@ -135,7 +132,6 @@ Obsah je uložený ako **JSON súbory v `/content`**. Čítanie/zápis rieši [`
 - Prihlásenie jedným heslom (`ADMIN_PASSWORD`), session je HMAC-podpísaná cookie. Prístup chráni [`src/middleware.ts`](src/middleware.ts).
 - **Generický editor** – formuláre sa generujú z definícií v [`src/lib/admin-schema.ts`](src/lib/admin-schema.ts). Každá položka podporuje koncept/publikované, dátum publikovania, poslednú aktualizáciu, zdroje, autora a SEO názov/popis.
 - Podpora typov polí: text, viacriadkový text, číslo, výber, checkbox, dátum, zoznam reťazcov, zoznam zdrojov aj jednotlivý odkaz na dokument.
-- **Podania** – prehľad podpisov výzvy, odberateľov newslettera a prijatých tipov/fotografií, vrátane označenia „vybavené" a mazania.
 
 > Ako pridať nový typ obsahu: doplňte typ do `types.ts`, kolekciu do `admin-schema.ts` (`COLLECTIONS`) a čítač do `content.ts`. Editor, API aj sitemap sa prispôsobia automaticky.
 
@@ -152,7 +148,7 @@ public/placeholders/     Vzorové SVG obrázky do galérie
 scripts/verify-content.mjs   Kontrola JSON obsahu (npm run seed)
 src/
 ├── app/                 App Router – stránky, API routes, sitemap, robots, OG image
-│   ├── api/             Verejné (vyzva, newsletter, submission) a admin API
+│   ├── api/             Admin API (obsah, nahrávanie súborov, prihlásenie)
 │   └── admin/           Administrácia
 ├── components/          UI (Header, Footer, Hero, Gallery, forms…) + admin/
 ├── lib/                 types, store, content, auth, mail, validate, utils, nav, admin-schema
@@ -202,7 +198,7 @@ Verejné stránky používajú **ISR** (`revalidate = 60`), takže úpravy z KV 
    Vercel doplní `BLOB_READ_WRITE_TOKEN`. Bez neho administrácia fotografie
    nenahrá (na Verceli je súborový systém read-only).
 4. **Nastavte Environment Variables** (Project → Settings → Environment Variables):
-   - `NEXT_PUBLIC_SITE_URL` = `https://zaplaz.sk` (alebo pridelená vercel.app doména)
+   - `NEXT_PUBLIC_SITE_URL` = `https://www.zaplaz.sk` (presne v tom tvare, na ktorom web beží – inak Facebook narazí na presmerovanie) (alebo pridelená vercel.app doména)
    - `ADMIN_PASSWORD` = silné heslo do administrácie
    - `ADMIN_SESSION_SECRET` = náhodný reťazec (min. 32 znakov)
 5. **Deploy.** Doménu `zaplaz.sk` pridáte v *Settings → Domains*.

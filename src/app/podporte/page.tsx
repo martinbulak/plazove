@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 // ISR: obsah sa obnovuje z KV (ak je nastavené) každých 60 s.
 export const revalidate = 60;
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://zaplaz.sk";
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.zaplaz.sk";
 const CITY_MAIL = "plazovekupalisko@banskabystrica.sk";
 const SUBJECT = "Podnet k stavu plážového kúpaliska";
 

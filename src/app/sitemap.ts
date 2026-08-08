@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import { FOOTER_NAV, LEGAL_NAV, CTA_NAV } from "@/lib/nav";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = process.env.NEXT_PUBLIC_SITE_URL || "https://zaplaz.sk";
+  const base = process.env.NEXT_PUBLIC_SITE_URL || "https://www.zaplaz.sk";
   const routes = ["/", CTA_NAV.href, ...FOOTER_NAV.map((i) => i.href), ...LEGAL_NAV.map((i) => i.href)];
   const unique = Array.from(new Set(routes));
   return unique.map((path) => ({
