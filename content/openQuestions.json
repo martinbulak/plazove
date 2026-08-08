@@ -29,24 +29,6 @@
     ]
   },
   {
-    "id": "q9",
-    "status": "published",
-    "actionStatus": "no_answer",
-    "question": "Je na nájomcu vedená exekúcia a mohla by ovplyvniť nájomný vzťah?",
-    "cityAnswer": "Mesto k 11. 5. 2026 uvádza, že nedisponuje právoplatným rozhodnutím ani úradným podkladom, na základe ktorého by vedelo vyhodnotiť právne dôsledky pre nájomný vzťah. Verejné registre (Finstat) k júlu 2026 pri spoločnosti AQUALAND Slovakia s.r.o. exekúciu nevykazovali. Ide zatiaľ o neoverenú informáciu.",
-    "lastUpdated": "2026-07-21",
-    "sources": [
-      {
-        "label": "Odpoveď mesta na infožiadosť Inf. 57/2026, bod 9",
-        "documentId": "doc-infoziadost-2026"
-      },
-      {
-        "label": "Finstat – AQUALAND Slovakia s.r.o.",
-        "url": "https://www.finstat.sk/36768014"
-      }
-    ]
-  },
-  {
     "id": "q3",
     "status": "published",
     "actionStatus": "no_answer",
