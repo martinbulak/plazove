@@ -42,7 +42,7 @@ export default async function ComparisonPage() {
         <SectionHeading
           as="h1"
           eyebrow="Porovnanie a súvislosti"
-          title="Ako to riešia iné mestá"
+          title="Porovnanie s inými kúpaliskami"
           intro="Aby sa dal prípad zasadiť do kontextu, porovnali sme, kto prevádzkuje verejné kúpaliská v ďalších slovenských mestách. Údaje sú z oficiálnych zdrojov miest a ich organizácií; pri každom meste uvádzame odkaz."
         />
 
