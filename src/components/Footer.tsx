@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { LEGAL_NAV, MAIN_NAV } from "@/lib/nav";
+import { FOOTER_NAV, LEGAL_NAV } from "@/lib/nav";
 import { getSite } from "@/lib/content";
 
 export async function Footer() {
@@ -27,7 +27,7 @@ export async function Footer() {
           <nav aria-label="Sekcie">
             <p className="eyebrow mb-4 text-ink-500">Sekcie</p>
             <ul className="space-y-1.5 text-sm">
-              {MAIN_NAV.map((i) => (
+              {FOOTER_NAV.map((i) => (
                 <li key={i.href}>
                   <Link href={i.href} className="text-ink-300 hover:text-white">
                     {i.label}

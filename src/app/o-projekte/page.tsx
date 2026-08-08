@@ -43,14 +43,26 @@ export default async function AboutPage() {
           </p>
           <ul className="mt-4 space-y-3 not-prose">
             <li className="rounded-[var(--radius-card)] border border-ink-200 bg-white p-4">
-              <p className="font-semibold text-ink-900">Martin Bulák</p>
+              <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
+                <p className="font-semibold text-ink-900">Martin Bulák</p>
+                <FacebookLink
+                  href="https://www.facebook.com/martin.bulak"
+                  name="Martin Bulák"
+                />
+              </div>
               <p className="mt-1 text-sm leading-relaxed text-ink-600">
                 Založil tento web. Zastrešuje jeho technickú stránku a
                 zhromažďovanie dokumentov na jednom mieste.
               </p>
             </li>
             <li className="rounded-[var(--radius-card)] border border-ink-200 bg-white p-4">
-              <p className="font-semibold text-ink-900">Magdaléna Kováč Mergová</p>
+              <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
+                <p className="font-semibold text-ink-900">Magdaléna Kováč Mergová</p>
+                <FacebookLink
+                  href="https://www.facebook.com/magdalenakovacmergova"
+                  name="Magdaléna Kováč Mergová"
+                />
+              </div>
               <p className="mt-1 text-sm leading-relaxed text-ink-600">
                 Téme plážového kúpaliska sa venuje dlhodobo. Podáva žiadosti
                 o informácie podľa infozákona a osobne sa zúčastňuje kontrolných
@@ -120,20 +132,28 @@ export default async function AboutPage() {
           </p>
         </div>
 
-        <Card>
-          <h2 className="text-lg font-bold text-ink-900">Kontakt</h2>
-          <p className="mt-2 text-sm">
-            Prevádzkovateľ webu: Martin Bulák
-            <br />
-            Družby 31, 974 04 Banská Bystrica
-            <br />
-            E-mail:{" "}
-            <a href={`mailto:${site.contactEmail}`} className="font-medium text-brand-700 underline">
-              {site.contactEmail}
-            </a>
-          </p>
-        </Card>
       </div>
     </Section>
+  );
+}
+
+/** Odkaz na verejný facebookový profil člena iniciatívy. */
+function FacebookLink({ href, name }: { href: string; name: string }) {
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="inline-flex items-center gap-1.5 rounded-md px-1.5 py-0.5 text-xs font-medium text-ink-500 hover:bg-ink-50 hover:text-brand-700"
+    >
+      <svg width="15" height="15" viewBox="0 0 24 24" aria-hidden className="shrink-0">
+        <path
+          fill="#1877F2"
+          d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.69 4.53-4.69 1.31 0 2.68.24 2.68.24v2.96h-1.51c-1.49 0-1.96.93-1.96 1.89v2.26h3.33l-.53 3.49h-2.8V24C19.61 23.1 24 18.1 24 12.07z"
+        />
+      </svg>
+      <span>Facebook</span>
+      <span className="sr-only">– profil {name}, otvorí sa v novom okne</span>
+    </a>
   );
 }

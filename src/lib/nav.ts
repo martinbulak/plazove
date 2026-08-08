@@ -38,11 +38,16 @@ export const MAIN_NAV: NavItem[] = [
     label: "Galéria",
     desc: "Fotografie stavu areálu",
   },
-  {
-    href: "/o-projekte",
-    label: "O projekte",
-    desc: "Kto a prečo web prevádzkuje",
-  },
+];
+
+/**
+ * Sekcie v pätičke. „O projekte" je zámerne mimo hlavnej navigácie –
+ * v hlavičke by zaberalo miesto obsahovým sekciám, ale odkaz naň musí
+ * zostať dostupný.
+ */
+export const FOOTER_NAV: NavItem[] = [
+  ...MAIN_NAV,
+  { href: "/o-projekte", label: "O projekte", desc: "Kto a prečo web prevádzkuje" },
 ];
 
 export const CTA_NAV: NavItem = {
