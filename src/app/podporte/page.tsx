@@ -2,18 +2,21 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Section, SectionHeading, Card } from "@/components/ui";
 import { ShareButtons } from "@/components/forms";
+import { CopyMessage } from "@/components/CopyMessage";
 import { getSite } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "Podporte zmenu",
+  title: "Napíšte mestu",
   description:
-    "Verejná výzva mestu Banská Bystrica, aby aktívne riešilo stav plážového kúpaliska. Ako ju môžete podporiť a komu napísať. Nezávislý občiansky projekt.",
+    "Mesto Banská Bystrica zriadilo na podnety k plážovému kúpalisku adresu plazovekupalisko@banskabystrica.sk. Pripravili sme text, ktorý stačí skopírovať a odoslať.",
 };
 
 // ISR: obsah sa obnovuje z KV (ak je nastavené) každých 60 s.
 export const revalidate = 60;
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://zaplaz.sk";
+const CITY_MAIL = "plazovekupalisko@banskabystrica.sk";
+const SUBJECT = "Podnet k stavu plážového kúpaliska";
 
 export default async function SupportPage() {
   const site = await getSite();
@@ -23,28 +26,31 @@ export default async function SupportPage() {
       <Section className="max-w-3xl">
         <SectionHeading
           as="h1"
-          eyebrow="Podporte zmenu"
-          title="Verejná výzva mestu"
-          intro="Plážové kúpalisko je majetok mesta. Čím viac ľudí dá najavo, že im na ňom záleží, tým ťažšie sa dá situácia prehliadať."
+          eyebrow="Ako pomôcť"
+          title="Napíšte mestu"
+          intro="Plážové kúpalisko je majetok mesta. Mesto na podnety k nemu zriadilo samostatnú adresu – čím viac ľudí na ňu napíše, tým ťažšie sa dá situácia prehliadať. Text sme pripravili, stačí ho skopírovať a odoslať."
         />
 
-        <blockquote className="border-l-4 border-brand-500 bg-white py-4 pl-5 pr-4 font-display text-lg leading-relaxed text-ink-800 shadow-sm ring-1 ring-ink-100">
-          {site.petitionText}
-        </blockquote>
+        <CopyMessage text={site.petitionText} to={CITY_MAIL} subject={SUBJECT} />
 
-        <div className="mt-6 rounded-lg border border-ink-200 bg-ink-50 p-4 text-sm leading-relaxed text-ink-600">
-          <strong>Prečo tu nie je podpisový formulár:</strong> tento web zámerne
-          nezbiera žiadne osobné údaje – nemá formuláre, cookies ani sledovanie.
-          Výzvu preto môžete podporiť priamo u mesta a tým, že sa o probléme
-          dozvie viac ľudí.
+        <div className="mt-4 rounded-lg border border-ink-200 bg-ink-50 p-4 text-sm leading-relaxed text-ink-600">
+          <strong>Text si pokojne upravte.</strong> Vlastná skúsenosť váži viac
+          než preposlaná šablóna – ak ste na kúpalisku boli a niečo vás tam
+          zarazilo, napíšte to vlastnými slovami. Nezabudnite sa podpísať;
+          na anonymné podnety úrad odpovedať nemusí.
+        </div>
+
+        <div className="mt-3 text-sm leading-relaxed text-ink-500">
+          Tento web nič nezbiera ani neodosiela – e-mail píšete priamo mestu zo
+          svojej schránky a my sa o ňom nedozvieme.
         </div>
       </Section>
 
       <div className="border-t border-ink-200 bg-white">
         <Section className="max-w-3xl">
           <SectionHeading
-            eyebrow="Ako pomôcť"
-            title="Tri veci, ktoré má zmysel urobiť"
+            eyebrow="Ďalšie dve možnosti"
+            title="Čo ešte má zmysel urobiť"
           />
 
           <ol className="space-y-4">
@@ -53,30 +59,6 @@ export default async function SupportPage() {
                 <div className="flex gap-4">
                   <span aria-hidden className="section-number text-2xl text-brand-400">
                     01
-                  </span>
-                  <div>
-                    <h3 className="font-semibold text-ink-900">Napíšte mestu</h3>
-                    <p className="mt-1 text-sm leading-relaxed text-ink-600">
-                      Mesto zriadilo na podnety k plážovému kúpalisku samostatnú
-                      adresu{" "}
-                      <a
-                        href="mailto:plazovekupalisko@banskabystrica.sk"
-                        className="font-medium text-brand-700 underline"
-                      >
-                        plazovekupalisko@banskabystrica.sk
-                      </a>
-                      . Napíšte, čo vás v areáli trápi a čo od mesta očakávate.
-                      Konkrétna skúsenosť váži viac než všeobecná sťažnosť.
-                    </p>
-                  </div>
-                </div>
-              </Card>
-            </li>
-            <li>
-              <Card>
-                <div className="flex gap-4">
-                  <span aria-hidden className="section-number text-2xl text-brand-400">
-                    02
                   </span>
                   <div>
                     <h3 className="font-semibold text-ink-900">
@@ -94,7 +76,8 @@ export default async function SupportPage() {
                       >
                         webe mesta
                       </a>
-                      .
+                      . Poslanec sa môže na stav areálu opýtať priamo na
+                      zastupiteľstve.
                     </p>
                   </div>
                 </div>
@@ -104,7 +87,7 @@ export default async function SupportPage() {
               <Card>
                 <div className="flex gap-4">
                   <span aria-hidden className="section-number text-2xl text-brand-400">
-                    03
+                    02
                   </span>
                   <div>
                     <h3 className="font-semibold text-ink-900">

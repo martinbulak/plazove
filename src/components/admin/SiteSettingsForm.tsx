@@ -64,7 +64,7 @@ export function SiteSettingsForm({ initial }: { initial: SiteConfig }) {
         <Text label="Upozornenie o nezávislosti" k="disclaimer" area />
         <Text label="Kontaktný e-mail" k="contactEmail" />
         <Text label="Prevádzkovateľ" k="operator" />
-        <Text label="Text verejnej výzvy" k="petitionText" area />
+        <Text label="Text výzvy mestu (na skopírovanie na /podporte)" k="petitionText" area />
       </div>
 
       <div className="rounded-xl border border-ink-200 bg-white p-5">
