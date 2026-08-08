@@ -22,6 +22,8 @@ export default async function DocumentsPage() {
    */
   const missing = docs.filter((d) => !d.fileUrl && !d.sourceUrl);
   const withFile = docs.filter((d) => d.fileUrl).length;
+  /** Položky dostupné len odkazom na cudziu stránku – nemáme z nich súbor. */
+  const linkOnly = docs.filter((d) => !d.fileUrl && d.sourceUrl).length;
 
   return (
     <Section>
@@ -29,18 +31,22 @@ export default async function DocumentsPage() {
         as="h1"
         eyebrow="Archív"
         title="Dokumenty a analýzy"
-        intro="Dokumenty, o ktoré sa tento web opiera. Pri každom uvádzame zhrnutie, hlavné závery a zdroj. Vyhľadávajte podľa názvu alebo filtrujte podľa kategórie."
+        intro="Podklady, o ktoré sa tento web opiera. Archív rozlišuje dve veci: súbory, ktoré si môžete rovno stiahnuť, a odkazy na cudzie stránky, kde je zdroj zverejnený. Pri každej položke uvádzame zhrnutie a hlavné závery."
       />
 
       {/* Stav zverejnenia */}
-      <div className="mb-6 grid gap-4 sm:grid-cols-3">
+      <div className="mb-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         <div className="border-t-2 border-ink-900 pt-3">
           <p className="display text-2xl text-ink-900">{docs.length}</p>
-          <p className="mt-1 text-sm text-ink-600">dokumentov v archíve</p>
+          <p className="mt-1 text-sm text-ink-600">položiek v archíve</p>
         </div>
         <div className="border-t-2 border-emerald-600 pt-3">
           <p className="display text-2xl text-ink-900">{withFile}</p>
-          <p className="mt-1 text-sm text-ink-600">s pripojeným súborom</p>
+          <p className="mt-1 text-sm text-ink-600">súborov na stiahnutie</p>
+        </div>
+        <div className="border-t-2 border-ink-400 pt-3">
+          <p className="display text-2xl text-ink-900">{linkOnly}</p>
+          <p className="mt-1 text-sm text-ink-600">odkazov na web</p>
         </div>
         <div className="border-t-2 border-amber-500 pt-3">
           <p className="display text-2xl text-ink-900">{missing.length}</p>
