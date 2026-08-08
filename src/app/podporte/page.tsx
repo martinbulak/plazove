@@ -69,7 +69,7 @@ export default async function SupportPage() {
                       predsedovia poslaneckých klubov. Kontakty na poslancov za
                       váš volebný obvod nájdete na{" "}
                       <a
-                        href="https://www.banskabystrica.sk/samosprava/mestske-zastupitelstvo/poslanci/"
+                        href="https://www.banskabystrica.sk/poslanci/"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="font-medium text-brand-700 underline"
